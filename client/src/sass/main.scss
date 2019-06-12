@@ -1,7 +1,9 @@
-// ABSTRACT
-@import "./components/abstract/mixins";
-@import "./components/abstract/variables";
+// mixins
+@import "./components/mixins/mixins";
 
 // BASE
 @import "./components/base/_base";
 @import "./components/base/_utils";
+
+// variables
+@import "./components/variables/colors";
