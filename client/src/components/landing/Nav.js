@@ -6,25 +6,39 @@ const Nav = () => {
     <div className="nav">
       <ul className="nav__list">
         <li className="nav__item">
-          <Link to="/">O name</Link>
+          <Link className="nav__link" to="/">
+            O name
+          </Link>
         </li>
         <li className="nav__item">
-          <Link to="/">Kursevi</Link>
+          <Link className="nav__link" to="/">
+            Kursevi
+          </Link>
         </li>
         <li className="nav__item">
-          <Link to="/">Modeli Nastave</Link>
+          <Link className="nav__link" to="/">
+            Modeli Nastave
+          </Link>
         </li>
         <li className="nav__item">
-          <Link to="/">Predstojeci Dogadjaji</Link>
+          <Link className="nav__link" to="/">
+            Predstojeci Dogadjaji
+          </Link>
         </li>
         <li className="nav__item">
-          <Link to="/">Blog</Link>
+          <Link className="nav__link" to="/">
+            Blog
+          </Link>
         </li>
         <li className="nav__item">
-          <Link to="/">Profesori</Link>
+          <Link className="nav__link" to="/">
+            Profesori
+          </Link>
         </li>
         <li className="nav__item">
-          <Link to="/">Kontakt</Link>
+          <Link className="nav__link" to="/">
+            Kontakt
+          </Link>
         </li>
       </ul>
     </div>

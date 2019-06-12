@@ -24,7 +24,7 @@ html {
   //   font-size: 50%;
   // }
 
-  @include respond(big-desktop) {
+  @include respond(1800) {
     font-size: 75%; // 1 rem = 12 / 16 * 100 = 74%
   }
 }
@@ -33,8 +33,12 @@ body {
   box-sizing: border-box;
 }
 
-.container {
-  max-width: 100rem;
+.container-flex-row {
+  display: flex;
+  justify-content: space-between;
+  max-width: 120rem;
   width: 100%;
   margin: 0 auto;
+  padding: 0 1rem;
+  background: yellow;
 }

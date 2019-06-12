@@ -8,8 +8,10 @@ const Landing = () => {
   return (
     <div className="landing">
       <header className="landing__header">
-        <Logo />
-        <Nav />
+        <div className="container-flex-row ">
+          <Logo />
+          <Nav />
+        </div>
       </header>
       <div className="landing__content">
         <h1 className="landing__h1">

@@ -1,9 +1,15 @@
 // mixins
-@import "./components/mixins/mixins";
+@import "./components/mixins/respond";
+
+// variables
+@import "./components/variables/colors";
 
 // BASE
 @import "./components/base/_base";
 @import "./components/base/_utils";
 
-// variables
-@import "./components/variables/colors";
+// layout
+@import "./components/layout/landing";
+
+// typograpfy
+@import "./components/typograpfy/landing-font-style";

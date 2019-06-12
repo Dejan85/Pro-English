@@ -1,2 +1,22 @@
 .landing {
+  &__header {
+    &__content {
+    }
+  }
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+.nav {
+  &__list {
+  }
+
+  &__item {
+  }
+
+  &__link {
+    font-size: 2rem;
+  }
 }
