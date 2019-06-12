@@ -1,12 +1,46 @@
 .landing {
   &__header {
-    &__content {
+  }
+
+  &__logo {
+    font-size: 3.5rem;
+    font-family: $font-2;
+    font-weight: 700;
+    color: $color-purple-black;
+
+    &--span {
+      color: $color-red-dark;
     }
   }
-}
 
-.logo {
-  font-size: 2rem;
+  &__h1,
+  &__h2,
+  &__h3 {
+    text-align: center;
+    color: white;
+    font-size: 5rem;
+    font-family: $font-1;
+  }
+
+  &__h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+
+  &__h3 {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  &__btn {
+    color: white;
+    font-size: 1.7rem;
+    font-family: $font-1;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+  }
 }
 
 .nav {
@@ -17,6 +51,10 @@
   }
 
   &__link {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: $color-purple-black;
+    font-family: $font-1;
+    font-weight: 700;
   }
 }

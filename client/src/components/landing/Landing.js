@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 //components
 import Nav from "./Nav";
@@ -14,6 +15,7 @@ const Landing = () => {
         </div>
       </header>
       <div className="landing__content">
+        <div className="landing__content--mask" />
         <h1 className="landing__h1">
           Dobrodosli u nas kutak u kome smo oziveli najbolje u nastavi
           engleskog.
@@ -27,7 +29,9 @@ const Landing = () => {
           izazove u ucenju pomazemo vas da ostvarite uspeh i oslobodite se
           straga i dilema.
         </h3>
-        <button>O name</button>
+        <Link to="/" className="landing__btn">
+          O nama
+        </Link>
       </div>
     </div>
   );

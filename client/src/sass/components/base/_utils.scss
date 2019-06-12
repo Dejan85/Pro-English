@@ -1,0 +1,12 @@
+.hover__line {
+  position: absolute;
+  transition: all 0.5s;
+  background: red;
+  height: 3px;
+  width: 0;
+  align-self: flex-end;
+}
+
+.active {
+  width: 100%;
+}
