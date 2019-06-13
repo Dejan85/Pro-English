@@ -1,25 +1,24 @@
 import React from "react";
+import PropType from "prop-types";
 
-const CourseCard = () => {
+const CourseCard = ({ info }) => {
   return (
-    <div className="course__card">
+    <div className="course__card ">
       <div className="course__card__front">
         <div className="course__card__img">
-          <img className="course__card--img" src="" alt="slika" />
+          <img className="course__card--img" src={info.img} alt="slika" />
         </div>
 
-        <h4 className="course__card__h4">Kursevi aktivne konverzije</h4>
-        <p className="course__card__p">
-          Ovo je mala React Js aplikacija. U pitanju je vec poznata igra Pig
-          Game. Dva igraca bacaju kockice i pokusavaju prvi da dostignu odredjen
-          broj pojena koji su prethodno rucno odredili. Igra je pisana u
-          React-u. Kao Context menager je koriscen Contect api. Vise u ovoj
-          aplikaciji mozete videti na njenoj stranici.
-        </p>
+        <h4 className="course__h4">{info.h4}</h4>
+        <p className="course__p">{info.p}</p>
       </div>
       <div className="course__card__back">BACK</div>
     </div>
   );
+};
+
+CourseCard.propType = {
+  info: PropType.object,
 };
 
 export default CourseCard;

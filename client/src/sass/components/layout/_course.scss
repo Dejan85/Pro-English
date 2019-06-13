@@ -12,5 +12,22 @@
     height: 40rem;
 
     @include card;
+
+    &__img {
+      padding-top: 2rem;
+      img {
+        width: 17rem;
+        height: 17rem;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__h4 {
+    padding: 2rem 7rem 0 7rem;
+  }
+
+  &__p {
+    padding-top: 3rem;
   }
 }
