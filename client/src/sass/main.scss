@@ -1,5 +1,6 @@
 // mixins
 @import "./components/mixins/respond";
+@import "./components/mixins/heading";
 
 // variables
 @import "./components/variables/colors";
@@ -12,7 +13,9 @@
 // layout
 @import "./components/layout/landing";
 @import "./components/layout/nav";
+@import "./components/layout/course";
 
 // typograpfy
 @import "./components/typograpfy/landing-typograpfy";
 @import "./components/typograpfy/nav-typograpfy";
+@import "./components/typograpfy/course-typograpfy";

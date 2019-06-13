@@ -1,0 +1,9 @@
+.course {
+  @include h2;
+
+  &__content {
+    // display: flex;
+    // width: 100%;
+    // justify-content: center;
+  }
+}
