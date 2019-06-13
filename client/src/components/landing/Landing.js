@@ -20,15 +20,15 @@ const Landing = () => {
           Dobrodosli u nas kutak u kome smo oziveli najbolje u nastavi
           engleskog.
         </h1>
-        <h2 className="landing__h2">
+        <p className="landing__p">
           Na kreativan i zabavan nacin vam pomazemo da uspesno usvojite engleski
           i da govorite bez blokade i treme.
-        </h2>
-        <h3 className="landing__h3">
+        </p>
+        <span className="landing__span">
           Kroz individualizovane programe ucienja usmerene na vase konkretne
           izazove u ucenju pomazemo vas da ostvarite uspeh i oslobodite se
           straga i dilema.
-        </h3>
+        </span>
         <Link to="/" className="landing__btn">
           O nama
         </Link>

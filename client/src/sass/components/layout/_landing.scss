@@ -40,15 +40,15 @@
   }
 
   &__h1,
-  &__h2,
-  &__h3 {
+  &__p,
+  &__span {
     max-width: 100rem;
     width: 100%;
   }
 
   &__h1,
-  &__h2,
-  &__h3,
+  &__p,
+  &__span,
   &__btn {
     z-index: 2;
   }
@@ -57,9 +57,13 @@
     padding-top: 8rem;
   }
 
-  &__h2 {
+  &__p {
     padding: 2.8rem 0;
   }
+
+  // &__span {
+  //   display: block;
+  // }
 
   &__btn {
     display: block;
@@ -74,35 +78,6 @@
 
     &:hover {
       background: darken($color-red-dark, 20%);
-    }
-  }
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-
-  &__list {
-    display: flex;
-  }
-
-  &__item {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    transition: all 0.5s;
-    position: relative;
-  }
-
-  &__link {
-    display: block;
-    padding: 1.4rem;
-    transition: all 0.1s;
-
-    &:hover + .hover__line {
-      // background: $color-red-dark;
-      // color: lighten($color-purple-black, 90%);
-      width: 90%;
     }
   }
 }
