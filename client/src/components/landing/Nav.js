@@ -7,12 +7,18 @@ const Nav = () => {
       <ul className="nav__list">
         <li className="nav__item">
           <Link className="nav__link" to="/">
-            O nama
+            Dobro dosli
           </Link>
           <div className="hover__line" />
         </li>
         <li className="nav__item">
           <Link className="nav__link" to="/">
+            O nama
+          </Link>
+          <div className="hover__line" />
+        </li>
+        <li className="nav__item">
+          <Link className="nav__link" to="/course">
             Kursevi
           </Link>
           <div className="hover__line" />
