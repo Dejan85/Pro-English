@@ -1,0 +1,10 @@
+@mixin line() {
+  .line {
+    display: block;
+    margin: 0 auto;
+    margin-top: 1rem;
+    width: 78%;
+    height: 0.4rem;
+    background: $color-pink-dark;
+  }
+}

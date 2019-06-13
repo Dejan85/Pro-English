@@ -31,7 +31,10 @@ const Course = () => {
 
   return (
     <div className="course">
-      <h2 className="h2">Kursevi</h2>
+      <h2 className="h2">
+        Kursevi
+        <span className="line" />
+      </h2>
       <div className="course__content container-flex-row">
         <CourseCard info={cards.card1} />
         <CourseCard info={cards.card2} />

@@ -1,6 +1,11 @@
 .course {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 300rem;
+
   @include h2;
+  @include line;
 
   &__content {
     padding: 0 5rem;
@@ -9,7 +14,7 @@
   &__card {
     position: relative;
     width: 33rem;
-    height: 40rem;
+    height: 44rem;
 
     @include card;
 
@@ -19,6 +24,7 @@
         width: 17rem;
         height: 17rem;
         border-radius: 50%;
+        object-fit: cover;
       }
     }
   }
@@ -28,6 +34,6 @@
   }
 
   &__p {
-    padding-top: 3rem;
+    padding-top: 5rem;
   }
 }
