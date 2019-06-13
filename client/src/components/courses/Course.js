@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-//components
+// components
 import CourseCard from "./CourseCard";
 
 // images
@@ -12,18 +12,19 @@ const Course = () => {
   const [cards, setCards] = useState({
     card1: {
       img: konverzacija,
-      h4: "Kursevi aktivne konverzacije",
-      p: "Namenjenu onima koji zele da pervazidju blokadu u govoru",
+      h4: "O nama",
+      p:
+        "ProEnglish predstavlja moderan pristup učenju usmeren na prevazilaženje blokade u govoru i usvajanje primenjivog znanja. Naši programi su osmišljeni tako da idu u korak sa savremenim metodama i tehnikama usvajanja jezika... ",
     },
     card2: {
       img: pravnici,
-      h4: "Engleski za pravnike",
+      h4: "Nacin rada",
       p:
-        "Engleski za pravnike, kurs zasnovan na srpskom pravnom sisetmu i primenjiv",
+        "Mi se ne bavimo likovima iz udžbenika, čitanjem tekstova i popunjavanjem vežbanja. Kod nas se uči aktivno i kroz stalnu konverzaciju na engleskom. Učimo vas da govorite onako kako bi se izrazio izvorni govornik...",
     },
     card3: {
       img: ispiti,
-      h4: "Medjunarodni ispiti",
+      h4: "Udzbenici",
       p:
         "Priprema za medjunarodne ispite: SAT, TOEFL, IELTS, Bocconi, GMAT, ACT",
     },
@@ -32,7 +33,7 @@ const Course = () => {
   return (
     <div className="course">
       <h2 className="h2">
-        Kursevi
+        O nama
         <span className="line" />
       </h2>
       <div className="course__content container-flex-row">

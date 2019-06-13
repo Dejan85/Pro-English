@@ -7,7 +7,7 @@ const Nav = () => {
       <ul className="nav__list">
         <li className="nav__item">
           <Link className="nav__link" to="/">
-            O name
+            O nama
           </Link>
           <div className="hover__line" />
         </li>
