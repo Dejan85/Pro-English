@@ -18,7 +18,7 @@ const Nav = () => {
           <div className="hover__line" />
         </li>
         <li className="nav__item">
-          <Link className="nav__link" to="/course">
+          <Link className="nav__link" to="/">
             Kursevi
           </Link>
           <div className="hover__line" />
