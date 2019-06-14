@@ -6,9 +6,9 @@ import Logo from "./Logo";
 
 const Header = () => {
   return (
-    <div className="header">
-      <Nav />
+    <div className="header ">
       <Logo />
+      <Nav />
     </div>
   );
 };

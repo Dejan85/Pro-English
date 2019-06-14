@@ -1,11 +1,13 @@
 import React from "react";
 
 //images
-import logo from "../../../sass/images/logo.jpg";
+import logo from "../../../sass/images/logo_2.jpg";
 
 const Logo = () => {
   return (
-    <div className="header__logo">{/* <img src={logo} alt="logo" /> */}</div>
+    <div className="header__logo">
+      <img src={logo} alt="logo" />{" "}
+    </div>
   );
 };
 

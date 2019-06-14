@@ -1,0 +1,10 @@
+.header {
+  &__link {
+    font-size: 1.6rem;
+    // text-transform: uppercase;
+    text-decoration: none;
+    color: $color-dark;
+    font-family: $font-1;
+    font-weight: 700;
+  }
+}
