@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Box = ({ info }) => {
   const { i, p, span, color } = info;
@@ -10,6 +11,10 @@ const Box = ({ info }) => {
       <span className="home__box__span">{span}</span>
     </div>
   );
+};
+
+Box.propTypes = {
+  info: PropTypes.object,
 };
 
 export default Box;
