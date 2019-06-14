@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Nav from "./partials/Nav";
 import Logo from "./partials/Logo";
 import Box from "./Box";
+import Welcome from "./Welcome";
 
 const Landing = () => {
   return (
@@ -79,6 +80,7 @@ const Landing = () => {
             customClass={"landing__icon-container--bg5"}
           />
         </div>
+        <Welcome />
       </div>
     </div>
   );
