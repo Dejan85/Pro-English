@@ -3,6 +3,7 @@
 @import "./components/mixins/heading";
 @import "./components/mixins/fliping-card";
 @import "./components/mixins/line";
+@import "./components/mixins/gradient";
 
 // // variables
 @import "./components/variables/colors";
@@ -14,8 +15,8 @@
 
 // // layout
 @import "./components/layout/header/header";
-@import "./components/layout/home/home-one";
+@import "./components/layout/home/home";
 
 // // typograpfy
 @import "./components/typograpfy/header/header-typograpfy";
-@import "./components/typograpfy/home/home-one-typograpfy";
+@import "./components/typograpfy/home/home-typograpfy";

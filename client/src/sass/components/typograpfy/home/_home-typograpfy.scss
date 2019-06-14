@@ -1,0 +1,34 @@
+.home {
+  &__h1,
+  &__p {
+    text-align: center;
+    color: white;
+    font-size: 5rem;
+    font-family: $font-1;
+  }
+
+  &__p {
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+
+  &__icon {
+    font-size: 7rem;
+    color: white;
+  }
+
+  &__box {
+    &__p {
+      font-size: 2rem;
+      font-family: $font-1;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    &__span {
+      font-size: 1.4rem;
+      font-family: $font-1;
+      color: $color-grey;
+    }
+  }
+}
