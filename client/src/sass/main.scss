@@ -1,23 +1,19 @@
 // // mixins
-// @import "./components/mixins/respond";
-// @import "./components/mixins/heading";
-// @import "./components/mixins/fliping-card";
-// @import "./components/mixins/line";
+@import "./components/mixins/respond";
+@import "./components/mixins/heading";
+@import "./components/mixins/fliping-card";
+@import "./components/mixins/line";
 
 // // variables
-// @import "./components/variables/colors";
-// @import "./components/variables/fonts";
+@import "./components/variables/colors";
+@import "./components/variables/fonts";
 
 // // BASE
-// @import "./components/base/_base";
-// @import "./components/base/_utils";
+@import "./components/base/_base";
+@import "./components/base/_utils";
 
 // // layout
-// @import "./components/layout/landing";
-// @import "./components/layout/nav";
-// @import "./components/layout/course";
+@import "./components/layout/header";
 
 // // typograpfy
-// @import "./components/typograpfy/landing-typograpfy";
-// @import "./components/typograpfy/nav-typograpfy";
-// @import "./components/typograpfy/course-typograpfy";
+@import "./components/typograpfy/header-typograpfy";
