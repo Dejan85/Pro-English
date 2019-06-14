@@ -5,8 +5,8 @@ const Nav = () => {
   return (
     <nav className="header__nav">
       <ul className="header__list">
-        <li className="header__item">
-          <Link className="header__link" to="/">
+        <li className="header__item ">
+          <Link className="header__link active" to="/">
             Home
           </Link>
         </li>

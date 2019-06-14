@@ -8,5 +8,6 @@
 }
 
 .active {
-  width: 100%;
+  background: $color-pink-dark !important;
+  color: lighten($color-dark, 90%) !important;
 }
