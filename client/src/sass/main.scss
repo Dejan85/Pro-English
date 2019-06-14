@@ -13,7 +13,9 @@
 @import "./components/base/_utils";
 
 // // layout
-@import "./components/layout/header";
+@import "./components/layout/header/header";
+@import "./components/layout/home/home-one";
 
 // // typograpfy
-@import "./components/typograpfy/header-typograpfy";
+@import "./components/typograpfy/header/header-typograpfy";
+@import "./components/typograpfy/home/home-one-typograpfy";
