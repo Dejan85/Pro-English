@@ -1,5 +1,6 @@
 .home {
   padding-top: 6rem;
+  height: 200rem;
   &__content {
     display: flex;
     flex-direction: column;
@@ -35,7 +36,8 @@
   &__boxes {
     display: flex;
     position: relative;
-    max-width: 130rem;
+    justify-content: center;
+    max-width: 160rem;
     width: 100%;
     height: 30rem;
     margin: 0 auto;
@@ -52,13 +54,14 @@
 
     &__p {
       text-align: center;
-      padding: 1.4rem;
+      padding: 1.3rem 0;
+      width: 15rem;
     }
 
     &__span {
       display: block;
       text-align: center;
-      padding: 0 1.2rem;
+      padding: 0 2rem;
     }
   }
 
@@ -66,13 +69,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 19.6rem;
-    width: 100%;
-    max-height: 19.6rem;
-    height: 100%;
+    width: 19.6rem;
+    height: 19.6rem;
 
     &--box1 {
       @include gradient(#a23272, #b83983);
+    }
+
+    &--box2 {
+      @include gradient(#fb385a, #fd4c45);
+    }
+
+    &--box3 {
+      @include gradient(#ff8c2c, #ffb138);
+    }
+
+    &--box4 {
+      @include gradient(#5db633, #56ab2f);
+    }
+
+    &--box5 {
+      @include gradient(#0085da, #019cef);
     }
   }
 }

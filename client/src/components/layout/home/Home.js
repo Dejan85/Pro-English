@@ -3,7 +3,12 @@ import React from "react";
 // components
 import Box from "./Box";
 
+// hooks
+import useBox from "../../hooks/useBox";
+
 const Home = () => {
+  const { boxes } = useBox();
+
   return (
     <div className="home">
       <div className="home__content">
@@ -18,11 +23,11 @@ const Home = () => {
         </p>
       </div>
       <div className="home__boxes">
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
+        <Box info={boxes().box1} />
+        <Box info={boxes().box2} />
+        <Box info={boxes().box3} />
+        <Box info={boxes().box4} />
+        <Box info={boxes().box5} />
       </div>
     </div>
   );

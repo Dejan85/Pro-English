@@ -1,16 +1,13 @@
 import React from "react";
 
-const Box = () => {
+const Box = ({ info }) => {
+  const { i, p, span, color } = info;
+
   return (
     <div className="home__box">
-      <div className="home__icon home__icon--box1 ">
-        <i className="fas fa-users" />
-      </div>
-      <p className="home__box__p">Rad u malim grupama</p>
-      <span className="home__box__span">
-        Predavanja vodimo u malim grupama. Zelimo da posvetimo maksimum paznje
-        svakom u grupi.
-      </span>
+      <div className={`home__icon ${color}`}>{i}</div>
+      <p className="home__box__p">{p}</p>
+      <span className="home__box__span">{span}</span>
     </div>
   );
 };
