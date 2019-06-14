@@ -2,13 +2,13 @@ import React from "react";
 import { Route } from "react-router-dom";
 
 // components
-import LandingOne from "./components/layout/landing/LandingOne";
+import HomeOne from "./components/layout/home/HomeOne";
 
 const MainRouter = () => {
   return (
     <>
       {/* main page */}
-      <Route exact path="/" component={LandingOne} />
+      <Route exact path="/" component={HomeOne} />
     </>
   );
 };
