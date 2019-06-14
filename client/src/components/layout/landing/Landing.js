@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 //components
-import Nav from "./Nav";
-import Logo from "./Logo";
+import Nav from "./partials/Nav";
+import Logo from "./partials/Logo";
 import Box from "./Box";
 
 const Landing = () => {
-  const [box, setBox] = useState({});
   return (
     <div className="landing">
       <header className="landing__header">
@@ -39,7 +38,7 @@ const Landing = () => {
             i={<i className="fas fa-users" />}
             h3={"Rad u malim grupama"}
             p={
-              "Whether you stay with us for one week or one year, we will make sure you have the time of your life."
+              "Predavanja vodimo u malim grupama. Zelimo da posvetimo maksimum paznje svakom u grupi."
             }
             customClass={"landing__icon-container--bg1"}
           />

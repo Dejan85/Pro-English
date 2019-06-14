@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Box = ({ i, h3, p, customClass }) => {
   return (
@@ -10,6 +11,13 @@ const Box = ({ i, h3, p, customClass }) => {
       <p className="landing__box-p">{p}</p>
     </div>
   );
+};
+
+Box.propTypes = {
+  i: PropTypes.object,
+  h3: PropTypes.string,
+  p: PropTypes.string,
+  customClass: PropTypes.string,
 };
 
 export default Box;
