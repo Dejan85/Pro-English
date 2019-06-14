@@ -31,7 +31,7 @@ const useBox = () => {
   });
   const [box5] = useState({
     i: <i className="fab fa-teamspeak" />,
-    p: "Online casovi",
+    p: "Online predavanja",
     span:
       " Whether you stay with us for one week or one year, we will make sure you have the time of your life.",
     color: "home__icon--box5",
