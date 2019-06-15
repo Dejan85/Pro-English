@@ -31,4 +31,28 @@
       color: $color-grey;
     }
   }
+
+  &__about {
+    &__h2 {
+      font-size: 4rem;
+      font-family: $font-1;
+      color: $color-dark;
+    }
+
+    &__p-2,
+    &__p-3,
+    &__p-4 {
+      font-size: 1.9rem;
+      font-family: $font-1;
+      color: $color-grey;
+      line-height: 1.4;
+    }
+
+    &__link {
+      color: white;
+      font-family: $font-1;
+      text-decoration: none;
+      font-size: 1.7rem;
+    }
+  }
 }

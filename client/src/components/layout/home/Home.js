@@ -2,6 +2,7 @@ import React from "react";
 
 // components
 import Box from "./Box";
+import About from "./About";
 
 // hooks
 import useBox from "../../hooks/useBox";
@@ -29,6 +30,7 @@ const Home = () => {
         <Box info={boxes().box4} />
         <Box info={boxes().box5} />
       </div>
+      <About />
     </div>
   );
 };

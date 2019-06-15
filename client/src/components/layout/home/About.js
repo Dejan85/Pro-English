@@ -1,0 +1,43 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+// img
+import welcome from "../../../sass/images/welcome.png";
+
+const About = () => {
+  return (
+    <div className="home__about">
+      <div className="home__about__text">
+        <h2 className="home__about__h2">Ko smo mi?</h2>
+        <p className="home__about__p-2">
+          ProEnglish predstavlja pokret i preokret u učenju engleskog jezika i
+          ostvarenje je našeg sna da se sa engleskog skloni veo mističnosti i
+          ružna reputacija koju su stvorile godine pogrešnog pristupa nastavi
+          jezika u formalnom obrazovnom sistemu. Mi nismo obična škola niti
+          imamo obične učionice: naši stolovi su posebno dizajnirani kako biste
+          ostvarili lakšu komunikaciju, mi učenike vodimo na mesta gde mogu da
+          vežbaju engleski u realnom kontekstu, sa učenicima pevamo karaoke na
+          engleskom i učestvujemo na projektima važnim za zajednicu.{" "}
+        </p>
+
+        <p className="home__about__p-3">
+          Naša misija je da engleski učinimo delom vašeg života, a ne obavezom
+          koju imate 2, 3 puta nedeljno u odredjenim terminima. Mi vas učimo
+          engleski koji nećete zaboraviti jer ga učite kroz iskustva koja su za
+          vas bitna. I koja su za nas bitna jer za nas ovo nije posao koji
+          radimo od 9 do 5 da bismo zaradili. Engleski je naš svestan izbor i
+          ljubav koja teži da sve promeni na bolje.
+        </p>
+
+        <Link className="home__about__link" to="/">
+          Procitaj vise
+        </Link>
+      </div>
+      <div className="home__about__img">
+        <img src={welcome} alt="ProEnglish" />
+      </div>
+    </div>
+  );
+};
+
+export default About;
