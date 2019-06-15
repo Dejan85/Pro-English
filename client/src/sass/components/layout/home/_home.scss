@@ -44,7 +44,6 @@
     margin: 0 auto;
     margin-top: -10rem;
     z-index: 3;
-    // padding: 0 1rem;
     padding: 0 2rem 0 1rem;
     // outline: 1px solid red;
   }
@@ -98,18 +97,19 @@
 
   &__about {
     display: flex;
-    max-width: 130rem;
+    max-width: 140rem;
     width: 100%;
     margin: 0 auto;
     margin-top: 15rem;
-    padding: 0 5rem;
+    padding: 0 2rem 0 1rem;
+
     // padding: 0 6rem 0 5rem;
-    // outline: 1px solid red;
+    // outline: 5px solid red;
 
     &__text {
-      width: 70%;
+      width: 60%;
       // text-align: justify;
-      outline: 1px solid red;
+      // outline: 1px solid red;
     }
 
     &__h2 {
@@ -117,12 +117,12 @@
       text-align: left;
     }
 
-    &__p-3,
-    &__p-4 {
-      margin-top: 2rem;
+    &__p-3 {
+      padding: 2rem 0;
     }
 
     &__link {
+      bottom: 0;
       margin-top: 5rem;
       display: inline-block;
       padding: 1rem 2rem;
@@ -135,9 +135,10 @@
     }
 
     &__img {
+      display: flex;
       // outline: 1px solid red;
       img {
-        // object-fit: contain;
+        // object-fit: cover;
         width: 100%;
         height: auto;
       }
