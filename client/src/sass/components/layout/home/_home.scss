@@ -1,6 +1,6 @@
 .home {
   padding-top: 6rem;
-  height: 200rem;
+  height: 500rem;
 
   &__content {
     display: flex;
@@ -44,7 +44,8 @@
     margin: 0 auto;
     margin-top: -10rem;
     z-index: 3;
-    padding: 0 2rem 0 1rem;
+    padding: 0 2rem 0 2rem;
+
     // outline: 1px solid red;
   }
 
@@ -101,7 +102,7 @@
     width: 100%;
     margin: 0 auto;
     margin-top: 15rem;
-    padding: 0 2rem 0 1rem;
+    padding: 0 2rem 0 2rem;
 
     // padding: 0 6rem 0 5rem;
     // outline: 5px solid red;
@@ -123,7 +124,7 @@
 
     &__link {
       bottom: 0;
-      margin-top: 5rem;
+      margin-top: 8rem;
       display: inline-block;
       padding: 1rem 2rem;
       background: $color-pink-dark;
@@ -142,6 +143,37 @@
         width: 100%;
         height: auto;
       }
+    }
+  }
+
+  &__course {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 140rem;
+    width: 100%;
+    margin-top: 20rem;
+    padding: 0 2rem 0 2rem;
+    // @include gradient2(rgb(255, 140, 32) 0%, rgb(255, 168, 19) 100%);
+    // @include gradient2(#3a7bd5, #00d2ff);
+    // background: #fdfdfd;
+
+    &__h3 {
+    }
+
+    &__span {
+      display: inline-block;
+      max-width: 70rem;
+      width: 100%;
+      text-align: center;
+      padding: 1.5rem 0;
+    }
+
+    &__content {
+      display: flex;
+      flex-wrap: wrap;
+      background: red;
     }
   }
 }

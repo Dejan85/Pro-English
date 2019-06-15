@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 // img
 import welcome from "../../../sass/images/welcome.png";
 
-const About = () => {
+const HomeAbout = () => {
   return (
     <div className="home__about">
       <div className="home__about__text">
@@ -40,4 +40,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default HomeAbout;

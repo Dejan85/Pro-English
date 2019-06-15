@@ -40,11 +40,10 @@
     }
 
     &__p-2,
-    &__p-3,
-    &__p-4 {
-      font-size: 1.9rem;
+    &__p-3 {
+      font-size: 1.8rem;
       font-family: $font-1;
-      color: $color-grey;
+      color: $color-grey-dark;
       line-height: 1.4;
     }
 
@@ -53,6 +52,21 @@
       font-family: $font-1;
       text-decoration: none;
       font-size: 1.7rem;
+    }
+  }
+
+  &__course {
+    &__h3 {
+      font-size: 5rem;
+      font-family: $font-1;
+      font-weight: 800;
+      color: $color-dark;
+    }
+
+    &__span {
+      font-size: 1.7rem;
+      color: $color-grey;
+      font-family: $font-1;
     }
   }
 }

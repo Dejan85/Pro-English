@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
 const useBox = () => {
+  //
+  // ─── BOX ────────────────────────────────────────────────────────────────────────
+  //
+
   const [box1] = useState({
     i: <i className="fas fa-users" />,
     p: "Rad u malim grupama",
@@ -36,6 +40,10 @@ const useBox = () => {
       " Whether you stay with us for one week or one year, we will make sure you have the time of your life.",
     color: "home__icon--box5",
   });
+
+  //
+  // ─── CARD ───────────────────────────────────────────────────────────────────────
+  //
 
   const boxes = () => {
     return { box1, box2, box3, box4, box5 };
