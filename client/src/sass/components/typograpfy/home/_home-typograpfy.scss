@@ -68,5 +68,36 @@
       color: $color-grey;
       font-family: $font-1;
     }
+
+    &__card {
+      &__teacher {
+        p {
+          font-family: $font-1;
+          font-size: 1.5rem;
+          color: $color-grey;
+        }
+      }
+
+      &__h4 {
+        font-size: 2.6rem;
+        font-family: $font-1;
+      }
+
+      &__text {
+        p {
+          font-size: 1.5rem;
+          font-family: $font-1;
+          color: $color-grey-dark;
+        }
+
+        a {
+          font-size: 1.5rem;
+          font-family: $font-1;
+          color: $color-grey-dark;
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
   }
 }
