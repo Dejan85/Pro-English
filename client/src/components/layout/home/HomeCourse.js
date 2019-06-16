@@ -17,6 +17,8 @@ const HomeCourse = () => {
         <Card />
         <Card /> */}
         <CircleBox />
+        <CircleBox />
+        <CircleBox />
       </div>
     </div>
   );
