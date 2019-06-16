@@ -149,7 +149,7 @@
   &__certificate {
     display: flex;
     margin-top: 20rem;
-    @include gradient2(rgb(255, 140, 32) 0%, rgb(255, 168, 19) 100%);
+    // @include gradient2(rgb(255, 140, 32) 0%, rgb(255, 168, 19) 100%);
     @include gradient2(#68bd40, #82e255);
     width: 100%;
     height: 18rem;
@@ -185,9 +185,6 @@
       margin: 0 auto;
       padding: 0 2rem 0 2rem;
     }
-
-    &__item {
-    }
   }
 
   &__course {
@@ -201,23 +198,46 @@
     padding: 0 2rem 0 2rem;
     // background: #0085da;
 
+    &__h3 {
+      padding-bottom: 2rem;
+    }
+
+    &__line {
+      width: 28rem;
+      height: 0.5rem;
+      // background: $color-pink-dark;
+      background: #56ab2f;
+      // @include gradient2(rgb(255, 140, 32) 0%, rgb(255, 168, 19) 100%);
+    }
+
+    &__line2 {
+      width: 13rem;
+      height: 1rem;
+      // background: $color-pink-dark;
+      background: #56ab2f;
+      // @include gradient2(rgb(255, 140, 32) 0%, rgb(255, 168, 19) 100%);
+    }
+
     &__span {
       display: inline-block;
       max-width: 70rem;
       width: 100%;
       text-align: center;
-      padding: 1.5rem 0;
+      padding: 3rem 0;
     }
 
     &__content {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: center;
+      align-items: center;
       width: 100%;
       margin-top: 8rem;
     }
 
     &__circleBox {
+      display: flex;
+      justify-content: center;
       width: 33rem;
 
       &__top {
@@ -229,8 +249,9 @@
         width: 30rem;
         height: 30rem;
         border-radius: 50%;
-        border: 0.8rem solid #56ab2f;
-        // border: 0.8rem solid #ff8c2c;
+        // border: 0.8rem solid #56ab2f;
+        border: 0.8rem solid $color-pink-dark;
+
         z-index: 2;
       }
 
@@ -255,6 +276,7 @@
         height: 30rem;
         border-radius: 50%;
         background: rgba($color-dark, 0.8);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
         margin-top: 22rem;
       }
 
@@ -267,12 +289,13 @@
         position: absolute;
         display: block;
         margin-top: 8rem;
-        background: #b83983;
+        background: $color-pink-dark;
         padding: 1rem;
         transition: all 1s;
+        border-radius: 1rem;
 
         &:hover {
-          background: darken(#b83983, 20%);
+          background: darken($color-pink-dark, 20%) !important;
         }
       }
     }

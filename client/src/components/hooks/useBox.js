@@ -42,14 +42,37 @@ const useBox = () => {
   });
 
   //
-  // ─── CARD ───────────────────────────────────────────────────────────────────────
+  // ─── CIRCLE ───────────────────────────────────────────────────────────────────────
   //
+
+  const [circle1] = useState({
+    heading: "a1",
+    p:
+      " This crash course in layers reveals or shows you in photoshop and create wonders in graphics industry...",
+    color: "#FC424F",
+  });
+  const [circle2] = useState({
+    heading: "b1",
+    p:
+      " This crash course in layers reveals or shows you in photoshop and create wonders in graphics industry...",
+    color: "#59B131",
+  });
+  const [circle3] = useState({
+    heading: "b2",
+    p:
+      " This crash course in layers reveals or shows you in photoshop and create wonders in graphics industry...",
+    color: "#018CE1",
+  });
 
   const boxes = () => {
     return { box1, box2, box3, box4, box5 };
   };
 
-  return { boxes };
+  const circle = () => {
+    return { circle1, circle2, circle3 };
+  };
+
+  return { boxes, circle };
 };
 
 export default useBox;

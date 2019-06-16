@@ -4,10 +4,16 @@ import React from "react";
 import Card from "./Card";
 import CircleBox from "./CircleBox";
 
+// hooks
+import useBox from "../../hooks/useBox";
+
 const HomeCourse = () => {
+  const { circle } = useBox();
   return (
     <div className="home__course">
       <h3 className="home__course__h3">Popularni Kursevi</h3>
+      <div className="home__course__line" />
+      <div className="home__course__line2" />
       <span className="home__course__span">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
@@ -16,9 +22,9 @@ const HomeCourse = () => {
         {/* <Card />
         <Card />
         <Card /> */}
-        <CircleBox />
-        <CircleBox />
-        <CircleBox />
+        <CircleBox info={circle().circle1} />
+        <CircleBox info={circle().circle2} />
+        <CircleBox info={circle().circle3} />
       </div>
     </div>
   );
