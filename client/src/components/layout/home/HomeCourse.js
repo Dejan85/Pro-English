@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 //components
 import Card from "./Card";
@@ -27,6 +28,7 @@ const HomeCourse = () => {
         <CircleBox info={circle().circle2} />
         <CircleBox info={circle().circle3} />
       </div>
+      <Link className="home__course__link">svi kursevi</Link>
     </div>
   );
 };

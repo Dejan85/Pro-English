@@ -45,6 +45,7 @@
     margin-top: -10rem;
     z-index: 3;
     padding: 0 2rem 0 2rem;
+    flex-wrap: wrap;
 
     // outline: 1px solid red;
   }
@@ -199,7 +200,7 @@
     // max-width: 110rem;
     width: 100%;
     margin-top: 10rem;
-    padding: 0rem 2rem 0rem 2rem;
+    padding: 0rem 2rem 7rem 2rem;
     // @include gradient2(rgb(255, 140, 32) 0%, rgb(255, 168, 19) 100%);
 
     -webkit-clip-path: polygon(
@@ -339,6 +340,18 @@
         &:hover {
           background: darken($color-pink-dark, 20%) !important;
         }
+      }
+    }
+
+    &__link {
+      display: block;
+      z-index: 2;
+      padding: 1rem;
+      background: #a23272;
+      transition: all 1s;
+
+      &:hover {
+        background: darken(#a23272, 20%);
       }
     }
 
