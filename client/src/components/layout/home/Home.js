@@ -33,7 +33,7 @@ const Home = () => {
         <Box info={boxes().box5} />
       </div>
       <HomeAbout />
-      <Certificate />
+      {/* <Certificate /> */}
       <HomeCourse />
     </div>
   );

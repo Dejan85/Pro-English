@@ -11,6 +11,7 @@ const HomeCourse = () => {
   const { circle } = useBox();
   return (
     <div className="home__course">
+      <div className="home__course__mask" />
       <h3 className="home__course__h3">Popularni Kursevi</h3>
       <div className="home__course__line" />
       <div className="home__course__line2" />
