@@ -57,7 +57,7 @@
 
   &__course {
     &__h3 {
-      font-size: 5rem;
+      font-size: 4.5rem;
       font-family: $font-1;
       font-weight: 800;
       color: $color-dark;
@@ -104,15 +104,15 @@
   &__certificate {
     &__link {
       color: white;
-      font-size: 6rem;
+      font-size: 4.5rem;
       text-transform: uppercase;
-      font-family: $font-3;
-      font-weight: 600;
+      font-family: $font-7;
+      // font-weight: 600;
       text-decoration: none;
-      transition: all 0.5s;
+      transition: all 1s;
 
       &:hover {
-        color: #019cef;
+        color: darken(white, 90%);
       }
     }
   }

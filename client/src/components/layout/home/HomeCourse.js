@@ -2,6 +2,7 @@ import React from "react";
 
 //components
 import Card from "./Card";
+import CircleBox from "./CircleBox";
 
 const HomeCourse = () => {
   return (
@@ -12,12 +13,10 @@ const HomeCourse = () => {
         tempor incididunt ut labore et dolore magna aliqua.
       </span>
       <div className="home__course__content">
+        {/* <Card />
         <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <Card /> */}
+        <CircleBox />
       </div>
     </div>
   );
