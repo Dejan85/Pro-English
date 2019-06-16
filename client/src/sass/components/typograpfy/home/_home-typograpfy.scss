@@ -100,4 +100,20 @@
       }
     }
   }
+
+  &__certificate {
+    &__link {
+      color: white;
+      font-size: 6rem;
+      text-transform: uppercase;
+      font-family: $font-3;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.5s;
+
+      &:hover {
+        color: #019cef;
+      }
+    }
+  }
 }

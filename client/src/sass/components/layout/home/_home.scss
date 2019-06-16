@@ -233,13 +233,15 @@
     margin-top: 20rem;
     @include gradient2(rgb(255, 140, 32) 0%, rgb(255, 168, 19) 100%);
     width: 100%;
-    height: 10rem;
+    height: 13rem;
 
     &__list {
       display: flex;
+      list-style-type: none;
+      justify-content: space-around;
+      align-items: center;
       max-width: 140rem;
       width: 100%;
-      outline: 1px solid white;
       margin: 0 auto;
     }
   }
