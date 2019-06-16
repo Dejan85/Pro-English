@@ -4,6 +4,7 @@ import React from "react";
 import Box from "./Box";
 import HomeAbout from "./HomeAbout";
 import HomeCourse from "./HomeCourse";
+import Certificate from "./Certificate";
 
 // hooks
 import useBox from "../../hooks/useBox";
@@ -32,6 +33,7 @@ const Home = () => {
         <Box info={boxes().box5} />
       </div>
       <HomeAbout />
+      <Certificate />
       <HomeCourse />
     </div>
   );

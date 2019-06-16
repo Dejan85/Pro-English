@@ -9,10 +9,10 @@ import slika3 from "../../../sass/images/11.jpg";
 const Card = () => {
   return (
     <div className="home__course__card">
-      <img className="home__course__card__img" alt="ProEnglish" src={slika} />
+      <img className="home__course__card__img" alt="ProEnglish" src={slika3} />
       <div className="home__course__card__teacher">
         <img alt="ProEnglish" src={slika2} />
-        <p>Branka Divcic</p>
+        <p>Branka Divčić</p>
       </div>
 
       <div className="home__course__card__text">
