@@ -3,9 +3,10 @@ import React from "react";
 // components
 import Box from "./Box";
 import HomeAbout from "./HomeAbout";
-import HomeCourse from "./HomeCourse";
-import HomeExams from "./HomeExams";
-// import Certificate from "./Certificate";
+// import HomeCourse from "./HomeCourse";
+import HomeCourseV2 from "./HomeCourseV2";
+// import HomeExams from "./HomeExams";
+import Certificate from "./Certificate";
 
 // hooks
 import useBox from "../../hooks/useBox";
@@ -34,9 +35,11 @@ const Home = () => {
         <Box info={boxes().box5} />
       </div>
       <HomeAbout />
-      <HomeCourse />
-      <HomeExams />
       {/* <Certificate /> */}
+
+      <HomeCourseV2 />
+      {/* <HomeCourse /> */}
+      {/* <HomeExams /> */}
     </div>
   );
 };

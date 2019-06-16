@@ -1,11 +1,11 @@
-// // mixins
+// // MIXINS
 @import "./components/mixins/respond";
 @import "./components/mixins/heading";
 @import "./components/mixins/fliping-card";
 @import "./components/mixins/line";
 @import "./components/mixins/gradient";
 
-// // variables
+// // VARIABLES
 @import "./components/variables/colors";
 @import "./components/variables/fonts";
 
@@ -13,10 +13,18 @@
 @import "./components/base/_base";
 @import "./components/base/_utils";
 
-// // layout
+// // LAYOUT
 @import "./components/layout/header/header";
-@import "./components/layout/home/home";
 
-// // typograpfy
+// home
+@import "./components/layout/home/home";
+@import "./components/layout/home/homeCourseV2";
+
+// // TYPOGRAPFY
+
+//header
 @import "./components/typograpfy/header/header-typograpfy";
+
+//home
 @import "./components/typograpfy/home/home-typograpfy";
+@import "./components/typograpfy/home/homeCourseV2-typograpfy";
