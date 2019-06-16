@@ -57,9 +57,9 @@
 
   &__course {
     &__h3 {
-      font-size: 4.5rem;
+      font-size: 4rem;
       font-family: $font-1;
-      font-weight: 800;
+      font-weight: 600;
       color: $color-dark;
       color: white;
     }
@@ -148,6 +148,22 @@
       &:hover {
         color: darken(white, 90%);
       }
+    }
+  }
+
+  &__exams {
+    &__h3 {
+      font-size: 4rem;
+      font-family: $font-1;
+      font-weight: 600;
+      color: $color-dark;
+    }
+
+    &__span {
+      font-size: 1.6rem;
+      color: $color-grey;
+      font-family: $font-1;
+      color: $color-dark;
     }
   }
 }

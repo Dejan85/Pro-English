@@ -4,7 +4,8 @@ import React from "react";
 import Box from "./Box";
 import HomeAbout from "./HomeAbout";
 import HomeCourse from "./HomeCourse";
-import Certificate from "./Certificate";
+import HomeExams from "./HomeExams";
+// import Certificate from "./Certificate";
 
 // hooks
 import useBox from "../../hooks/useBox";
@@ -34,6 +35,7 @@ const Home = () => {
       </div>
       <HomeAbout />
       <HomeCourse />
+      <HomeExams />
       {/* <Certificate /> */}
     </div>
   );

@@ -58,7 +58,7 @@ const useBox = () => {
     color: "#59B131",
   });
   const [circle3] = useState({
-    heading: "b2",
+    heading: "c1",
     p:
       " This crash course in layers reveals or shows you in photoshop and create wonders in graphics industry...",
     color: "#018CE1",
