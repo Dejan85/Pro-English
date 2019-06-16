@@ -1,8 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 //components
-import Card from "./Card";
 import CircleBox from "./CircleBox";
 
 // hooks
@@ -21,14 +20,11 @@ const HomeCourse = () => {
         tempor incididunt ut labore et dolore magna aliqua.
       </span>
       <div className="home__course__content">
-        {/* <Card />
-        <Card />
-        <Card /> */}
         <CircleBox info={circle().circle1} />
         <CircleBox info={circle().circle2} />
         <CircleBox info={circle().circle3} />
       </div>
-      <Link className="home__course__link">svi kursevi</Link>
+      {/* <Link className="home__course__link">svi kursevi</Link> */}
     </div>
   );
 };
