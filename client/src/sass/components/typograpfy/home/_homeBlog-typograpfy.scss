@@ -1,0 +1,42 @@
+.homeBlog {
+  &__h3 {
+    font-size: 3.5rem;
+    font-family: $font-1;
+    font-weight: 800;
+  }
+
+  &__link {
+    font-size: 1.9rem;
+    font-family: $font-1;
+    font-weight: 800;
+    text-decoration: none;
+    color: $color-dark-2;
+  }
+
+  &__p {
+    font-size: 1.4rem;
+    font-family: $font-1;
+    color: $color-grey-dark;
+  }
+
+  &__span {
+    font-size: 1.1rem;
+    font-family: $font-1;
+    font-weight: 700;
+    color: $color-grey;
+  }
+
+  &__p2 {
+    font-size: 1.2rem;
+    font-family: $font-1;
+    font-weight: 700;
+    color: $color-grey;
+
+    span {
+      display: inline-block;
+      padding-left: 3px;
+      color: cornflowerblue;
+      //   color: $color-pink-dark;
+    }
+  }
+}

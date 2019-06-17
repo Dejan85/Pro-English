@@ -23,7 +23,9 @@ const HomeCourseV2 = () => {
               pretiumdiet a, venenatis ie ust. ullam dictum felis eu pedemol
               iumpretium ieta...
             </p>
-            <Link className="homeCourseV2__link">Test</Link>
+            <Link className="homeCourseV2__link" to="/">
+              Test
+            </Link>
           </div>
         </div>
 
@@ -40,7 +42,9 @@ const HomeCourseV2 = () => {
               pretiumdiet a, venenatis ie ust. ullam dictum felis eu pedemol
               iumpretium ieta...
             </p>
-            <Link className="homeCourseV2__link">Test</Link>
+            <Link className="homeCourseV2__link" to="/">
+              Test
+            </Link>
           </div>
         </div>
         <div className="homeCourseV2__left">

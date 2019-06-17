@@ -7,6 +7,7 @@ import HomeCourse from "./HomeCourse";
 import HomeCourseV2 from "./HomeCourseV2";
 // import HomeExams from "./HomeExams";
 import Certificate from "./Certificate";
+import HomeBlog from "./HomeBlog";
 
 // hooks
 import useBox from "../../hooks/useBox";
@@ -39,6 +40,7 @@ const Home = () => {
       {/* <HomeCourse /> */}
       <HomeCourseV2 />
       {/* <HomeExams /> */}
+      <HomeBlog />
     </div>
   );
 };

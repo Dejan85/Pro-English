@@ -50,6 +50,11 @@
       display: inline-block;
       padding: 1rem 3rem;
       background: $color-pink-dark;
+      transition: all 1s;
+
+      &:hover {
+        background: darken($color-pink-dark, 20%);
+      }
     }
   }
 
