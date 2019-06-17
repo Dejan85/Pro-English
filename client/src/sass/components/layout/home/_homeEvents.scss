@@ -1,0 +1,22 @@
+.homeEvent {
+  display: flex;
+  margin: 0 auto;
+  max-width: 140rem;
+  width: 100%;
+  padding: 10rem 2rem 0 2rem;
+
+  &__calendar,
+  &__latest,
+  &__upcoming {
+    display: flex;
+    flex-direction: column;
+    max-width: 45rem;
+    width: 100%;
+    outline: 1px solid red;
+  }
+
+  &__h3 {
+    text-align: center;
+    width: 100%;
+  }
+}
