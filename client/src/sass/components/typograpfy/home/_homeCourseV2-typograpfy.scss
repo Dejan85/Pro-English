@@ -1,0 +1,21 @@
+.homeCourseV2 {
+  &__h3 {
+    font-family: $font-1;
+    font-size: 3.5rem;
+  }
+
+  &__p {
+    font-size: 1.8rem;
+    font-family: $font-1;
+    color: $color-grey-dark;
+    line-height: 1.4;
+  }
+
+  &__link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.7rem;
+    font-family: $font-1;
+    font-weight: 600;
+  }
+}

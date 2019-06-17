@@ -1,29 +1,61 @@
 .homeCourseV2 {
   //   display: flex;
   width: 100%;
-  background: rgb(248, 248, 248);
   margin-top: 12rem;
 
   &__container {
     display: flex;
-    margin: 0 auto;
-    flex-wrap: wrap;
     // max-width: 140rem;
     width: 100%;
     // padding: 0rem 2rem 0 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
+    flex-wrap: wrap;
   }
 
   &__left {
     width: 50%;
-    // background: red;
+    height: 45rem;
   }
 
   &__img {
     width: 100%;
+    object-fit: cover;
+    height: 45rem;
   }
 
   &__right {
+    display: flex;
+    flex-direction: column;
     width: 50%;
-    // background: red;
+    height: 45rem;
+  }
+
+  &__content,
+  &__content2 {
+    display: flex;
+    flex-direction: column;
+    max-width: 70rem;
+    width: 100%;
+    height: 100%;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding-right: 2rem;
+
+    p {
+      max-width: 50rem;
+      text-align: justify;
+    }
+
+    a {
+      display: inline-block;
+      padding: 1rem 3rem;
+      background: $color-pink-dark;
+    }
+  }
+
+  &__content2 {
+    align-self: flex-end;
+    align-items: flex-start;
+    padding-left: 2rem;
   }
 }
