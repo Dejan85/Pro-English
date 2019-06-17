@@ -13,7 +13,7 @@
     flex-direction: column;
     max-width: 42rem;
     width: 100%;
-    outline: 1px solid red;
+    // outline: 1px solid red;
   }
 
   &__h3 {
@@ -25,7 +25,7 @@
 .calendar {
   // outline: 1px solid red;
   margin-top: 5rem;
-  width: 44rem;
+  max-width: 39rem;
 
   &__header {
     display: flex;
@@ -58,7 +58,8 @@
 
   &__item {
     list-style-type: none;
-    width: 6.3rem;
+    max-width: 6.3rem;
+    width: 100%;
     padding: 0.5rem 0;
     text-align: center;
     background: $color-green-blue;
@@ -73,8 +74,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 6.28rem;
-    padding: 2rem 0;
+    width: 14.28%;
+    height: 14.28%;
+    padding: 1.6rem 0;
     list-style-type: none;
     border: 1px solid $color-grey-light;
   }
