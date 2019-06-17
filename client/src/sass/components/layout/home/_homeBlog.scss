@@ -4,7 +4,7 @@
   align-items: center;
   max-width: 140rem;
   width: 100%;
-  padding: 7rem 2rem 0 2rem;
+  padding: 10rem 2rem 0 2rem;
   margin: 0 auto;
   //   outline: 1px solid red;
 
@@ -20,18 +20,21 @@
     flex-wrap: wrap;
     justify-content: space-between;
     border-top: 1px solid $color-grey-light;
+    border-bottom: 1px solid $color-grey-light;
     width: 100%;
     padding-top: 5rem;
+    padding-bottom: 5rem;
   }
   &__blogBox {
     // outline: 1px solid red;
-    max-width: 31rem;
+    max-width: 32rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
     // border: 1px solid $color-grey-light;
   }
 
   &__img {
     width: 100%;
+    object-fit: cover;
   }
 
   &__link {
