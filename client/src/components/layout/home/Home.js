@@ -3,7 +3,7 @@ import React from "react";
 // components
 import Box from "./Box";
 import HomeAbout from "./HomeAbout";
-import HomeCourse from "./HomeCourse";
+// import HomeCourse from "./HomeCourse";
 import HomeCourseV2 from "./HomeCourseV2";
 // import HomeExams from "./HomeExams";
 import Certificate from "./Certificate";
@@ -42,7 +42,7 @@ const Home = () => {
       <HomeCourseV2 />
       {/* <HomeExams /> */}
       <HomeBlog />
-      {/* <HomeEvents /> */}
+      <HomeEvents />
     </div>
   );
 };
