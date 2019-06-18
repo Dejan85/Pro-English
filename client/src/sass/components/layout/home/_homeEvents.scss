@@ -16,6 +16,16 @@
     // outline: 1px solid red;
   }
 
+  &__latest {
+    max-width: 30rem;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  &__upcoming {
+    padding: 0 1rem;
+  }
+
   &__h3 {
     text-align: left;
     width: 100%;
@@ -68,7 +78,7 @@
       padding: 0rem 2rem;
       border: 1px solid $color-grey-light;
       border-left: 2px solid $color-pink-dark;
-      width: 85%;
+      width: 100%;
       height: 8rem;
 
       &:not(:first-child) {
@@ -184,6 +194,7 @@
       justify-content: space-between;
       // outline: 1px solid red;
       width: 75%;
+      padding-left: 1rem;
     }
 
     &__h5 {
