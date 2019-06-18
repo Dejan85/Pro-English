@@ -9,7 +9,6 @@ import HomeCourseV2 from "./HomeCourseV2";
 import Certificate from "./Certificate";
 import HomeBlog from "./HomeBlog";
 import HomeEvents from "./HomeEvents";
-
 // hooks
 import useBox from "../../hooks/useBox";
 
