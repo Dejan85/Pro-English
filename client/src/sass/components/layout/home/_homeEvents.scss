@@ -26,6 +26,7 @@
   // outline: 1px solid red;
   margin-top: 5rem;
   max-width: 39rem;
+  width: 100%;
 
   &__header {
     display: flex;
@@ -74,10 +75,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 14.28%;
-    height: 14.28%;
+    flex: 1 0 14.28%;
+    // width: 14.28%;
     padding: 1.6rem 0;
     list-style-type: none;
-    border: 1px solid $color-grey-light;
+    border: 0.5px solid $color-grey-light;
   }
 }

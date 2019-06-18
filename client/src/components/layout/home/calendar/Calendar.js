@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 // Components
 import Week from "./Week";
-
+import CalendarEventCard from "./CalendarEventCard";
 // Hooks
 import useCalendar from "../../../hooks/useCalendar";
 
@@ -53,6 +53,9 @@ const Calendar = () => {
             );
           })}
         </ul>
+      </div>
+      <div className="calendar__event">
+        <CalendarEventCard />
       </div>
     </div>
   );

@@ -37,7 +37,7 @@ const useCalendar = () => {
     const date = new Date(year, month, 0).getDate();
     const date2 = new Date(month).getDate();
     console.log(months[date2]);
-    const day = [];
+    const day = [" ", " ", " ", " ", " "];
 
     for (let i = 1; i <= date; i++) {
       day.push(i);
