@@ -80,9 +80,24 @@
       border-left: 2px solid $color-pink-dark;
       width: 100%;
       height: 8rem;
+      transition: all 1s;
+      cursor: pointer;
 
       &:not(:first-child) {
         margin-top: 1rem;
+      }
+
+      &:hover {
+        background: $color-pink-dark;
+        border-left: 2px solid darken($color-pink-dark, 90%);
+
+        p {
+          color: white;
+        }
+
+        span {
+          color: white;
+        }
       }
     }
   }
