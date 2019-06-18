@@ -2,7 +2,7 @@ import React from "react";
 
 const CalendarEventCard = () => {
   return (
-    <>
+    <div className="calendar__event__container">
       <div className="calendar__event__card">
         <div className="calendar__event__day">18</div>
         <div className="calendar__event__month">
@@ -18,7 +18,7 @@ const CalendarEventCard = () => {
           10:00 - 12:30
         </p>
       </div>
-    </>
+    </div>
   );
 };
 

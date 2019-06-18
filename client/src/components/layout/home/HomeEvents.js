@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 //components
 import Calendar from "./calendar/Calendar";
+import CalendarEventCard from "./calendar/CalendarEventCard";
 
 const HomeEvent = () => {
   return (
@@ -12,6 +14,16 @@ const HomeEvent = () => {
       </div>
       <div className="homeEvent__latest">
         <h3 className="homeEvent__h3">Zadnji dogadjaji</h3>
+        <div className="homeEvent__latest__card">
+          <CalendarEventCard />
+          <CalendarEventCard />
+          <CalendarEventCard />
+          <CalendarEventCard />
+
+          <Link className="homeEvent__link" to="/">
+            Vidi sve
+          </Link>
+        </div>
       </div>
       <div className="homeEvent__upcoming">
         <h3 className="homeEvent__h3">Buduci dogadjaji</h3>

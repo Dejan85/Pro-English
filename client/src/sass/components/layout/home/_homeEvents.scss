@@ -20,6 +20,26 @@
     text-align: left;
     width: 100%;
   }
+
+  &__latest {
+    &__card {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+      // outline: 1px solid red;
+    }
+  }
+
+  &__link {
+    background: $color-pink-dark;
+    padding: 1rem 2.4rem;
+    margin-top: 5rem;
+    transition: all 1s;
+
+    &:hover {
+      background: darken($color-pink-dark, 20%);
+    }
+  }
 }
 
 .calendar {
@@ -83,11 +103,14 @@
   }
 
   &__event {
-    display: flex;
-    justify-content: space-between;
     width: 100%;
     // outline: 1px solid red;
-    margin-top: 3rem;
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 3rem;
+    }
 
     &__card {
       display: flex;
