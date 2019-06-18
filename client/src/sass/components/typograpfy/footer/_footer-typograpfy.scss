@@ -1,0 +1,51 @@
+.footer {
+  &__container {
+  }
+
+  &__msg,
+  &__course,
+  &__certificate,
+  &__follow,
+  &__contact {
+  }
+
+  &__h1 {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: $font-8;
+    line-height: 1.1;
+    font-weight: 600;
+    font-size: 1.7rem;
+  }
+
+  &__p {
+    color: $color-grey-light;
+    text-decoration: none;
+    font-family: $font-8;
+    font-weight: 400;
+    font-size: 1.3rem;
+  }
+
+  &__list {
+  }
+
+  &__item {
+    list-style-type: none;
+  }
+
+  &__link {
+    color: $color-grey-light;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: $font-8;
+    line-height: 1.1;
+    font-weight: 400;
+    font-size: 1.2rem;
+    transition: all 0.5s;
+
+    &:hover {
+      color: $color-pink-dark;
+    }
+  }
+}
