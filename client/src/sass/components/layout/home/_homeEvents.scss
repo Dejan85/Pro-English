@@ -30,7 +30,8 @@
     }
   }
 
-  &__link {
+  &__link,
+  &__link-2 {
     background: $color-pink-dark;
     padding: 1rem 2.4rem;
     margin-top: 5rem;
@@ -38,6 +39,41 @@
 
     &:hover {
       background: darken($color-pink-dark, 20%);
+    }
+  }
+
+  &__link-2 {
+    width: 10rem;
+    margin-left: 2px;
+  }
+
+  &__upcoming {
+    &__content {
+      display: flex;
+      margin-top: 5rem;
+      // outline: 1px solid red;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      list-style-type: none;
+      padding: 0rem 2rem;
+      border: 1px solid $color-grey-light;
+      border-left: 2px solid $color-pink-dark;
+      width: 85%;
+      height: 8rem;
+
+      &:not(:first-child) {
+        margin-top: 1rem;
+      }
     }
   }
 }
