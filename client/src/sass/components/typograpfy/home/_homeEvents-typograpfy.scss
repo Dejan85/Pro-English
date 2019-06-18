@@ -28,4 +28,39 @@
     font-weight: 600;
     color: $color-grey-light;
   }
+
+  &__event {
+    &__day {
+      font-size: 2.5rem;
+      font-family: $font-8;
+    }
+
+    &__month {
+      text-transform: uppercase;
+      font-family: $font-8;
+      font-weight: 600;
+      color: $color-grey-2;
+      font-size: 1.2rem;
+    }
+
+    &__h5 {
+      font-size: 1.7rem;
+      font-family: $font-8;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    &__p {
+      font-size: 1.4rem;
+      font-family: $font-1;
+      font-weight: 500;
+      line-height: 1.2;
+      color: $color-grey-2;
+
+      i {
+        color: $color-pink-dark;
+        font-size: 1.5rem;
+      }
+    }
+  }
 }

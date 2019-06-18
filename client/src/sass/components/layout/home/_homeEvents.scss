@@ -81,4 +81,64 @@
     list-style-type: none;
     border: 0.5px solid $color-grey-light;
   }
+
+  &__event {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    // outline: 1px solid red;
+    margin-top: 3rem;
+
+    &__card {
+      display: flex;
+      flex-direction: column;
+      width: 7.81rem;
+      height: 8.8rem;
+      // padding: 1rem 2.3rem;
+      justify-content: center;
+      border-top: 2px solid $color-pink-dark;
+      border-left: 1px solid $color-grey-light;
+      border-right: 1px solid $color-grey-light;
+      border-bottom: 1px solid $color-grey-light;
+    }
+
+    &__day {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // background: red;
+      height: 60%;
+    }
+
+    &__month {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-top: 1px solid $color-grey-light;
+      width: 100%;
+      height: 40%;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      // outline: 1px solid red;
+      width: 75%;
+    }
+
+    &__h5 {
+      // padding: 0.5rem;
+      // outline: 1px solid red;
+      // width: 25rem;
+    }
+
+    &__p {
+      // padding: 1.2rem 0.5rem;
+
+      i {
+        padding-right: 1rem;
+      }
+    }
+  }
 }
