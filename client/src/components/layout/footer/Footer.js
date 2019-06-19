@@ -87,7 +87,7 @@ const Footer = () => {
           <h1 className="footer__h1">Kontakt</h1>
           <ul className="footer__list">
             <li className="footer__item">
-              <i className="fas fa-mobile-alt footer__icon phone" />
+              <i className="fas fa-phone phone" />
               <Link className="footer__link">060/14353567</Link>
             </li>
             <li className="footer__item">

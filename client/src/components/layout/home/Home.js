@@ -9,6 +9,8 @@ import HomeCourseV2 from "./HomeCourseV2";
 import Certificate from "./Certificate";
 import HomeBlog from "./HomeBlog";
 import HomeEvents from "./HomeEvents";
+import HomeTeachers from "./HomeTeachers";
+
 // hooks
 import useBox from "../../hooks/useBox";
 
@@ -42,6 +44,7 @@ const Home = () => {
       <HomeBlog />
       {/* <Certificate /> */}
       <HomeEvents />
+      <HomeTeachers />
     </div>
   );
 };
