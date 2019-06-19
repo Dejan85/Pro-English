@@ -2,6 +2,7 @@ import React from "react";
 
 // components
 import BlogBox from "./partials/BlogBox";
+import NewLetter from "./partials/NewsLetter";
 
 // images
 import slika from "../../../sass/images/30.jpg";
@@ -19,6 +20,9 @@ const HomeBlog = () => {
         <BlogBox slika={slika2} />
         <BlogBox slika={slika3} />
         <BlogBox slika={slika4} />
+        <div className="homeBlog__newsletter">
+          <NewLetter />
+        </div>
       </div>
     </div>
   );
