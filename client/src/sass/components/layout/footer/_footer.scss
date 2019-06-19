@@ -1,7 +1,7 @@
 .footer {
   width: 100%;
   margin-top: 10rem;
-  background: $color-dark-4;
+  background: $color-dark;
 
   &__container {
     display: flex;
@@ -38,6 +38,16 @@
     max-width: 15rem;
     width: 100%;
   }
+
+  &__follow {
+    max-width: 15rem;
+    width: 100%;
+  }
+
+  //   &__contact {
+  //     max-width: 15rem;
+  //     width: 100%;
+  //   }
 
   &__h1 {
     display: inline-block;
