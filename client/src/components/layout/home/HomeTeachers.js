@@ -15,6 +15,8 @@ const HomeTeacher = () => {
       <div className="homeTeachers__line" />
       <div className="homeTeachers__content">
         <Card2 slika={slika} />
+        <Card2 slika={slika} />
+        <Card2 slika={slika} />
       </div>
     </div>
   );
