@@ -7,4 +7,15 @@
   justify-content: space-around;
   align-items: center;
   margin-top: 10rem;
+
+  @include h3-with-line;
+}
+
+.home__course__card {
+  // display: flex;
+  // position: relative;
+  // width: 35rem;
+
+  // @include fliping-card;
+  @include card2;
 }

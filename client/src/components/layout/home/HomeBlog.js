@@ -1,7 +1,7 @@
 import React from "react";
 
 // components
-import BlogBox from "./BlogBox";
+import BlogBox from "./partials/BlogBox";
 
 // images
 import slika from "../../../sass/images/30.jpg";

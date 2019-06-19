@@ -8,23 +8,26 @@
   margin: 0 auto;
   //   outline: 1px solid red;
 
-  &__line {
-    margin-top: 3rem;
-    width: 4rem;
-    height: 5px;
-    background: cornflowerblue;
-  }
+  // &__line {
+  //   margin-top: 3rem;
+  //   width: 4rem;
+  //   height: 5px;
+  //   background: cornflowerblue;
+  // }
 
-  &__content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    border-top: 1px solid $color-grey-light;
-    border-bottom: 1px solid $color-grey-light;
-    width: 100%;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
+  // &__content {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   justify-content: space-between;
+  //   border-top: 1px solid $color-grey-light;
+  //   border-bottom: 1px solid $color-grey-light;
+  //   width: 100%;
+  //   padding-top: 5rem;
+  //   padding-bottom: 5rem;
+  // }
+
+  @include h3-with-line;
+
   &__blogBox {
     // outline: 1px solid red;
     max-width: 32rem;

@@ -1,12 +1,12 @@
 import React from "react";
 
 // components
-import Box from "./Box";
+import Box from "./partials/Box";
 import HomeAbout from "./HomeAbout";
 import HomeCourse from "./HomeCourse";
 import HomeCourseV2 from "./HomeCourseV2";
 // import HomeExams from "./HomeExams";
-import Certificate from "./Certificate";
+import Certificate from "./partials/Certificate";
 import HomeBlog from "./HomeBlog";
 import HomeEvents from "./HomeEvents";
 import HomeTeachers from "./HomeTeachers";

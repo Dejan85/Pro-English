@@ -2,7 +2,7 @@ import React from "react";
 // import { Link } from "react-router-dom";
 
 //components
-import CircleBox from "./CircleBox";
+import CircleBox from "./partials/CircleBox";
 
 // hooks
 import useBox from "../../hooks/useBox";

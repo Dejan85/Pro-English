@@ -1,0 +1,10 @@
+@mixin card2 {
+  //   @include fliping-card;
+  .card2 {
+    background: red;
+    &__img {
+      border-radius: 50%;
+      border: 1px solid red;
+    }
+  }
+}

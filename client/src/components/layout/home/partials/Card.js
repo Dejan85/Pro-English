@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // image
-import slika from "../../../sass/images/15.jpg";
-import slika2 from "../../../sass/images/16.jpg";
-import slika3 from "../../../sass/images/11.jpg";
+import slika from "../../../../sass/images/15.jpg";
+import slika2 from "../../../../sass/images/16.jpg";
+import slika3 from "../../../../sass/images/11.jpg";
 
 const Card = () => {
   return (
