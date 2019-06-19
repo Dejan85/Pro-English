@@ -17,6 +17,7 @@ const HomeTeacher = () => {
         <Card2 slika={slika} />
         <Card2 slika={slika} />
         <Card2 slika={slika} />
+        <Card2 slika={slika} />
       </div>
     </div>
   );
