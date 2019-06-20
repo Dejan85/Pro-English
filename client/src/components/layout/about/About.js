@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 // images
 import slika from "../../../sass/images/38.jpg";
 import slika2 from "../../../sass/images/28.webp";
 
 const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <div className="about">
       <div className="about__background">

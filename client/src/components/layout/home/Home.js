@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 // components
 import Box from "./partials/Box";
@@ -16,6 +16,10 @@ import useBox from "../../hooks/useBox";
 
 const Home = () => {
   const { boxes } = useBox();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   return (
     <div className="home">
