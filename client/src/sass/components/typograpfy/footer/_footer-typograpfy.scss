@@ -22,9 +22,10 @@
   &__p {
     color: $color-grey-light;
     text-decoration: none;
-    font-family: $font-8;
-    font-weight: 400;
-    font-size: 1.3rem;
+    font-family: $font-1;
+    font-weight: 300;
+    font-size: 1.4rem;
+    text-align: justify;
   }
 
   &__list {
@@ -45,7 +46,7 @@
     transition: all 0.5s;
 
     &:hover {
-      color: $color-pink-dark;
+      color: #0896ea;
     }
   }
 }
