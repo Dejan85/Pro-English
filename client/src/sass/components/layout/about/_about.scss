@@ -84,6 +84,16 @@
       }
     }
 
+    &--p2 {
+      padding-right: 0rem;
+      padding-left: 3rem;
+      text-align: justify;
+
+      p:not(:last-child) {
+        padding-bottom: 3rem;
+      }
+    }
+
     img {
       width: 40%;
       object-fit: cover;

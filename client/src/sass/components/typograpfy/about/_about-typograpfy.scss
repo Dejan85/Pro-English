@@ -17,5 +17,9 @@
     color: lighten($color-dark, 50%);
     font-size: 2rem;
     font-family: $font-1;
+
+    span {
+      color: $color-pink-dark;
+    }
   }
 }

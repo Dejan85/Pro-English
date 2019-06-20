@@ -2,6 +2,7 @@ import React from "react";
 
 // images
 import slika from "../../../sass/images/38.jpg";
+import slika2 from "../../../sass/images/28.webp";
 
 const About = () => {
   return (
@@ -47,7 +48,7 @@ const About = () => {
                 i mesecu.
               </p>
             </div>
-            <img src={slika} alt="proenglish" />
+            <img src={slika2} alt="proenglish" />
             <p />
           </div>
         </div>
@@ -60,7 +61,8 @@ const About = () => {
         <div className="about__container">
           <h2 className="about__h2">Način rada </h2>
           <div className="about__paragraph">
-            <div className="about__paragraph--p">
+            <img src={slika} alt="proenglish" />
+            <div className="about__paragraph--p2">
               <p>
                 ProEnglish predstavlja moderan pristup učenju usmeren na
                 prevazilaženje blokade u govoru i usvajanje primenjivog znanja.
@@ -110,10 +112,9 @@ const About = () => {
                 kursa, pre i posle časa, i da dobijete smernice za rad. Uz šolju
                 kafe ili čaja, kako nalaže običaj, u mestu koje je naš drugi dom
                 i u kome provodimo najviše vremena kako bismo zajedno uspeli.
-                Cheers!
+                <span> Cheers!</span>
               </p>
             </div>
-            <img src={slika} alt="proenglish" />
           </div>
         </div>
       </div>
