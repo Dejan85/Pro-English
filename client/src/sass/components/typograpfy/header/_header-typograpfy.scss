@@ -8,3 +8,25 @@
     font-weight: 700;
   }
 }
+
+.dropMenu {
+  &__list {
+  }
+
+  &__item {
+  }
+
+  &__link {
+    color: lighten($color-dark, 40%);
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-family: $font-1;
+    font-weight: 500;
+    text-transform: capitalize;
+
+    &:hover {
+      color: $color-pink-dark;
+      font-weight: 600;
+    }
+  }
+}

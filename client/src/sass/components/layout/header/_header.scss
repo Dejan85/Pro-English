@@ -45,6 +45,18 @@
       .header__link {
         color: lighten($color-dark, 90%);
       }
+
+      .dropMenu {
+        &__list {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        &__item {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
     }
   }
 
@@ -54,5 +66,33 @@
     height: 6rem;
     padding: 0 1rem;
     transition: all 0.5s;
+  }
+}
+
+.dropMenu {
+  &__list {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s;
+    width: 17rem;
+    box-shadow: 0 1.5rem 4rem rgba($color-dark, 0.15);
+  }
+
+  &__item {
+    list-style-type: none;
+    background: white;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__link {
+    display: flex;
+    padding: 1rem 1rem;
+    transition: color 0.4s;
+    border-top: 1px solid $color-grey-light;
+    // border-bottom: 1px solid $color-grey-light;
   }
 }
