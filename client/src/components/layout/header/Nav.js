@@ -3,10 +3,20 @@ import { Link } from "react-router-dom";
 
 // components
 import DropNav from "./partials/DropNav";
+
 const Nav = () => {
-  const [oNama] = useState(["Ko smo mi", "Nacin rada", "Udzbenici"]);
-  const [kursevi] = useState(["Konverzacijski kurs", "a2", "b1", "b2", "c1"]);
-  const [ispiti] = useState(["Toefl", "Ielts", "Gmat", "Gre", "Sat"]);
+  const [oNama] = useState({
+    links: ["Ko smo mi", "Nacin rada"],
+    address: ["whoweare", "howwework"],
+  });
+  const [kursevi] = useState({
+    links: ["Konverzacijski kurs", "a2", "b1", "b2", "c1"],
+    address: ["conversation", "a2", "b1", "b2", "c1"],
+  });
+  const [ispiti] = useState({
+    links: ["Toefl", "Ielts", "Gmat", "Gre", "Sat"],
+    address: ["Toefl", "Ielts", "Gmat", "Gre", "Sat"],
+  });
 
   return (
     <nav className="header__nav">
@@ -17,22 +27,22 @@ const Nav = () => {
           </Link>
         </li>
         <li className="header__item flex__class">
-          <Link className="header__link" to="/xad">
+          <Link className="header__link" to="/about">
             O nama
           </Link>
-          <DropNav item={oNama} />
+          <DropNav info={oNama} />
         </li>
         <li className="header__item flex__class">
-          <Link className="header__link" to="/xad">
+          <Link className="header__link" to="/">
             Kursevi
           </Link>
-          <DropNav item={kursevi} />
+          <DropNav info={kursevi} />
         </li>
         <li className="header__item flex__class">
           <Link className="header__link" to="/">
             Pripreme za ispite
           </Link>
-          <DropNav item={ispiti} />
+          <DropNav info={ispiti} />
         </li>
         <li className="header__item">
           <Link className="header__link" to="/">

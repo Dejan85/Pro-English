@@ -2,14 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const DropNav = ({ item }) => {
+const DropNav = ({ info }) => {
   return (
     <div className="dropMenu">
       <ul className="dropMenu__list">
-        {item.map((item, index) => {
+        {info.links.map((item, index) => {
           return (
             <li key={index} className="dropMenu__item">
-              <Link className="dropMenu__link">{item}</Link>
+              <Link
+                to={info.address && info.address[index]}
+                className="dropMenu__link">
+                {item}
+              </Link>
             </li>
           );
         })}
@@ -19,7 +23,8 @@ const DropNav = ({ item }) => {
 };
 
 DropNav.propTypes = {
-  DropNav: PropTypes.array,
+  item: PropTypes.array,
+  address: PropTypes.array,
 };
 
 export default DropNav;

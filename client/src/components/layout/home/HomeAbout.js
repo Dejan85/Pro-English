@@ -29,7 +29,7 @@ const HomeAbout = () => {
           ljubav koja teži da sve promeni na bolje.
         </p>
 
-        <Link className="home__about__link" to="/">
+        <Link className="home__about__link" to="/whoweare">
           Procitaj vise
         </Link>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 // Components
 import Week from "./Week";
@@ -11,7 +11,7 @@ const Calendar = () => {
   // let [counter, setCounter] = useState(0);
 
   const handleMonth = e => {
-    const name = e.target.getAttribute("name");
+    // const name = e.target.getAttribute("name");
 
     // if (name === "+") {
     //   setCounter(() => {

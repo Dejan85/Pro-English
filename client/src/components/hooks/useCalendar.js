@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const useCalendar = () => {
   let [counter, setCounter] = useState({
@@ -35,8 +35,7 @@ const useCalendar = () => {
 
   const getAllDays = (month, year) => {
     const date = new Date(year, month, 0).getDate();
-    const date2 = new Date(month).getDate();
-    console.log(months[date2]);
+    // const date2 = new Date(month).getDate();
     const day = [" ", " ", " ", " ", " "];
 
     for (let i = 1; i <= date; i++) {
