@@ -48,6 +48,72 @@ const About = () => {
               </p>
             </div>
             <img src={slika} alt="proenglish" />
+            <p />
+          </div>
+        </div>
+      </div>
+      <div className="about__background__2">
+        <div className="about__mask" />
+      </div>
+
+      <div className="about__content">
+        <div className="about__container">
+          <h2 className="about__h2">Način rada </h2>
+          <div className="about__paragraph">
+            <div className="about__paragraph--p">
+              <p>
+                ProEnglish predstavlja moderan pristup učenju usmeren na
+                prevazilaženje blokade u govoru i usvajanje primenjivog znanja.
+                Naši programi su osmišljeni tako da idu u korak sa savremenim
+                metodama i tehnikama usvajanja jezika. Verujemo da je prošlo
+                vreme kad je učenje jezika bilo učenje gramatičkih pravila
+                napamet ili usvajanja novih reči prepisivanjem ili ponavljanjem.
+                Jezik je živ i moćan, i pravi razliku izmedju životinja i
+                čoveka. U rukama kompetentnog govornika jezik postaje alat za
+                pregovaranje i osvajanje novih intelektualnih prostora. Zato mi
+                jezik shvatamo ozbiljno.
+              </p>
+              <p>
+                Mi se ne bavimo likovima iz udžbenika, čitanjem tekstova i
+                popunjavanjem vežbanja. Kod nas se uči aktivno i kroz stalnu
+                konverzaciju na engleskom. Učimo vas da govorite onako kako bi
+                se izrazio izvorni govornik, prirodno i bez previše razmišljanja
+                o gramatičkoj strukturi. Mi se bavimo vama i učimo vas engleski
+                koji je potreban za vašu uspešnu konverzaciju, od gramatike do
+                vokabulara, tako da sve možete da primenite odmah. Kod nas nema
+                praznog hoda i tapkanja u mestu.
+              </p>
+              <p>
+                Naša ciljna grupa su oni koji žele da rade fokusirano, ostvare
+                merljiv napredak i spremni su da se oslobe uverenja da nikada
+                neće govoriti engleski tečno i tačno.
+              </p>
+
+              <p>
+                Ko smo mi da pričamo o tome? Mi smo tim profesora sa preko 10
+                godina iskustva u nastavi. Naši polaznici su na studijama na
+                fakultetima od Bokonija do Oksforda, mnogi sada žive u
+                inostranstvu, a uspešnih poslovnih ljudi nas biraju zbog
+                jedinstvnog pristupa i sposopnosti da prenesemo znanje
+              </p>
+
+              <p>
+                Svi naši kursevi su konverzacijskog tipa, vrlo aktivni i
+                usmereni na usvajanje primenjivog znanja i veština za uspešno
+                polaganje medjunarodnih ispita. Budući da smo upoznati sa
+                psihologijom učenja, andragogijom, metodikom i metodologijom
+                nastave stranih jezika, svakome prilazimo na drugačiji i
+                jedinstven način. Uveli smo i konsultacije za koje smo i sami
+                nekada želeli da postoje kad smo učili predmete koji su nam
+                predstavljali izazov, a one su odlična prilika da postavite
+                dodatna pitanja i razrešite dileme i nejasnoće bilo kad u toku
+                kursa, pre i posle časa, i da dobijete smernice za rad. Uz šolju
+                kafe ili čaja, kako nalaže običaj, u mestu koje je naš drugi dom
+                i u kome provodimo najviše vremena kako bismo zajedno uspeli.
+                Cheers!
+              </p>
+            </div>
+            <img src={slika} alt="proenglish" />
           </div>
         </div>
       </div>

@@ -6,6 +6,13 @@
     font-family: $font-8;
   }
 
+  &__h2 {
+    color: white;
+    font-size: 5rem;
+    text-transform: uppercase;
+    font-family: $font-8;
+  }
+
   &__paragraph {
     color: lighten($color-dark, 50%);
     font-size: 2rem;

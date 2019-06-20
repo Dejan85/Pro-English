@@ -9,3 +9,7 @@
 .about__background {
   background-image: url("./sass/images/7.jpg");
 }
+
+.about__background__2 {
+  background-image: url("./sass/images/3.jpg");
+}
