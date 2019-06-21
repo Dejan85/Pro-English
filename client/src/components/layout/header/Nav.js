@@ -33,7 +33,7 @@ const Nav = () => {
           {/* <DropNav info={oNama} /> */}
         </li>
         <li className="header__item flex__class">
-          <Link className="header__link" to="/">
+          <Link className="header__link" to="/course">
             Kursevi
           </Link>
           <DropNav info={kursevi} />

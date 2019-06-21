@@ -1,16 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 
 // images
 import slika from "../../../sass/images/38.jpg";
 import slika2 from "../../../sass/images/28.webp";
+// import background from "../../../sass/images/7.jpg";
+// import background2 from "../../../sass/images/3.jpg";
 
 const About = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // stavio sam ovo ovde da bi resetovao scroll PRE NEGO STO SE COMPONENT MOUNT. Ovo je umesto componentWillMount
+  const [reset] = useState(() => {
+    return window.scrollTo(0, 0);
+  });
+
   return (
     <div className="about">
-      <div className="about__background">
+      {reset}
+      <div
+        className="about__background"
+        // style={{ backgroundImage: `url(${background})` }}>
+      >
         <div className="about__mask" />
       </div>
       <div className="about__content">
@@ -56,7 +64,10 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="about__background__2">
+      <div
+        className="about__background__2"
+        // style={{ backgroundImage: `url(${background2})` }}>
+      >
         <div className="about__mask" />
       </div>
 

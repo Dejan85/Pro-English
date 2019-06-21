@@ -6,20 +6,15 @@ import Header from "./components/layout/header/Header";
 import Home from "./components/layout/home/Home";
 import Footer from "./components/layout/footer/Footer";
 import About from "./components/layout/about/About";
-import HowWeWork from "./components/layout/about/HowWeWork";
-import WhoWeAre from "./components/layout/about/WhoWeAre";
+import Course from "./components/layout/course/Course";
 
 const MainRouter = () => {
   return (
     <>
       <Header />
-      {/* home page */}
       <Route exact path="/" component={Home} />
-      {/* about pages */}
       <Route exact path="/about" component={About} />
-      <Route exact path="/howwework" component={HowWeWork} />
-      <Route exact path="/whoweare" component={WhoWeAre} />
-
+      <Route exact path="/course" component={Course} />
       <Footer />
     </>
   );

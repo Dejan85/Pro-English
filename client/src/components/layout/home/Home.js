@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 
 // components
 import Box from "./partials/Box";
@@ -14,16 +14,24 @@ import HomeTeachers from "./HomeTeachers";
 // hooks
 import useBox from "../../hooks/useBox";
 
+//images
+// import background from "../../../sass/images/9.jpg";
+
 const Home = () => {
   const { boxes } = useBox();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // stavio sam ovo ovde da bi resetovao scroll PRE NEGO STO SE COMPONENT MOUNT. Ovo je umesto componentWillMount
+  const [reset] = useState(() => {
+    return window.scrollTo(0, 0);
+  });
 
   return (
     <div className="home">
-      <div className="home__content">
+      {reset}
+      <div
+        className="home__content"
+        // style={{ backgroundImage: `url(${background})` }}
+      >
         <div className="home__mask" />
         <h1 className="home__h1">
           Dobrodosli u nas kutak u kome smo oziveli najbolje u nastavi
