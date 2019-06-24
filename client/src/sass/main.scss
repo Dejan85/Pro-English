@@ -34,6 +34,9 @@
 //course
 @import "./components/layout/course/Course";
 
+//exams
+@import "./components/layout/exams/Exams";
+
 // footer
 @import "./components/layout/footer/footer";
 
@@ -54,6 +57,9 @@
 
 //course
 @import "./components/typograpfy/course/course-typograpfy.scss";
+
+//exams
+@import "./components/typograpfy/exams/exams-tpograpfy";
 
 // footer
 @import "./components/typograpfy/footer/footer-typograpfy";

@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 import DropNav from "./partials/DropNav";
 
 const Nav = () => {
-  const [oNama] = useState({
-    links: ["Ko smo mi", "Nacin rada"],
-    address: ["whoweare", "howwework"],
-  });
-  const [kursevi] = useState({
-    links: ["Konverzacijski kurs", "a2", "b1", "b2", "c1"],
-    address: ["conversation", "a2", "b1", "b2", "c1"],
-  });
+  // const [oNama] = useState({
+  //   links: ["Ko smo mi", "Nacin rada"],
+  //   address: ["whoweare", "howwework"],
+  // });
+  // const [kursevi] = useState({
+  //   links: ["Konverzacijski kurs", "a2", "b1", "b2", "c1"],
+  //   address: ["conversation", "a2", "b1", "b2", "c1"],
+  // });
   const [ispiti] = useState({
     links: ["Toefl", "Ielts", "Gmat", "Gre", "Sat"],
     address: ["Toefl", "Ielts", "Gmat", "Gre", "Sat"],
@@ -36,10 +36,10 @@ const Nav = () => {
           <Link className="header__link" to="/course">
             Kursevi
           </Link>
-          <DropNav info={kursevi} />
+          {/* <DropNav info={kursevi} /> */}
         </li>
         <li className="header__item flex__class">
-          <Link className="header__link" to="/">
+          <Link className="header__link" to="/exams">
             Pripreme za ispite
           </Link>
           <DropNav info={ispiti} />

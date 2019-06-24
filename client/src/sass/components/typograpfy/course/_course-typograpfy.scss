@@ -1,0 +1,19 @@
+.course {
+  &__h1 {
+    font-size: 3rem;
+    font-family: $font-8;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  &__content {
+    p {
+      font-size: 1.8rem;
+      font-family: $font-8;
+      padding-bottom: 2rem;
+      color: $color-grey;
+      text-align: justify;
+    }
+  }
+}
