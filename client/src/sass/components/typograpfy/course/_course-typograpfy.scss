@@ -16,4 +16,14 @@
       text-align: justify;
     }
   }
+
+  &__text {
+    p {
+      font-size: 1.8rem;
+      font-family: $font-8;
+      padding-bottom: 2rem;
+      color: $color-grey;
+      text-align: justify;
+    }
+  }
 }

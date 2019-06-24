@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Course = () => {
+  // stavio sam ovo ovde da bi resetovao scroll PRE NEGO STO SE COMPONENT MOUNT. Ovo je umesto componentWillMount
+  const [reset] = useState(() => {
+    return window.scrollTo(0, 0);
+  });
+
   return (
     <div className="course">
       <div className="course__mask" />
@@ -43,22 +48,43 @@ const Course = () => {
           </p>
         </div>
       </div>
-      {/* <div className="course__header">
+      <div className="course__content2">
         <div className="course__diagram">
-          <p className="course__diagram--p">A1 – Početnik</p>
-          <h2 className="course__h2">At this level you can understand</h2>
-          <ul className="course__list">
-            <li className="course__item">
-              Very basic personal, family and job-related language
-            </li>
-            <li className="course__item">
-              Enough to meet the needs with slow, clear speech
-            </li>
-            <li>Short, simple texts on familiar matter</li>
-          </ul>
+          <div className="course__text">
+            <p>
+              Obično postoje dve vrste početnika, pravi i lažni. Pravi početnik
+              nikada ranije nije učio engleski, dok je lažni početnik učio
+              nekada davno i zaboravio, ili je, što se često dešava, pokupio par
+              izraza iz serija i filmova koje gleda koje bi mu pomogle u
+              svakodnevnoj konverzaciji.
+            </p>
+
+            <p>
+              Početnici mogu izraziti šta žele u ograničenom broju situacija (na
+              ulici, u prodavnici, restoranu), mogu pričati u kratkim rečenicama
+              o osnovnim stvarima koje su im poznate (meni u restoranu, cene,
+              datumi, upoznavanje i slično). U zavisnosti od toga koliko im je
+              jezik sličan jeziku koje uče, toliko će moći da shvate i budu
+              shvaćeni. Na primer, obično su potvrdne i odrične rečenice lakše
+              da se nauče od upitnih jer je tu potrebna rečenična struktura koja
+              nije slična onoj u srpskom jeziku.
+            </p>
+
+            <p>
+              Početnici još uvek ne mogu da prošire temu razgovora i pitaju
+              spontana pitanja. Takođe teško razumeju govor na drugom jeziku
+              osim ako ta osoba ne govori polako. Uglavnom pasivno slušaju i
+              koriste govor tela da nadomeste reč koja im nedostaje.
+            </p>
+          </div>
+          <div className="course__lvl">
+            <p>A1</p>
+            <span>Pocetnik</span>
+          </div>
         </div>
+
         <div className="course__nav">nav</div>
-      </div> */}
+      </div>
     </div>
   );
 };
