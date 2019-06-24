@@ -1,6 +1,9 @@
 {
   "name": "proenglish",
   "version": "1.0.0",
+  "engines": {
+    "node": "11.10.1"
+  },
   "description": "Pro english is MERN app for Pro English school",
   "main": "app.js",
   "scripts": {
