@@ -42,16 +42,17 @@ const Course = () => {
             win-winsituation!
           </p>
 
-          <p>
+          <span className="course__content__span">
             Ispod ćete pronaći kratak opis svih nivoa po CEFR skali, kao kratak
             pregled šta se očekuje od svakog.
-          </p>
+          </span>
         </div>
       </div>
       <div className="course__content2">
-        <div className="course__diagram">
+        <div className="course__mask" />
+        <div className="course__lvl">
           <div className="course__text">
-            <p>
+            <p className="course__text__p">
               Obično postoje dve vrste početnika, pravi i lažni. Pravi početnik
               nikada ranije nije učio engleski, dok je lažni početnik učio
               nekada davno i zaboravio, ili je, što se često dešava, pokupio par
@@ -59,7 +60,7 @@ const Course = () => {
               svakodnevnoj konverzaciji.
             </p>
 
-            <p>
+            <p className="course__text__p">
               Početnici mogu izraziti šta žele u ograničenom broju situacija (na
               ulici, u prodavnici, restoranu), mogu pričati u kratkim rečenicama
               o osnovnim stvarima koje su im poznate (meni u restoranu, cene,
@@ -70,20 +71,24 @@ const Course = () => {
               nije slična onoj u srpskom jeziku.
             </p>
 
-            <p>
+            <p className="course__text__p">
               Početnici još uvek ne mogu da prošire temu razgovora i pitaju
               spontana pitanja. Takođe teško razumeju govor na drugom jeziku
               osim ako ta osoba ne govori polako. Uglavnom pasivno slušaju i
               koriste govor tela da nadomeste reč koja im nedostaje.
             </p>
+            <div className="course__nav">
+              <i className="fas fa-chevron-left" />
+              <i className="fas fa-chevron-right" />
+            </div>
           </div>
-          <div className="course__lvl">
-            <p>A1</p>
+        </div>
+        <div className="course__diagram__container">
+          <div className="course__diagram">
+            <p className="course__diagram__p">A1</p>
             <span>Pocetnik</span>
           </div>
         </div>
-
-        <div className="course__nav">nav</div>
       </div>
     </div>
   );

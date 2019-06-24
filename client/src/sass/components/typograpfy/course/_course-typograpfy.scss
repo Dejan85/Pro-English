@@ -8,7 +8,33 @@
   }
 
   &__content {
-    p {
+    p,
+    &__span {
+      font-size: 1.8rem;
+      font-family: $font-8;
+      color: $color-grey;
+      text-align: justify;
+    }
+
+    &__span {
+      color: $color-pink-dark;
+      font-weight: 600;
+    }
+  }
+  &__diagram {
+    &__p,
+    span {
+      color: white;
+      font-size: 2rem;
+      font-family: $font-8;
+    }
+    span {
+      display: inline-block;
+    }
+  }
+
+  &__text {
+    &__p {
       font-size: 1.8rem;
       font-family: $font-8;
       padding-bottom: 2rem;
@@ -17,13 +43,8 @@
     }
   }
 
-  &__text {
-    p {
-      font-size: 1.8rem;
-      font-family: $font-8;
-      padding-bottom: 2rem;
-      color: $color-grey;
-      text-align: justify;
-    }
+  &__nav {
+    font-size: 1.8rem;
+    color: white;
   }
 }

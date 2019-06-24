@@ -17,3 +17,8 @@
 .course {
   background-image: url("./sass/images/5.jpg");
 }
+
+.course__content2 {
+  background-image: url("./sass/images/14.jpg");
+  /* background-image: url("./sass/images/28.jpg"); */
+}
