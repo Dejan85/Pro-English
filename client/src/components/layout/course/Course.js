@@ -8,6 +8,8 @@ const Course = () => {
 
   return (
     <div className="course">
+      {reset}
+
       <div className="course__mask" />
       <div className="course__header">
         <h1 className="course__h1">Utvrdite nivo znanja</h1>
