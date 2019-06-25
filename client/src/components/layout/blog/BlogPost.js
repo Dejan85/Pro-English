@@ -22,9 +22,11 @@ const BlogPost = () => {
       </div>
       <div className="blogPost__content">
         <p className="blogPost__content__p">
-          Da li je san o izobilju, boljem životu i srećnim ljudima moguće
-          ostvariti samo u Americi ili svoj američki san možete da doživite i na
-          suprotnoj strani Zemljine hemisfere, u čarobnoj Australiji?
+          <i>
+            Da li je san o izobilju, boljem životu i srećnim ljudima moguće
+            ostvariti samo u Americi ili svoj američki san možete da doživite i
+            na suprotnoj strani Zemljine hemisfere, u čarobnoj Australiji?
+          </i>
         </p>
         <h2 className="blogPost__h2">
           Ovaj tekst je namenjen onima koji razmišljaju o odlasku iz Srbije i
