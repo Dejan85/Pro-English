@@ -11,6 +11,9 @@ import slika3 from "../../../sass/images/blog3.jpg";
 import slika4 from "../../../sass/images/blog4.jpg";
 
 const Blog = () => {
+  const [reset] = useState(() => {
+    return window.scrollTo(0, 0);
+  });
   const [blog] = useState({
     blog1: {
       date: "25. Jun 2019",
@@ -39,6 +42,7 @@ const Blog = () => {
   });
   return (
     <div className="blog">
+      {reset}
       <h3 className="blog__h3">Blog</h3>
       <div className="blog__line" />
       <div className="blog__content">

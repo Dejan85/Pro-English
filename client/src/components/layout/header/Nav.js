@@ -44,11 +44,11 @@ const Nav = () => {
           </Link>
           <DropNav info={ispiti} />
         </li>
-        <li className="header__item">
+        {/* <li className="header__item">
           <Link className="header__link" to="/">
             Utvrdite nivo znanja
           </Link>
-        </li>
+        </li> */}
         <li className="header__item">
           <Link className="header__link" to="/">
             Dogadjaji

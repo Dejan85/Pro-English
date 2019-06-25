@@ -11,7 +11,7 @@ const BoxTwo = ({ blog, img }) => {
         <span className="blog__span">{date}</span>
         <h2 className="blog__h2">{heading}</h2>
         <p className="blog__p">{p}</p>
-        <Link className="blog__link" to="/">
+        <Link className="blog__link" to="/singleBlog">
           Procitaj sve
         </Link>
       </div>
