@@ -1,5 +1,8 @@
 import React from "react";
 
+// images
+import kengur from "../../../sass/images/kengur.jpg";
+
 const BlogPost = () => {
   return (
     <div className="blogPost">
@@ -9,7 +12,9 @@ const BlogPost = () => {
       </span>
       <div className="blogPost__info">
         <p className="blogPost__date">25. jun 2019.</p>
-        <p className="blogPost__postedBy">Branka</p>
+        <p className="blogPost__postedBy">
+          <span>Postovala:</span> Branka
+        </p>
       </div>
       <div className="blogPost__content">
         <p className="blogPost__content__p">
@@ -17,10 +22,11 @@ const BlogPost = () => {
           ostvariti samo u Americi ili svoj američki san možete da doživite i na
           suprotnoj strani Zemljine hemisfere, u čarobnoj Australiji?
         </p>
-        <h2 className="blogPost__content__h2">
+        <h2 className="blogPost__h2">
           Ovaj tekst je namenjen onima koji razmišljaju o odlasku iz Srbije i
           pitaju se kuda dalje.
         </h2>
+        <img className="blogPost__img" src={kengur} alt="proenglish" />
         <p className="blogPost__content__p">
           Početak dvadesetog veka su obeležila velika pomeranja evropskih naroda
           u Ameriku: nekadašnja britanska kolonija otvorila je tada vrata
@@ -62,9 +68,9 @@ const BlogPost = () => {
           kao i preko 100.000 Hrvata. Sve više je onih koji se opredeljuju za
           odlazak u Australiju. Zašto je to slučaj?
         </p>
-        <h2 className="blogPost__content__h2">
+        <h3 className="blogPost__h3">
           1. Gradovi sa visokim kvalitetom života
-        </h2>
+        </h3>
         <p className="blogPost__content__p">
           Prema istraživanju koje obradjuje faktore koji doprinose kvalitetu
           života, a koje obuhvata 140 svetskih gradova, australijski gradovi se
@@ -75,7 +81,7 @@ const BlogPost = () => {
           zahvaljujući velikim ulaganjima koja za cilj imaju iskorišćavanje
           punog potencijala i bogatstva Australije.
         </p>
-        <h2 className="blogPost__content__h2">2. Zarada</h2>
+        <h3 className="blogPost__h3">2. Zarada</h3>
         <p className="blogPost__content__p">
           Ekonomska kriza koja je prodrmala Evropu i Ameriku zaobišla je
           Australiju. Zapravo, u poslednjih nekoliko godina Australija je
@@ -85,7 +91,7 @@ const BlogPost = () => {
           obzir i to da će svaki radno sposoban član porodice moći da se zaposli
           i ostvari mesečni prihod na sličnom nivou.
         </p>
-        <h2 className="blogPost__content__h2">3. Niska stopa nezaposlenosti</h2>
+        <h3 className="blogPost__h3">3. Niska stopa nezaposlenosti</h3>
         <p className="blogPost__content__p">
           Australija je u potrazi za kvalifikovanom i vrednom radnom snagom koja
           zemlji omogućava da parira drugim svetskim silama. Pod uslovom da
@@ -99,7 +105,7 @@ const BlogPost = () => {
           organizuje preko 270 nacija koje žive u Australiji. Zapravo, svaki
           četvrti Australijanac je rodjen van Australije.
         </p>
-        <h2 className="blogPost__content__h2">4. Stabilnost i bezbednost</h2>
+        <h3 className="blogPost__h3">4. Stabilnost i bezbednost</h3>
         <p className="blogPost__content__p">
           Iako je Australija poznata po otrovnim vrstama insekata i gmizavaca,
           savremenom čoveku najčešće preti opasnost od drugog čoveka. Takve
@@ -111,9 +117,7 @@ const BlogPost = () => {
           vas svakodnevno zavodi svojom prirodom i lepotom. Ko bi gledao mimo te
           lepote u ekrane?
         </p>
-        <h2 className="blogPost__content__h2">
-          5. Najsrećnija nacija na svetu
-        </h2>
+        <h3 className="blogPost__h3">5. Najsrećnija nacija na svetu</h3>
         <p className="blogPost__content__p">
           Australijanci nose titulu najsrećnijih i najraspoloženijih ljudi na
           svetu. Svi prethodno pomenuti faktori svakako doprinose tome, a tu je
@@ -128,7 +132,7 @@ const BlogPost = () => {
           sagledali kroz ružičaste naočari ili ima i istine u ovome? Gde ćete
           vi, sada kada možemo bilo kuda?
         </p>
-        <h5 className="blogPost__potpis">Hugs, Tičerka B.</h5>
+        <h5 className="blogPost__signature">Hugs, Tičerka B.</h5>
       </div>
     </div>
   );

@@ -1,6 +1,54 @@
 .blogPost {
+  text-align: justify;
   &__h1 {
     font-size: 3rem;
     font-weight: 600;
+    font-family: $font-8;
+    color: $color-dark;
+  }
+
+  &__h2,
+  &__h3 {
+    font-size: 2.1rem;
+    font-weight: 600;
+    font-family: $font-8;
+    color: $color-dark;
+  }
+
+  &__span {
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: $font-1;
+    color: $color-grey;
+  }
+
+  &__date {
+    color: $color-pink-dark;
+    font-size: 1.3rem;
+    font-weight: 500;
+    font-family: $font-8;
+  }
+
+  &__postedBy {
+    color: $color-pink-dark;
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-family: $font-8;
+    span {
+      color: $color-dark;
+      font-weight: 500;
+    }
+  }
+  &__content__p {
+    font-size: 1.6rem;
+    font-family: $font-8;
+    color: $color-grey;
+  }
+
+  &__signature {
+    color: $color-pink-dark;
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: $font-5;
   }
 }
