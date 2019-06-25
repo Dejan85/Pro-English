@@ -1,0 +1,25 @@
+.blog {
+  &__span {
+    font-size: 1.6rem;
+    font-family: $font-8;
+  }
+
+  &__h2 {
+    font-size: 2.3rem;
+    font-family: $font-8;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  &__p {
+    font-size: 1.6rem;
+    font-family: $font-8;
+  }
+
+  &__link {
+    font-size: 1.7rem;
+    text-decoration: none;
+    color: white;
+    font-family: $font-8;
+  }
+}
