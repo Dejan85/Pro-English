@@ -55,7 +55,7 @@ const Nav = () => {
           </Link>
         </li>
         <li className="header__item">
-          <Link className="header__link" to="/">
+          <Link className="header__link" to="/blog">
             Blog
           </Link>
         </li>
