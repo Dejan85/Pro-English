@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 // images
 import kengur from "../../../sass/images/kengur.jpg";
 
 const BlogPost = () => {
+  const [reset] = useState(() => {
+    return window.scrollTo(0, 0);
+  });
   return (
     <div className="blogPost">
+      {reset}
       <h1 className="blogPost__h1">DA LI JE AUSTRALIJA NOVA OBEĆANA ZEMLJA?</h1>
       <span className="blogPost__span">
         Beskrajan, plavi krug. U njemu, zvezda.
