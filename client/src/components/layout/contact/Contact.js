@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Components
 import Map from "./paritals/Map";
 
 const Contact = () => {
+  const [reset] = useState(() => {
+    return window.scrollTo(0, 0);
+  });
   return (
     <div className="contact">
+      {reset}
       <div className="contact__map">
         <Map />
       </div>
