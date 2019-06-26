@@ -10,6 +10,7 @@ import Course from "./components/layout/course/Course";
 import Exams from "./components/layout/exams/Exams";
 import Blog from "./components/layout/blog/Blog";
 import BlogPost from "./components/layout/blog/BlogPost";
+import Contact from "./components/layout/contact/Contact";
 
 const MainRouter = () => {
   return (
@@ -21,6 +22,7 @@ const MainRouter = () => {
       <Route exact path="/exams" component={Exams} />
       <Route exact path="/blog" component={Blog} />
       <Route exact path="/singleBlog" component={BlogPost} />
+      <Route exact path="/contact" component={Contact} />
       <Footer />
     </>
   );
