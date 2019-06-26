@@ -1,24 +1,34 @@
 import React, { useState } from "react";
-import GoogleMapReact from "google-map-react";
+import {
+  GoogleMap,
+  withScriptjs,
+  withGoogleMap,
+  Marker,
+} from "react-google-maps";
 
 const Map = () => {
-  const [cord] = useState({
-    center: {
-      lat: 59.95,
-      lng: 30.33,
-    },
-    zoom: 11,
-  });
+  const [info] = useState([{ adress: "Zeleni venac 2A" }]);
+
+  const map = () => {
+    return (
+      <GoogleMap
+        defaultZoom={15}
+        defaultCenter={{ lat: 44.814346, lng: 20.458047 }}
+        options={{ gestureHandling: "greedy" }}>
+        <Marker position={{ lat: 44.814346, lng: 20.458047 }} />
+      </GoogleMap>
+    );
+  };
+
+  const WrappedMap = withScriptjs(withGoogleMap(map));
   return (
-    <div className="contact__map">
-      <div style={{ height: "100vh", width: "100%" }}>
-        <GoogleMapReact
-          //   bootstrapURLKeys={{ key: /* YOUR KEY HERE */ }}
-          defaultCenter={cord.center}
-          defaultZoom={cord.zoom}>
-          {/* <AnyReactComponent lat={59.955413} lng={30.337844} text="My Marker" /> */}
-        </GoogleMapReact>
-      </div>
+    <div style={{ width: "100vw", height: "100vh" }}>
+      <WrappedMap
+        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDEPkQvhTNGmJPJ5f4YHzhouvVyYtIdr7M`}
+        loadingElement={<div style={{ height: "100%" }} />}
+        containerElement={<div style={{ height: "100%" }} />}
+        mapElement={<div style={{ height: "100%" }} />}
+      />
     </div>
   );
 };

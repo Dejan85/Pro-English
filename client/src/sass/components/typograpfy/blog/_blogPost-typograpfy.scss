@@ -42,7 +42,7 @@
   &__content__p {
     font-size: 1.9rem;
     font-family: $font-8;
-    color: lighten($color-grey-dark, 16%);
+    color: $color-grey-dark;
   }
 
   &__signature {
