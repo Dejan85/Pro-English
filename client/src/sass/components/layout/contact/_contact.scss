@@ -21,7 +21,7 @@
   }
 
   &__span {
-    padding: 1rem 5rem;
+    padding: 0.7rem 5rem;
   }
 
   &__form {
@@ -45,6 +45,12 @@
     textarea {
       border: none;
       border-bottom: 1px solid $color-pink-dark;
+      padding: 1rem;
+    }
+
+    textarea:focus,
+    input:focus {
+      outline: none;
     }
 
     button {

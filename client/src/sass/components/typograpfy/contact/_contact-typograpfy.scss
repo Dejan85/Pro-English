@@ -18,6 +18,17 @@
       font-size: 1.8rem;
     }
 
+    input {
+      font-family: $font-1;
+      font-size: 1.4rem;
+    }
+
+    textarea {
+      font-family: $font-1;
+      font-size: 1.6rem;
+      color: $color-grey-dark;
+    }
+
     button {
       color: white;
       font-size: 1.8rem;
