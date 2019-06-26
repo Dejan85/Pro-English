@@ -1,0 +1,26 @@
+.contact {
+  &__h1 {
+    font-size: 4rem;
+    font-family: $font-8;
+  }
+
+  &__span {
+    font-family: $font-1;
+    font-size: 1.8rem;
+    color: $color-grey-dark;
+  }
+
+  &__input {
+    font-family: $font-1;
+    color: $color-grey-dark;
+
+    label {
+      font-size: 1.8rem;
+    }
+
+    button {
+      color: white;
+      font-size: 1.8rem;
+    }
+  }
+}
