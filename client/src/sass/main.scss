@@ -41,6 +41,10 @@
 @import "./components/layout/blog/blog";
 @import "./components/layout/blog/blogPost";
 
+//ewvents
+@import "./components/layout/events/events";
+@import "./components/layout/events/event";
+
 //contact
 @import "./components/layout/contact/contact";
 
@@ -71,6 +75,10 @@
 //blog
 @import "./components/typograpfy/blog/blog-typograpfy";
 @import "./components/typograpfy/blog/blogPost-typograpfy";
+
+//events
+@import "./components/typograpfy/events/events-typograpfy";
+@import "./components/typograpfy/events/event-typograpfy";
 
 //contact
 @import "./components/typograpfy/contact/contact-typograpfy";

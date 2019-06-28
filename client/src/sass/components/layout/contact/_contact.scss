@@ -12,22 +12,18 @@
     display: flex;
     flex-direction: column;
     width: 50%;
-    padding-top: 5rem;
-    justify-content: flex-start;
-  }
-
-  &__h1 {
-    padding: 0 5rem;
+    padding: 5rem 8rem;
+    justify-content: center;
   }
 
   &__span {
-    padding: 0.7rem 5rem;
+    padding: 0.7rem 0;
   }
 
   &__form {
     display: flex;
     flex-direction: column;
-    padding: 5rem 5rem 0 5rem;
+    padding: 5rem 0 0 0;
     width: 100%;
   }
 

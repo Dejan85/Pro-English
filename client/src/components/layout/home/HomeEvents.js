@@ -20,7 +20,7 @@ const HomeEvent = () => {
           <CalendarEventCard />
           <CalendarEventCard />
 
-          <Link className="homeEvent__link" to="/">
+          <Link className="homeEvent__link" to="/dogadjaji">
             Vidi sve
           </Link>
         </div>
@@ -55,7 +55,7 @@ const HomeEvent = () => {
                 Ponedeljak, 19:00 - 21:00
               </span>
             </li>
-            <Link className="homeEvent__link-2" to="/">
+            <Link className="homeEvent__link-2" to="/dogadjaji">
               Vidi sve
             </Link>
           </ul>
