@@ -43,6 +43,11 @@
   &__span {
     display: block;
     padding: 0.5rem 0 2rem 0;
+
+    i {
+      padding-right: 1rem;
+      color: $color-pink-dark;
+    }
   }
 
   &__link {
