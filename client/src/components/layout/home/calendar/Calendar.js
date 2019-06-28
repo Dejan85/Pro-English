@@ -1,41 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Components
 import Week from "./Week";
 import CalendarEventCard from "./CalendarEventCard";
 // Hooks
-import useCalendar from "../../../hooks/useCalendar";
+import useCalendarTest from "../../../hooks/useCalendarTest";
 
 const Calendar = () => {
-  const { getMonth, getAllDays } = useCalendar();
-  // let [counter, setCounter] = useState(0);
+  const { showCalendar, getAllDaysInMonth } = useCalendarTest();
+  let [today, setToday] = useState("June 2019");
 
-  const handleMonth = e => {
-    // const name = e.target.getAttribute("name");
+  // const date = new Date();
+  // const currentMonth = date.getMonth();
+  // const currentYear = date.getFullYear();
+  let counter = 1;
+  let xad;
 
-    // if (name === "+") {
-    //   setCounter(() => {
-    //     return counter + 1;
-    //   });
-    // } else if (name === "-") {
-    //   setCounter(() => {
-    //     return counter - 1;
-    //   });
-    // }
-    getMonth();
+  const firstDayInMonth = new Date(
+    `${new Date().getFullYear()}-${new Date().getMonth() + 1}-01`
+  ).getDay();
+
+  const handleMonthIncrease = e => {
+    if (counter > 12) {
+      counter = 1;
+      xad = xad - counter;
+    }
+
+    xad = new Date().getMonth() + counter++;
+    console.log(xad);
   };
 
-  const day = getAllDays(6, 2019);
+  const handleMonthDecrease = e => {
+    console.log(new Date().getMonth() + counter--);
+  };
 
   return (
     <div className="calendar">
       <div className="calendar__header">
-        <div className="calendar__icon">
-          <i className="fas fa-chevron-left" name="-" onClick={handleMonth} />
+        <div className="calendar__icon" onClick={handleMonthDecrease}>
+          <i className="fas fa-chevron-left" name="-" />
         </div>
-        <p className="calendar__p">June 2019</p>
-        <div className="calendar__icon">
-          <i className="fas fa-chevron-right" name="+" onClick={handleMonth} />
+        <p className="calendar__p">{today}</p>
+        <div className="calendar__icon" onClick={handleMonthIncrease}>
+          <i className="fas fa-chevron-right" name="+" />
         </div>
       </div>
       <div className="calendar__week">
@@ -45,7 +52,7 @@ const Calendar = () => {
       </div>
       <div className="calendar__day">
         <ul className="calendar__list-2">
-          {day.map((item, index) => {
+          {getAllDaysInMonth().map((item, index) => {
             return (
               <li key={index} className="calendar__item-2">
                 {item}

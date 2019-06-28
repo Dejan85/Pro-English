@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   GoogleMap,
   withScriptjs,
@@ -7,8 +7,6 @@ import {
 } from "react-google-maps";
 
 const Map = () => {
-  const [info] = useState([{ adress: "Zeleni venac 2A" }]);
-
   const map = () => {
     return (
       <GoogleMap

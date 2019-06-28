@@ -1,18 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 // components
 import DropNav from "./partials/DropNav";
 
 const Nav = () => {
-  // const [oNama] = useState({
-  //   links: ["Ko smo mi", "Nacin rada"],
-  //   address: ["whoweare", "howwework"],
-  // });
-  // const [kursevi] = useState({
-  //   links: ["Konverzacijski kurs", "a2", "b1", "b2", "c1"],
-  //   address: ["conversation", "a2", "b1", "b2", "c1"],
-  // });
   const [ispiti] = useState({
     links: ["Toefl", "Ielts", "Gmat", "Gre", "Sat"],
     address: ["Toefl", "Ielts", "Gmat", "Gre", "Sat"],
@@ -22,47 +14,59 @@ const Nav = () => {
     <nav className="header__nav">
       <ul className="header__list">
         <li className="header__item ">
-          <Link className="header__link active" to="/">
+          <NavLink
+            className="header__link"
+            activeClassName="active"
+            exact
+            to="/">
             Home
-          </Link>
+          </NavLink>
         </li>
         <li className="header__item flex__class">
-          <Link className="header__link" to="/about">
+          <NavLink
+            className="header__link"
+            activeClassName="active"
+            to="/about">
             O nama
-          </Link>
-          {/* <DropNav info={oNama} /> */}
+          </NavLink>
         </li>
         <li className="header__item flex__class">
-          <Link className="header__link" to="/course">
+          <NavLink
+            className="header__link"
+            activeClassName="active"
+            to="/course">
             Kursevi
-          </Link>
-          {/* <DropNav info={kursevi} /> */}
+          </NavLink>
         </li>
         <li className="header__item flex__class">
-          <Link className="header__link" to="/exams">
+          <NavLink
+            className="header__link"
+            activeClassName="active"
+            to="/exams">
             Pripreme za ispite
-          </Link>
+          </NavLink>
           <DropNav info={ispiti} />
         </li>
-        {/* <li className="header__item">
-          <Link className="header__link" to="/">
-            Utvrdite nivo znanja
-          </Link>
-        </li> */}
         <li className="header__item">
-          <Link className="header__link" to="/dogadjaji">
+          <NavLink
+            className="header__link"
+            activeClassName="active"
+            to="/dogadjaji">
             Dogadjaji
-          </Link>
+          </NavLink>
         </li>
         <li className="header__item">
-          <Link className="header__link" to="/blog">
+          <NavLink className="header__link" activeClassName="active" to="/blog">
             Blog
-          </Link>
+          </NavLink>
         </li>
         <li className="header__item">
-          <Link className="header__link" to="/contact">
+          <NavLink
+            className="header__link"
+            activeClassName="active"
+            to="/contact">
             Kontakt
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>
