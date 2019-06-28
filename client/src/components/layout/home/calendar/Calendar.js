@@ -7,31 +7,25 @@ import CalendarEventCard from "./CalendarEventCard";
 import useCalendarTest from "../../../hooks/useCalendarTest";
 
 const Calendar = () => {
-  const { showCalendar, getAllDaysInMonth } = useCalendarTest();
-  let [today, setToday] = useState("June 2019");
-
-  // const date = new Date();
-  // const currentMonth = date.getMonth();
-  // const currentYear = date.getFullYear();
-  let counter = 1;
-  let xad;
-
-  const firstDayInMonth = new Date(
-    `${new Date().getFullYear()}-${new Date().getMonth() + 1}-01`
-  ).getDay();
+  const { getAllDaysInMonth, showHeaderDate } = useCalendarTest();
+  let [currentDate, setCurrentDate] = useState({
+    year: new Date().getFullYear(),
+    month: new Date().getMonth(),
+  });
+  let { month, year } = showHeaderDate(currentDate);
 
   const handleMonthIncrease = e => {
-    if (counter > 12) {
-      counter = 1;
-      xad = xad - counter;
-    }
-
-    xad = new Date().getMonth() + counter++;
-    console.log(xad);
+    setCurrentDate({
+      ...currentDate,
+      month: currentDate.month + 1,
+    });
   };
 
   const handleMonthDecrease = e => {
-    console.log(new Date().getMonth() + counter--);
+    setCurrentDate({
+      ...currentDate,
+      month: currentDate.month - 1,
+    });
   };
 
   return (
@@ -40,7 +34,7 @@ const Calendar = () => {
         <div className="calendar__icon" onClick={handleMonthDecrease}>
           <i className="fas fa-chevron-left" name="-" />
         </div>
-        <p className="calendar__p">{today}</p>
+        <p className="calendar__p">{`${month} ${year}`}</p>
         <div className="calendar__icon" onClick={handleMonthIncrease}>
           <i className="fas fa-chevron-right" name="+" />
         </div>
@@ -52,7 +46,7 @@ const Calendar = () => {
       </div>
       <div className="calendar__day">
         <ul className="calendar__list-2">
-          {getAllDaysInMonth().map((item, index) => {
+          {getAllDaysInMonth(currentDate).map((item, index) => {
             return (
               <li key={index} className="calendar__item-2">
                 {item}
