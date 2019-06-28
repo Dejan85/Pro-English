@@ -11,6 +11,7 @@ import Exams from "./components/layout/exams/Exams";
 import Blog from "./components/layout/blog/Blog";
 import BlogPost from "./components/layout/blog/BlogPost";
 import Events from "./components/layout/events/Events";
+import SingleEvent from "./components/layout/events/SingleEvent";
 import Contact from "./components/layout/contact/Contact";
 
 const MainRouter = () => {
@@ -24,6 +25,7 @@ const MainRouter = () => {
       <Route exact path="/blog" component={Blog} />
       <Route exact path="/singleBlog" component={BlogPost} />
       <Route exact path="/dogadjaji" component={Events} />
+      <Route exact path="/dogadjaji/one" component={SingleEvent} />
       <Route exact path="/contact" component={Contact} />
       <Footer />
     </>

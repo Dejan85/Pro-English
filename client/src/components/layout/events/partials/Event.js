@@ -25,7 +25,7 @@ const Event = () => {
           leo. Mauris volutpat aliquam tellus nec rhoncus. Aliquam et nibh
           pulvinar, sodales nibh et, pretium urna.
         </p>
-        <Link to="/" className="event__link">
+        <Link to="/dogadjaji/one" className="event__link">
           Procitaj sve
         </Link>
       </div>
