@@ -1,52 +1,61 @@
 import React, { useState } from "react";
 
 // Components
-import Week from "./Week";
 import CalendarEventCard from "./CalendarEventCard";
 // Hooks
 import useCalendarTest from "../../../hooks/useCalendarTest";
 
 const Calendar = () => {
-  const { getAllDaysInMonth, showHeaderDate } = useCalendarTest();
-  let [currentDate, setCurrentDate] = useState({
+  const { getAllDaysInMonth, showHeaderDate, weeks } = useCalendarTest();
+  const [currentDate, setCurrentDate] = useState({
     year: new Date().getFullYear(),
     month: new Date().getMonth(),
   });
-  let { month, year } = showHeaderDate(currentDate);
+  const { month, year } = showHeaderDate(currentDate);
+  const allDays = getAllDaysInMonth(currentDate);
 
-  const handleMonthIncrease = e => {
+  // handler for calendar header ++
+  const handleMonthIncrease = () => {
     setCurrentDate({
       ...currentDate,
       month: currentDate.month + 1,
     });
+
+    const counter = 12 - currentDate.month;
+    if (counter === 1) {
+      setCurrentDate({ ...currentDate, month: currentDate.month - 11 });
+    }
   };
 
-  const handleMonthDecrease = e => {
+  // handler for calendar header --
+  const handleMonthDecrease = () => {
     setCurrentDate({
       ...currentDate,
       month: currentDate.month - 1,
     });
+
+    if (currentDate.month < 1) {
+      setCurrentDate({ ...currentDate, month: 11 });
+    }
   };
 
   return (
     <div className="calendar">
       <div className="calendar__header">
         <div className="calendar__icon" onClick={handleMonthDecrease}>
-          <i className="fas fa-chevron-left" name="-" />
+          <i className="fas fa-chevron-left" />
         </div>
         <p className="calendar__p">{`${month} ${year}`}</p>
         <div className="calendar__icon" onClick={handleMonthIncrease}>
-          <i className="fas fa-chevron-right" name="+" />
+          <i className="fas fa-chevron-right" />
         </div>
       </div>
       <div className="calendar__week">
-        <ul className="calendar__list">
-          <Week />
-        </ul>
+        <ul className="calendar__list">{weeks()}</ul>
       </div>
       <div className="calendar__day">
         <ul className="calendar__list-2">
-          {getAllDaysInMonth(currentDate).map((item, index) => {
+          {allDays.map((item, index) => {
             return (
               <li key={index} className="calendar__item-2">
                 {item}
