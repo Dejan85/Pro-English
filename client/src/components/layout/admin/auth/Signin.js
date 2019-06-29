@@ -17,7 +17,7 @@ const Signin = () => {
           </div>
 
           <div className="sign__btnHolder">
-            <button className="sign__btn">Registruj se</button>
+            <button className="sign__btn">Uloguj se</button>
           </div>
         </form>
       </div>
