@@ -1,5 +1,5 @@
-import React from "react";
-import { Route } from "react-router-dom";
+import React, { useState } from "react";
+import { Route, withRouter } from "react-router-dom";
 
 // components
 import Header from "./components/layout/header/Header";
@@ -14,10 +14,18 @@ import Events from "./components/layout/events/Events";
 import SingleEvent from "./components/layout/events/SingleEvent";
 import Contact from "./components/layout/contact/Contact";
 
-const MainRouter = () => {
+const MainRouter = props => {
+  const [headerAndFooter] = useState(() => {
+    return (
+      props.history.location.pathname === "/admin" ||
+      props.history.location.pathname === "/admin/signin" ||
+      props.history.location.pathname === "/admin/signup"
+    );
+  });
+
   return (
     <>
-      <Header />
+      {!headerAndFooter && <Header />}
       <Route exact path="/" component={Home} />
       <Route exact path="/about" component={About} />
       <Route exact path="/course" component={Course} />
@@ -27,9 +35,9 @@ const MainRouter = () => {
       <Route exact path="/dogadjaji" component={Events} />
       <Route exact path="/dogadjaji/one" component={SingleEvent} />
       <Route exact path="/contact" component={Contact} />
-      <Footer />
+      {!headerAndFooter && <Footer />}
     </>
   );
 };
 
-export default MainRouter;
+export default withRouter(MainRouter);

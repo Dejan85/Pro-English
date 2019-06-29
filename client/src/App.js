@@ -8,11 +8,13 @@ import "../src/sass/main.scss";
 //
 
 import MainRouter from "./MainRouter";
+import AdminRouter from "./components/layout/admin/route/AdminRouter";
 
 function App() {
   return (
     <Router>
       <MainRouter />
+      <AdminRouter />
     </Router>
   );
 }

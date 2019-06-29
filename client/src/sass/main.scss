@@ -52,6 +52,9 @@
 // footer
 @import "./components/layout/footer/footer";
 
+//dashboard
+@import "./components/layout/admin/dashboard";
+
 // // TYPOGRAPFY
 
 //header
@@ -87,3 +90,7 @@
 
 // footer
 @import "./components/typograpfy/footer/footer-typograpfy";
+
+//dashboard
+
+@import "./components/typograpfy/admin/dashboard-typograpfy";
