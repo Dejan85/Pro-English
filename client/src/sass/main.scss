@@ -52,8 +52,9 @@
 // footer
 @import "./components/layout/footer/footer";
 
-//dashboard
+//DASHBOARD
 @import "./components/layout/admin/dashboard";
+@import "./components/layout/admin/auth/sign";
 
 // // TYPOGRAPFY
 
@@ -91,6 +92,7 @@
 // footer
 @import "./components/typograpfy/footer/footer-typograpfy";
 
-//dashboard
+//DASHBOARD
 
 @import "./components/typograpfy/admin/dashboard-typograpfy";
+@import "./components/typograpfy/admin/auth/sign-typograpfy";

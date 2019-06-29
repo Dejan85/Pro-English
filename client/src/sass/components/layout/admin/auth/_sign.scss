@@ -1,0 +1,57 @@
+.sign {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 120rem;
+  width: 100%;
+  padding: 0 2rem 0 2rem;
+  margin: 0 auto;
+  height: 100vh;
+
+  &__h1 {
+    width: 100%;
+    padding-bottom: 10rem;
+  }
+
+  &__form {
+    width: 100%;
+  }
+
+  &__inputHolder {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+  }
+
+  &__label {
+    padding-bottom: 1rem;
+  }
+
+  &__input {
+    height: 3rem;
+    border: none;
+    border-bottom: 0.1rem solid $color-pink-dark;
+
+    &:focus {
+      outline: none;
+      border-bottom: 0.2rem solid darken($color-pink-dark, 0%);
+    }
+  }
+
+  &__btnHolder {
+    padding-top: 10rem;
+  }
+
+  &__btn {
+    padding: 1rem 2rem;
+    background: $color-pink-dark;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &:hover {
+      background: darken($color-pink-dark, 20%);
+    }
+  }
+}
