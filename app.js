@@ -1,14 +1,28 @@
 const express = require("express");
 const app = express();
-const mongoose = require("mongoose");
-const dotenv = require("dotenv");
+const port = process.env.PORT || 6000;
 const morgan = require("morgan");
+const dotenv = require("dotenv");
+const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const expressValidator = require("express-validator");
+const cookieParser = require("cookie-parser");
+const fs = require("fs");
 const cors = require("cors");
 const path = require("path");
-const port = process.env.PORT || 6000;
 
 dotenv.config();
+
+//
+// ─── DB ─────────────────────────────────────────────────────────────────────────
+//
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true }).then(() => {
+  console.log("Db Connected");
+});
+
+mongoose.connection.on("error", err => {
+  console.log(`Db connection error: ${err.message}`);
+});
 
 //
 // ─── MIDDLEWARE ─────────────────────────────────────────────────────────────────
@@ -19,8 +33,17 @@ app.use(morgan("dev"));
 //body parser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+//cookie parser
+app.use(cookieParser());
+// express validator
+app.use(expressValidator());
 // cors
 app.use(cors());
+
+//
+// ─── ROUTES ─────────────────────────────────────────────────────────────────────
+//
+const auth = require("./nodeapi/routes/auth");
 
 //
 // ─── THIS IS SETUP FOR HEROKU DEPLOY ────────────────────────────────────────────
