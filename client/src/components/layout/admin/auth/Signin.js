@@ -6,14 +6,14 @@ import useForm from "../../../hooks/auth/useForm";
 const Signin = () => {
   const { input, error, onChange, onSubmit } = useForm();
 
+  console.log(error);
   return (
     <div className="sign">
       <h1 className="sign__h1">Login</h1>
       <div className="sign__form">
         <form onSubmit={onSubmit} name="signin">
           <div className="sign__inputHolder">
-            {error}
-
+            {error && error.email}
             <label className="sign__label">Email</label>
             <input
               className="sign__input"
@@ -25,6 +25,7 @@ const Signin = () => {
           </div>
 
           <div className="sign__inputHolder">
+            {error && error.password}
             <label className="sign__label">Password</label>
             <input
               className="sign__input"
