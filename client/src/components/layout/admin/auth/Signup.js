@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Redirect } from "react-router-dom";
 
 // hooks
@@ -6,6 +6,8 @@ import useForm from "../../../hooks/auth/useForm";
 
 const Signup = () => {
   const { input, error, redirect, onChange, onSubmit } = useForm();
+
+  console.log(error);
 
   return (
     <div className="sign">

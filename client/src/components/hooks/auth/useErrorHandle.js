@@ -4,9 +4,9 @@ const useErrorHandle = () => {
 
   const errorHandle = input => {
     const firstname = (function() {
-      if (!input.name) {
+      if (!input.firstname) {
         return "Firstname is required";
-      } else if (!input.name.length < 3 && !input.name.length > 20) {
+      } else if (!input.firstname.length < 3 && !input.firstname.length > 20) {
         return "Name must be between 3 and 20 characters";
       }
     })();
