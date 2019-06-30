@@ -43,7 +43,22 @@ app.use(cors());
 //
 // ─── ROUTES ─────────────────────────────────────────────────────────────────────
 //
+
+const post = require("./nodeapi/routes/post");
 const auth = require("./nodeapi/routes/auth");
+const user = require("./nodeapi/routes/user");
+app.use("/", post);
+app.use("/", auth);
+app.use("/", user);
+
+// express jwt (this is must be below route)
+app.use(function(err, req, res, next) {
+  if (err.name === "UnauthorizedError") {
+    res.status(401).json({
+      err: "Unauthorized!",
+    });
+  }
+});
 
 //
 // ─── THIS IS SETUP FOR HEROKU DEPLOY ────────────────────────────────────────────
