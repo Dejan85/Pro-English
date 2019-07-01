@@ -34,7 +34,7 @@ exports.signin = (req, res) => {
     // create authenticate method in model and use here
     if (!user.authenticate(password)) {
       return res.status(401).json({
-        error: "User with that email does not exists. Please signin",
+        error: "You are enter wrong password. Please try again",
       });
     }
 

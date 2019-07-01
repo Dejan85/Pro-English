@@ -26,7 +26,7 @@ const useErrorHandle = () => {
     })();
     const password = (function() {
       if (!input.password) {
-        return "password is required";
+        return "Password is required";
       } else if (!input.password.match(expression2)) {
         return "Password must contain a number";
       } else if (input.password.length < 6) {

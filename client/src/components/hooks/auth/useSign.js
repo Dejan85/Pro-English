@@ -41,9 +41,28 @@ const useSign = () => {
       });
   };
 
+  //
+  // ─── SIGNOUT ────────────────────────────────────────────────────────────────────
+  //
+
+  const signout = () => {
+    if (typeof window !== "undefined") localStorage.removeItem("jwt");
+    return fetch("/signout", {
+      method: "GET",
+    })
+      .then(res => {
+        console.log("signout", res);
+        return res.json();
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
   return {
     signup,
     signin,
+    signout,
   };
 };
 

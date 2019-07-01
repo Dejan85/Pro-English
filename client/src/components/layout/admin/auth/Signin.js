@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
 // hooks
 import useForm from "../../../hooks/auth/useForm";
@@ -13,7 +13,7 @@ const Signin = () => {
       <div className="sign__form">
         <form onSubmit={onSubmit} name="signin">
           <div className="sign__inputHolder">
-            {(error && error.email) || (error && error)}
+            <div className="sign__error" />
             <label className="sign__label">Email</label>
             <input
               className="sign__input"
@@ -22,10 +22,15 @@ const Signin = () => {
               value={input.email}
               onChange={onChange}
             />
+
+            {error && (
+              <div className="sign__error">
+                {error.email || error.serverError}
+              </div>
+            )}
           </div>
 
           <div className="sign__inputHolder">
-            {error && error.password}
             <label className="sign__label">Password</label>
             <input
               className="sign__input"
@@ -34,12 +39,16 @@ const Signin = () => {
               value={input.password}
               onChange={onChange}
             />
+            {error && <div className="sign__error"> {error.password}</div>}
           </div>
 
           <div className="sign__btnHolder">
             <button type="submit" className="sign__btn">
               Uloguj se
             </button>
+            <Link type="submit" className="sign__link" to="/admin/signup">
+              Registruj se
+            </Link>
           </div>
         </form>
       </div>

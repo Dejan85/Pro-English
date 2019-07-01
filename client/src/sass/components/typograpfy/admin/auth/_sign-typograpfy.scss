@@ -25,5 +25,21 @@
     font-size: 1.6rem;
     font-weight: 600;
     font-family: $font-1;
+    text-decoration: none;
+  }
+
+  &__link {
+    color: $color-pink-dark;
+    font-size: 1.6rem;
+    font-weight: 600;
+    font-family: $font-1;
+    text-decoration: none;
+  }
+
+  &__error {
+    color: #f56b67;
+    font-family: $font-1;
+    font-weight: 600;
+    font-size: 1.3rem;
   }
 }

@@ -41,7 +41,7 @@ const useForm = () => {
         return signup(input)
           .then(res => {
             if (res.error) {
-              setError({ taken: res.error });
+              setError(res.error);
             } else {
               setRedirect(true);
             }
@@ -59,7 +59,7 @@ const useForm = () => {
         return signin({ email: input.email, password: input.password })
           .then(res => {
             if (res.error) {
-              setError(res.error);
+              setError({ serverError: res.error });
             } else {
               authenticate(res);
               setRedirect(true);
