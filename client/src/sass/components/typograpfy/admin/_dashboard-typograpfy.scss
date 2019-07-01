@@ -1,0 +1,24 @@
+.dashboard {
+  &__h1 {
+    color: white;
+    font-family: $font-1;
+    font-size: 2rem;
+  }
+
+  &__icon {
+    font-size: 1.6rem;
+    color: white;
+
+    p {
+      font-size: 2rem;
+      font-family: $font-1;
+    }
+  }
+
+  &__dropMenuLink {
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-family: $font-1;
+  }
+}
