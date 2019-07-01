@@ -7,8 +7,6 @@ import useForm from "../../../hooks/auth/useForm";
 const Signup = () => {
   const { input, error, redirect, onChange, onSubmit } = useForm();
 
-  console.log(error);
-
   return (
     <div className="sign">
       {redirect && <Redirect to="signin" />}
