@@ -38,7 +38,7 @@ const Signup = () => {
             />
           </div>
           <div className="sign__inputHolder">
-            {error && error.email}
+            {(error && error.email) || (error && error.taken)}
             <label className="sign__label">Email</label>
             <input
               className="sign__input"

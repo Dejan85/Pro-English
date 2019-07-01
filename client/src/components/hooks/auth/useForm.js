@@ -34,7 +34,11 @@ const useForm = () => {
       if (e.target.name === "signup")
         return signup(input)
           .then(res => {
-            (res.error && setError(res.error)) || setRedirect(true);
+            if (res.error) {
+              setError({ taken: res.error });
+            } else {
+              setRedirect(true);
+            }
           })
           .catch(err => {
             console.log(err);
