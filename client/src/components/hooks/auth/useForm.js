@@ -24,6 +24,10 @@ const useForm = () => {
       ...input,
       [e.target.name]: e.target.value,
     });
+    setError({
+      ...error,
+      [e.target.name]: "",
+    });
   };
 
   const onSubmit = e => {
@@ -41,7 +45,7 @@ const useForm = () => {
         return signup(input)
           .then(res => {
             if (res.error) {
-              setError(res.error);
+              setError({ serverError: res.error });
             } else {
               setRedirect(true);
             }
