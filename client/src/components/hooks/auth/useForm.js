@@ -28,10 +28,16 @@ const useForm = () => {
 
   const onSubmit = e => {
     e && e.preventDefault();
-    const { firstname, lastname, email, password } = errorHandle(input);
+    const {
+      firstname,
+      lastname,
+      email,
+      password,
+      confirmPassword,
+    } = errorHandle(input);
 
-    if (!firstname && !lastname && !email && !password) {
-      if (e.target.name === "signup")
+    if (e.target.name === "signup") {
+      if (!firstname && !lastname && !email && !password && !confirmPassword) {
         return signup(input)
           .then(res => {
             if (res.error) {
@@ -43,31 +49,31 @@ const useForm = () => {
           .catch(err => {
             console.log(err);
           });
+      } else {
+        setError({ firstname, lastname, email, password, confirmPassword });
+      }
+    }
 
-      if (e.target.name === "signin")
+    if (e.target.name === "signin") {
+      if (!email && !password) {
         return signin({ email: input.email, password: input.password })
           .then(res => {
-            authenticate(res);
-            res.error && setError(res.error);
+            if (res.error) {
+              setError(res.error);
+            } else {
+              authenticate(res);
+              setRedirect(true);
+            }
           })
           .catch(err => {
             setError(err);
             console.log(err);
           });
-    } else {
-      //   isValid(firstname, lastname, email, password);
-      setError({ firstname, lastname, email, password });
+      } else {
+        setError({ email, password });
+      }
     }
   };
-
-  //   const isValid = (firstname, lastname, email, password) => {
-  //     setError({
-  //       firstname,
-  //       lastname,
-  //       email,
-  //       password,
-  //     });
-  //   };
 
   return {
     input,

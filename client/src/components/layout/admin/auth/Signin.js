@@ -1,19 +1,19 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 
 // hooks
 import useForm from "../../../hooks/auth/useForm";
 
 const Signin = () => {
-  const { input, error, onChange, onSubmit } = useForm();
-
-  console.log(error);
+  const { input, error, redirect, onChange, onSubmit } = useForm();
   return (
     <div className="sign">
+      {redirect && <Redirect to="/admin" />}
       <h1 className="sign__h1">Login</h1>
       <div className="sign__form">
         <form onSubmit={onSubmit} name="signin">
           <div className="sign__inputHolder">
-            {error && error.email}
+            {(error && error.email) || (error && error)}
             <label className="sign__label">Email</label>
             <input
               className="sign__input"

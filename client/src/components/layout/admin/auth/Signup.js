@@ -47,7 +47,7 @@ const Signup = () => {
             />
           </div>
           <div className="sign__inputHolder">
-            {error && error.password}
+            {(error && error.password) || (error && error.confirmPassword)}
             <label className="sign__label">Password</label>
             <input
               className="sign__input"
