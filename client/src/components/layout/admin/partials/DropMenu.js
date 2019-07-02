@@ -5,7 +5,7 @@ const DropMenu = () => {
   return (
     <ul className="dashboard__dropMenu">
       <li className="dashboard__dropMenuItem">
-        <Link to="/admin/xad" className="dashboard__dropMenuLink">
+        <Link to="/admin/blog" className="dashboard__dropMenuLink">
           Add Blog
         </Link>
         <Link to="/admin" className="dashboard__dropMenuLink">

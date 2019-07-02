@@ -19,7 +19,8 @@ const MainRouter = props => {
     return (
       props.history.location.pathname === "/admin" ||
       props.history.location.pathname === "/admin/signin" ||
-      props.history.location.pathname === "/admin/signup"
+      props.history.location.pathname === "/admin/signup" ||
+      props.history.location.pathname === "/admin/blog"
     );
   });
 

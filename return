@@ -1,0 +1,134 @@
+[33m721c7f9[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{0}: commit: bulding dashboard
+[33me9c1726[m HEAD@{1}: commit: bulding dashboard
+[33m9daeb3e[m HEAD@{2}: commit: sign almost done
+[33m03f2eec[m HEAD@{3}: commit: sign is almost done
+[33m5a1a3d2[m HEAD@{4}: commit: sign validation is done
+[33m2b6578b[m HEAD@{5}: commit: building validate for signin and signup
+[33m57a5f90[m HEAD@{6}: commit: building validate for signin and signup
+[33m56883b1[m HEAD@{7}: commit: building validate for signin and signup
+[33m0f6d14a[m HEAD@{8}: commit: building validate for signin and signup
+[33m6d5498c[m HEAD@{9}: commit: building validate for signin and signup
+[33m2b3fd50[m HEAD@{10}: commit: signin and signup almost done
+[33m0871ef7[m HEAD@{11}: commit: auth nodeapi is done
+[33m051816e[m HEAD@{12}: commit: set some basic stuf
+[33ma8d2ec9[m HEAD@{13}: commit: start building backend for login system
+[33m68cfdd5[m HEAD@{14}: commit: i am fix padding to height on input field on conact
+[33md1862a1[m HEAD@{15}: commit: signin and signup style done
+[33m7615cb3[m HEAD@{16}: commit: start building auth/signup
+[33m7fe7bad[m HEAD@{17}: commit: calendar on home page almost done
+[33m8a87f03[m HEAD@{18}: commit: swithing date on calendar header and calendar day is work now
+[33m909ed0e[m HEAD@{19}: commit: building calendar
+[33m25ff12b[m[33m ([m[1;31mheroku/master[m[33m)[m HEAD@{20}: commit: event post is almost done
+[33ma12ee9b[m HEAD@{21}: commit: event post is almost done
+[33meb018f5[m HEAD@{22}: commit: decrease 140rem width of container to 120rem
+[33m28e7385[m HEAD@{23}: commit: events are start building
+[33md9c4698[m HEAD@{24}: commit: contact form almost done
+[33mffd5494[m HEAD@{25}: commit: contact form almost done
+[33m0cb92d0[m HEAD@{26}: commit: contact form almost done
+[33me198261[m HEAD@{27}: commit: working on kontakt
+[33m4fa02b9[m HEAD@{28}: commit: working on kontakt
+[33m439f510[m HEAD@{29}: commit: adding map done
+[33m42f4339[m HEAD@{30}: commit: commit for laptop
+[33m6d55ec7[m HEAD@{31}: commit: save
+[33mec2f167[m HEAD@{32}: commit: litle change abotu design in blog post
+[33m83f283f[m HEAD@{33}: commit: blog post almost done
+[33m69ca0c4[m HEAD@{34}: commit: blog post almost done
+[33mc63fe85[m HEAD@{35}: commit: start building single post
+[33m54d81b9[m HEAD@{36}: commit: blog landing almost done
+[33m5d8741b[m HEAD@{37}: commit: blog scss setup done
+[33m1b6716d[m HEAD@{38}: commit: start building blog
+[33m7dc5348[m HEAD@{39}: commit: fix exams in main csss
+[33md6fe3bc[m HEAD@{40}: commit: build update
+[33m62aff82[m HEAD@{41}: commit: fix course file in sass
+[33m6724962[m HEAD@{42}: commit: create build folder fro asw deploy
+[33m008ea04[m HEAD@{43}: commit: heroku
+[33m83f100a[m HEAD@{44}: commit: heroku
+[33m493fe18[m HEAD@{45}: commit: course almost done
+[33m58dd32d[m HEAD@{46}: commit: start building content 2
+[33m5a37da9[m HEAD@{47}: commit: kursevi page working
+[33m2e64305[m HEAD@{48}: commit: put reset scroll to useState
+[33ma036067[m HEAD@{49}: commit: fix scroll rset
+[33m77a5a65[m HEAD@{50}: commit: fix scroll rset
+[33m2506a16[m HEAD@{51}: commit: about page done
+[33md2f03a1[m HEAD@{52}: commit: o nama almost done
+[33m0a71b5e[m HEAD@{53}: commit: working on about page
+[33m1f6ccb9[m HEAD@{54}: commit: start building about
+[33m0fc73be[m HEAD@{55}: commit: navigation with drop menu almost done
+[33m2632805[m HEAD@{56}: commit: for heroku
+[33mad0e612[m HEAD@{57}: commit: adding one more teacher box
+[33mfb0b24d[m HEAD@{58}: commit: reparing newsletter
+[33m11f2711[m HEAD@{59}: commit: newletter almost done
+[33m4d82212[m HEAD@{60}: commit: teachers almost done
+[33ma087050[m HEAD@{61}: commit: start buidling teachers, rebulding
+[33m2146596[m HEAD@{62}: commit: add card to teachers
+[33m7798586[m HEAD@{63}: commit: start bulding home teachers
+[33m918c138[m HEAD@{64}: commit: git push origin master
+[33m42cb8a8[m HEAD@{65}: commit: start bulding footer
+[33mbefb7a1[m HEAD@{66}: commit: add background on hover on incoming events
+[33m3697a40[m HEAD@{67}: commit: add background on hover on incoming events
+[33mc804ade[m HEAD@{68}: commit: fix zadnji dogadjaji align in centar
+[33m1c9af96[m HEAD@{69}: commit: events almost done
+[33m99968de[m HEAD@{70}: commit: zadnji dogadjaji almost done
+[33m8bc8aa1[m HEAD@{71}: commit: calendar almost done
+[33m910cdd0[m HEAD@{72}: commit: calendar structure info done
+[33m08459a9[m HEAD@{73}: commit: calendar
+[33m2d94c7f[m HEAD@{74}: commit: building calendar
+[33m1be7b57[m HEAD@{75}: commit: za heroku
+[33m3fc4f8f[m HEAD@{76}: commit: start building events
+[33mcef2742[m HEAD@{77}: commit: bog first vrsion
+[33me588146[m HEAD@{78}: commit: home course v2 done
+[33m9a55135[m HEAD@{79}: commit: rebuilding home course page
+[33m3e10617[m HEAD@{80}: commit: change picture from course
+[33m1eacd27[m HEAD@{81}: commit: button from course home removed
+[33m90b3986[m HEAD@{82}: commit: add button to home course
+[33mf816258[m HEAD@{83}: commit: heroku
+[33m1bdf20e[m HEAD@{84}: commit: home course almsot done
+[33m00c4029[m HEAD@{85}: commit: building circle box
+[33m21f3da9[m HEAD@{86}: commit: rebuild popular course
+[33m1d09e51[m HEAD@{87}: commit: heroku
+[33mdbcd4d4[m HEAD@{88}: commit: start building home certificate
+[33m6066a2d[m HEAD@{89}: commit: working on popular course
+[33mcc7fe24[m HEAD@{90}: commit: start bulding popular course
+[33m8ee7cee[m HEAD@{91}: commit: home about page almost done
+[33mc141ee9[m HEAD@{92}: commit: working on home about
+[33m3b730bf[m HEAD@{93}: commit: add prop-types to box
+[33mb0dd059[m HEAD@{94}: commit: merge all from v2 branch
+[33mcdb692a[m[33m ([m[1;31morigin/v2[m[33m, [m[1;32mv2[m[33m)[m HEAD@{95}: merge v2: Fast-forward
+[33mb7ae79a[m HEAD@{96}: checkout: moving from v2 to master
+[33mcdb692a[m[33m ([m[1;31morigin/v2[m[33m, [m[1;32mv2[m[33m)[m HEAD@{97}: commit: header, home, and boxes done
+[33mfad98d4[m HEAD@{98}: commit: boxes almost done
+[33mae541cf[m HEAD@{99}: commit: building homeOne page
+[33maa905fd[m HEAD@{100}: commit: building homeOne page
+[33m73e6c62[m HEAD@{101}: commit: start building landing page-one
+[33md94aad6[m HEAD@{102}: commit: header is done
+[33m4185c4d[m HEAD@{103}: commit: header almost done
+[33m3b32139[m HEAD@{104}: commit: workign on header
+[33mc8c02fa[m HEAD@{105}: commit: header ready for styling
+[33m38bad90[m HEAD@{106}: commit: header structure working
+[33m66d7f62[m HEAD@{107}: commit: making structure for home page
+[33m79921f2[m HEAD@{108}: commit: rebuilding
+[33mb7ae79a[m HEAD@{109}: checkout: moving from master to v2
+[33mb7ae79a[m HEAD@{110}: commit: adding prop-types to box
+[33m6678a18[m HEAD@{111}: commit: landing box
+[33ma5960b7[m HEAD@{112}: commit: start building on another way
+[33mdfc4c10[m HEAD@{113}: commit: test
+[33m0beb65d[m HEAD@{114}: commit: test
+[33m106b90d[m HEAD@{115}: commit: card almost done
+[33mbfe1451[m HEAD@{116}: commit: za heroku
+[33m3a05ae0[m HEAD@{117}: commit: cards almost done
+[33mc2ac9c7[m HEAD@{118}: commit: card
+[33m1675e54[m HEAD@{119}: commit: bulding courses content
+[33m29a8d14[m HEAD@{120}: commit: start building course components
+[33m9b69557[m HEAD@{121}: commit: make it better
+[33mf0bd971[m HEAD@{122}: commit: landing page almost done
+[33mec47c19[m HEAD@{123}: commit: start building nav
+[33m71cbbf8[m HEAD@{124}: commit: global app sass setting done
+[33m020f405[m HEAD@{125}: commit: landing, logo and nav strukture done
+[33m09295a4[m HEAD@{126}: commit: fix gitignore
+[33m3671b46[m HEAD@{127}: commit: start building pages structure
+[33m6121850[m HEAD@{128}: commit: start building pages structure
+[33m7d97a65[m HEAD@{129}: commit: start building pages structure
+[33mf371792[m HEAD@{130}: commit: sass ready
+[33m0de76a6[m HEAD@{131}: commit: react start
+[33m7df3be0[m HEAD@{132}: commit: start building node api
+[33m2833fbd[m HEAD@{133}: commit (initial): project start
