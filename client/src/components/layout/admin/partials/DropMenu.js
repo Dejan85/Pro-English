@@ -5,13 +5,13 @@ const DropMenu = () => {
   return (
     <ul className="dashboard__dropMenu">
       <li className="dashboard__dropMenuItem">
-        <Link to="/" className="dashboard__dropMenuLink">
+        <Link to="/admin/xad" className="dashboard__dropMenuLink">
           Add Blog
         </Link>
-        <Link to="/" className="dashboard__dropMenuLink">
+        <Link to="/admin" className="dashboard__dropMenuLink">
           Edit Blog
         </Link>
-        <Link to="/" className="dashboard__dropMenuLink">
+        <Link to="/admin" className="dashboard__dropMenuLink">
           Delete Blog
         </Link>
       </li>

@@ -1,13 +1,18 @@
 import React, { useRef } from "react";
+import { Route } from "react-router-dom";
+import usePrivateRoute from "../../hooks/auth/usePrivateRoute";
 
 // components
 import DropMenu from "./partials/DropMenu";
+import AddBlog from "./partials/blog/AddBlog";
 
 const Dashboard = () => {
   const blogRef = useRef();
   const dropMenuHandler = e => {
     blogRef.current.classList.toggle("toggle");
   };
+  const { PrivateRoute } = usePrivateRoute();
+
   return (
     <div className="dashboard">
       <div className="dashboard__header">
@@ -30,6 +35,9 @@ const Dashboard = () => {
             </li>
             <DropMenu />
           </ul>
+        </div>
+        <div className="test">
+          <Route exact path="/admin/xad" component={AddBlog} />
         </div>
       </div>
     </div>

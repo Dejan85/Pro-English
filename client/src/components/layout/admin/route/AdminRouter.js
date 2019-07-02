@@ -9,6 +9,7 @@ import usePrivateRoute from "../../../hooks/auth/usePrivateRoute";
 import Dashboard from "../Dashboard";
 import Signin from "../auth/Signin";
 import Signup from "../auth/Signup";
+import AddBlog from "../../../layout/admin/partials/blog/AddBlog";
 
 const AdminRouter = () => {
   const { PrivateRoute } = usePrivateRoute();
