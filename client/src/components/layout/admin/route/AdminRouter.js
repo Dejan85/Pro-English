@@ -14,17 +14,10 @@ const AdminRouter = props => {
   // const { PrivateRoute } = usePrivateRoute();
   const { isAuthenticated } = useAuthenticate();
 
-  const redirect = () => {
-    if (props.history.location.pathname === "/admin") {
-      return <Redirect to="/admin/signin" />;
-    }
-  };
-
   return (
     <>
-      {isAuthenticated() && <Dashboard />}
-      {/* auth */}
-      {redirect()}
+      {(isAuthenticated() && <Dashboard />) ||
+        (!isAuthenticated() && <Redirect to="/admin/signin" />)}
       <Route exact path="/admin/signin" component={Signin} />
       <Route exact path="/admin/signup" component={Signup} />
     </>
