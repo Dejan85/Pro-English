@@ -13,9 +13,6 @@ const Dashboard = () => {
   const { PrivateRoute } = usePrivateRoute();
   const { dropMenuHandler } = useDropMenu();
   const blogRef = useRef();
-  // const dropMenuHandler = e => {
-  //   blogRef.current.classList.toggle("toggle");
-  // };
 
   return (
     <Router>
