@@ -5,6 +5,10 @@
     color: white;
     font-size: 5rem;
     font-family: $font-1;
+
+    @include respond(1430) {
+      font-size: 3.8rem;
+    }
   }
 
   &__p {

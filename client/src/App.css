@@ -1,24 +1,45 @@
 .home__content {
   background-image: url("./sass/images/9.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .home__course {
   background-image: url("./sass/images/1.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
 }
 
 .about__background {
   background-image: url("./sass/images/7.jpg");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .about__background__2 {
   background-image: url("./sass/images/3.jpg");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .course {
   background-image: url("./sass/images/5.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .course__content2 {
   background-image: url("./sass/images/14.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
   /* background-image: url("./sass/images/28.jpg"); */
 }
