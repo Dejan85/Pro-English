@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // img
-import welcome from "../../../sass/images/welcome.png";
+import welcome from "../../../sass/images/question3.jpg";
 
 const HomeAbout = () => {
   return (

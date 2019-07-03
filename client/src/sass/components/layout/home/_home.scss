@@ -25,6 +25,13 @@
     max-width: 100rem;
     width: 100%;
     z-index: 2;
+    padding: 0 2rem 0 2rem;
+    // outline: 1px solid red;
+
+    @include respond(1440) {
+      max-width: 80rem;
+      width: 100%;
+    }
   }
 
   &__p {
@@ -46,9 +53,10 @@
 
     // outline: 1px solid red;
 
-    @include respond(1430) {
-      max-width: 100rem;
+    @include respond(1440) {
+      max-width: 90rem;
       width: 100%;
+      margin-top: -8rem;
     }
   }
 
@@ -72,9 +80,9 @@
       display: block;
       text-align: center;
       width: 19.6rem;
-      @include respond(1430) {
+
+      @include respond(1440) {
         width: 15rem;
-        // outline: 1px solid red;
       }
     }
   }
@@ -86,7 +94,7 @@
     width: 19.6rem;
     height: 19.6rem;
 
-    @include respond(1430) {
+    @include respond(1440) {
       width: 15rem;
       height: 15rem;
     }
@@ -120,12 +128,9 @@
     margin-top: 15rem;
     padding: 0 2rem 0 2rem;
 
-    // padding: 0 6rem 0 5rem;
-    // outline: 5px solid red;
-
     &__text {
       width: 60%;
-      // text-align: justify;
+      padding-right: 2rem;
       // outline: 1px solid red;
     }
 
@@ -155,7 +160,7 @@
       display: flex;
       // outline: 1px solid red;
       img {
-        // object-fit: cover;
+        object-fit: cover;
         width: 100%;
         height: auto;
       }

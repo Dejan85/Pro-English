@@ -56,15 +56,15 @@ $breakpoint argument choices:
     }
   }
 
-  @if $breakpoint == 1280 {
+  @if $breakpoint == 1200 {
     @media (max-width: 75em) {
       // 1280px
       @content;
     }
   }
 
-  @if $breakpoint == 1430 {
-    @media (max-width: 89.375em) {
+  @if $breakpoint == 1440 {
+    @media (max-width: 90em) {
       // 1420px
       @content;
     }
