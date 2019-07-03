@@ -41,6 +41,10 @@
       font-size: 4rem;
       font-family: $font-1;
       color: $color-dark;
+
+      @include respond(1440) {
+        font-size: 3.8rem;
+      }
     }
 
     &__p-2,
@@ -56,6 +60,10 @@
       font-family: $font-1;
       text-decoration: none;
       font-size: 1.7rem;
+
+      @include respond(1440) {
+        font-size: 1.6rem;
+      }
     }
   }
 

@@ -7,9 +7,9 @@
     font-family: $font-1;
     font-weight: 700;
 
-    // @include respond(1430) {
-    //   font-size: 1.4rem;
-    // }
+    @include respond(1440) {
+      font-size: 1.5rem;
+    }
   }
 }
 

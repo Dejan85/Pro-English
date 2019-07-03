@@ -2,6 +2,10 @@
   &__h3 {
     font-family: $font-1;
     font-size: 3.5rem;
+
+    @include respond(1440) {
+      font-size: 3.3rem;
+    }
   }
 
   &__p {
@@ -9,6 +13,10 @@
     font-family: $font-8;
     color: $color-grey-dark;
     line-height: 1.4;
+
+    // @include respond(1440) {
+    //   font-size: 1.5rem;
+    // }
   }
 
   &__link {
@@ -17,5 +25,9 @@
     font-size: 1.7rem;
     font-family: $font-1;
     font-weight: 600;
+
+    @include respond(1440) {
+      font-size: 1.5rem;
+    }
   }
 }
