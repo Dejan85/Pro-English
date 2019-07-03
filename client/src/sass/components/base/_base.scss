@@ -35,6 +35,11 @@ html {
     font-size: 43.75%; // 1 rem = 7 / 16 * 100 = 50%
   }
 
+  @include respond(840) {
+    // width <980
+    font-size: 37.5%; // 1 rem = 7 / 16 * 100 = 50%
+  }
+
   // @include respond(phone) {
   //   font-size: 50%;
   // }
