@@ -10,6 +10,10 @@
     height: 43rem;
   }
 
+  @include respond(1200) {
+    height: 44rem;
+  }
+
   @include fliping-card;
 
   &__img,

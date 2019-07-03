@@ -3,6 +3,7 @@ import React from "react";
 // component
 import Nav from "./Nav";
 import Logo from "./Logo";
+import ReasponsiveNav from "./ResponsivNav";
 
 const Header = () => {
   return (
@@ -10,6 +11,7 @@ const Header = () => {
       <div className="header__container">
         <Logo />
         <Nav />
+        <ReasponsiveNav />
       </div>
     </div>
   );
