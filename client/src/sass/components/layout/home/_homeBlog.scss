@@ -7,6 +7,10 @@
   padding: 10rem 2rem 0 2rem;
   margin: 0 auto;
 
+  @include respond(980) {
+    padding: 10rem 4rem 0 4rem;
+  }
+
   @include h3-with-line;
 
   &__newsletter {
@@ -21,18 +25,33 @@
   }
 
   &__blogBox {
-    // outline: 1px solid red;
-    max-width: 32rem;
     max-width: 27rem;
-    // height: 40rem;
     width: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
-    // border: 1px solid $color-grey-light;
+
+    @include respond(980) {
+      display: flex;
+      max-width: 120rem;
+      width: 100%;
+      margin-bottom: 7rem;
+    }
   }
 
   &__img {
     width: 100%;
     object-fit: cover;
+
+    @include respond(980) {
+      width: 50%;
+    }
+  }
+
+  &__content2 {
+    @include respond(980) {
+      display: flex;
+      flex-direction: column;
+      padding: 3rem 3rem;
+    }
   }
 
   &__link {
@@ -40,6 +59,10 @@
     padding: 1.5rem 0;
     text-align: center;
     transition: all 0.5s;
+
+    @include respond(980) {
+      padding: 2rem 0;
+    }
 
     &:hover {
       color: $color-pink-dark;
@@ -50,21 +73,41 @@
     text-align: justify;
     padding: 0rem 1.5rem;
     padding-bottom: 2rem;
+
+    @include respond(980) {
+      padding: 0;
+    }
   }
 
   &__line2 {
     width: 3rem;
     height: 4px;
     margin-left: 1rem;
-    background: cornflowerblue;
+    background: $color-pink-dark;
+
+    @include respond(980) {
+      margin-left: 0;
+      align-self: flex-end;
+      margin-top: 5rem;
+    }
   }
 
   &__span {
     display: inline-block;
     padding: 1rem 1rem;
+
+    @include respond(980) {
+      padding: 1rem 0;
+      align-self: flex-end;
+    }
   }
 
   &__p2 {
     padding: 1rem 1rem;
+
+    @include respond(980) {
+      align-self: flex-end;
+      padding: 1rem 0;
+    }
   }
 }

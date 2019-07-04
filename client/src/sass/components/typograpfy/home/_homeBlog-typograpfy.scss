@@ -11,12 +11,20 @@
     font-weight: 800;
     text-decoration: none;
     color: $color-dark-2;
+
+    @include respond(980) {
+      font-size: 2.4rem;
+    }
   }
 
   &__p {
     font-size: 1.4rem;
     font-family: $font-8;
     color: $color-grey-dark;
+
+    @include respond(980) {
+      font-size: 1.7rem;
+    }
   }
 
   &__span {
@@ -35,8 +43,7 @@
     span {
       display: inline-block;
       padding-left: 3px;
-      color: cornflowerblue;
-      //   color: $color-pink-dark;
+      color: $color-pink-dark;
     }
   }
 }

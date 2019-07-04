@@ -9,6 +9,7 @@ import slika from "../../../sass/images/30.jpg";
 import slika2 from "../../../sass/images/31.jpg";
 import slika3 from "../../../sass/images/33.jpg";
 import slika4 from "../../../sass/images/34.jpg";
+import kengur from "../../../sass/images/kengur.jpg";
 
 const HomeBlog = () => {
   return (
@@ -16,7 +17,7 @@ const HomeBlog = () => {
       <h3 className="homeBlog__h3">Blog</h3>
       <div className="homeBlog__line" />
       <div className="homeBlog__content">
-        <BlogBox slika={slika} />
+        <BlogBox slika={kengur} />
         <BlogBox slika={slika2} />
         <BlogBox slika={slika3} />
         <BlogBox slika={slika4} />
