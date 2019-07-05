@@ -9,11 +9,23 @@
     @include respond(1440) {
       font-size: 3.8rem;
     }
+
+    @include respond(980) {
+      font-size: 4.8rem;
+    }
   }
 
   &__p {
     font-size: 2.5rem;
     font-weight: 500;
+
+    @include respond(980) {
+      font-size: 2.8rem;
+    }
+
+    @include respond(820) {
+      font-size: 3rem;
+    }
   }
 
   &__icon {
@@ -33,6 +45,18 @@
       font-size: 1.5rem;
       font-family: $font-1;
       color: $color-grey;
+
+      @include respond(980) {
+        font-size: 1.6rem;
+      }
+
+      @include respond(920) {
+        font-size: 1.8rem;
+      }
+
+      @include respond(820) {
+        font-size: 2rem;
+      }
     }
   }
 
@@ -45,6 +69,18 @@
       @include respond(1440) {
         font-size: 3.8rem;
       }
+
+      @include respond(980) {
+        font-size: 4rem;
+      }
+
+      @include respond(920) {
+        font-size: 4.2rem;
+      }
+
+      @include respond(820) {
+        font-size: 4.5rem;
+      }
     }
 
     &__p-2,
@@ -53,6 +89,18 @@
       font-family: $font-8;
       color: $color-grey-dark;
       line-height: 1.4;
+
+      @include respond(980) {
+        font-size: 1.9rem;
+      }
+
+      @include respond(920) {
+        font-size: 2rem;
+      }
+
+      @include respond(820) {
+        font-size: 2.2rem;
+      }
     }
 
     &__link {
@@ -63,6 +111,18 @@
 
       @include respond(1440) {
         font-size: 1.6rem;
+      }
+
+      @include respond(980) {
+        font-size: 1.9rem;
+      }
+
+      @include respond(920) {
+        font-size: 2rem;
+      }
+
+      @include respond(820) {
+        font-size: 2.3rem;
       }
     }
   }

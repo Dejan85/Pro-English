@@ -6,6 +6,18 @@
     @include respond(1440) {
       font-size: 3.3rem;
     }
+
+    @include respond(980) {
+      font-size: 3.6rem;
+    }
+
+    @include respond(920) {
+      font-size: 3.8rem;
+    }
+
+    @include respond(820) {
+      font-size: 3.9rem;
+    }
   }
 
   &__p {
@@ -14,9 +26,17 @@
     color: $color-grey-dark;
     line-height: 1.4;
 
-    // @include respond(1440) {
-    //   font-size: 1.5rem;
-    // }
+    @include respond(980) {
+      font-size: 1.7rem;
+    }
+
+    @include respond(920) {
+      font-size: 1.9rem;
+    }
+
+    @include respond(820) {
+      font-size: 2.1rem;
+    }
   }
 
   &__link {
@@ -28,6 +48,18 @@
 
     @include respond(1440) {
       font-size: 1.5rem;
+    }
+
+    @include respond(980) {
+      font-size: 1.6rem;
+    }
+
+    @include respond(920) {
+      font-size: 1.8rem;
+    }
+
+    @include respond(820) {
+      font-size: 2.3rem;
     }
   }
 }
