@@ -55,6 +55,11 @@ html {
     font-size: 25%; // 1 rem = 4 / 16 * 100 = 50%
   }
 
+  @include respond(520) {
+    // width <520
+    font-size: 18.75%; // 1 rem = 3 / 16 * 100 = 50%
+  }
+
   // @include respond(1800) {
   //   font-size: 75%; // 1 rem = 12 / 16 * 100 = 74%
   // }
