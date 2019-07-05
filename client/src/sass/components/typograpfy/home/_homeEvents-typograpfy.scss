@@ -4,6 +4,10 @@
     font-size: 2.6rem;
     color: $color-dark-3;
     font-weight: 400;
+
+    @include respond(820) {
+      font-size: 3.5rem;
+    }
   }
 
   &__link,
@@ -13,6 +17,10 @@
     font-size: 1.3rem;
     text-transform: uppercase;
     font-family: $font-8;
+
+    @include respond(820) {
+      font-size: 1.8rem;
+    }
   }
 
   &__upcoming {
@@ -22,6 +30,10 @@
       font-weight: 600;
       line-height: 1.2;
       color: $color-grey-dark;
+
+      @include respond(820) {
+        font-size: 2.3rem;
+      }
     }
 
     &__span {
@@ -30,6 +42,10 @@
       font-weight: 500;
       line-height: 1.2;
       color: $color-grey-2;
+
+      @include respond(820) {
+        font-size: 1.8rem;
+      }
     }
   }
 }
@@ -39,6 +55,10 @@
     color: white;
     font-size: 1.6rem;
     font-family: $font-1;
+
+    @include respond(820) {
+      font-size: 2.5rem;
+    }
   }
 
   &__item {
@@ -47,6 +67,10 @@
     font-size: 1.3rem;
     font-family: $font-8;
     font-weight: 600;
+
+    @include respond(820) {
+      font-size: 2.2rem;
+    }
   }
 
   &__item-2 {
@@ -58,12 +82,20 @@
     @include respond(980) {
       font-size: 2rem;
     }
+
+    @include respond(820) {
+      font-size: 2.4rem;
+    }
   }
 
   &__event {
     &__day {
       font-size: 2.5rem;
       font-family: $font-8;
+
+      @include respond(820) {
+        font-size: 4rem;
+      }
     }
 
     &__month {
@@ -72,6 +104,10 @@
       font-weight: 600;
       color: $color-grey-2;
       font-size: 1.2rem;
+
+      @include respond(820) {
+        font-size: 2rem;
+      }
     }
 
     &__h5 {
@@ -80,6 +116,10 @@
       font-weight: 600;
       line-height: 1.2;
       color: $color-grey-dark;
+
+      @include respond(820) {
+        font-size: 2.3rem;
+      }
     }
 
     &__p {
@@ -89,9 +129,17 @@
       line-height: 1.2;
       color: $color-grey-2;
 
+      @include respond(820) {
+        font-size: 1.9rem;
+      }
+
       i {
         color: $color-pink-dark;
         font-size: 1.5rem;
+
+        @include respond(820) {
+          font-size: 1.9rem;
+        }
       }
     }
   }

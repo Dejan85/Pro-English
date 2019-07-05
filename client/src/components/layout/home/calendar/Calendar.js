@@ -41,28 +41,30 @@ const Calendar = () => {
 
   return (
     <div className="calendar">
-      <div className="calendar__header">
-        <div className="calendar__icon" onClick={handleMonthDecrease}>
-          <i className="fas fa-chevron-left" />
+      <div className="calendar__container">
+        <div className="calendar__header">
+          <div className="calendar__icon" onClick={handleMonthDecrease}>
+            <i className="fas fa-chevron-left" />
+          </div>
+          <p className="calendar__p">{`${month} ${year}`}</p>
+          <div className="calendar__icon" onClick={handleMonthIncrease}>
+            <i className="fas fa-chevron-right" />
+          </div>
         </div>
-        <p className="calendar__p">{`${month} ${year}`}</p>
-        <div className="calendar__icon" onClick={handleMonthIncrease}>
-          <i className="fas fa-chevron-right" />
+        <div className="calendar__week">
+          <ul className="calendar__list">{weeks()}</ul>
         </div>
-      </div>
-      <div className="calendar__week">
-        <ul className="calendar__list">{weeks()}</ul>
-      </div>
-      <div className="calendar__day">
-        <ul className="calendar__list-2">
-          {allDays.map((item, index) => {
-            return (
-              <li key={index} className="calendar__item-2">
-                {item}
-              </li>
-            );
-          })}
-        </ul>
+        <div className="calendar__day">
+          <ul className="calendar__list-2">
+            {allDays.map((item, index) => {
+              return (
+                <li key={index} className="calendar__item-2">
+                  {item}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
       <div className="calendar__event">
         <CalendarEventCard />

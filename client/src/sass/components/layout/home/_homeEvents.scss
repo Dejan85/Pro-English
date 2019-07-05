@@ -39,13 +39,26 @@
       width: 100%;
       // outline: 1px solid red;
     }
+
+    @include respond(820) {
+      max-width: 120rem;
+      width: 100%;
+    }
   }
 
   &__latest {
     @include respond(980) {
-      // outline: 1px solid red;
       max-width: 53rem;
       width: 100%;
+    }
+
+    @include respond(820) {
+      max-width: 120rem;
+      width: 100%;
+      margin: 7rem 0;
+      padding-top: 2rem;
+      border-top: 1px solid $color-grey-light;
+      margin-bottom: 0 !important;
     }
   }
 
@@ -53,7 +66,9 @@
     @include respond(980) {
       max-width: 120rem;
       width: 100%;
-      padding-top: 10rem;
+      margin: 7rem 0;
+      padding-top: 2rem;
+      border-top: 1px solid $color-grey-light;
     }
   }
 
@@ -73,6 +88,9 @@
 
   &__link,
   &__link-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: $color-pink-dark;
     padding: 1rem 2.4rem;
     margin-top: 5rem;
@@ -85,11 +103,19 @@
 
   &__link {
     width: 10rem;
+
+    @include respond(820) {
+      width: 12rem;
+    }
   }
 
   &__link-2 {
     width: 10rem;
     margin-left: 2px;
+
+    @include respond(820) {
+      width: 12rem;
+    }
   }
 
   &__upcoming {
@@ -139,7 +165,6 @@
 }
 
 .calendar {
-  // outline: 1px solid red;
   margin-top: 5rem;
   max-width: 39rem;
   width: 100%;
@@ -149,6 +174,17 @@
     width: 100%;
   }
 
+  @include respond(820) {
+    max-width: 120rem;
+    width: 100%;
+  }
+
+  &__container {
+    position: relative;
+    width: 100%;
+    // outline: 1px solid red;
+  }
+
   &__header {
     display: flex;
     justify-content: space-between;
@@ -156,6 +192,10 @@
     width: 100%;
     height: 4rem;
     background: $color-dark-3;
+
+    @include respond(820) {
+      height: 6rem;
+    }
   }
 
   &__icon {
@@ -180,8 +220,7 @@
 
   &__item {
     list-style-type: none;
-    max-width: 6.3rem;
-    width: 100%;
+    flex: 1;
     padding: 0.5rem 0;
     text-align: center;
     background: $color-green-blue;
@@ -201,20 +240,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1 0 14.28%;
-    // width: 14.28%;
-    padding: 1.6rem 0;
+    flex: 1 1 14.28%;
+    padding: 5% 0;
     list-style-type: none;
     border: 0.5px solid $color-grey-light;
-
-    @include respond(980) {
-      padding: 2.25rem 0;
-    }
   }
 
   &__event {
     width: 100%;
-    // outline: 1px solid red;
+    padding-top: 5rem;
 
     &__container {
       display: flex;
@@ -238,6 +272,11 @@
       border-left: 1px solid $color-grey-light;
       border-right: 1px solid $color-grey-light;
       border-bottom: 1px solid $color-grey-light;
+
+      @include respond(820) {
+        width: 9.81rem;
+        height: 10.8rem;
+      }
     }
 
     &__day {
@@ -261,7 +300,6 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      // outline: 1px solid red;
       width: 75%;
       padding-left: 1rem;
 
@@ -270,15 +308,7 @@
       }
     }
 
-    &__h5 {
-      // padding: 0.5rem;
-      // outline: 1px solid red;
-      // width: 25rem;
-    }
-
     &__p {
-      // padding: 1.2rem 0.5rem;
-
       i {
         padding-right: 1rem;
       }
