@@ -14,10 +14,30 @@
     @include respond(1200) {
       font-size: 1.6rem;
     }
+
+    @include respond(1200) {
+      font-size: 1.6rem;
+    }
   }
 
   &__responsiveNav {
     font-size: 2.5rem;
+
+    @include respond(920) {
+      font-size: 3rem;
+    }
+
+    @include respond(820) {
+      font-size: 4rem;
+    }
+
+    @include respond(768) {
+      font-size: 5rem;
+    }
+
+    @include respond(680) {
+      font-size: 6rem;
+    }
   }
 }
 

@@ -7,6 +7,18 @@
   box-shadow: 0 1px 1rem rgba($color-dark, 0.15);
   z-index: 100;
 
+  @include respond(980) {
+    height: 7rem;
+  }
+
+  @include respond(920) {
+    height: 8rem;
+  }
+
+  @include respond(820) {
+    height: 9rem;
+  }
+
   &__container {
     display: flex;
     justify-content: space-between;
@@ -32,6 +44,22 @@
 
     @include respond(1440) {
       height: 5rem;
+    }
+
+    @include respond(1440) {
+      height: 5rem;
+    }
+
+    @include respond(980) {
+      height: 7rem;
+    }
+
+    @include respond(920) {
+      height: 8rem;
+    }
+
+    @include respond(820) {
+      height: 9rem;
     }
   }
 
