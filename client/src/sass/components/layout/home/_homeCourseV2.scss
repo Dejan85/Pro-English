@@ -15,6 +15,10 @@
   &__left {
     width: 50%;
     height: 45rem;
+
+    @include respond(680) {
+      width: 100%;
+    }
   }
 
   &__img {
@@ -28,6 +32,10 @@
     flex-direction: column;
     width: 50%;
     height: 45rem;
+
+    @include respond(680) {
+      width: 100%;
+    }
   }
 
   &__content,
@@ -45,9 +53,20 @@
       padding-right: 4rem;
     }
 
+    @include respond(680) {
+      max-width: 120rem;
+      width: 100%;
+    }
+
     p {
       max-width: 50rem;
       text-align: justify;
+
+      @include respond(680) {
+        max-width: 120rem;
+        width: 100%;
+        padding: 0 0rem 0 4rem;
+      }
     }
 
     a {
@@ -69,6 +88,17 @@
 
     @include respond(980) {
       padding-left: 4rem;
+    }
+
+    @include respond(680) {
+      align-self: flex-start;
+      align-items: flex-start;
+    }
+
+    p {
+      @include respond(680) {
+        padding: 1rem 0rem;
+      }
     }
   }
 }

@@ -35,6 +35,14 @@
       width: 100%;
       margin-bottom: 7rem;
     }
+
+    @include respond(680) {
+      display: flex;
+      flex-direction: column;
+      max-width: 120rem;
+      width: 100%;
+      margin-bottom: 7rem;
+    }
   }
 
   &__img {
@@ -43,6 +51,11 @@
 
     @include respond(980) {
       width: 50%;
+    }
+
+    @include respond(980) {
+      width: 100%;
+      height: 40rem;
     }
   }
 

@@ -42,10 +42,18 @@ $breakpoint argument choices:
     }
   }
 
+  @if $breakpoint == 680 {
+    @media (max-width: 42.5em) {
+      //  (680 / 16px)  16px je default vrednost em-a
+      // 680px
+      @content;
+    }
+  }
+
   @if $breakpoint == 720 {
     @media (max-width: 45em) {
-      //  (480 / 16px)  16px je default vrednost em-a
-      // 768px
+      //  (720 / 16px)  16px je default vrednost em-a
+      // 720px
       @content;
     }
   }

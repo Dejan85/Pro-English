@@ -47,7 +47,12 @@ html {
 
   @include respond(720) {
     // width <720
-    font-size: 31.25%; // 1 rem = 6 / 16 * 100 = 50%
+    font-size: 31.25%; // 1 rem = 5 / 16 * 100 = 50%
+  }
+
+  @include respond(680) {
+    // width <680
+    font-size: 25%; // 1 rem = 4 / 16 * 100 = 50%
   }
 
   // @include respond(1800) {
