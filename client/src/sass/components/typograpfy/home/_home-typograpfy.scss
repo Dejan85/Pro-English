@@ -26,6 +26,10 @@
     @include respond(820) {
       font-size: 3rem;
     }
+
+    @include respond(720) {
+      font-size: 3.5rem;
+    }
   }
 
   &__icon {
@@ -39,6 +43,10 @@
       font-family: $font-1;
       font-weight: 800;
       text-transform: uppercase;
+
+      @include respond(720) {
+        font-size: 2.3rem;
+      }
     }
 
     &__span {
@@ -56,6 +64,10 @@
 
       @include respond(820) {
         font-size: 2rem;
+      }
+
+      @include respond(720) {
+        font-size: 2.2rem;
       }
     }
   }
@@ -78,8 +90,8 @@
         font-size: 4.2rem;
       }
 
-      @include respond(820) {
-        font-size: 4.5rem;
+      @include respond(720) {
+        font-size: 4.7rem;
       }
     }
 
@@ -100,6 +112,10 @@
 
       @include respond(820) {
         font-size: 2.2rem;
+      }
+
+      @include respond(720) {
+        font-size: 2.7rem;
       }
     }
 
@@ -123,6 +139,10 @@
 
       @include respond(820) {
         font-size: 2.3rem;
+      }
+
+      @include respond(720) {
+        font-size: 2.7rem;
       }
     }
   }

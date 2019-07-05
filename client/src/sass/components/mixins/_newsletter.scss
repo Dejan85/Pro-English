@@ -13,6 +13,10 @@
         font-size: 2.2rem;
       }
 
+      @include respond(720) {
+        font-size: 2.8rem;
+      }
+
       &::-webkit-input-placeholder {
         font-family: $font-8;
         font-size: 1.7rem;
@@ -54,6 +58,24 @@
           font-size: 2.2rem;
         }
       }
+
+      @include respond(920) {
+        &::-webkit-input-placeholder {
+          font-size: 2.6rem;
+        }
+
+        &:-ms-input-placeholder {
+          font-size: 2.6rem;
+        }
+
+        &:-moz-placeholder {
+          font-size: 2.6rem;
+        }
+
+        &::-moz-placeholder {
+          font-size: 2.6rem;
+        }
+      }
     }
 
     &__btn {
@@ -70,6 +92,10 @@
 
       @include respond(920) {
         font-size: 1.7rem;
+      }
+
+      @include respond(720) {
+        font-size: 2rem;
       }
 
       &:hover {

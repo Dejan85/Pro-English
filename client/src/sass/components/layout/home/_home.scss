@@ -136,6 +136,10 @@
       width: 60%;
       padding-right: 2rem;
       // outline: 1px solid red;
+
+      @include respond(980) {
+        width: 90%;
+      }
     }
 
     &__h2 {
@@ -162,7 +166,11 @@
 
     &__img {
       display: flex;
-      // outline: 1px solid red;
+
+      @include respond(980) {
+        width: 54%;
+      }
+
       img {
         object-fit: cover;
         width: 100%;

@@ -2,7 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // img
-import welcome from "../../../sass/images/question3.jpg";
+import question3 from "../../../sass/images/question3.jpg";
+import question2 from "../../../sass/images/question2.jpg";
+import question22 from "../../../sass/images/question22.jpg";
 
 const HomeAbout = () => {
   return (
@@ -34,7 +36,7 @@ const HomeAbout = () => {
         </Link>
       </div>
       <div className="home__about__img">
-        <img src={welcome} alt="ProEnglish" />
+        <img src={question2} alt="ProEnglish" />
       </div>
     </div>
   );

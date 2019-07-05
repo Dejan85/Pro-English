@@ -3,6 +3,22 @@
     font-size: 3.5rem;
     font-family: $font-1;
     font-weight: 800;
+
+    @include respond(980) {
+      font-size: 3.7rem;
+    }
+
+    @include respond(920) {
+      font-size: 3.9rem;
+    }
+
+    @include respond(820) {
+      font-size: 4.2rem;
+    }
+
+    @include respond(720) {
+      font-size: 4.7rem;
+    }
   }
 
   &__link {
@@ -23,6 +39,10 @@
     @include respond(820) {
       font-size: 2.9rem;
     }
+
+    @include respond(820) {
+      font-size: 3.6rem;
+    }
   }
 
   &__p {
@@ -39,7 +59,11 @@
     }
 
     @include respond(820) {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
+    }
+
+    @include respond(720) {
+      font-size: 2.8rem;
     }
   }
 
@@ -56,6 +80,10 @@
     @include respond(920) {
       font-size: 1.6rem;
     }
+
+    @include respond(720) {
+      font-size: 2.3rem;
+    }
   }
 
   &__p2 {
@@ -70,6 +98,10 @@
 
     @include respond(920) {
       font-size: 1.5rem;
+    }
+
+    @include respond(720) {
+      font-size: 2rem;
     }
 
     span {
