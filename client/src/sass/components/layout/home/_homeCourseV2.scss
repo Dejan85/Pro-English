@@ -18,6 +18,8 @@
 
     @include respond(680) {
       width: 100%;
+      height: auto;
+      padding-bottom: 2rem;
     }
   }
 
@@ -100,5 +102,11 @@
         padding: 1rem 0rem;
       }
     }
+  }
+}
+
+.responsive__hidden {
+  @include respond(680) {
+    display: none;
   }
 }

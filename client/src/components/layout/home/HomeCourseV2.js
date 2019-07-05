@@ -48,7 +48,11 @@ const HomeCourseV2 = () => {
           </div>
         </div>
         <div className="homeCourseV2__left">
-          <img className="homeCourseV2__img" alt="pro-english" src={slika2} />
+          <img
+            className="homeCourseV2__img responsive__hidden"
+            alt="pro-english"
+            src={slika2}
+          />
         </div>
       </div>
     </div>
