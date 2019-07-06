@@ -21,108 +21,115 @@ $breakpoint argument choices:
     }
   }
 
-  @if $breakpoint == 380 {
-    @media (min-width: 23.75em) {
-      // 320px  (320 / 16px)  16px je default vrednost em-a
-      @content;
-    }
-  }
+  // @if $breakpoint == 1800 {
+  //   @media (min-width: 112.5em) {
+  //     // 1800px
+  //     @content;
+  //   }
+  // }
 
-  @if $breakpoint == 420 {
-    @media (min-width: 26.25em) {
-      // 420px  (420 / 16px)  16px je default vrednost em-a
-      @content;
-    }
-  }
+  // @if $breakpoint == 380 {
+  //   @media (min-width: 23.75em) {
+  //     // 320px  (320 / 16px)  16px je default vrednost em-a
+  //     @content;
+  //   }
+  // }
 
-  @if $breakpoint == 480 {
-    @media (min-width: 30em) {
-      // 480px  (480 / 16px)  16px je default vrednost em-a
-      @content;
-    }
-  }
+  // @if $breakpoint == 420 {
+  //   @media (min-width: 26.25em) {
+  //     // 420px  (420 / 16px)  16px je default vrednost em-a
+  //     @content;
+  //   }
+  // }
 
-  @if $breakpoint == 520 {
-    @media (min-width: 32.5em) {
-      //  (520 / 16px)  16px je default vrednost em-a
-      // 520px
-      @content;
-    }
-  }
+  // @if $breakpoint == 480 {
+  //   @media (min-width: 30em) {
+  //     // 480px  (480 / 16px)  16px je default vrednost em-a
+  //     @content;
+  //   }
+  // }
 
-  @if $breakpoint == 680 {
-    @media (min-width: 42.5em) {
-      //  (680 / 16px)  16px je default vrednost em-a
-      // 680px
-      @content;
-    }
-  }
+  // @if $breakpoint == 520 {
+  //   @media (min-width: 32.5em) {
+  //     //  (520 / 16px)  16px je default vrednost em-a
+  //     // 520px
+  //     @content;
+  //   }
+  // }
 
-  @if $breakpoint == 720 {
-    @media (min-width: 45em) {
-      //  (720 / 16px)  16px je default vrednost em-a
-      // 720px
-      @content;
-    }
-  }
+  // @if $breakpoint == 680 {
+  //   @media (min-width: 42.5em) {
+  //     //  (680 / 16px)  16px je default vrednost em-a
+  //     // 680px
+  //     @content;
+  //   }
+  // }
 
-  @if $breakpoint == 768 {
-    @media (min-width: 48em) {
-      //  (480 / 16px)  16px je default vrednost em-a
-      // 768px
-      @content;
-    }
-  }
+  // @if $breakpoint == 720 {
+  //   @media (min-width: 45em) {
+  //     //  (720 / 16px)  16px je default vrednost em-a
+  //     // 720px
+  //     @content;
+  //   }
+  // }
 
-  @if $breakpoint == 820 {
-    @media (min-width: 51.25em) {
-      //  (820 / 16px)  16px je default vrednost em-a
-      // 820px
-      @content;
-    }
-  }
+  // @if $breakpoint == 768 {
+  //   @media (min-width: 48em) {
+  //     //  (480 / 16px)  16px je default vrednost em-a
+  //     // 768px
+  //     @content;
+  //   }
+  // }
 
-  @if $breakpoint == 920 {
-    @media (min-width: 57.5em) {
-      // 920px
-      @content;
-    }
-  }
+  // @if $breakpoint == 820 {
+  //   @media (min-width: 51.25em) {
+  //     //  (820 / 16px)  16px je default vrednost em-a
+  //     // 820px
+  //     @content;
+  //   }
+  // }
 
-  @if $breakpoint == 980 {
-    @media (min-width: 61.25em) {
-      // 980px
-      @content;
-    }
-  }
+  // @if $breakpoint == 920 {
+  //   @media (min-width: 57.5em) {
+  //     // 920px
+  //     @content;
+  //   }
+  // }
 
-  @if $breakpoint == 1024 {
-    @media (min-width: 64em) {
-      // 1024px
-      @content;
-    }
-  }
+  // @if $breakpoint == 980 {
+  //   @media (min-width: 61.25em) {
+  //     // 980px
+  //     @content;
+  //   }
+  // }
 
-  @if $breakpoint == 1200 {
-    @media (min-width: 75em) {
-      // 1200px
-      @content;
-    }
-  }
+  // @if $breakpoint == 1024 {
+  //   @media (min-width: 64em) {
+  //     // 1024px
+  //     @content;
+  //   }
+  // }
 
-  @if $breakpoint == 1440 {
-    @media (min-width: 90em) {
-      // 1420px
-      @content;
-    }
-  }
+  // @if $breakpoint == 1200 {
+  //   @media (min-width: 75em) {
+  //     // 1200px
+  //     @content;
+  //   }
+  // }
 
-  @if $breakpoint == 1920 {
-    @media (min-width: 112.5em) {
-      // 1420px
-      @content;
-    }
-  }
+  // @if $breakpoint == 1440 {
+  //   @media (min-width: 90em) {
+  //     // 1420px
+  //     @content;
+  //   }
+  // }
+
+  // @if $breakpoint == 1920 {
+  //   @media (min-width: 112.5em) {
+  //     // 1420px
+  //     @content;
+  //   }
+  // }
 
   // @if $breakpoint == big-desktop {
   //   @media (min-width: 112.5em) {

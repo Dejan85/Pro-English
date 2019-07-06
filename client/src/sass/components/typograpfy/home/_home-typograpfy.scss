@@ -37,7 +37,7 @@
       text-transform: uppercase;
 
       @include respond(320) {
-        font-size: 4rem;
+        font-size: 3.7rem;
       }
     }
 
@@ -47,7 +47,7 @@
       color: $color-grey;
 
       @include respond(320) {
-        font-size: 3.4rem;
+        font-size: 2.9rem;
       }
     }
   }
