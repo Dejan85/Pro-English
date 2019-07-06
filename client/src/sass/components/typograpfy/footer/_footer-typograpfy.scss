@@ -17,6 +17,10 @@
     line-height: 1.1;
     font-weight: 600;
     font-size: 1.7rem;
+
+    @include respond(320) {
+      font-size: 3.4rem;
+    }
   }
 
   &__p {
@@ -26,6 +30,11 @@
     font-weight: 300;
     font-size: 1.4rem;
     text-align: justify;
+
+    @include respond(320) {
+      font-size: 3rem;
+      font-weight: 400;
+    }
   }
 
   &__list {
@@ -47,6 +56,10 @@
 
     &:hover {
       color: #0896ea;
+    }
+
+    @include respond(320) {
+      font-size: 2.8rem;
     }
   }
 }

@@ -20,7 +20,7 @@
   &__front {
     background: white;
     transform: perspective(600px) rotateY(0deg);
-    @include respond(980) {
+    @include respond(320) {
       transform: none;
     }
   }
@@ -28,7 +28,7 @@
   &__back {
     background: $color-pink-dark;
     transform: perspective(600px) rotateY(180deg);
-    @include respond(980) {
+    @include respond(320) {
       display: none;
     }
   }
@@ -36,14 +36,14 @@
   &:hover > &__front {
     transform: perspective(600px) rotateY(-180deg);
 
-    @include respond(980) {
+    @include respond(320) {
       transform: none;
     }
   }
 
   &:hover > &__back {
     transform: perspective(600px) rotateY(0deg);
-    @include respond(980) {
+    @include respond(320) {
       transform: none;
     }
   }
