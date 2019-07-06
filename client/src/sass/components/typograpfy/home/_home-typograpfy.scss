@@ -5,16 +5,28 @@
     color: white;
     font-size: 5rem;
     font-family: $font-1;
+
+    @include respond(320) {
+      font-size: 5.2rem;
+    }
   }
 
   &__p {
     font-size: 2.5rem;
     font-weight: 500;
+
+    @include respond(320) {
+      font-size: 3.3rem;
+    }
   }
 
   &__icon {
     font-size: 7rem;
     color: white;
+
+    @include respond(320) {
+      font-size: 13rem;
+    }
   }
 
   &__box {
@@ -23,12 +35,20 @@
       font-family: $font-1;
       font-weight: 800;
       text-transform: uppercase;
+
+      @include respond(320) {
+        font-size: 4rem;
+      }
     }
 
     &__span {
       font-size: 1.5rem;
       font-family: $font-1;
       color: $color-grey;
+
+      @include respond(320) {
+        font-size: 3.4rem;
+      }
     }
   }
 
@@ -37,6 +57,10 @@
       font-size: 4rem;
       font-family: $font-1;
       color: $color-dark;
+
+      @include respond(320) {
+        font-size: 7rem;
+      }
     }
 
     &__p-2,
@@ -45,6 +69,11 @@
       font-family: $font-8;
       color: $color-grey-dark;
       line-height: 1.4;
+
+      @include respond(320) {
+        font-size: 3.4rem;
+        text-align: center;
+      }
     }
 
     &__link {
@@ -52,6 +81,10 @@
       font-family: $font-1;
       text-decoration: none;
       font-size: 1.7rem;
+
+      @include respond(320) {
+        font-size: 3.4rem;
+      }
     }
   }
 

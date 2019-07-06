@@ -7,6 +7,10 @@
   box-shadow: 0 1px 1rem rgba($color-dark, 0.15);
   z-index: 100;
 
+  @include respond(320) {
+    height: 9rem;
+  }
+
   &__container {
     display: flex;
     justify-content: space-between;
@@ -21,6 +25,10 @@
     height: 6rem;
     width: auto;
 
+    @include respond(320) {
+      height: 7.3rem;
+    }
+
     img {
       max-width: 100%;
       max-height: 100%;
@@ -29,6 +37,10 @@
 
   &__list {
     display: flex;
+
+    @include respond(320) {
+      display: none;
+    }
   }
 
   &__item {
@@ -70,6 +82,12 @@
   &__responsiveNav {
     display: none;
     padding-right: 1rem;
+
+    @include respond(320) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
 
