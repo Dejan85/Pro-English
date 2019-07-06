@@ -1,56 +1,87 @@
 .homeCourseV2 {
-  //   display: flex;
   width: 100%;
   margin-top: 12rem;
 
   &__container {
     display: flex;
-    // max-width: 140rem;
     width: 100%;
-    // padding: 0rem 2rem 0 2rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
     flex-wrap: wrap;
+
+    @include respond(320) {
+      flex-direction: column;
+    }
   }
 
   &__left {
+    display: flex;
     width: 50%;
-    height: 45rem;
+    // height: 45rem;
+
+    @include respond(320) {
+      width: 100%;
+      // height: 0;
+    }
   }
 
   &__img {
     width: 100%;
     object-fit: cover;
     height: 45rem;
+
+    @include respond(320) {
+      height: 40rem;
+    }
   }
 
   &__right {
     display: flex;
     flex-direction: column;
     width: 50%;
-    height: 45rem;
+    // height: 45rem;
+
+    @include respond(320) {
+      width: 100%;
+    }
   }
 
   &__content,
   &__content2 {
     display: flex;
     flex-direction: column;
-    max-width: 60rem;
-    width: 100%;
+    width: 60rem;
+    // width: 100%;
     height: 100%;
     align-items: flex-end;
     justify-content: space-around;
     padding-right: 2rem;
 
+    @include respond(320) {
+      text-align: center;
+      align-items: center;
+      padding-right: 0rem;
+      width: 100%;
+      padding: 0 2rem;
+    }
+
     p {
-      max-width: 50rem;
+      width: 50rem;
       text-align: justify;
+
+      @include respond(320) {
+        width: 100%;
+      }
     }
 
     a {
       display: inline-block;
-      padding: 1rem 3rem;
+      padding: 1rem 5rem;
       background: $color-pink-dark;
       transition: all 1s;
+
+      @include respond(320) {
+        margin: 5rem 0;
+      }
 
       &:hover {
         background: darken($color-pink-dark, 20%);
@@ -62,8 +93,22 @@
     align-self: flex-end;
     align-items: flex-start;
     padding-left: 2rem;
+
+    @include respond(320) {
+      align-items: center;
+      padding: 0rem 2rem;
+    }
+  }
+
+  &__h3 {
+    @include respond(320) {
+      padding: 3rem 0;
+    }
   }
 }
 
-.responsive__hidden {
+.desktop-responsive-img {
+  @include respond(320) {
+    display: none;
+  }
 }

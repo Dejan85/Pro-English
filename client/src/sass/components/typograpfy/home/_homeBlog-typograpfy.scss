@@ -3,6 +3,10 @@
     font-size: 3.5rem;
     font-family: $font-1;
     font-weight: 800;
+
+    @include respond(320) {
+      font-size: 5.3rem;
+    }
   }
 
   &__link {
@@ -11,12 +15,20 @@
     font-weight: 800;
     text-decoration: none;
     color: $color-dark-2;
+
+    @include respond(320) {
+      font-size: 4rem;
+    }
   }
 
   &__p {
     font-size: 1.4rem;
     font-family: $font-8;
     color: $color-grey-dark;
+
+    @include respond(320) {
+      font-size: 3rem;
+    }
   }
 
   &__span {
@@ -24,6 +36,10 @@
     font-family: $font-1;
     font-weight: 700;
     color: $color-grey;
+
+    @include respond(320) {
+      font-size: 2rem;
+    }
   }
 
   &__p2 {
@@ -31,6 +47,10 @@
     font-family: $font-8;
     font-weight: 700;
     color: $color-grey;
+
+    @include respond(320) {
+      font-size: 2rem;
+    }
 
     span {
       display: inline-block;

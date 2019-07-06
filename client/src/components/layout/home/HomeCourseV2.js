@@ -29,6 +29,13 @@ const HomeCourseV2 = () => {
           </div>
         </div>
 
+        <div className="homeCourseV2__left mob-responsive-img">
+          <img
+            className="homeCourseV2__img responsive__hidden"
+            alt="pro-english"
+            src={slika2}
+          />
+        </div>
         <div className="homeCourseV2__right">
           <div className="homeCourseV2__content2">
             <h3 className="homeCourseV2__h3">
@@ -47,7 +54,7 @@ const HomeCourseV2 = () => {
             </Link>
           </div>
         </div>
-        <div className="homeCourseV2__left">
+        <div className="homeCourseV2__left desktop-responsive-img">
           <img
             className="homeCourseV2__img responsive__hidden"
             alt="pro-english"
