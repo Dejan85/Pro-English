@@ -8,7 +8,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
     flex-wrap: wrap;
 
-    @include respond(320) {
+    @include respond(600) {
       flex-direction: column;
     }
   }
@@ -18,7 +18,7 @@
     width: 50%;
     // height: 45rem;
 
-    @include respond(320) {
+    @include respond(600) {
       width: 100%;
       // height: 0;
     }
@@ -29,7 +29,7 @@
     object-fit: cover;
     height: 45rem;
 
-    @include respond(320) {
+    @include respond(600) {
       height: 40rem;
     }
   }
@@ -40,7 +40,7 @@
     width: 50%;
     // height: 45rem;
 
-    @include respond(320) {
+    @include respond(600) {
       width: 100%;
     }
   }
@@ -56,7 +56,7 @@
     justify-content: space-around;
     padding-right: 2rem;
 
-    @include respond(320) {
+    @include respond(600) {
       text-align: center;
       align-items: center;
       padding-right: 0rem;
@@ -68,7 +68,7 @@
       width: 50rem;
       text-align: justify;
 
-      @include respond(320) {
+      @include respond(600) {
         width: 100%;
       }
     }
@@ -79,7 +79,7 @@
       background: $color-pink-dark;
       transition: all 1s;
 
-      @include respond(320) {
+      @include respond(600) {
         margin: 5rem 0;
       }
 
@@ -94,21 +94,21 @@
     align-items: flex-start;
     padding-left: 2rem;
 
-    @include respond(320) {
+    @include respond(600) {
       align-items: center;
       padding: 0rem 2rem;
     }
   }
 
   &__h3 {
-    @include respond(320) {
+    @include respond(600) {
       padding: 3rem 0;
     }
   }
 }
 
 .desktop-responsive-img {
-  @include respond(320) {
+  @include respond(600) {
     display: none;
   }
 }

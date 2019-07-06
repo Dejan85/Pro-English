@@ -24,7 +24,7 @@
     width: 27rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
 
-    @include respond(320) {
+    @include respond(600) {
       width: 100%;
       margin-bottom: 4rem;
       padding-bottom: 1rem;
@@ -46,7 +46,7 @@
       color: $color-pink-dark;
     }
 
-    @include respond(320) {
+    @include respond(600) {
       padding: 5rem 0;
     }
   }
@@ -63,7 +63,7 @@
     margin-left: 1rem;
     background: $color-pink-dark;
 
-    @include respond(320) {
+    @include respond(600) {
       margin-top: 3rem;
     }
   }

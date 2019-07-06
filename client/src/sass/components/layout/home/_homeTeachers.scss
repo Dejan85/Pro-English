@@ -15,7 +15,7 @@
   &__content {
     padding: 10rem 2rem;
 
-    @include respond(320) {
+    @include respond(600) {
       padding-bottom: 0;
     }
   }

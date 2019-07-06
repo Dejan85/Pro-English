@@ -3,7 +3,7 @@
     &__form {
       display: flex;
 
-      @include respond(320) {
+      @include respond(600) {
         flex-direction: column;
       }
     }
@@ -37,7 +37,7 @@
         text-align: center;
       }
 
-      @include respond(320) {
+      @include respond(600) {
         font-size: 2.6rem;
 
         &::-webkit-input-placeholder {
@@ -82,7 +82,7 @@
         background: darken($color-pink-dark, 20%);
       }
 
-      @include respond(320) {
+      @include respond(600) {
         font-size: 2.5rem;
         margin-left: 0;
         margin-top: 2rem;

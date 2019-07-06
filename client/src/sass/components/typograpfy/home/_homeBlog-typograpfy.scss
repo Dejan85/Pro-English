@@ -4,7 +4,7 @@
     font-family: $font-1;
     font-weight: 800;
 
-    @include respond(320) {
+    @include respond(600) {
       font-size: 5.3rem;
     }
   }
@@ -16,7 +16,7 @@
     text-decoration: none;
     color: $color-dark-2;
 
-    @include respond(320) {
+    @include respond(600) {
       font-size: 4rem;
     }
   }
@@ -26,7 +26,7 @@
     font-family: $font-8;
     color: $color-grey-dark;
 
-    @include respond(320) {
+    @include respond(600) {
       font-size: 3rem;
     }
   }
@@ -37,7 +37,7 @@
     font-weight: 700;
     color: $color-grey;
 
-    @include respond(320) {
+    @include respond(600) {
       font-size: 2rem;
     }
   }
@@ -48,7 +48,7 @@
     font-weight: 700;
     color: $color-grey;
 
-    @include respond(320) {
+    @include respond(600) {
       font-size: 2rem;
     }
 
