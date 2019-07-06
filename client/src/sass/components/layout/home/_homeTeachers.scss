@@ -14,12 +14,6 @@
 
   &__content {
     padding: 10rem 2rem;
-
-    @include respond(980) {
-      display: flex;
-      justify-content: space-evenly;
-      padding: 10rem 4rem;
-    }
   }
 }
 

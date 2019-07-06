@@ -7,10 +7,6 @@
   padding: 10rem 2rem 0 2rem;
   flex-wrap: wrap;
 
-  @include respond(980) {
-    padding: 10rem 4rem 0 4rem;
-  }
-
   &__calendar,
   &__latest,
   &__upcoming {
@@ -34,42 +30,12 @@
   }
 
   &__calendar {
-    @include respond(980) {
-      max-width: 53rem;
-      width: 100%;
-      // outline: 1px solid red;
-    }
-
-    @include respond(820) {
-      max-width: 120rem;
-      width: 100%;
-    }
   }
 
   &__latest {
-    @include respond(980) {
-      max-width: 53rem;
-      width: 100%;
-    }
-
-    @include respond(820) {
-      max-width: 120rem;
-      width: 100%;
-      margin: 7rem 0;
-      padding-top: 2rem;
-      border-top: 1px solid $color-grey-light;
-      margin-bottom: 0 !important;
-    }
   }
 
   &__upcoming {
-    @include respond(980) {
-      max-width: 120rem;
-      width: 100%;
-      margin: 7rem 0;
-      padding-top: 2rem;
-      border-top: 1px solid $color-grey-light;
-    }
   }
 
   &__h3 {
@@ -103,19 +69,11 @@
 
   &__link {
     width: 10rem;
-
-    @include respond(820) {
-      width: 12rem;
-    }
   }
 
   &__link-2 {
     width: 10rem;
     margin-left: 2px;
-
-    @include respond(820) {
-      width: 12rem;
-    }
   }
 
   &__upcoming {
@@ -169,16 +127,6 @@
   max-width: 39rem;
   width: 100%;
 
-  @include respond(980) {
-    max-width: 53rem;
-    width: 100%;
-  }
-
-  @include respond(820) {
-    max-width: 120rem;
-    width: 100%;
-  }
-
   &__container {
     position: relative;
     width: 100%;
@@ -192,10 +140,6 @@
     width: 100%;
     height: 4rem;
     background: $color-dark-3;
-
-    @include respond(820) {
-      height: 6rem;
-    }
   }
 
   &__icon {
@@ -224,11 +168,6 @@
     padding: 0.5rem 0;
     text-align: center;
     background: $color-green-blue;
-
-    @include respond(980) {
-      max-width: 20rem;
-      width: 100%;
-    }
   }
 
   &__list-2 {
@@ -254,11 +193,6 @@
       display: flex;
       justify-content: space-between;
       margin-top: 3rem;
-
-      @include respond(980) {
-        padding-left: 0rem;
-        justify-content: flex-start;
-      }
     }
 
     &__card {
@@ -272,11 +206,6 @@
       border-left: 1px solid $color-grey-light;
       border-right: 1px solid $color-grey-light;
       border-bottom: 1px solid $color-grey-light;
-
-      @include respond(820) {
-        width: 9.81rem;
-        height: 10.8rem;
-      }
     }
 
     &__day {
@@ -302,14 +231,6 @@
       justify-content: space-between;
       width: 75%;
       padding-left: 1rem;
-
-      @include respond(980) {
-        padding-left: 3rem;
-      }
-
-      @include respond(920) {
-        width: 100%;
-      }
     }
 
     &__p {

@@ -2,31 +2,6 @@
   &__h3 {
     font-family: $font-1;
     font-size: 3.5rem;
-
-    @include respond(1440) {
-      font-size: 3.3rem;
-    }
-
-    @include respond(980) {
-      font-size: 3.6rem;
-    }
-
-    @include respond(920) {
-      font-size: 3.8rem;
-    }
-
-    @include respond(820) {
-      font-size: 3.9rem;
-    }
-
-    @include respond(720) {
-      font-size: 4rem;
-    }
-
-    @include respond(680) {
-      font-size: 5.8rem;
-      font-weight: 800;
-    }
   }
 
   &__p {
@@ -34,26 +9,6 @@
     font-family: $font-8;
     color: $color-grey-dark;
     line-height: 1.4;
-
-    @include respond(980) {
-      font-size: 1.7rem;
-    }
-
-    @include respond(920) {
-      font-size: 1.9rem;
-    }
-
-    @include respond(820) {
-      font-size: 2.1rem;
-    }
-
-    @include respond(720) {
-      font-size: 2.5rem;
-    }
-
-    @include respond(720) {
-      font-size: 3.6rem;
-    }
   }
 
   &__link {
@@ -62,29 +17,5 @@
     font-size: 1.7rem;
     font-family: $font-1;
     font-weight: 600;
-
-    @include respond(1440) {
-      font-size: 1.5rem;
-    }
-
-    @include respond(980) {
-      font-size: 1.6rem;
-    }
-
-    @include respond(920) {
-      font-size: 1.8rem;
-    }
-
-    @include respond(820) {
-      font-size: 2.3rem;
-    }
-
-    @include respond(720) {
-      font-size: 2.5rem;
-    }
-
-    @include respond(720) {
-      font-size: 3.7rem;
-    }
   }
 }
