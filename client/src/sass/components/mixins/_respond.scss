@@ -117,7 +117,7 @@ $breakpoint argument choices:
     }
   }
 
-  @if $breakpoint == 1800 {
+  @if $breakpoint == 1920 {
     @media (min-width: 112.5em) {
       // 1420px
       @content;
