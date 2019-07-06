@@ -8,7 +8,7 @@
   z-index: 100;
 
   @include respond(320) {
-    height: 9rem;
+    height: 10rem;
   }
 
   &__container {
@@ -26,7 +26,7 @@
     width: auto;
 
     @include respond(320) {
-      height: 7.3rem;
+      height: 8.3rem;
     }
 
     img {
