@@ -49,8 +49,8 @@
   &__content2 {
     display: flex;
     flex-direction: column;
-    width: 60rem;
-    // width: 100%;
+    max-width: 60rem;
+    width: 100%;
     height: 100%;
     align-items: flex-end;
     justify-content: space-around;
@@ -60,6 +60,7 @@
       text-align: center;
       align-items: center;
       padding-right: 0rem;
+      max-width: 120rem;
       width: 100%;
       padding: 0 2rem;
     }
@@ -108,7 +109,21 @@
 }
 
 .desktop-responsive-img {
+  display: block;
+}
+
+.mob-responsive-img {
+  display: none;
+}
+
+.desktop-responsive-img {
   @include respond(900) {
     display: none;
+  }
+}
+
+.mob-responsive-img {
+  @include respond(900) {
+    display: block;
   }
 }

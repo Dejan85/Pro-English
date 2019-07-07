@@ -51,7 +51,6 @@
     padding: 0 2rem 0 2rem;
     flex-wrap: wrap;
 
-    // outline: 1px solid red;
     @include respond(900) {
       justify-content: center;
       margin-top: -12rem;
@@ -98,6 +97,11 @@
     align-items: center;
     width: 19.6rem;
     height: 19.6rem;
+
+    @include respond(1200) {
+      width: 16rem;
+      height: 16rem;
+    }
 
     @include respond(900) {
       width: 20rem;
