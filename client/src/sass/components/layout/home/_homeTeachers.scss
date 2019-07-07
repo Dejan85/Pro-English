@@ -15,8 +15,10 @@
   &__content {
     padding: 10rem 2rem;
 
-    @include respond(600) {
+    @include respond(900) {
       padding-bottom: 0;
+      width: 70%;
+      justify-content: center;
     }
   }
 }

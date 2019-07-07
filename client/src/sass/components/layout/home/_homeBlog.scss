@@ -24,7 +24,7 @@
     width: 27rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
 
-    @include respond(600) {
+    @include respond(900) {
       width: 100%;
       margin-bottom: 4rem;
       padding-bottom: 1rem;
@@ -34,10 +34,14 @@
   &__img {
     width: 100%;
     object-fit: cover;
+
+    @include respond(900) {
+      height: 30rem;
+    }
   }
 
   &__link {
-    display: inline-block;
+    display: block;
     padding: 1.5rem 0;
     text-align: center;
     transition: all 0.5s;
@@ -46,7 +50,7 @@
       color: $color-pink-dark;
     }
 
-    @include respond(600) {
+    @include respond(900) {
       padding: 5rem 0;
     }
   }
@@ -63,7 +67,7 @@
     margin-left: 1rem;
     background: $color-pink-dark;
 
-    @include respond(600) {
+    @include respond(900) {
       margin-top: 3rem;
     }
   }

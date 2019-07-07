@@ -24,8 +24,8 @@
     font-size: 7rem;
     color: white;
 
-    @include respond(600) {
-      font-size: 13rem;
+    @include respond(900) {
+      font-size: 8rem;
     }
   }
 
@@ -36,6 +36,10 @@
       font-weight: 800;
       text-transform: uppercase;
 
+      @include respond(900) {
+        font-size: 3rem;
+      }
+
       @include respond(600) {
         font-size: 3.7rem;
       }
@@ -45,6 +49,10 @@
       font-size: 1.5rem;
       font-family: $font-1;
       color: $color-grey;
+
+      @include respond(900) {
+        font-size: 2.2rem;
+      }
 
       @include respond(600) {
         font-size: 2.9rem;
@@ -58,6 +66,10 @@
       font-family: $font-1;
       color: $color-dark;
 
+      @include respond(900) {
+        font-size: 4.5rem;
+      }
+
       @include respond(600) {
         font-size: 7rem;
       }
@@ -70,6 +82,11 @@
       color: $color-grey-dark;
       line-height: 1.4;
 
+      @include respond(900) {
+        font-size: 2rem;
+        text-align: center;
+      }
+
       @include respond(600) {
         font-size: 3.2rem;
         text-align: center;
@@ -81,6 +98,10 @@
       font-family: $font-1;
       text-decoration: none;
       font-size: 1.7rem;
+
+      @include respond(900) {
+        font-size: 2.2rem;
+      }
 
       @include respond(600) {
         font-size: 3.4rem;
@@ -108,7 +129,7 @@
       &__heading {
         font-size: 5.7rem;
         font-family: $font-1;
-        font-weight: 900;
+        font-weight: 600;
         text-transform: uppercase;
         color: white;
       }

@@ -11,6 +11,10 @@
   &__responsiveNav {
     font-size: 2.5rem;
 
+    @include respond(900) {
+      font-size: 4rem;
+    }
+
     @include respond(600) {
       font-size: 5.8rem;
     }

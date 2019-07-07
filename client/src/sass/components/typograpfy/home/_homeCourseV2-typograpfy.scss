@@ -3,6 +3,11 @@
     font-family: $font-1;
     font-size: 3.5rem;
 
+    @include respond(900) {
+      font-size: 4rem;
+      font-weight: 800;
+    }
+
     @include respond(600) {
       font-size: 5.2rem;
     }
@@ -13,6 +18,10 @@
     font-family: $font-8;
     color: $color-grey-dark;
     line-height: 1.4;
+
+    @include respond(900) {
+      font-size: 2rem;
+    }
 
     @include respond(600) {
       font-size: 2.9rem;
@@ -25,6 +34,10 @@
     font-size: 1.7rem;
     font-family: $font-1;
     font-weight: 600;
+
+    @include respond(900) {
+      font-size: 2.2rem;
+    }
 
     @include respond(600) {
       font-size: 3rem;

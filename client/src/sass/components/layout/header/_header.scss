@@ -7,6 +7,10 @@
   box-shadow: 0 1px 1rem rgba($color-dark, 0.15);
   z-index: 100;
 
+  @include respond(900) {
+    height: 7rem;
+  }
+
   @include respond(600) {
     height: 10rem;
   }
@@ -24,6 +28,11 @@
   &__logo {
     height: 6rem;
     width: auto;
+
+    @include respond(900) {
+      height: 7rem;
+    }
+
     @include respond(600) {
       height: 8.3rem;
     }
@@ -37,7 +46,7 @@
   &__list {
     display: flex;
 
-    @include respond(600) {
+    @include respond(900) {
       display: none;
     }
   }
@@ -82,7 +91,7 @@
     display: none;
     padding-right: 1rem;
 
-    @include respond(600) {
+    @include respond(900) {
       display: flex;
       justify-content: center;
       align-items: center;
