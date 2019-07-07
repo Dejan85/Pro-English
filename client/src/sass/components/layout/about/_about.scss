@@ -70,6 +70,11 @@
       padding-right: 3rem;
       text-align: justify;
 
+      @include respond(900) {
+        width: 100%;
+        padding-right: 0rem;
+      }
+
       p:not(:last-child) {
         padding-bottom: 3rem;
       }
@@ -80,6 +85,10 @@
       padding-left: 3rem;
       text-align: justify;
 
+      @include respond(900) {
+        padding-left: 0rem;
+      }
+
       p:not(:last-child) {
         padding-bottom: 3rem;
       }
@@ -88,6 +97,10 @@
     img {
       width: 40%;
       object-fit: cover;
+
+      @include respond(900) {
+        display: none;
+      }
     }
   }
 

@@ -36,7 +36,7 @@ const HomeAbout = () => {
         </Link>
       </div>
       <div className="home__about__img">
-        <img src={question2} alt="ProEnglish" />
+        <img src={question3} alt="ProEnglish" />
       </div>
     </div>
   );
