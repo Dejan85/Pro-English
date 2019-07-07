@@ -5,7 +5,7 @@
     font-weight: 800;
 
     @include respond(900) {
-      font-size: 4rem;
+      font-size: 3.7rem;
     }
 
     @include respond(600) {
@@ -21,7 +21,7 @@
     color: $color-dark-2;
 
     @include respond(900) {
-      font-size: 3.4rem;
+      font-size: 2.7rem;
     }
 
     @include respond(600) {
@@ -35,7 +35,7 @@
     color: $color-grey-dark;
 
     @include respond(900) {
-      font-size: 2.1rem;
+      font-size: 1.9rem;
     }
 
     @include respond(600) {
