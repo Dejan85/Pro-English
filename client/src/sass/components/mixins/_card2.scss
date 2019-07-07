@@ -7,8 +7,16 @@
   height: 41rem;
   padding-bottom: 5rem;
 
+  @include respond(1800) {
+    height: 44rem;
+  }
+
+  @include respond(1200) {
+    height: 45rem;
+  }
+
   @include respond(900) {
-    max-width: 40rem;
+    max-width: 43rem;
     width: 100%;
     margin-bottom: 5rem;
     height: 50rem;
