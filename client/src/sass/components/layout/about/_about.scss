@@ -31,6 +31,10 @@
     // height: 110rem;
     // background: red;
     padding-bottom: 13rem;
+
+    @include respond(900) {
+      padding-bottom: 8rem;
+    }
   }
 
   &__container {
@@ -64,6 +68,10 @@
   &__paragraph {
     display: flex;
     padding-top: 15rem;
+
+    @include respond(900) {
+      padding-top: 8rem;
+    }
 
     &--p {
       width: 60%;
