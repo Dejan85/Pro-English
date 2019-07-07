@@ -22,6 +22,11 @@
     height: 100%;
     padding: 10rem 2rem 10rem 2rem;
     background: white;
+
+    @include respond(900) {
+      width: 100%;
+      padding-top: 5rem;
+    }
   }
 
   &__h1 {
@@ -31,6 +36,11 @@
     background: $color-pink-dark;
     -webkit-clip-path: polygon(6% 0, 100% 0%, 94% 100%, 0% 100%);
     clip-path: polygon(6% 0, 100% 0%, 94% 100%, 0% 100%);
+
+    @include respond(900) {
+      top: 6rem;
+      left: 6rem;
+    }
   }
 
   &__content {
@@ -39,6 +49,15 @@
     width: 100%;
     margin-left: 20rem;
     padding: 0 4rem;
+
+    @include respond(900) {
+      padding-top: 15rem;
+      margin-left: 0rem;
+      padding-left: 0;
+      padding-right: 0;
+      max-width: 120rem;
+      width: 100%;
+    }
 
     p,
     &__span {
@@ -70,6 +89,11 @@
     width: 45%;
     // height: 65.5rem;
     z-index: 2;
+
+    @include respond(900) {
+      max-width: 120rem;
+      width: 100%;
+    }
   }
 
   &__text {
@@ -79,6 +103,11 @@
     width: 100%;
     margin: 0 auto;
     padding: 10rem 2rem 10rem 2rem;
+
+    @include respond(900) {
+      max-width: 95rem;
+      width: 100%;
+    }
   }
 
   &__diagram {
