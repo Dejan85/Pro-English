@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import useTest from '../../hooks/useTest';
+// hooks
+import useGetCourseContent from '../../hooks/course/api/useGetCourseContent';
+import useHanldeCourseContent from '../../hooks/course/useHandleCourseContent';
 
 const Course = () => {
   // stavio sam ovo ovde da bi resetovao scroll PRE NEGO STO SE COMPONENT MOUNT. Ovo je umesto componentWillMount
@@ -8,11 +10,22 @@ const Course = () => {
     return window.scrollTo(0, 0);
   });
 
-  const { test } = useTest();
+  const { getCourseContent } = useGetCourseContent();
+  const { hanldeCourseContent, courses } = useHanldeCourseContent();
+  const [course, setCourse] = useState(undefined);
 
-  test().then(res => {
-    console.log(res[1].a2[2]);
-  });
+  const initCourse = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
+
+  useEffect(() => {
+    getCourseContent()
+      .then(res => {
+        hanldeCourseContent(res, initCourse[0]);
+        return setCourse(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <div className='course'>
@@ -62,7 +75,7 @@ const Course = () => {
         <div className='course__mask' />
         <div className='course__lvl'>
           <div className='course__text'>
-            <p className='course__text__p'>
+            {/* <p className='course__text__p'>
               Obično postoje dve vrste početnika, pravi i lažni. Pravi početnik
               nikada ranije nije učio engleski, dok je lažni početnik učio
               nekada davno i zaboravio, ili je, što se često dešava, pokupio par
@@ -86,10 +99,31 @@ const Course = () => {
               spontana pitanja. Takođe teško razumeju govor na drugom jeziku
               osim ako ta osoba ne govori polako. Uglavnom pasivno slušaju i
               koriste govor tela da nadomeste reč koja im nedostaje.
-            </p>
+            </p> */}
+
+            {courses &&
+              courses.map((item, index) => {
+                if (item) {
+                  console.log(item);
+                  return item.map((item, i) => {
+                    return (
+                      <p key={i} className='course__text__p'>
+                        {item[index]}
+                      </p>
+                    );
+                  });
+                }
+              })}
+
             <div className='course__nav'>
-              <i className='fas fa-chevron-left' onClick={test} />
-              <i className='fas fa-chevron-right' onClick={test} />
+              <i
+                className='fas fa-chevron-left'
+                onClick={hanldeCourseContent.bind(this, course, initCourse[1])}
+              />
+              <i
+                className='fas fa-chevron-right'
+                onClick={hanldeCourseContent.bind(this, course, initCourse[2])}
+              />
             </div>
           </div>
         </div>

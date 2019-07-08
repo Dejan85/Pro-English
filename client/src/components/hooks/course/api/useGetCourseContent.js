@@ -1,5 +1,5 @@
-const useTest = () => {
-  const test = () => {
+const useGetCourseContent = () => {
+  const getCourseContent = () => {
     return fetch('/data', {
       method: 'GET',
       aplication: 'json'
@@ -12,7 +12,9 @@ const useTest = () => {
       });
   };
 
-  return { test };
+  return {
+    getCourseContent
+  };
 };
 
-export default useTest;
+export default useGetCourseContent;
