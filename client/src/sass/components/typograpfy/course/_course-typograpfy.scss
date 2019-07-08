@@ -14,6 +14,10 @@
       font-family: $font-8;
       color: $color-grey;
       text-align: justify;
+
+      @include respond(900) {
+        font-size: 2.1rem;
+      }
     }
 
     &__span {
@@ -27,6 +31,10 @@
       color: white;
       font-size: 2rem;
       font-family: $font-8;
+
+      @include respond(900) {
+        font-size: 2.1rem;
+      }
     }
     span {
       display: inline-block;
@@ -40,6 +48,10 @@
       padding-bottom: 2rem;
       color: $color-grey;
       text-align: justify;
+
+      @include respond(900) {
+        font-size: 2.1rem;
+      }
     }
   }
 
