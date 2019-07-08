@@ -21,5 +21,10 @@
     font-size: 3.5rem;
     font-family: $font-1;
     font-weight: 800;
+
+    @include respond(600) {
+      padding-top: 5rem;
+      font-size: 4.5rem;
+    }
   }
 }

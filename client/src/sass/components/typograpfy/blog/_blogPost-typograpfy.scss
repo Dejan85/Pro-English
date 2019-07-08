@@ -5,6 +5,10 @@
     font-weight: 600;
     font-family: $font-8;
     color: $color-dark;
+
+    @include respond(600) {
+      font-size: 3.8rem;
+    }
   }
 
   &__h2,
@@ -13,6 +17,10 @@
     font-weight: 600;
     font-family: $font-8;
     color: $color-dark;
+
+    @include respond(600) {
+      font-size: 3rem;
+    }
   }
 
   &__span {
@@ -20,6 +28,10 @@
     font-weight: 500;
     font-family: $font-1;
     color: $color-grey;
+
+    @include respond(600) {
+      font-size: 2.7rem;
+    }
   }
 
   &__date {
@@ -27,6 +39,10 @@
     font-size: 1.3rem;
     font-weight: 500;
     font-family: $font-8;
+
+    @include respond(600) {
+      font-size: 2rem;
+    }
   }
 
   &__postedBy {
@@ -38,11 +54,19 @@
       color: $color-dark;
       font-weight: 500;
     }
+
+    @include respond(600) {
+      font-size: 2rem;
+    }
   }
   &__content__p {
     font-size: 1.9rem;
     font-family: $font-8;
     color: $color-grey-dark;
+
+    @include respond(600) {
+      font-size: 2.8rem;
+    }
   }
 
   &__signature {
@@ -50,5 +74,9 @@
     font-size: 2rem;
     font-weight: 600;
     font-family: $font-5;
+
+    @include respond(600) {
+      font-size: 2.8rem;
+    }
   }
 }
