@@ -28,14 +28,14 @@ const MainRouter = props => {
     <>
       {!headerAndFooter && <Header />}
       <Route exact path="/" component={Home} />
-      <Route exact path="/about" component={About} />
-      <Route exact path="/course" component={Course} />
-      <Route exact path="/exams" component={Exams} />
+      <Route exact path="/onama" component={About} />
+      <Route exact path="/kursevi" component={Course} />
+      <Route exact path="/ispiti" component={Exams} />
       <Route exact path="/blog" component={Blog} />
       <Route exact path="/singleBlog" component={BlogPost} />
       <Route exact path="/dogadjaji" component={Events} />
       <Route exact path="/dogadjaji/one" component={SingleEvent} />
-      <Route exact path="/contact" component={Contact} />
+      <Route exact path="/kontakt" component={Contact} />
       {!headerAndFooter && <Footer />}
     </>
   );

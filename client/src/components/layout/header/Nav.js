@@ -26,7 +26,7 @@ const Nav = () => {
           <NavLink
             className="header__link"
             activeClassName="active"
-            to="/about">
+            to="/onama">
             O nama
           </NavLink>
         </li>
@@ -34,7 +34,7 @@ const Nav = () => {
           <NavLink
             className="header__link"
             activeClassName="active"
-            to="/course">
+            to="/kursevi">
             Kursevi
           </NavLink>
         </li>
@@ -42,7 +42,7 @@ const Nav = () => {
           <NavLink
             className="header__link"
             activeClassName="active"
-            to="/exams">
+            to="/ispiti">
             Pripreme za ispite
           </NavLink>
           <DropNav info={ispiti} />
@@ -64,7 +64,7 @@ const Nav = () => {
           <NavLink
             className="header__link"
             activeClassName="active"
-            to="/contact">
+            to="/kontakt">
             Kontakt
           </NavLink>
         </li>

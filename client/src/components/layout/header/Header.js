@@ -3,7 +3,7 @@ import React from "react";
 // component
 import Nav from "./Nav";
 import Logo from "./Logo";
-import ReasponsiveNav from "./ResponsivNav";
+import ReasponsiveNav from "./ResponsiveNav";
 
 const Header = () => {
   return (
