@@ -4,7 +4,7 @@
     font-family: $font-8;
 
     @include respond(600) {
-      font-size: 6rem;
+      font-size: 5rem;
     }
   }
 
@@ -15,7 +15,7 @@
     font-weight: 500;
 
     @include respond(600) {
-      font-size: 3.5rem;
+      font-size: 3rem;
     }
   }
 
