@@ -42,3 +42,11 @@
     }
   }
 }
+
+.responsiveDropNav {
+  &__link {
+    font-family: $font-8;
+    font-weight: 600;
+    font-size: 5.5rem;
+  }
+}
