@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+
+import useTest from '../../hooks/useTest';
 
 const Course = () => {
   // stavio sam ovo ovde da bi resetovao scroll PRE NEGO STO SE COMPONENT MOUNT. Ovo je umesto componentWillMount
@@ -6,14 +8,20 @@ const Course = () => {
     return window.scrollTo(0, 0);
   });
 
+  const { test } = useTest();
+
+  test().then(res => {
+    console.log(res[1].a2[2]);
+  });
+
   return (
-    <div className="course">
+    <div className='course'>
       {reset}
 
-      <div className="course__mask" />
-      <div className="course__header">
-        <h1 className="course__h1">Utvrdite nivo znanja</h1>
-        <div className="course__content">
+      <div className='course__mask' />
+      <div className='course__header'>
+        <h1 className='course__h1'>Utvrdite nivo znanja</h1>
+        <div className='course__content'>
           <p>
             Želite li brz, online test koji bi vas nakon niza gramatičkih
             pitanja svrstao u određenu grupu znanja? Po našem mišljenju, jezik
@@ -44,17 +52,17 @@ const Course = () => {
             win-winsituation!
           </p>
 
-          <span className="course__content__span">
+          <span className='course__content__span'>
             Ispod ćete pronaći kratak opis svih nivoa po CEFR skali, kao kratak
             pregled šta se očekuje od svakog.
           </span>
         </div>
       </div>
-      <div className="course__content2">
-        <div className="course__mask" />
-        <div className="course__lvl">
-          <div className="course__text">
-            <p className="course__text__p">
+      <div className='course__content2'>
+        <div className='course__mask' />
+        <div className='course__lvl'>
+          <div className='course__text'>
+            <p className='course__text__p'>
               Obično postoje dve vrste početnika, pravi i lažni. Pravi početnik
               nikada ranije nije učio engleski, dok je lažni početnik učio
               nekada davno i zaboravio, ili je, što se često dešava, pokupio par
@@ -62,7 +70,7 @@ const Course = () => {
               svakodnevnoj konverzaciji.
             </p>
 
-            <p className="course__text__p">
+            <p className='course__text__p'>
               Početnici mogu izraziti šta žele u ograničenom broju situacija (na
               ulici, u prodavnici, restoranu), mogu pričati u kratkim rečenicama
               o osnovnim stvarima koje su im poznate (meni u restoranu, cene,
@@ -73,21 +81,21 @@ const Course = () => {
               nije slična onoj u srpskom jeziku.
             </p>
 
-            <p className="course__text__p">
+            <p className='course__text__p'>
               Početnici još uvek ne mogu da prošire temu razgovora i pitaju
               spontana pitanja. Takođe teško razumeju govor na drugom jeziku
               osim ako ta osoba ne govori polako. Uglavnom pasivno slušaju i
               koriste govor tela da nadomeste reč koja im nedostaje.
             </p>
-            <div className="course__nav">
-              <i className="fas fa-chevron-left" />
-              <i className="fas fa-chevron-right" />
+            <div className='course__nav'>
+              <i className='fas fa-chevron-left' onClick={test} />
+              <i className='fas fa-chevron-right' onClick={test} />
             </div>
           </div>
         </div>
-        <div className="course__diagram__container">
-          <div className="course__diagram">
-            <p className="course__diagram__p">A1</p>
+        <div className='course__diagram__container'>
+          <div className='course__diagram'>
+            <p className='course__diagram__p'>A1</p>
             <span>Pocetnik</span>
           </div>
         </div>
