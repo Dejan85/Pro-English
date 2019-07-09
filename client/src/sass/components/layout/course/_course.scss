@@ -118,17 +118,14 @@
     max-width: 70rem;
     width: 100%;
     margin: 0 auto;
-    height: 87rem;
+    min-height: 87rem;
+
     padding: 0rem 2rem 10rem 2rem;
 
     @include respond(1200) {
       max-width: 120rem;
       width: 100%;
       padding: 0 4rem 10rem 0rem;
-    }
-
-    @include respond(600) {
-      height: 150rem;
     }
   }
 
