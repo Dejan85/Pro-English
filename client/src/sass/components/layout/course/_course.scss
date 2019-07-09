@@ -142,7 +142,8 @@
     // height: 100%;
     transition: all 0.5s;
 
-    &__container {
+    @include gradient2($color-pink-dark, darken($color-pink-dark, 30%))
+      &__container {
       width: 19.1rem;
       background: white;
       z-index: 2;

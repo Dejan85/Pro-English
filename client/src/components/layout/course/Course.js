@@ -23,7 +23,6 @@ const Course = props => {
 
   useEffect(
     () => {
-      console.log(data);
       if (data !== {}) {
         if (data.course) {
           setCourse(data.course);
