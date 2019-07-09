@@ -1,21 +1,30 @@
-import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import "./App.css";
-import "../src/sass/main.scss";
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import './App.css';
+import '../src/sass/main.scss';
 
 //
-// ─── ROUTES ─────────────────────────────────────────────────────────────────────
+// ─── REDUX ──────────────────────────────────────────────────────────────────────
 //
 
-import MainRouter from "./MainRouter";
-import AdminRouter from "./components/layout/admin/route/AdminRouter";
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import { fetchCourseData } from './redux/actions/fetchData';
 
-function App() {
+import MainRouter from './MainRouter';
+import AdminRouter from './components/layout/admin/route/AdminRouter';
+
+// fetch data from api
+store.dispatch(fetchCourseData());
+
+function App () {
   return (
-    <Router>
-      <MainRouter />
-      <AdminRouter />
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <MainRouter />
+        <AdminRouter />
+      </Router>
+    </Provider>
   );
 }
 

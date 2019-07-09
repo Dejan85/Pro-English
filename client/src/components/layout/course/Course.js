@@ -17,6 +17,7 @@ const Course = () => {
   const initCourse = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
 
   useEffect(() => {
+    // fetch data from api
     getCourseContent()
       .then(res => {
         hanldeCourseContent(res, initCourse[0]);
