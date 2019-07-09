@@ -1,23 +1,22 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const useHanldeCourseContent = () => {
   const [courses, setCourses] = useState(undefined);
+  let i = 0;
 
-  const hanldeCourseContent = (res, cor) => {
-    console.log(cor);
-    let mapArr;
-    mapArr = res.map(item => {
-      return item[cor];
-    });
-
-    setCourses(() => {
-      return mapArr;
-    });
+  const hanldeCourseContent = (course, cor) => {
+    i = i + 1;
+    return (
+      <p>
+        {i}
+      </p>
+    );
   };
 
   return {
     hanldeCourseContent,
-    courses
+    courses,
+    i
   };
 };
 

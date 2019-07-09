@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, withRouter, Redirect } from "react-router-dom";
+import { Route, withRouter } from "react-router-dom";
 
 //hooks
 // import usePrivateRoute from "../../../hooks/auth/usePrivateRoute";

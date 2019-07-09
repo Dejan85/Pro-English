@@ -5,7 +5,6 @@ import { COURSE__DATA } from '../type/type';
 //
 
 export const fetchCourseData = () => dispatch => {
-  console.log('radi');
   return fetch('/data', {
     method: 'GET',
     aplication: 'json'

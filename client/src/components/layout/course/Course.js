@@ -1,32 +1,82 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+
+// redux
+import { connect } from 'react-redux';
 
 // hooks
-import useGetCourseContent from '../../hooks/course/api/useGetCourseContent';
 import useHanldeCourseContent from '../../hooks/course/useHandleCourseContent';
 
-const Course = () => {
+const Course = props => {
+  const { data } = props;
   // stavio sam ovo ovde da bi resetovao scroll PRE NEGO STO SE COMPONENT MOUNT. Ovo je umesto componentWillMount
   const [reset] = useState(() => {
     return window.scrollTo(0, 0);
   });
 
-  const { getCourseContent } = useGetCourseContent();
-  const { hanldeCourseContent, courses } = useHanldeCourseContent();
+  // const { hanldeCourseContent, i } = useHanldeCourseContent();
   const [course, setCourse] = useState(undefined);
-
+  const [counter, setCounter] = useState(0);
+  const [paragraph, setParagraph] = useState();
   const initCourse = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
 
-  useEffect(() => {
-    // fetch data from api
-    getCourseContent()
-      .then(res => {
-        hanldeCourseContent(res, initCourse[0]);
-        return setCourse(res);
-      })
-      .catch(err => {
-        console.log(err);
+  useEffect(
+    () => {
+      console.log(data);
+      if (data !== {}) {
+        if (data.course) {
+          setCourse(data.course);
+        }
+      }
+    },
+    [data]
+  );
+
+  const counterHandlerDecrese = () => {
+    if (counter === 0) {
+      setCounter(() => {
+        return 5;
       });
-  }, []);
+    } else {
+      setCounter(() => {
+        return counter - 1;
+      });
+    }
+  };
+
+  const counterHandlerIncrese = () => {
+    if (counter === 5) {
+      setCounter(() => {
+        return 0;
+      });
+    } else {
+      setCounter(() => {
+        return counter + 1;
+      });
+    }
+  };
+
+  const contentHandler = () => {
+    if (course) {
+      setParagraph(() => {
+        return course.map((item, index) => {
+          if (item[initCourse[counter]]) {
+            return item[initCourse[counter]].map((item, index) => {
+              return (
+                <p className='course__text__p' key={index}>
+                  {item[0]}
+                </p>
+              );
+            });
+          }
+        });
+      });
+    }
+  };
+
+  useEffect(() => {
+    contentHandler();
+  });
 
   return (
     <div className='course'>
@@ -76,6 +126,17 @@ const Course = () => {
         <div className='course__mask' />
         <div className='course__lvl'>
           <div className='course__text'>
+            <div className='course__nav'>
+              <i
+                className='fas fa-chevron-left'
+                onClick={(contentHandler, counterHandlerDecrese)}
+              />
+              <i
+                className='fas fa-chevron-right'
+                onClick={(contentHandler, counterHandlerIncrese)}
+              />
+            </div>
+
             {/* <p className='course__text__p'>
               Obično postoje dve vrste početnika, pravi i lažni. Pravi početnik
               nikada ranije nije učio engleski, dok je lažni početnik učio
@@ -102,30 +163,7 @@ const Course = () => {
               koriste govor tela da nadomeste reč koja im nedostaje.
             </p> */}
 
-            {courses &&
-              courses.map((item, index) => {
-                if (item) {
-                  console.log(item);
-                  return item.map((item, i) => {
-                    return (
-                      <p key={i} className='course__text__p'>
-                        {item[index]}
-                      </p>
-                    );
-                  });
-                }
-              })}
-
-            <div className='course__nav'>
-              <i
-                className='fas fa-chevron-left'
-                onClick={hanldeCourseContent.bind(this, course, initCourse[1])}
-              />
-              <i
-                className='fas fa-chevron-right'
-                onClick={hanldeCourseContent.bind(this, course, initCourse[2])}
-              />
-            </div>
+            {paragraph}
           </div>
         </div>
         <div className='course__diagram__container'>
@@ -139,4 +177,12 @@ const Course = () => {
   );
 };
 
-export default Course;
+Course.propType = {
+  state: PropTypes.string
+};
+
+function mapStateToProps (state) {
+  return { data: state.data };
+}
+
+export default connect(mapStateToProps, null)(Course);

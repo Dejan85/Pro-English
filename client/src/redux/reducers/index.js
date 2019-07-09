@@ -8,5 +8,5 @@ import course from './course';
 
 export default combineReducers({
   // course reducers
-  course: course
+  data: course
 });
