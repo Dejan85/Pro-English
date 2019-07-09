@@ -19,7 +19,6 @@ const Course = props => {
   const [counter, setCounter] = useState(0);
   const [paragraph, setParagraph] = useState();
   const [diagram, setDiagram] = useState(16.67);
-  const [diagramHeading, setDiagramHeading] = useState('');
   const initCourse = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
   const { stringSplit, firstWord, secondWord } = useStringSplit();
 
@@ -74,14 +73,11 @@ const Course = props => {
   function contentHandler () {
     if (course) {
       setParagraph(() => {
-        return course.map((item, index) => {
+        return course.map(item => {
           if (item[initCourse[counter]]) {
             return item[initCourse[counter]].map((item, index) => {
               if (index === 0) {
                 stringSplit(item[0]);
-                setDiagramHeading(() => {
-                  return item[0];
-                });
               }
               return (
                 <p className='course__text__p' key={index}>
