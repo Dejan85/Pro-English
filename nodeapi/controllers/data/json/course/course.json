@@ -1,6 +1,7 @@
 [
   {
     "a1": [
+      ["A1 – Početnik"],
       [
         "Obično postoje dve vrste početnika, pravi i lažni. Pravi početnik nikada ranije nije učio engleski, dok je lažni početnik učio nekada davno i zaboravio, ili je, što se često dešava, pokupio par izraza iz serija i filmova koje gleda koje bi mu pomogle u svakodnevnoj konverzaciji."
       ],
@@ -15,6 +16,8 @@
 
   {
     "a2": [
+      ["A2 – Viši početnici"],
+
       [
         "Viši početnici su obično osobe koje su učile engleski tu i tamo, rascepkano na više mesta i bez koherentnosti. Oni koji produže pravo sa A1 nivoa na A2 nivo su obično sigurniji u svoje znanje, takođe na sistematičniji i lakši način usvajaju novo. Zbog ovoga upravo nagoveštavamo našim polaznicima da je učenje jezika stalan proces, ako ga prekinete ili pravite pauzu, biće vam teže da nastavite. Bolji je stalan rad umanjenim tempom umesto intenzivnog a isprekidanog."
       ],
@@ -29,6 +32,8 @@
 
   {
     "b1": [
+      ["B1 – Samostalni govornik"],
+
       [
         "Ovaj nivo se često naziva samostalnim, jer je preloman za učenika koji tek tada počinje da slobodno govori na engleskom. Rečenice su možda iscepkane, nepravilne, sa puno pauza i neverbalnih potpomaganja, ali mogu preneti svoju ideju i objasniti šta žele."
       ],
@@ -43,6 +48,8 @@
 
   {
     "b2": [
+      ["B2 - Pouzdani govornik"],
+
       [
         "Ovaj nivo služi za usavršavanje govornih i pismenih veština. Na njemu se usavršavaju veštine slušanja i čitanja, mogu se dati duži i komplikovaniji tekstovi za čitanje, a govor postaje sigurniji i tečniji. Na ovom nivou se ispravljaju greške i idealan je da se ponovno oformi jača baza znanja na kojoj bi se gradio vokabular (reči i izrazi) potreban za C nivoe."
       ],
@@ -57,6 +64,8 @@
 
   {
     "c1": [
+      ["C1 - Napredni govornici"],
+
       [
         "Ovde se govornici ovde fokusiraju na to ne samo da prenesu značenje, već i da ga iskažu na način koji bi bio najprirodniji tom jeziku. Stoga je ovde veliki deo posvećen učenju reči i izraza koje idu zajedno u engleskom jeziku. U to spadaju kolokacije, idiomi, frazalni glagoli i stručni izrazi"
       ],
@@ -71,6 +80,7 @@
 
   {
     "c2": [
+      ["C2 - Usavršeni govornici"],
       [
         "Smatra se da su C2 govornici usavršili jezik toliko da mogu da se snađu u bilo kojoj situaciji. Ovo je najviši nivo i teško ga je ostvariti, potrebno je dosta godina, truda i rada da bismo došli do tog nivoa da kad pričamo na engleskom, zaista i mislimo na tom jeziku."
       ],

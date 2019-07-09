@@ -15,8 +15,7 @@ const useHanldeCourseContent = () => {
 
   return {
     hanldeCourseContent,
-    courses,
-    i
+    courses
   };
 };
 
