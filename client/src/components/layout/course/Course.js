@@ -18,6 +18,7 @@ const Course = props => {
   const [course, setCourse] = useState(undefined);
   const [counter, setCounter] = useState(0);
   const [paragraph, setParagraph] = useState();
+  const [diagram, setDiagram] = useState(16.67);
   const initCourse = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
 
   useEffect(
@@ -37,9 +38,15 @@ const Course = props => {
       setCounter(() => {
         return 5;
       });
+      setDiagram(() => {
+        return 100;
+      });
     } else {
       setCounter(() => {
         return counter - 1;
+      });
+      setDiagram(() => {
+        return diagram - 16.67;
       });
     }
   };
@@ -49,9 +56,15 @@ const Course = props => {
       setCounter(() => {
         return 0;
       });
+      setDiagram(() => {
+        return 16.67;
+      });
     } else {
       setCounter(() => {
         return counter + 1;
+      });
+      setDiagram(() => {
+        return diagram + 16.67;
       });
     }
   };
@@ -167,7 +180,7 @@ const Course = props => {
           </div>
         </div>
         <div className='course__diagram__container'>
-          <div className='course__diagram'>
+          <div className='course__diagram' style={{ height: diagram + '%' }}>
             <p className='course__diagram__p'>A1</p>
             <span>Pocetnik</span>
           </div>
