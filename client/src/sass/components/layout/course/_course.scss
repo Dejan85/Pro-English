@@ -126,6 +126,10 @@
       width: 100%;
       padding: 0 4rem 10rem 0rem;
     }
+
+    @include respond(600) {
+      height: 105rem;
+    }
   }
 
   &__diagram {
@@ -142,11 +146,17 @@
     // height: 100%;
     transition: all 0.5s;
 
-    @include gradient2($color-pink-dark, darken($color-pink-dark, 30%))
-      &__container {
+    @include gradient2($color-pink-dark, darken($color-pink-dark, 30%));
+
+    &__container {
       width: 19.1rem;
       background: white;
       z-index: 2;
+    }
+
+    span {
+      width: 90%;
+      text-align: center;
     }
   }
 

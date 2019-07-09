@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 // hooks
-import useHanldeCourseContent from '../../hooks/course/useHandleCourseContent';
-
+// import useHanldeCourseContent from '../../hooks/course/useHandleCourseContent';
+import useStringSplit from '../../hooks/course/useStringSplit';
 const Course = props => {
   const { data } = props;
   // stavio sam ovo ovde da bi resetovao scroll PRE NEGO STO SE COMPONENT MOUNT. Ovo je umesto componentWillMount
@@ -19,17 +19,20 @@ const Course = props => {
   const [counter, setCounter] = useState(0);
   const [paragraph, setParagraph] = useState();
   const [diagram, setDiagram] = useState(16.67);
+  const [diagramHeading, setDiagramHeading] = useState('');
   const initCourse = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
+  const { stringSplit, firstWord, secondWord } = useStringSplit();
 
   useEffect(
     () => {
-      if (data !== {}) {
-        if (data.course) {
-          setCourse(data.course);
-        }
+      if (data.course) {
+        setCourse(data.course);
+
+        // ova funkcija se poziva tako sto menjamo stalno diagram i samim tim se use effect poziva i tako pozivamo contentHandler()
+        contentHandler();
       }
     },
-    [data]
+    [data, course, diagram]
   );
 
   const counterHandlerDecrese = () => {
@@ -68,12 +71,18 @@ const Course = props => {
     }
   };
 
-  const contentHandler = () => {
+  function contentHandler () {
     if (course) {
       setParagraph(() => {
         return course.map((item, index) => {
           if (item[initCourse[counter]]) {
             return item[initCourse[counter]].map((item, index) => {
+              if (index === 0) {
+                stringSplit(item[0]);
+                setDiagramHeading(() => {
+                  return item[0];
+                });
+              }
               return (
                 <p className='course__text__p' key={index}>
                   {item[0]}
@@ -84,11 +93,7 @@ const Course = props => {
         });
       });
     }
-  };
-
-  useEffect(() => {
-    contentHandler();
-  });
+  }
 
   return (
     <div className='course'>
@@ -141,11 +146,11 @@ const Course = props => {
             <div className='course__nav'>
               <i
                 className='fas fa-chevron-left'
-                onClick={(contentHandler, counterHandlerDecrese)}
+                onClick={counterHandlerDecrese}
               />
               <i
                 className='fas fa-chevron-right'
-                onClick={(contentHandler, counterHandlerIncrese)}
+                onClick={counterHandlerIncrese}
               />
             </div>
 
@@ -180,8 +185,12 @@ const Course = props => {
         </div>
         <div className='course__diagram__container'>
           <div className='course__diagram' style={{ height: diagram + '%' }}>
-            <p className='course__diagram__p'>A1</p>
-            <span>Pocetnik</span>
+            <p className='course__diagram__p'>
+              {firstWord}
+            </p>
+            <span>
+              {secondWord}
+            </span>
           </div>
         </div>
       </div>
