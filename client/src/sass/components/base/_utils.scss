@@ -68,3 +68,11 @@
 .toggle {
   height: 27rem !important;
 }
+
+.scroll__indicator {
+  position: fixed;
+  top: 6rem;
+  left: 0;
+  height: 0.5rem;
+  background: $color-pink-dark;
+}
