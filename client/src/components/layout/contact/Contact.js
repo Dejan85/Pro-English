@@ -1,43 +1,48 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+
+// hooks
+import useContactForm from '../../hooks/contact/useContactForm';
 
 // Components
-import Map from "./paritals/Map";
+import Map from './paritals/Map';
 
 const Contact = () => {
+  const { contactForm } = useContactForm();
+
   const [reset] = useState(() => {
     return window.scrollTo(0, 0);
   });
   return (
-    <div className="contact">
+    <div className='contact'>
       {reset}
-      <div className="contact__map">
+      <div className='contact__map'>
         <Map />
       </div>
-      <div className="contact__content">
-        <h1 className="contact__h1">Kontakt</h1>
-        <span className="contact__span">
+      <div className='contact__content'>
+        <h1 className='contact__h1'>Kontakt</h1>
+        <span className='contact__span'>
           Pisite nam o svemu sto vas interesuje, tu smo da odgovorimo na svako
           vase pitanje.
         </span>
-        <div className="contact__form">
-          <form>
-            <div className="contact__input">
+        <div className='contact__form'>
+          <form onSubmit={contactForm}>
+            <div className='contact__input'>
               <label>Ime</label>
               <input />
             </div>
-            <div className="contact__input">
+            <div className='contact__input'>
               <label>Email</label>
               <input />
             </div>
-            <div className="contact__input">
+            <div className='contact__input'>
               <label>Tema</label>
               <input />
             </div>
-            <div className="contact__input">
+            <div className='contact__input'>
               <label>Pitanje</label>
-              <textarea rows="7" />
+              <textarea rows='7' />
             </div>
-            <div className="contact__input">
+            <div className='contact__input'>
               <button>Submit</button>
             </div>
           </form>

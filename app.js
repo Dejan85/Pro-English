@@ -10,6 +10,7 @@ const cookieParser = require('cookie-parser');
 // const fs = require('fs');
 const cors = require('cors');
 const path = require('path');
+const request = require('request');
 
 dotenv.config();
 
@@ -48,10 +49,12 @@ const post = require('./nodeapi/routes/post');
 const auth = require('./nodeapi/routes/auth');
 const user = require('./nodeapi/routes/user');
 const data = require('./nodeapi/routes/data');
+const contactForm = require('./nodeapi/routes/contactForm');
 app.use('/', post);
 app.use('/', auth);
 app.use('/', user);
 app.use('/data', data);
+app.use('/contact', contactForm);
 
 // express jwt (this is must be below route)
 app.use(function (err, req, res, next) {
