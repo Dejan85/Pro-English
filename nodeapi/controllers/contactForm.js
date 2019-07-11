@@ -1,4 +1,6 @@
 const request = require('request');
+const dotenv = require('dotenv');
+dotenv.config();
 
 exports.contactForm = (req, res) => {
   const { name, email, title, question } = req.body;
@@ -23,7 +25,7 @@ exports.contactForm = (req, res) => {
     url: 'https://us3.api.mailchimp.com/3.0/lists/35190d402b',
     method: 'POST',
     headers: {
-      Authorization: 'auth 4c562372162394f52668ca2ea7237626-us3'
+      Authorization: process.env.API_MAILCHIMP
     },
     body: postData
   };

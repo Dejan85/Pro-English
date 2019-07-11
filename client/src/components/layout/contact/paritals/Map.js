@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 import {
   GoogleMap,
   withScriptjs,
   withGoogleMap,
-  Marker,
-} from "react-google-maps";
+  Marker
+} from 'react-google-maps';
 
 const Map = () => {
   const map = () => {
@@ -12,7 +12,8 @@ const Map = () => {
       <GoogleMap
         defaultZoom={15}
         defaultCenter={{ lat: 44.814346, lng: 20.458047 }}
-        options={{ gestureHandling: "greedy" }}>
+        options={{ gestureHandling: 'greedy' }}
+      >
         <Marker position={{ lat: 44.814346, lng: 20.458047 }} />
       </GoogleMap>
     );
@@ -20,12 +21,12 @@ const Map = () => {
 
   const WrappedMap = withScriptjs(withGoogleMap(map));
   return (
-    <div className="mapContainer">
+    <div className='mapContainer'>
       <WrappedMap
         googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDEPkQvhTNGmJPJ5f4YHzhouvVyYtIdr7M`}
-        loadingElement={<div style={{ height: "100%" }} />}
-        containerElement={<div style={{ height: "100%" }} />}
-        mapElement={<div style={{ height: "100%" }} />}
+        loadingElement={<div style={{ height: '100%' }} />}
+        containerElement={<div style={{ height: '100%' }} />}
+        mapElement={<div style={{ height: '100%' }} />}
       />
     </div>
   );

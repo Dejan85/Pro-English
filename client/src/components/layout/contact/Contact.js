@@ -10,6 +10,9 @@ import Map from './paritals/Map';
 const Contact = () => {
   const { input, error, onChange, onSubmit } = useForm();
   // const { contactForm } = useContactForm();
+  const [map] = useState(() => {
+    return <Map />;
+  });
 
   const [reset] = useState(() => {
     return window.scrollTo(0, 0);
@@ -19,7 +22,7 @@ const Contact = () => {
     <div className='contact'>
       {reset}
       <div className='contact__map'>
-        <Map />
+        {map}
       </div>
       <div className='contact__content'>
         <h1 className='contact__h1'>Kontakt</h1>
