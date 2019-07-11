@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 
 // hooks
-import useContactForm from '../../hooks/contact/useContactForm';
+// import useContactForm from '../../hooks/contact/useContactForm';
+import useForm from '../../hooks/auth/useForm';
 
 // Components
 import Map from './paritals/Map';
 
 const Contact = () => {
-  const { contactForm } = useContactForm();
+  const { input, error, onChange, onSubmit } = useForm();
+  // const { contactForm } = useContactForm();
 
   const [reset] = useState(() => {
     return window.scrollTo(0, 0);
   });
+
   return (
     <div className='contact'>
       {reset}
@@ -25,22 +28,60 @@ const Contact = () => {
           vase pitanje.
         </span>
         <div className='contact__form'>
-          <form onSubmit={contactForm}>
+          <form onSubmit={onSubmit} name='contact'>
             <div className='contact__input'>
               <label>Ime</label>
-              <input />
+              <input
+                name='firstname'
+                type='text'
+                value={input.firstname}
+                onChange={onChange}
+              />
+
+              {error &&
+                <div className='sign__error'>
+                  {error.firstname}
+                </div>}
             </div>
             <div className='contact__input'>
               <label>Email</label>
-              <input />
+              <input
+                name='email'
+                type='email'
+                value={input.email}
+                onChange={onChange}
+              />
+              {error &&
+                <div className='sign__error'>
+                  {error.email || error.serverError}
+                </div>}
             </div>
             <div className='contact__input'>
-              <label>Tema</label>
-              <input />
+              <label>Title</label>
+              <input
+                name='title'
+                type='text'
+                value={input.title}
+                onChange={onChange}
+              />
+              {error &&
+                <div className='sign__error'>
+                  {error.title}
+                </div>}
             </div>
             <div className='contact__input'>
               <label>Pitanje</label>
-              <textarea rows='7' />
+              <textarea
+                rows='7'
+                name='question'
+                type='text'
+                value={input.question}
+                onChange={onChange}
+              />
+              {error &&
+                <div className='sign__error'>
+                  {error.question}
+                </div>}
             </div>
             <div className='contact__input'>
               <button>Submit</button>

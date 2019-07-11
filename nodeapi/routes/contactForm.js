@@ -4,6 +4,6 @@ const router = express.Router();
 // controllers
 const { contactForm } = require('../controllers/contactForm');
 
-router.get('/', contactForm);
+router.post('/', contactForm);
 
 module.exports = router;
