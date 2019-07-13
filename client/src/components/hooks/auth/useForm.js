@@ -5,12 +5,14 @@ import useSign from './useSign';
 import useAuthenticate from './useAuthenticate';
 import useErrorHandler from './useErrorHandle';
 import useContactForm from '../contact/useContactForm';
+import useFetchNewsletter from '../home/useFetchNewsletter';
 
 const useForm = () => {
   const { signup, signin } = useSign();
   const { contactForm } = useContactForm();
   const { authenticate } = useAuthenticate();
   const { errorHandle } = useErrorHandler();
+  const { fetchNewsletter } = useFetchNewsletter();
   const [error, setError] = useState(undefined);
   const [redirect, setRedirect] = useState(false);
   const [input, setInput] = useState({
@@ -101,6 +103,23 @@ const useForm = () => {
           });
       } else {
         setError({ firstname, email, title, question });
+      }
+    }
+
+    if (e.target.name === 'newsletter') {
+      if (!email) {
+        return fetchNewsletter({
+          email: input.email
+        });
+        // .then(res => {
+        //   console.log(res);
+        // })
+        // .catch(err => {
+        //   setError(err);
+        //   console.log(err);
+        // });
+      } else {
+        setError({ email });
       }
     }
   };

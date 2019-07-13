@@ -48,12 +48,15 @@ const post = require('./nodeapi/routes/post');
 const auth = require('./nodeapi/routes/auth');
 const user = require('./nodeapi/routes/user');
 const data = require('./nodeapi/routes/data');
-const contactForm = require('./nodeapi/routes/contactForm');
+const contact = require('./nodeapi/routes/contact');
+const newsletter = require('./nodeapi/routes/newsletter');
+
 app.use('/', post);
 app.use('/', auth);
 app.use('/', user);
 app.use('/data', data);
-app.use('/contact', contactForm);
+app.use('/contact', contact);
+app.use('/newsletter', newsletter);
 
 // express jwt (this is must be below route)
 app.use(function (err, req, res, next) {
