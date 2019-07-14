@@ -1,24 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 // components
 import Box from "./partials/Box";
 import HomeAbout from "./HomeAbout";
-// import HomeCourse from "./HomeCourse";
 import HomeCourseV2 from "./HomeCourseV2";
-// import HomeExams from "./HomeExams";
-// import Certificate from "./partials/Certificate";
+
 import HomeBlog from "./HomeBlog";
 import HomeEvents from "./HomeEvents";
 import HomeTeachers from "./HomeTeachers";
 
 // hooks
 import useBox from "../../hooks/useBox";
+import useOnScreen from "../../hooks/useOnScreen";
 
 //images
-// import background from "../../../sass/images/9.jpg";
+import background from "../../../sass/images/9.jpg";
+console.log(background);
 
 const Home = () => {
   const { boxes } = useBox();
+  const ref = useRef();
+  const onScreen = useOnScreen(ref);
+  const [xad, setXad] = useState(() => {
+    return { backgroundImage: `url(${background})` };
+  });
 
   // stavio sam ovo ovde da bi resetovao scroll PRE NEGO STO SE COMPONENT MOUNT. Ovo je umesto componentWillMount
   const [reset] = useState(() => {
@@ -26,12 +31,12 @@ const Home = () => {
   });
 
   return (
-    <div className="home">
+    <div className="home" ref={ref}>
       {reset}
       <div
         className="home__content"
-        // style={{ backgroundImage: `url(${background})` }}
-      >
+        // style={{ backgroundImage: `url(${background})` }}>
+        style={xad}>
         <div className="home__mask" />
         <h1 className="home__h1">
           Dobrodosli u nas kutak u kome smo oziveli najbolje u nastavi
@@ -50,11 +55,8 @@ const Home = () => {
         <Box info={boxes().box5} />
       </div>
       <HomeAbout />
-      {/* <HomeCourse /> */}
       <HomeCourseV2 />
-      {/* <HomeExams /> */}
       <HomeBlog />
-      {/* <Certificate /> */}
       <HomeEvents />
       <HomeTeachers />
     </div>

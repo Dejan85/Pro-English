@@ -13,16 +13,16 @@
     margin: 0 auto;
   }
 
-  &__mask {
-    position: absolute;
-    background: rgba($color-dark, 0.6);
-    width: 100%;
-    height: 100%;
+  // &__mask {
+  //   position: absolute;
+  //   background: rgba($color-dark, 0.6);
+  //   width: 100%;
+  //   height: 100%;
 
-    @include respond(1200) {
-      display: none;
-    }
-  }
+  //   @include respond(1200) {
+  //     display: none;
+  //   }
+  // }
 
   &__header {
     display: flex;
