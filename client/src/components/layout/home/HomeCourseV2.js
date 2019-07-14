@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 //images
-import slika from "../../../sass/images/28.webp";
-import slika2 from "../../../sass/images/29.webp";
+import slika from "../../../sass/images/50.jpg";
+import slika2 from "../../../sass/images/51.jpg";
 
 const HomeCourseV2 = () => {
   return (

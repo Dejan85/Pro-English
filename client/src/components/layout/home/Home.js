@@ -14,14 +14,13 @@ import useBox from "../../hooks/useBox";
 import useOnScreen from "../../hooks/useOnScreen";
 
 //images
-import background from "../../../sass/images/9.jpg";
-console.log(background);
+import background from "../../../sass/images/9.1.jpg";
 
 const Home = () => {
   const { boxes } = useBox();
-  const ref = useRef();
-  const onScreen = useOnScreen(ref);
-  const [xad, setXad] = useState(() => {
+  // const ref = useRef();
+  // const onScreen = useOnScreen(ref);
+  const [xad] = useState(() => {
     return { backgroundImage: `url(${background})` };
   });
 
@@ -30,14 +29,12 @@ const Home = () => {
     return window.scrollTo(0, 0);
   });
 
+  console.log("render");
+
   return (
-    <div className="home" ref={ref}>
+    <div className="home">
       {reset}
-      <div
-        className="home__content"
-        // style={{ backgroundImage: `url(${background})` }}>
-        style={xad}>
-        <div className="home__mask" />
+      <div className="home__content" style={xad}>
         <h1 className="home__h1">
           Dobrodosli u nas kutak u kome smo oziveli najbolje u nastavi
           engleskog.
