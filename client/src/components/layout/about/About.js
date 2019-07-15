@@ -18,6 +18,8 @@ const About = () => {
     return { backgroundImage: `url(${bckg2})` };
   });
 
+  console.log("about rendering");
+
   return (
     <div className="about">
       {reset}

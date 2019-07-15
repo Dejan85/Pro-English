@@ -10,12 +10,14 @@ import '../src/sass/main.scss';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import { fetchCourseData } from './redux/actions/fetchData';
+import { getBackground } from './redux/actions/background';
 
 import MainRouter from './MainRouter';
 import AdminRouter from './components/layout/admin/route/AdminRouter';
 
 // fetch data from api
 store.dispatch(fetchCourseData());
+store.dispatch(getBackground());
 
 function App () {
   return (

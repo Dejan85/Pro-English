@@ -40,6 +40,7 @@ const Blog = () => {
         "Beskrajan, plavi krug. U njemu, zvezda. Da li je san o izobilju, boljem životu i srećnim ljudima moguće ostvariti samo u Americi ili svoj američki san možete da doživite i na suprotnoj strani Zemljine hemisfere, u čarobnoj Australiji?  Beskrajan, plavi krug. U njemu, zvezda. Da li je san o izobilju, boljem životu i srećnim ljudima moguće ostvariti samo u Americi ili svoj američki san možete da doživite i na suprotnoj strani Zemljine hemisfere, u čarobnoj Australiji?",
     },
   });
+  console.log("blog rendering");
   return (
     <div className="blog">
       {reset}

@@ -1,12 +1,14 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 
 //
 // ─── COURSE REDUCERS ────────────────────────────────────────────────────────────
 //
 
-import course from './course';
+import course from "./course";
+import background from "./background";
 
 export default combineReducers({
   // course reducers
-  data: course
+  data: course,
+  background: background,
 });
