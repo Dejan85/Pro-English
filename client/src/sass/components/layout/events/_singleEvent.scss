@@ -22,8 +22,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 13rem;
-    height: 15rem;
+    width: 10rem;
+    height: 11rem;
     border-top: 3px solid $color-pink-dark;
     // outline: 1px solid red;
 
@@ -48,7 +48,7 @@
   &__heading {
     width: 100%;
     height: 15rem;
-    padding-left: 3rem;
+    padding-left: 1rem;
   }
 
   &__content {
@@ -65,15 +65,11 @@
 
   &__span {
     display: block;
-    padding: 0.5rem 0 2rem 0;
+    padding: 1rem 0 2rem 0;
 
     i {
       padding-right: 1rem;
       color: $color-pink-dark;
     }
-  }
-
-  &__p {
-    padding-top: 9rem;
   }
 }

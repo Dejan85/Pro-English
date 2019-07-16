@@ -1,4 +1,11 @@
 .events {
+  &__h3 {
+    font-size: 3.4rem;
+    font-family: $font-8;
+    font-weight: 300;
+    color: lighten($color-grey-dark, 20%);
+  }
+
   &__label {
     font-size: 1.6rem;
     font-family: $font-1;

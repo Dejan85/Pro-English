@@ -20,6 +20,15 @@
     }
   }
 
+  &__calendar {
+    // margin-top: 5rem;
+    width: 39rem;
+
+    @include respond(900) {
+      width: 100%;
+    }
+  }
+
   &__latest {
     width: 30rem;
     padding: 0 1rem;
@@ -124,10 +133,11 @@
 .calendar {
   margin-top: 5rem;
   width: 39rem;
+  width: 100%;
 
-  @include respond(900) {
-    width: 100%;
-  }
+  // @include respond(900) {
+  //   width: 100%;
+  // }
 
   &__container {
     position: relative;

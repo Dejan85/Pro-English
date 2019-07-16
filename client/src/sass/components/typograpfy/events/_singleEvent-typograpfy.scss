@@ -3,7 +3,7 @@
     &--num {
       font-family: $font-8;
       color: $color-dark;
-      font-size: 4rem;
+      font-size: 3rem;
       font-weight: 500;
     }
     &--mounth {
@@ -19,6 +19,7 @@
     font-family: $font-8;
     font-weight: 500;
     color: $color-dark;
+    line-height: 1;
   }
 
   &__span {

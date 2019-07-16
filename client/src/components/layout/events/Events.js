@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
+// component
 import Event from './partials/Event';
+import Calendar from '../home/calendar/Calendar';
 
 const Events = () => {
   const [reset] = useState(() => {
@@ -9,7 +11,12 @@ const Events = () => {
   return (
     <div className='events'>
       {reset}
+      <h3 className='events__h3'>Budite u toku nasih i vasih desavanja.</h3>
+
       <div className='events__search'>
+        <div className='events__popupCalendar'>
+          <Calendar />
+        </div>
         <p className='events__label'>Izaberi daatum</p>
         <div className='events__calendar'>07/25/2019</div>
         <button className='events__button'>Pretrazi Dogadjaje</button>
@@ -23,7 +30,7 @@ const Events = () => {
         </ul>
       </div>
       <div className='events__heading'>
-        <h2 className='events__h2'>Dogadjaji za 16. 07. 2019.</h2>
+        <h2 className='events__h2'>Desavanja koja su trenutno aktuelna</h2>
       </div>
       <Event />
       <Event />

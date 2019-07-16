@@ -5,12 +5,42 @@
   margin: 0 auto;
   padding: 6rem 2rem 6rem 2rem;
 
+  &__h3 {
+    text-align: center;
+    padding: 10rem 0 5rem 0;
+  }
+
   &__search {
-    padding: 15rem 0 5rem 0;
+    padding: 5rem 0 5rem 0;
     display: flex;
     // outline: 1px solid red;
     flex-wrap: wrap;
     // justify-content: space-between;
+    // border-top: 1px solid darken($color-grey-light, 10%);
+  }
+
+  &__popupCalendar {
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    top: 10rem;
+
+    .calendar {
+      margin-top: 0;
+
+      &__header {
+        height: 3rem;
+      }
+
+      &__item {
+        padding: 0.1rem 0;
+      }
+
+      &__item-2 {
+        flex: 1 1 14.28%;
+        padding: 2% 0;
+      }
+    }
   }
 
   &__calendar {
@@ -46,8 +76,8 @@
   &__item {
     list-style-type: none;
     padding: 1rem 2rem;
-    // border: 1px solid lighten($color-pink-dark, 20%);
-    border: 1px solid $color-pink-dark;
+    border: 1px solid darken($color-grey-light, 10%);
+    // border: 1px solid $color-pink-dark;
     border-radius: 20rem;
     cursor: pointer;
 
@@ -63,6 +93,6 @@
   &__h2 {
     border: 1px solid darken($color-grey-light, 10%);
     border-left: 1.5px solid $color-pink-dark;
-    padding: 1.2rem;
+    padding: 0.8rem;
   }
 }
