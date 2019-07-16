@@ -199,6 +199,13 @@
     padding: 5% 0;
     list-style-type: none;
     border: 0.5px solid $color-grey-light;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &:hover {
+      background: $color-pink-dark;
+      color: white;
+    }
   }
 
   &__event {

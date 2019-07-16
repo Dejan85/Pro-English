@@ -5,7 +5,7 @@ import CalendarEventCard from './CalendarEventCard';
 // Hooks
 import useCalendarTest from '../../../hooks/useCalendarTest';
 
-const Calendar = () => {
+const Calendar = ({ closePopup, calendarEventCard }) => {
   const { getAllDaysInMonth, showHeaderDate, weeks } = useCalendarTest();
   const [currentDate, setCurrentDate] = useState({
     year: new Date().getFullYear(),
@@ -60,7 +60,11 @@ const Calendar = () => {
           <ul className='calendar__list-2'>
             {allDays.map((item, index) => {
               return (
-                <li key={index} className='calendar__item-2'>
+                <li
+                  key={index}
+                  className='calendar__item-2'
+                  onClick={closePopup}
+                >
                   {item}
                 </li>
               );
@@ -68,9 +72,10 @@ const Calendar = () => {
           </ul>
         </div>
       </div>
-      {/* <div className='calendar__event'>
-        <CalendarEventCard />
-      </div> */}
+      {!calendarEventCard &&
+        <div className='calendar__event'>
+          <CalendarEventCard />
+        </div>}
     </div>
   );
 };
