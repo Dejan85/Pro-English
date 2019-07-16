@@ -22,6 +22,8 @@ const Events = () => {
   });
   const actuel = useRef();
   const daily = useRef();
+  const weekly = useRef();
+  const mounthly = useRef();
 
   const calendarHandler = () => {
     setCalendar(!calendar);
@@ -32,13 +34,16 @@ const Events = () => {
     setCalendar(false);
   };
 
-  const sortingHandler = e => {
-    console.log(e.target.name);
+  const sortingHandler = ref => {
+    setSort({
+      [ref.current.getAttribute('data-name')]: !sort[
+        [ref.current.getAttribute('data-name')]
+      ]
+    });
   };
 
   window.onwheel = closeCalendar;
 
-  console.log('render');
   return (
     <div className='events' onClick={closeCalendar}>
       {reset}
@@ -60,16 +65,36 @@ const Events = () => {
       </div>
       <div className='events__sort'>
         <ul className='events__list'>
-          <li className='events__item' name='actuel' onClick={sortingHandler}>
+          <li
+            className='events__item'
+            data-name='actuel'
+            ref={actuel}
+            onClick={sortingHandler.bind(this, actuel)}
+          >
             Aktuelno
           </li>
-          <li className='events__item' name='day' onClick={sortingHandler}>
+          <li
+            className='events__item'
+            data-name='daily'
+            ref={daily}
+            onClick={sortingHandler.bind(this, daily)}
+          >
             Dnevni
           </li>
-          <li className='events__item' name='week' onClick={sortingHandler}>
+          <li
+            className='events__item'
+            data-name='weekly'
+            ref={weekly}
+            onClick={sortingHandler.bind(this, weekly)}
+          >
             Nedeljni
           </li>
-          <li className='events__item' name='month' onClick={sortingHandler}>
+          <li
+            className='events__item'
+            data-name='mounthly'
+            ref={mounthly}
+            onClick={sortingHandler.bind(this, mounthly)}
+          >
             Mesecni
           </li>
         </ul>
@@ -77,7 +102,12 @@ const Events = () => {
       <div className='events__heading'>
         <h2 className='events__h2'>Desavanja koja su trenutno aktuelna</h2>
       </div>
-      <Actuel />
+      {(sort.actuel && <Actuel />) ||
+        (sort.daily && <Daily />) ||
+        (sort.weekly && <Weekly />) ||
+        (sort.mounthly && <Mounthly />)}
+
+      {/* {sort.mounthly && <Mounthly />} */}
     </div>
   );
 };

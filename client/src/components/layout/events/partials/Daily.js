@@ -4,7 +4,8 @@ import React from 'react';
 import Event from './Event';
 
 const Daily = () => {
-  return <Event />;
+  // return <Event />;
+  return <div className=''>dnevni</div>;
 };
 
 export default Daily;
