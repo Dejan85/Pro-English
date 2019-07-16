@@ -1,7 +1,68 @@
 .events {
   max-width: 120rem;
   width: 100%;
-  height: 100rem;
+  // height: 100rem;
   margin: 0 auto;
-  padding: 6rem 2rem 0 2rem;
+  padding: 6rem 2rem 6rem 2rem;
+
+  &__search {
+    padding: 15rem 0 5rem 0;
+    display: flex;
+    // outline: 1px solid red;
+    flex-wrap: wrap;
+    // justify-content: space-between;
+  }
+
+  &__calendar {
+    width: 20rem;
+    border: 1px solid darken($color-grey-light, 10%);
+    border-radius: 20rem;
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    padding: 1rem 0;
+    padding-left: 2rem;
+    cursor: pointer;
+  }
+
+  &__label {
+    width: 100%;
+    padding: 0rem 0rem 2rem;
+  }
+
+  &__button {
+    border: 1px solid $color-pink-dark;
+    border-radius: 20rem;
+    background: none;
+    padding: 0 2rem;
+    cursor: pointer;
+    margin-left: 2rem;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    list-style-type: none;
+    padding: 1rem 2rem;
+    // border: 1px solid lighten($color-pink-dark, 20%);
+    border: 1px solid $color-pink-dark;
+    border-radius: 20rem;
+    cursor: pointer;
+
+    &:not(:first-child) {
+      margin-left: 2rem;
+    }
+  }
+
+  &__heading {
+    padding: 5rem 0;
+  }
+
+  &__h2 {
+    border: 1px solid darken($color-grey-light, 10%);
+    border-left: 1.5px solid $color-pink-dark;
+    padding: 1.2rem;
+  }
 }

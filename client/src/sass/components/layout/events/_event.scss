@@ -1,15 +1,21 @@
 .event {
   display: flex;
   width: 100%;
-  height: 29rem;
-  padding: 3rem 0;
-  margin: 5rem 0;
+  // height: 29rem;
+  padding: 5rem 0;
+  // margin: 5rem 0;
+  // outline: 1px solid red;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $color-grey-light;
+  }
 
   &__date {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 25rem;
+    width: 10rem;
+    height: 11rem;
     border-top: 3px solid $color-pink-dark;
 
     &--num {
@@ -33,11 +39,17 @@
   &__content {
     position: relative;
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     max-width: 150rem;
     width: 100%;
-    padding-left: 4rem;
+    // padding-left: 4rem;
     // outline: 1px solid red;
+    flex-wrap: wrap;
+  }
+
+  &__h2 {
+    // outline: 1px solid red;
+    padding-left: 1rem;
   }
 
   &__span {
@@ -50,10 +62,12 @@
     }
   }
 
+  &__p {
+    padding: 2rem 0 3rem;
+  }
+
   &__link {
-    position: absolute;
-    display: inline-block;
-    bottom: 0;
+    display: block;
     padding: 0.7rem;
     border: 1px solid $color-pink-dark;
     transition: all 0.5s;
