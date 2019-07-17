@@ -4,7 +4,16 @@ import React from 'react';
 import Event from './Event';
 
 const Actuel = () => {
-  return <Event />;
+  return (
+    <div className='events__actuel'>
+      <Event />
+      <Event />
+      <Event />
+      <Event />
+      <Event />
+      <Event />
+    </div>
+  );
 };
 
 export default Actuel;

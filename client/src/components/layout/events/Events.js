@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 
 // components
-import Event from './partials/Event';
 import Calendar from '../home/calendar/Calendar';
 import Actuel from './partials/Actuel';
 import Daily from './partials/Daily';
@@ -36,16 +35,14 @@ const Events = () => {
 
   const sortingHandler = ref => {
     setSort({
-      [ref.current.getAttribute('data-name')]: !sort[
-        [ref.current.getAttribute('data-name')]
-      ]
+      [ref.current.getAttribute('data-name')]: true
     });
   };
 
   window.onwheel = closeCalendar;
 
   return (
-    <div className='events' onClick={closeCalendar}>
+    <div className='events'>
       {reset}
       <h3 className='events__h3'>Budite u toku nasih i vasih desavanja.</h3>
 
@@ -66,7 +63,7 @@ const Events = () => {
       <div className='events__sort'>
         <ul className='events__list'>
           <li
-            className='events__item'
+            className={`events__item ${sort.actuel && 'events__item__active2'}`}
             data-name='actuel'
             ref={actuel}
             onClick={sortingHandler.bind(this, actuel)}
@@ -74,7 +71,7 @@ const Events = () => {
             Aktuelno
           </li>
           <li
-            className='events__item'
+            className={`events__item ${sort.daily && 'events__item__active2'}`}
             data-name='daily'
             ref={daily}
             onClick={sortingHandler.bind(this, daily)}
@@ -82,7 +79,7 @@ const Events = () => {
             Dnevni
           </li>
           <li
-            className='events__item'
+            className={`events__item ${sort.weekly && 'events__item__active2'}`}
             data-name='weekly'
             ref={weekly}
             onClick={sortingHandler.bind(this, weekly)}
@@ -90,7 +87,8 @@ const Events = () => {
             Nedeljni
           </li>
           <li
-            className='events__item'
+            className={`events__item ${sort.mounthly &&
+              'events__item__active2'}`}
             data-name='mounthly'
             ref={mounthly}
             onClick={sortingHandler.bind(this, mounthly)}
