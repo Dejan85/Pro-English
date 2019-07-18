@@ -16,7 +16,9 @@ const AdminRouter = props => {
   const [dashboardHandler] = useState(() => {
     return (
       props.history.location.pathname === '/admin' ||
-      props.history.location.pathname === '/admin/blog'
+      props.history.location.pathname === '/admin/blog' ||
+      props.history.location.pathname === '/admin/blog/add' ||
+      props.history.location.pathname === '/admin/events/add' 
     )
   })
 
