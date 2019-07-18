@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 // import Select from 'react-select';
 
 // hooks
@@ -12,25 +12,19 @@ const Event = () => {
 
   for (let i = 0; i <= 24; i++) {
     if (i <= 9) {
-      //   hour.push({ label: '0' + i });
       hour.push('0' + i);
     } else {
-      //   hour.push({ label: i });
       hour.push(i);
     }
   }
 
   for (let i = 0; i <= 60; i++) {
     if (i <= 9) {
-      //   min.push({ label: '0' + i });
       min.push('0' + i);
     } else {
-      //   min.push({ label: i });
       min.push(i);
     }
   }
-
-  // console.log(hour);
 
   return (
     <form onSubmit={onSubmit} name='addEvent'>
@@ -79,7 +73,11 @@ const Event = () => {
         </div>
 
         <div className='addEvents__event--inputHolder'>
-          <input name='event' onChange={onChange} value={input.event} />
+          <input
+            name='eventDescription'
+            onChange={onChange}
+            value={input.eventDescription}
+          />
         </div>
         <div className='addEvents__event--inputHolder'>
           <button type='submit'>Submit</button>

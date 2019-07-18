@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 // components
 import Event from './Event';
-
 // hooks
 import useCalendarTest from '../../../../hooks/useCalendarTest';
 
@@ -15,7 +14,13 @@ const AddEvents = () => {
   const [event, setEvent] = useState();
   const allDays = getAllDaysInMonth(currentDate);
 
-  const eventHandler = () => {
+  let initialValue;
+  const refContainer = useRef();
+
+  console.log(refContainer);
+
+  const eventHandler = item => {
+    console.log(item);
     setEvent(!event);
   };
 
@@ -36,14 +41,20 @@ const AddEvents = () => {
 
           {allDays.map((item, index) => {
             return (
-              <li key={index} className='addEvents--item2'>
+              <li
+                key={index}
+                className='addEvents--item2'
+                ref={() => {
+                  return refContainer;
+                }}
+              >
                 <h6 className='addEvents--h6'>
                   {item}
                 </h6>
                 {item !== ' '
                   ? <i
                     className='fas fa-plus addEvents__icon'
-                    onClick={eventHandler}
+                    onClick={eventHandler.bind(this, item)}
                     />
                   : null}
               </li>

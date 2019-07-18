@@ -24,10 +24,10 @@ const useForm = () => {
     title: '',
     question: '',
     timeFromOne: '',
-    timeToOne: '',
+    timeToOne: '00',
     timeFromTwo: '',
-    timeToTwo: '',
-    event: ''
+    timeToTwo: '00',
+    eventDescription: ''
   });
 
   const onChange = e => {
@@ -134,6 +134,16 @@ const useForm = () => {
       } else {
         setError({ email });
       }
+    }
+
+    if ((e.target.name = 'addEvents')) {
+      const data = {
+        time: `${input.timeFromOne +
+          ' : ' +
+          input.timeToOne} - ${input.timeFromTwo + ' : ' + input.timeToTwo}`,
+        discription: input.eventDescription
+      };
+      console.log(data);
     }
   };
 
