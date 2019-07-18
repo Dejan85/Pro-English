@@ -22,7 +22,12 @@ const useForm = () => {
     password: '',
     confirmPassword: '',
     title: '',
-    question: ''
+    question: '',
+    timeFromOne: '',
+    timeToOne: '',
+    timeFromTwo: '',
+    timeToTwo: '',
+    event: ''
   });
 
   const onChange = e => {
@@ -30,6 +35,7 @@ const useForm = () => {
       ...input,
       [e.target.name]: e.target.value
     });
+
     setError({
       ...error,
       [e.target.name]: ''
@@ -46,7 +52,14 @@ const useForm = () => {
       confirmPassword,
       title,
       question
+      // timeFromOne,
+      // timeToOne,
+      // timeFromTwo,
+      // timeToTwo,
+      // event
     } = errorHandle(input);
+
+    console.log(input);
 
     if (e.target.name === 'signup') {
       if (!firstname && !lastname && !email && !password && !confirmPassword) {

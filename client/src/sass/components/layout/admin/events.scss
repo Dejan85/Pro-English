@@ -1,0 +1,74 @@
+.addEvents {
+  &--list {
+    display: flex;
+    background: $color-green-blue;
+  }
+
+  &--list2 {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &--item {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 1.6rem 0;
+    flex: 1;
+    border-left: 0.1px solid lighten($color-green-blue, 2%);
+  }
+
+  &--item2 {
+    display: flex;
+    position: relative;
+
+    flex-direction: column;
+    padding: 1.6rem 0;
+    // max-width: 14.28%;
+    flex: 1 0 14.28%;
+    width: 100%;
+    border: 0.1px solid lighten($color-grey-light, 2%);
+    min-height: 30rem;
+    height: 100%;
+  }
+
+  &--h6 {
+    padding-left: 2rem;
+  }
+
+  &__item {
+    text-align: center;
+    margin: 0.5rem;
+  }
+
+  &__icon {
+    position: absolute;
+    font-size: 5rem;
+    color: $color-grey-light;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &:hover {
+      color: $color-pink-dark;
+    }
+  }
+
+  &__event {
+    position: fixed;
+    background: white;
+    // outline: 1px solid red;
+    width: 100%;
+    width: 113.2rem;
+    height: 30rem;
+    z-index: 50;
+
+    &--inputHolder {
+      display: flex;
+      width: 20rem;
+    }
+  }
+}

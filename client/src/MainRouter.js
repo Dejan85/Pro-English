@@ -17,17 +17,21 @@ import Contact from "./components/layout/contact/Contact";
 const MainRouter = props => {
   const [headerAndFooter] = useState(() => {
     return (
-      props.history.location.pathname === "/admin" ||
-      props.history.location.pathname === "/admin/signin" ||
-      props.history.location.pathname === "/admin/signup" ||
-      props.history.location.pathname === "/admin/blog" ||
-      props.history.location.pathname === "/admin/events/add" 
+      props.history.location.pathname === "/" ||
+      props.history.location.pathname === "/onama" ||
+      props.history.location.pathname === "/kursevi" ||
+      props.history.location.pathname === "/ispiti" ||
+      props.history.location.pathname === "/singleBlog" ||
+      props.history.location.pathname === "/dogadjaji" ||
+      props.history.location.pathname === "/dogadjaji/one" ||
+      props.history.location.pathname === "/kontakt" 
+
     );
   });
 
   return (
     <>
-      {!headerAndFooter && <Header />}
+      {headerAndFooter && <Header />}
       <Route exact path="/" component={Home} />
       <Route exact path="/onama" component={About} />
       <Route exact path="/kursevi" component={Course} />
@@ -37,7 +41,7 @@ const MainRouter = props => {
       <Route exact path="/dogadjaji" component={Events} />
       <Route exact path="/dogadjaji/one" component={SingleEvent} />
       <Route exact path="/kontakt" component={Contact} />
-      {!headerAndFooter && <Footer />}
+      {headerAndFooter && <Footer />}
     </>
   );
 };

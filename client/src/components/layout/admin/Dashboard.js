@@ -38,7 +38,12 @@ const Dashboard = () => {
                   <i className='fas fa-chevron-down' />
                 </div>
               </li>
-              <DropMenu />
+              <DropMenu
+                add='Add Blog'
+                edit='Edit Blog'
+                del='Delete Blog'
+                url='/admin/blog/add'
+              />
             </ul>
             <ul
               className='dashboard__list'
@@ -47,17 +52,22 @@ const Dashboard = () => {
             >
               <li className='dashboard__item'>
                 <div className='dashboard__icon'>
-                  <i className='fas fa-blog' />
-                  <p>Blog</p>
+                  <i className='far fa-calendar-alt' />
+                  <p>Events</p>
                 </div>
                 <div className='dashboard__icon'>
                   <i className='fas fa-chevron-down' />
                 </div>
               </li>
-              <DropMenu />
+              <DropMenu
+                add='Add Events'
+                edit='Edit Events'
+                del='Delete Events'
+                url='/admin/events/add'
+              />
             </ul>
           </div>
-          <div className='test'>
+          <div className='dashboard__panel'>
             <PrivateRoute exact path='/admin/blog/add' component={AddBlog} />
             <PrivateRoute
               exact

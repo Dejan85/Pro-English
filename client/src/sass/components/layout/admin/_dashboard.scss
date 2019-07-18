@@ -69,4 +69,12 @@
       background: darken($color-pink-dark, 5%);
     }
   }
+
+  &__panel {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: auto;
+    position: relative;
+  }
 }

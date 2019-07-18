@@ -1,18 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const DropMenu = () => {
+const DropMenu = ({ add, edit, del, url }) => {
   return (
     <ul className='dashboard__dropMenu'>
       <li className='dashboard__dropMenuItem'>
-        <Link to='/admin/blog/add' className='dashboard__dropMenuLink'>
-          Add Blog
+        <Link to={url} className='dashboard__dropMenuLink'>
+          {add}
         </Link>
         <Link to='/admin' className='dashboard__dropMenuLink'>
-          Edit Blog
+          {edit}
         </Link>
         <Link to='/admin' className='dashboard__dropMenuLink'>
-          Delete Blog
+          {del}
         </Link>
       </li>
     </ul>

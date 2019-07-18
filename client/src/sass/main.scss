@@ -55,6 +55,7 @@
 //DASHBOARD
 @import "./components/layout/admin/dashboard";
 @import "./components/layout/admin/auth/sign";
+@import "./components/layout/admin/events.scss";
 
 // // TYPOGRAPFY
 
@@ -96,3 +97,4 @@
 
 @import "./components/typograpfy/admin/dashboard-typograpfy";
 @import "./components/typograpfy/admin/auth/sign-typograpfy";
+@import "./components/typograpfy/admin/events-typograpfy";
