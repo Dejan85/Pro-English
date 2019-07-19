@@ -39,7 +39,10 @@ exports.signin = (req, res) => {
     }
 
     // generate a token with user id and secret
-    const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
+    const token = jwt.sign(
+      { _id: user._id },
+      'ASDLKJASLDKALSKDASKDLAKSLDAKSLDAKSLDKALKDSKAS'
+    );
 
     // persist the token as 't' in cookie with expire date
     res.cookie('t', token, { expire: new Date() + 9999 });
@@ -80,7 +83,7 @@ exports.forgotPassword = (req, res) => {
     // generate a token with user id and secret
     const token = jwt.sign(
       { _id: user._id, iss: 'NODEAPI' },
-      process.env.JWT_SECRET
+      ' ASDLKJASLDKALSKDASKDLAKSLDAKSLDAKSLDKALKDSKAS'
     );
 
     // email data
