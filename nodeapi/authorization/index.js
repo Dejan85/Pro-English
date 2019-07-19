@@ -1,13 +1,13 @@
-const expressJwt = require("express-jwt");
-const dotenv = require("dotenv");
+const expressJwt = require('express-jwt');
+const dotenv = require('dotenv');
 dotenv.config();
 
 // require signin
 exports.requireSignin = expressJwt({
   // if the token is valid, express jwt appends the verified users id
   // in an auth key to the erquest object
-  secret: process.env.JWT_SECRET,
-  userProperty: "auth",
+  secret: 'ASDLKJASLDKALSKDASKDLAKSLDAKSLDAKSLDKALKDSKAS',
+  userProperty: 'auth'
 });
 
 // has authorization
@@ -15,7 +15,7 @@ exports.hasAuthorization = (req, res, next) => {
   const authorized = req.profile && req.auth && req.profile._id && req.auth._id;
   if (!authorized) {
     return res.status(403).json({
-      error: "User is not aothorized to perform this action",
+      error: 'User is not aothorized to perform this action'
     });
   }
   next();
@@ -27,7 +27,7 @@ exports.isPoster = (req, res, next) => {
 
   if (!isPoster) {
     return res.status(403).json({
-      error: "User is not authorized!",
+      error: 'User is not authorized!'
     });
   }
   next();
