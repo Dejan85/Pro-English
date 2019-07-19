@@ -16,9 +16,13 @@ dotenv.config();
 //
 // ─── DB ─────────────────────────────────────────────────────────────────────────
 //
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true }).then(() => {
-  console.log('Db Connected');
-});
+mongoose
+  .connect('mongodb://branka:branka123456@ds263156.mlab.com:63156/proenglish', {
+    useNewUrlParser: true
+  })
+  .then(() => {
+    console.log('Db Connected');
+  });
 
 mongoose.connection.on('error', err => {
   console.log(`Db connection error: ${err.message}`);
