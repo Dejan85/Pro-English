@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import Event from './Event';
 // hooks
 import useCalendarTest from '../../../../hooks/useCalendarTest';
-import { unwatchFile } from 'fs';
 
 const AddEvents = () => {
   const { getAllDaysInMonth } = useCalendarTest();
@@ -23,7 +22,6 @@ const AddEvents = () => {
       };
     });
 
-    console.log('rado');
     setEvent(!event);
   };
 

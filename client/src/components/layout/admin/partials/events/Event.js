@@ -30,69 +30,73 @@ const Event = ({ eventData, eventHandler }) => {
     () => {
       return getEventData(eventData);
     },
-    [eventData]
+    [eventData, getEventData]
   );
 
   return (
-    <form onSubmit={onSubmit} name='addEvent'>
-      <div className='addEvents__event'>
-        <div className='addEvents__event--inputHolder'>
-          <select onChange={onChange} name='timeFromOne'>
-            {hour.map((item, index) => {
-              return (
-                <option key={index} value={item}>
-                  {item}
-                </option>
-              );
-            })}
-          </select>
-          :
-          <select name='timeToOne' onChange={onChange}>
-            {min.map((item, index) => {
-              return (
-                <option key={index} value={item}>
-                  {item}
-                </option>
-              );
-            })}
-          </select>
-        </div>
-        <div className='addEvents__event--inputHolder'>
-          <select onChange={onChange} name='timeFromTwo'>
-            {hour.map((item, index) => {
-              return (
-                <option key={index} value={item}>
-                  {item}
-                </option>
-              );
-            })}
-          </select>
-          :
-          <select onChange={onChange} name='timeToTwo'>
-            {min.map((item, index) => {
-              return (
-                <option key={index} value={item}>
-                  {item}
-                </option>
-              );
-            })}
-          </select>
-        </div>
-
-        <div className='addEvents__event--inputHolder'>
-          <input
-            name='eventDescription'
-            onChange={onChange}
-            value={input.eventDescription}
-          />
-        </div>
-        <div className='addEvents__event--inputHolder'>
-          <button type='submit' onClick={eventHandler}>
-            Submit
-          </button>
-        </div>
+    <div className='addEvents__event'>
+      <div className='addEvents__event--inputHolder'>
+        <select onChange={onChange} name='timeFromOne'>
+          {hour.map((item, index) => {
+            return (
+              <option key={index} value={item}>
+                {item}
+              </option>
+            );
+          })}
+        </select>
+        :
+        <select name='timeToOne' onChange={onChange}>
+          {min.map((item, index) => {
+            return (
+              <option key={index} value={item}>
+                {item}
+              </option>
+            );
+          })}
+        </select>
       </div>
-    </form>
+      <div className='addEvents__event--inputHolder'>
+        <select onChange={onChange} name='timeFromTwo'>
+          {hour.map((item, index) => {
+            return (
+              <option key={index} value={item}>
+                {item}
+              </option>
+            );
+          })}
+        </select>
+        :
+        <select onChange={onChange} name='timeToTwo'>
+          {min.map((item, index) => {
+            return (
+              <option key={index} value={item}>
+                {item}
+              </option>
+            );
+          })}
+        </select>
+      </div>
+
+      <div className='addEvents__event--inputHolder'>
+        <input
+          name='eventDescription'
+          onChange={onChange}
+          value={input.eventDescription}
+        />
+      </div>
+      <div className='addEvents__event--inputHolder'>
+        <button
+          name='addEvent'
+          onClick={e => {
+            onSubmit(e);
+            eventHandler();
+          }}
+        >
+          Submit
+        </button>
+      </div>
+    </div>
   );
 };
 

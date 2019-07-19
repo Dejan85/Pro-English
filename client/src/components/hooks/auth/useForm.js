@@ -144,7 +144,7 @@ const useForm = () => {
         time: `${input.timeFromOne +
           ' : ' +
           input.timeToOne} - ${input.timeFromTwo + ' : ' + input.timeToTwo}`,
-        discription: input.eventDescription,
+        description: input.eventDescription,
         date
       };
 
