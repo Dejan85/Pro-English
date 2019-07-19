@@ -1,26 +1,29 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // components
 import Event from './Event';
 // hooks
 import useCalendarTest from '../../../../hooks/useCalendarTest';
+import { unwatchFile } from 'fs';
 
 const AddEvents = () => {
   const { getAllDaysInMonth } = useCalendarTest();
-  const [currentDate] = useState({
+  const [currentDate, setCurrentDate] = useState({
     year: new Date().getFullYear(),
     month: new Date().getMonth()
   });
   const [event, setEvent] = useState();
   const allDays = getAllDaysInMonth(currentDate);
 
-  let initialValue;
-  const refContainer = useRef();
-
-  console.log(refContainer);
-
   const eventHandler = item => {
-    console.log(item);
+    setCurrentDate(() => {
+      return {
+        ...currentDate,
+        day: item
+      };
+    });
+
+    console.log('rado');
     setEvent(!event);
   };
 
@@ -37,17 +40,12 @@ const AddEvents = () => {
           <li className='addEvents--item'>Nedelja</li>
         </ul>
         <ul className='addEvents--list2'>
-          {event && <Event />}
+          {event &&
+            <Event eventData={currentDate} eventHandler={eventHandler} />}
 
           {allDays.map((item, index) => {
             return (
-              <li
-                key={index}
-                className='addEvents--item2'
-                ref={() => {
-                  return refContainer;
-                }}
-              >
+              <li key={index} className='addEvents--item2'>
                 <h6 className='addEvents--h6'>
                   {item}
                 </h6>

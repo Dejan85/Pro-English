@@ -1,11 +1,11 @@
-import React from 'react';
-// import Select from 'react-select';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 // hooks
 import useForm from '../../../../hooks/auth/useForm';
 
-const Event = () => {
-  const { onChange, onSubmit, input } = useForm();
+const Event = ({ eventData, eventHandler }) => {
+  const { onChange, onSubmit, input, getEventData } = useForm();
 
   let hour = [];
   let min = [];
@@ -25,6 +25,13 @@ const Event = () => {
       min.push(i);
     }
   }
+
+  useEffect(
+    () => {
+      return getEventData(eventData);
+    },
+    [eventData]
+  );
 
   return (
     <form onSubmit={onSubmit} name='addEvent'>
@@ -80,11 +87,21 @@ const Event = () => {
           />
         </div>
         <div className='addEvents__event--inputHolder'>
-          <button type='submit'>Submit</button>
+          <button type='submit' onClick={eventHandler}>
+            Submit
+          </button>
         </div>
       </div>
     </form>
   );
+};
+
+Event.propTypes = {
+  eventData: PropTypes.object,
+  onChange: PropTypes.func,
+  onSubmit: PropTypes.func,
+  input: PropTypes.object,
+  eventHandler: PropTypes.func
 };
 
 export default Event;

@@ -29,6 +29,7 @@ const useForm = () => {
     timeToTwo: '00',
     eventDescription: ''
   });
+  const [date, setDate] = useState();
 
   const onChange = e => {
     setInput({
@@ -40,6 +41,10 @@ const useForm = () => {
       ...error,
       [e.target.name]: ''
     });
+  };
+
+  const getEventData = date => {
+    setDate(date);
   };
 
   const onSubmit = e => {
@@ -58,8 +63,6 @@ const useForm = () => {
       // timeToTwo,
       // event
     } = errorHandle(input);
-
-    console.log(input);
 
     if (e.target.name === 'signup') {
       if (!firstname && !lastname && !email && !password && !confirmPassword) {
@@ -141,9 +144,13 @@ const useForm = () => {
         time: `${input.timeFromOne +
           ' : ' +
           input.timeToOne} - ${input.timeFromTwo + ' : ' + input.timeToTwo}`,
-        discription: input.eventDescription
+        discription: input.eventDescription,
+        date
       };
-      console.log(data);
+
+      console.log(data.time);
+      console.log(data.description);
+      console.log(data.date);
     }
   };
 
@@ -152,7 +159,8 @@ const useForm = () => {
     onChange,
     onSubmit,
     error,
-    redirect
+    redirect,
+    getEventData
   };
 };
 
