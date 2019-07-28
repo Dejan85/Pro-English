@@ -83,6 +83,16 @@ app.get('*', (req, res) => {
 });
 
 //
+// ─── HEROKU ─────────────────────────────────────────────────────────────────────
+//
+
+var http = require('http');
+setInterval(function () {
+  console.log('radi');
+  http.get('https://brankaapp.herokuapp.com/');
+}, 300000); // every 5 minutes (300000)
+
+//
 // ─── SERVER CONNECT ─────────────────────────────────────────────────────────────
 //
 
