@@ -15,23 +15,23 @@ import SingleEvent from "./components/layout/events/SingleEvent";
 import Contact from "./components/layout/contact/Contact";
 
 const MainRouter = props => {
-  const [headerAndFooter] = useState(() => {
-    return (
-      props.history.location.pathname === "/" ||
-      props.history.location.pathname === "/onama" ||
-      props.history.location.pathname === "/kursevi" ||
-      props.history.location.pathname === "/ispiti" ||
-      props.history.location.pathname === "/singleBlog" ||
-      props.history.location.pathname === "/dogadjaji" ||
-      props.history.location.pathname === "/dogadjaji/one" ||
-      props.history.location.pathname === "/kontakt" 
+  // const [headerAndFooter] = useState(() => {
+  //   return (
+  //     props.history.location.pathname === "/" ||
+  //     props.history.location.pathname === "/onama" ||
+  //     props.history.location.pathname === "/kursevi" ||
+  //     props.history.location.pathname === "/ispiti" ||
+  //     props.history.location.pathname === "/singleBlog" ||
+  //     props.history.location.pathname === "/dogadjaji" ||
+  //     props.history.location.pathname === "/dogadjaji/one" ||
+  //     props.history.location.pathname === "/kontakt" 
 
-    );
-  });
+  //   );
+  // });
 
   return (
     <>
-      {headerAndFooter && <Header />}
+      <Header />
       <Route exact path="/" component={Home} />
       <Route exact path="/onama" component={About} />
       <Route exact path="/kursevi" component={Course} />
@@ -41,7 +41,7 @@ const MainRouter = props => {
       <Route exact path="/dogadjaji" component={Events} />
       <Route exact path="/dogadjaji/one" component={SingleEvent} />
       <Route exact path="/kontakt" component={Contact} />
-      {headerAndFooter && <Footer />}
+      <Footer />
     </>
   );
 };
