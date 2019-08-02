@@ -1,16 +1,16 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect, useCallback } from "react";
+import PropTypes from "prop-types";
 
 // redux
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
 // hooks
 // import useHanldeCourseContent from '../../hooks/course/useHandleCourseContent';
-import useStringSplit from '../../hooks/course/useStringSplit';
+import useStringSplit from "../../hooks/course/useStringSplit";
 
 // image
-import bckg from '../../../sass/images/5.1.jpg';
-import bckg2 from '../../../sass/images/14.1.jpg';
+import bckg from "../../../images/5.1.jpg";
+import bckg2 from "../../../images/14.1.jpg";
 
 const Course = props => {
   const { data } = props;
@@ -30,44 +30,38 @@ const Course = props => {
   const [counter, setCounter] = useState(0);
   const [paragraph, setParagraph] = useState();
   const [diagram, setDiagram] = useState(16.67);
-  const initCourse = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
+  const initCourse = ["a1", "a2", "b1", "b2", "c1", "c2"];
   const { stringSplit, firstWord, secondWord } = useStringSplit();
 
-  const contentHandler = useCallback(
-    () => {
-      if (course) {
-        setParagraph(() => {
-          return course.map(item => {
-            if (item[initCourse[counter]]) {
-              return item[initCourse[counter]].map((item, index) => {
-                if (index === 0) {
-                  stringSplit(item[0]);
-                }
-                return (
-                  <p className='course__text__p' key={index}>
-                    {item[0]}
-                  </p>
-                );
-              });
-            }
-          });
+  const contentHandler = useCallback(() => {
+    if (course) {
+      setParagraph(() => {
+        return course.map(item => {
+          if (item[initCourse[counter]]) {
+            return item[initCourse[counter]].map((item, index) => {
+              if (index === 0) {
+                stringSplit(item[0]);
+              }
+              return (
+                <p className="course__text__p" key={index}>
+                  {item[0]}
+                </p>
+              );
+            });
+          }
         });
-      }
-    },
-    [course, counter]
-  );
+      });
+    }
+  }, [course, initCourse, counter, stringSplit]);
 
-  useEffect(
-    () => {
-      if (data.course) {
-        setCourse(data.course);
+  useEffect(() => {
+    if (data.course) {
+      setCourse(data.course);
 
-        // ova funkcija se poziva tako sto menjamo stalno diagram i samim tim se use effect poziva i tako pozivamo contentHandler()
-        contentHandler();
-      }
-    },
-    [data, course, diagram, contentHandler]
-  );
+      // ova funkcija se poziva tako sto menjamo stalno diagram i samim tim se use effect poziva i tako pozivamo contentHandler()
+      contentHandler();
+    }
+  }, [data, course, diagram, contentHandler]);
 
   const counterHandlerDecrese = () => {
     if (counter === 0) {
@@ -105,14 +99,14 @@ const Course = props => {
     }
   };
 
-  console.log('render');
+  console.log("render");
 
   return (
-    <div className='course' style={background}>
+    <div className="course" style={background}>
       {reset}
-      <div className='course__header'>
-        <h1 className='course__h1'>Utvrdite nivo znanja</h1>
-        <div className='course__content'>
+      <div className="course__header">
+        <h1 className="course__h1">Utvrdite nivo znanja</h1>
+        <div className="course__content">
           <p>
             Želite li brz, online test koji bi vas nakon niza gramatičkih
             pitanja svrstao u određenu grupu znanja? Po našem mišljenju, jezik
@@ -143,22 +137,22 @@ const Course = props => {
             win-winsituation!
           </p>
 
-          <span className='course__content__span'>
+          <span className="course__content__span">
             Ispod ćete pronaći kratak opis svih nivoa po CEFR skali, kao kratak
             pregled šta se očekuje od svakog.
           </span>
         </div>
       </div>
-      <div className='course__content2' style={background2}>
-        <div className='course__lvl'>
-          <div className='course__text'>
-            <div className='course__nav'>
+      <div className="course__content2" style={background2}>
+        <div className="course__lvl">
+          <div className="course__text">
+            <div className="course__nav">
               <i
-                className='fas fa-chevron-left'
+                className="fas fa-chevron-left"
                 onClick={counterHandlerDecrese}
               />
               <i
-                className='fas fa-chevron-right'
+                className="fas fa-chevron-right"
                 onClick={counterHandlerIncrese}
               />
             </div>
@@ -192,14 +186,10 @@ const Course = props => {
             {paragraph}
           </div>
         </div>
-        <div className='course__diagram__container'>
-          <div className='course__diagram' style={{ height: diagram + '%' }}>
-            <p className='course__diagram__p'>
-              {firstWord}
-            </p>
-            <span>
-              {secondWord}
-            </span>
+        <div className="course__diagram__container">
+          <div className="course__diagram" style={{ height: diagram + "%" }}>
+            <p className="course__diagram__p">{firstWord}</p>
+            <span>{secondWord}</span>
           </div>
         </div>
       </div>
@@ -208,11 +198,14 @@ const Course = props => {
 };
 
 Course.propType = {
-  state: PropTypes.string
+  state: PropTypes.string,
 };
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   return { data: state.data };
 }
 
-export default connect(mapStateToProps, null)(Course);
+export default connect(
+  mapStateToProps,
+  null
+)(Course);

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 // images
-import slika from "../../../sass/images/38.jpg";
-import slika2 from "../../../sass/images/51.jpg";
-import bckg from "../../../sass/images/7.1.jpg";
-import bckg2 from "../../../sass/images/3.1.jpg";
+import slika from "../../../images/38.jpg";
+import slika2 from "../../../images/51.jpg";
+import bckg from "../../../images/7.1.jpg";
+import bckg2 from "../../../images/3.1.jpg";
 
 const About = () => {
   // stavio sam ovo ovde da bi resetovao scroll PRE NEGO STO SE COMPONENT MOUNT. Ovo je umesto componentWillMount

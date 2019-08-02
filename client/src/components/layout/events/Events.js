@@ -1,11 +1,11 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef } from "react";
 
 // components
-import Calendar from '../home/calendar/Calendar';
-import Actuel from './partials/Actuel';
-import Daily from './partials/Daily';
-import Mounthly from './partials/Mounthly';
-import Weekly from './partials/Weekly';
+import Calendar from "../home/calendar/Calendar";
+import Actuel from "./partials/Actuel";
+import Daily from "./partials/Daily";
+import Mounthly from "./partials/Mounthly";
+import Weekly from "./partials/Weekly";
 
 const Events = () => {
   const [reset] = useState(() => {
@@ -17,7 +17,7 @@ const Events = () => {
     actuel: true,
     daily: false,
     mounthly: false,
-    weekly: false
+    weekly: false,
   });
   const actuel = useRef();
   const daily = useRef();
@@ -35,70 +35,67 @@ const Events = () => {
 
   const sortingHandler = ref => {
     setSort({
-      [ref.current.getAttribute('data-name')]: true
+      [ref.current.getAttribute("data-name")]: true,
     });
   };
 
   window.onwheel = closeCalendar;
 
   return (
-    <div className='events'>
+    <div className="events">
       {reset}
-      <h3 className='events__h3'>Budite u toku nasih i vasih desavanja.</h3>
+      <h3 className="events__h3">Budite u toku nasih i vasih desavanja.</h3>
 
-      <div className='events__search'>
-        {calendar &&
-          <div className='events__popupCalendar'>
+      <div className="events__search">
+        {calendar && (
+          <div className="events__popupCalendar">
             <Calendar
               closePopup={closeCalendar}
               calendarEventCard={calendarEventCard}
             />
-          </div>}
-        <p className='events__label'>Izaberi daatum</p>
-        <div className='events__calendar' onClick={calendarHandler}>
+          </div>
+        )}
+        <p className="events__label">Izaberi daatum</p>
+        <div className="events__calendar" onClick={calendarHandler}>
           07/25/2019
         </div>
-        <div className='events__button'>Pretrazi Dogadjaje</div>
+        <div className="events__button">Pretrazi Dogadjaje</div>
       </div>
-      <div className='events__sort'>
-        <ul className='events__list'>
+      <div className="events__sort">
+        <ul className="events__list">
           <li
-            className={`events__item ${sort.actuel && 'events__item__active2'}`}
-            data-name='actuel'
+            className={`events__item ${sort.actuel && "events__item__active2"}`}
+            data-name="actuel"
             ref={actuel}
-            onClick={sortingHandler.bind(this, actuel)}
-          >
+            onClick={sortingHandler.bind(this, actuel)}>
             Aktuelno
           </li>
           <li
-            className={`events__item ${sort.daily && 'events__item__active2'}`}
-            data-name='daily'
+            className={`events__item ${sort.daily && "events__item__active2"}`}
+            data-name="daily"
             ref={daily}
-            onClick={sortingHandler.bind(this, daily)}
-          >
+            onClick={sortingHandler.bind(this, daily)}>
             Dnevni
           </li>
           <li
-            className={`events__item ${sort.weekly && 'events__item__active2'}`}
-            data-name='weekly'
+            className={`events__item ${sort.weekly && "events__item__active2"}`}
+            data-name="weekly"
             ref={weekly}
-            onClick={sortingHandler.bind(this, weekly)}
-          >
+            onClick={sortingHandler.bind(this, weekly)}>
             Nedeljni
           </li>
           <li
             className={`events__item ${sort.mounthly &&
-              'events__item__active2'}`}
-            data-name='mounthly'
+              "events__item__active2"}`}
+            data-name="mounthly"
             ref={mounthly}
-            onClick={sortingHandler.bind(this, mounthly)}
-          >
+            onClick={sortingHandler.bind(this, mounthly)}>
             Mesecni
           </li>
         </ul>
       </div>
-      <div className='events__heading'>
-        <h2 className='events__h2'>Desavanja koja su trenutno aktuelna</h2>
+      <div className="events__heading">
+        <h2 className="events__h2">Desavanja koja su trenutno aktuelna</h2>
       </div>
       {(sort.actuel && <Actuel />) ||
         (sort.daily && <Daily />) ||

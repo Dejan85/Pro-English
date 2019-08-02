@@ -232,4 +232,33 @@
       color: $color-dark;
     }
   }
+
+  &__promotions {
+    &--h1 {
+      text-align: center;
+      color: white;
+      font-family: $font-1;
+      font-size: 2.3rem;
+    }
+
+    &--h2 {
+      text-align: center;
+      color: white;
+      font-family: $font-1;
+      font-size: 1.8rem;
+    }
+
+    &--item {
+      font-size: 2rem;
+      font-family: $font-1;
+      color: white;
+    }
+
+    &--p {
+      font-size: 1.7rem;
+      font-family: $font-1;
+      color: white;
+      text-align: right;
+    }
+  }
 }

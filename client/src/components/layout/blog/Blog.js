@@ -5,10 +5,10 @@ import BoxOne from "../blog/partials/BoxOne";
 import BoxTwo from "../blog/partials/BoxTwo";
 
 //images
-import slika from "../../../sass/images/blog1.jpg";
-import slika2 from "../../../sass/images/blog2.jpg";
-import slika3 from "../../../sass/images/blog3.jpg";
-import slika4 from "../../../sass/images/blog4.jpg";
+import slika from "../../../images/blog1.jpg";
+import slika2 from "../../../images/blog2.jpg";
+import slika3 from "../../../images/blog3.jpg";
+import slika4 from "../../../images/blog4.jpg";
 
 const Blog = () => {
   const [reset] = useState(() => {

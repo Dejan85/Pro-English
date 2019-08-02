@@ -1,10 +1,10 @@
-import React, { useState, useRef } from "react";
-import LazyLoad from 'react-lazyload';
+import React, { useState } from "react";
 
 // components
 import Box from "./partials/Box";
 import HomeAbout from "./HomeAbout";
 import HomeCourseV2 from "./HomeCourseV2";
+import Promotions from "./partials/Promotions";
 
 import HomeBlog from "./HomeBlog";
 import HomeEvents from "./HomeEvents";
@@ -12,16 +12,14 @@ import HomeTeachers from "./HomeTeachers";
 
 // hooks
 import useBox from "../../hooks/useBox";
-import useOnScreen from "../../hooks/useOnScreen";
 
 //images
-import background from "../../../sass/images/9.1.jpg";
+import background from "../../../images/9.1.jpg";
 
 const Home = () => {
   const { boxes } = useBox();
-  // const ref = useRef();
-  // const onScreen = useOnScreen(ref);
-  const [xad] = useState(() => {
+  const [promotions, usePromotions] = useState(true);
+  const [bckg] = useState(() => {
     return { backgroundImage: `url(${background})` };
   });
 
@@ -30,12 +28,11 @@ const Home = () => {
     return window.scrollTo(0, 0);
   });
 
-  console.log("render");
-
   return (
     <div className="home">
       {reset}
-      <div className="home__content" style={xad}>
+      {promotions && <Promotions />}
+      <div className="home__content" style={bckg}>
         <h1 className="home__h1">
           Dobrodosli u nas kutak u kome smo oziveli najbolje u nastavi
           engleskog.

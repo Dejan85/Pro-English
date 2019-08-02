@@ -1,10 +1,10 @@
 import React from "react";
 
 //images
-import slika from "../../../sass/images/35.jpg";
-import slika2 from "../../../sass/images/36.jpg";
-import slika3 from "../../../sass/images/37.jpg";
-import slika4 from "../../../sass/images/38.png";
+import slika from "../../../images/35.jpg";
+import slika2 from "../../../images/36.jpg";
+import slika3 from "../../../images/37.jpg";
+import slika4 from "../../../images/38.png";
 
 //component
 // import Card from "./partials/Card";

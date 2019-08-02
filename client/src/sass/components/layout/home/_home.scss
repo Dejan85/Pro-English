@@ -1,5 +1,6 @@
 .home {
   padding-top: 6rem;
+  position: relative;
 
   @include respond(900) {
     display: flex;
@@ -479,6 +480,67 @@
       text-align: center;
       padding: 3rem 0;
       z-index: 1;
+    }
+  }
+
+  &__promotions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: fixed;
+    max-width: 100rem;
+    width: 100%;
+    height: 58rem;
+    background: whitesmoke;
+    z-index: 20;
+    left: 0;
+    right: 0;
+    top: 15rem;
+    margin: auto;
+    box-shadow: 0 1px 1rem rgba($color-dark, 0.15);
+    // border: 0.5rem $color-pink-dark ridge;
+
+    &--h1 {
+      // background: $color-pink-dark;
+      @include gradient2(darken($color-pink-dark, 10%), $color-pink-dark);
+      max-width: 40rem;
+      width: 100%;
+      padding: 2rem;
+      margin: 1rem;
+    }
+
+    &--h2 {
+      background: $color-pink-dark;
+      @include gradient2(darken($color-pink-dark, 10%), $color-pink-dark);
+
+      max-width: 80rem;
+      width: 100%;
+      padding: 2rem 0rem;
+      margin: -2rem 1rem;
+    }
+
+    &--list1 {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin: 4rem 1rem;
+    }
+
+    &--item {
+      list-style-type: none;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      // @include gradient2(#5db633, #56ab2f);
+      @include gradient2(darken($color-pink-dark, 10%), $color-pink-dark);
+    }
+
+    &--p {
+      max-width: 70rem;
+      width: 100%;
+      margin: 2rem 1rem;
+      padding: 0.5rem;
+
+      @include gradient2(darken($color-pink-dark, 10%), $color-pink-dark);
     }
   }
 }
