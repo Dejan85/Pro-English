@@ -5,6 +5,7 @@ import Box from "./partials/Box";
 import HomeAbout from "./HomeAbout";
 import HomeCourseV2 from "./HomeCourseV2";
 import Promotions from "./partials/Promotions";
+import Promotions2 from "./partials/Promotions2";
 
 import HomeBlog from "./HomeBlog";
 import HomeEvents from "./HomeEvents";
@@ -35,7 +36,8 @@ const Home = () => {
   return (
     <div className="home">
       {reset}
-      {promotions && <Promotions promotionsHandler={promotionsHandler} />}
+      {/* {promotions && <Promotions promotionsHandler={promotionsHandler} />} */}
+      {promotions && <Promotions2 promotionsHandler={promotionsHandler} />}
       <div className="home__content" style={bckg}>
         <h1 className="home__h1">
           Dobrodosli u nas kutak u kome smo oziveli najbolje u nastavi
