@@ -237,36 +237,48 @@
     &--h1 {
       text-align: center;
       color: white;
-      color: #4c352c;
+      // color: #4c352c;
       font-family: $font-1;
-      font-size: 2.3rem;
+      font-size: 2.5rem;
+      // color: #1cd3cf;
     }
 
     &--h2 {
       text-align: center;
       color: white;
-      color: #4c352c;
+      // color: #4c352c;
+      // color: #1cd3cf;
 
       font-family: $font-1;
-      font-size: 1.8rem;
+      font-size: 2rem;
+    }
+
+    &--h4 {
+      text-align: center;
+      color: white;
+      font-family: $font-2;
+      font-size: 7rem;
+      // color: #1cd3cf;
     }
 
     &--item {
       font-size: 2rem;
       font-family: $font-1;
       color: white;
-      color: #4c352c;
+      // color: #4c352c;
 
       text-align: center;
+      // color: #1cd3cf;
     }
 
     &--p {
       font-size: 1.7rem;
       font-family: $font-1;
       color: white;
-      color: #4c352c;
+      // color: #4c352c;
 
       text-align: center;
+      // color: #1cd3cf;
     }
 
     &--close {

@@ -502,7 +502,10 @@
     &--h1 {
       // background: $color-pink-dark;
       // @include gradient2(darken($color-pink-dark, 10%), $color-pink-dark);
-      @include gradient2(darken(#fce503, 4%), #fce503);
+      // @include gradient2(darken(#fce503, 4%), #fce503);
+      // @include gradient2(#3458d3, lighten(#3458d3, 5%));
+      @include gradient2(darken(#1cd3cf, 10%), #1cd3cf);
+
       max-width: 50rem;
       width: 100%;
       padding: 2rem;
@@ -510,14 +513,26 @@
     }
 
     &--h2 {
-      background: $color-pink-dark;
       // @include gradient2(darken($color-pink-dark, 10%), $color-pink-dark);
-      @include gradient2(darken(#fce503, 4%), #fce503);
+      // @include gradient2(darken(#fce503, 4%), #fce503);
+      // @include gradient2(#3458d3, lighten(#3458d3, 5%));
+      @include gradient2(darken(#1cd3cf, 10%), #1cd3cf);
 
       max-width: 80rem;
       width: 100%;
       padding: 2rem 0rem;
       margin: -2rem 1rem;
+    }
+
+    &--h4 {
+      // @include gradient2(darken($color-pink-dark, 10%), $color-pink-dark);
+      // @include gradient2(darken(#fce503, 4%), #fce503);
+      // @include gradient2(#3458d3, lighten(#3458d3, 5%));
+      @include gradient2(darken(#1cd3cf, 10%), #1cd3cf);
+
+      max-width: 40rem;
+      width: 100%;
+      margin: -4rem 0 4rem 0;
     }
 
     &--list1 {
@@ -533,17 +548,21 @@
       margin: 0.5rem 0;
       // @include gradient2(#5db633, #56ab2f);
       // @include gradient2(darken($color-pink-dark, 10%), $color-pink-dark);
-      @include gradient2(darken(#fce503, 4%), #fce503);
+      // @include gradient2(darken(#fce503, 4%), #fce503);
+      // @include gradient2(#3458d3, lighten(#3458d3, 5%));
+      @include gradient2(darken(#1cd3cf, 10%), #1cd3cf);
     }
 
     &--p {
       max-width: 70rem;
       width: 100%;
-      margin: 2rem 1rem;
-      padding: 0.5rem;
+      margin: -2rem 1rem;
+      padding: 1rem;
 
       // @include gradient2(darken($color-pink-dark, 10%), $color-pink-dark);
-      @include gradient2(darken(#fce503, 4%), #fce503);
+      // @include gradient2(darken(#fce503, 4%), #fce503);
+      // @include gradient2(#3458d3, lighten(#3458d3, 5%));
+      @include gradient2(darken(#1cd3cf, 10%), #1cd3cf);
     }
 
     &--close {

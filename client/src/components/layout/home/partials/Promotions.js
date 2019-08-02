@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import background from "../../../../images/60.jpg";
 import background1 from "../../../../images/61.jpg";
-import background2 from "../../../../images/62.jpg";
+import background2 from "../../../../images/63.jpg";
 
 const Promotions = ({ promotionsHandler }) => {
   const [bckg] = useState(() => {
@@ -30,32 +30,32 @@ const Promotions = ({ promotionsHandler }) => {
         className="far fa-times-circle home__promotions--close"
         onClick={promotionsHandler}
       />
-      {/* <h4>Letnja Akcija</h4> */}
+      <h4 className="home__promotions--h4">Letnja Akcija</h4>
       <h1 className="home__promotions--h1">Letnji kurs aktivne konverzacije</h1>
       <h2 className="home__promotions--h2">
         Letnji kurs aktivne konverzacije namenjen je onima koji engleski
         razumeju, ali sami ne uspevaju da progovore zato što:{" "}
       </h2>
       <ul className="home__promotions--list1">
-        {/* <li className="home__promotions--item">se plaše</li>
-        <li className="home__promotions--item">osećaju blokadu</li>
-        <li className="home__promotions--item">nisu sigurni u svoje znanje</li>
-        <li className="home__promotions--item">
-          previše razmišljaju dok govore
-        </li>
-        <li className="home__promotions--item">
-          ne uspevaju da razmišljaju na engleskom.
-        </li> */}
-
-        <li className="home__promotions--item">
-          ne uspevaju da razmišljaju na engleskom.
-        </li>
-        <li className="home__promotions--item">
-          previše razmišljaju dok govore
-        </li>
-        <li className="home__promotions--item">nisu sigurni u svoje znanje</li>
-        <li className="home__promotions--item">osećaju blokadu</li>
         <li className="home__promotions--item">se plaše</li>
+        <li className="home__promotions--item">osećaju blokadu</li>
+        <li className="home__promotions--item">nisu sigurni u svoje znanje</li>
+        <li className="home__promotions--item">
+          previše razmišljaju dok govore
+        </li>
+        <li className="home__promotions--item">
+          ne uspevaju da razmišljaju na engleskom.
+        </li>
+
+        {/* <li className="home__promotions--item">
+          ne uspevaju da razmišljaju na engleskom.
+        </li>
+        <li className="home__promotions--item">
+          previše razmišljaju dok govore
+        </li>
+        <li className="home__promotions--item">nisu sigurni u svoje znanje</li>
+        <li className="home__promotions--item">osećaju blokadu</li>
+        <li className="home__promotions--item">se plaše</li> */}
       </ul>
       <p className="home__promotions--p">
         Trajanje kursa: 7 nedelja = 21 čas Časovi se održavaju 3 puta nedeljno
