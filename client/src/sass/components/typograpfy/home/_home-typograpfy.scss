@@ -237,6 +237,7 @@
     &--h1 {
       text-align: center;
       color: white;
+      color: #4c352c;
       font-family: $font-1;
       font-size: 2.3rem;
     }
@@ -244,6 +245,8 @@
     &--h2 {
       text-align: center;
       color: white;
+      color: #4c352c;
+
       font-family: $font-1;
       font-size: 1.8rem;
     }
@@ -252,13 +255,27 @@
       font-size: 2rem;
       font-family: $font-1;
       color: white;
+      color: #4c352c;
+
+      text-align: center;
     }
 
     &--p {
       font-size: 1.7rem;
       font-family: $font-1;
       color: white;
-      text-align: right;
+      color: #4c352c;
+
+      text-align: center;
+    }
+
+    &--close {
+      color: $color-pink-dark;
+      font-size: 3.5rem;
+
+      &:hover {
+        color: darken($color-pink-dark, 20%);
+      }
     }
   }
 }

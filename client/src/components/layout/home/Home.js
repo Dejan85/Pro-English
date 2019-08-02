@@ -18,7 +18,7 @@ import background from "../../../images/9.1.jpg";
 
 const Home = () => {
   const { boxes } = useBox();
-  const [promotions, usePromotions] = useState(true);
+  const [promotions, setPromotions] = useState(true);
   const [bckg] = useState(() => {
     return { backgroundImage: `url(${background})` };
   });
@@ -28,10 +28,14 @@ const Home = () => {
     return window.scrollTo(0, 0);
   });
 
+  const promotionsHandler = () => {
+    setPromotions(false);
+  };
+
   return (
     <div className="home">
       {reset}
-      {promotions && <Promotions />}
+      {promotions && <Promotions promotionsHandler={promotionsHandler} />}
       <div className="home__content" style={bckg}>
         <h1 className="home__h1">
           Dobrodosli u nas kutak u kome smo oziveli najbolje u nastavi
