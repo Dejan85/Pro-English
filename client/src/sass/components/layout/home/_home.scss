@@ -632,7 +632,9 @@
 
     &--cont {
       display: flex;
+      justify-content: space-around;
       // background: red;
+      width: 85%;
     }
 
     &--list1 {
