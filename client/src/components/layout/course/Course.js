@@ -61,7 +61,7 @@ const Course = props => {
       // ova funkcija se poziva tako sto menjamo stalno diagram i samim tim se use effect poziva i tako pozivamo contentHandler()
       contentHandler();
     }
-  }, [data, course, diagram, contentHandler]);
+  }, [data, course, diagram]);
 
   const counterHandlerDecrese = () => {
     if (counter === 0) {

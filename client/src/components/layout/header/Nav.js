@@ -45,7 +45,7 @@ const Nav = () => {
             to="/ispiti">
             Pripreme za ispite
           </NavLink>
-          <DropNav info={ispiti} />
+          {/* <DropNav info={ispiti} /> */}
         </li>
         <li className="header__item">
           <NavLink

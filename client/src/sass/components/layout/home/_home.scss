@@ -651,6 +651,7 @@
       padding: 1rem;
       // margin: -0.5rem 0;
       @include gradient2(darken(#f96c8d, 10%), #f96c8d);
+      background: darken(#f96c8d, 10%);
     }
 
     &--p {
