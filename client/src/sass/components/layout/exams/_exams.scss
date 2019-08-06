@@ -5,35 +5,35 @@
   max-width: 120rem;
   width: 100%;
   margin: 0 auto;
-  padding: 10rem 2rem 10rem 2rem;
+  padding: 0rem 2rem 0rem 2rem;
   height: 200rem;
 
-  @include h3-with-line;
-
   &__content {
+    display: flex;
+    flex-wrap: wrap;
     position: relative;
-    justify-content: flex-start;
     height: 100%;
-    border: none;
+    width: 100%;
+    // background: #9475cd;
   }
 
   &__list1 {
-    @include tab($color-pink-dark, 0rem, 10, 20rem);
+    @include tab($color-pink-dark, 0rem, 10, 10rem, 82%);
   }
 
   &__list2 {
-    @include tab(#5cb432, 17rem, 9, 15rem);
+    @include tab(#5cb432, 17rem, 9, 20rem, 87%);
   }
 
   &__list3 {
-    @include tab(#63b5f6, 34rem, 8, 10rem);
+    @include tab(#63b5f6, 34rem, 8, 33rem, 92%);
   }
 
   &__list4 {
-    @include tab(#9475cd, 51rem, 7, 14);
+    @include tab(#9475cd, 51rem, 7, 46rem, 97%);
   }
 
-  &__list5 {
-    @include tab(#f8ac30, 68rem, 6, 0rem);
-  }
+  // &__list5 {
+  //   @include tab(#f8ac30, 68rem, 6, 0rem);
+  // }
 }
