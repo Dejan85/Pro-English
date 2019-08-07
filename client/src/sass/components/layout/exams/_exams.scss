@@ -18,19 +18,39 @@
   }
 
   &__list1 {
-    @include tab($color-pink-dark, 0rem, 10, 10rem, 82%);
+    --width: 82%;
+
+    @include tab($color-pink-dark, 0rem, 10, 10rem, var(--width));
+
+    @include respond(600) {
+      @include tab($color-pink-dark, 0rem, 10, 15rem, var(--width));
+    }
   }
 
   &__list2 {
-    @include tab(#5cb432, 17rem, 9, 19rem, 87%);
+    --width: 87%;
+
+    @include tab(#5cb432, 17rem, 9, 19rem, var(--width));
+
+    @include respond(600) {
+      @include tab(#5cb432, 17rem, 9, 22rem, var(--width));
+    }
   }
 
   &__list3 {
-    @include tab(#63b5f6, 34rem, 8, 31rem, 92%);
+    --width: 92%;
+
+    @include tab(#63b5f6, 34rem, 8, 31rem, var(--width));
   }
 
   &__list4 {
-    @include tab(#9475cd, 51rem, 7, 43rem, 97%);
+    --width: 97%;
+
+    @include tab(#9475cd, 51rem, 7, 43rem, var(--width));
+
+    @include respond(600) {
+      @include tab(#9475cd, 51rem, 7, 41rem, var(--width));
+    }
   }
 
   // &__list5 {
