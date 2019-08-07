@@ -7,8 +7,6 @@ import useTabs from '../../hooks/exams/useTabs';
 const Exams = props => {
   const { exams } = props;
 
-  console.log(exams);
-
   const [reset] = useState(() => {
     return window.scrollTo(0, 0);
   });
@@ -22,7 +20,7 @@ const Exams = props => {
           <div className='exams__list1--tab' data-name='gre' onClick={tabs}>
             GRE
           </div>
-          <div className='exams__body'>
+          <div className='exams__body '>
             {exams.gre &&
               exams.gre.map((item, index) => {
                 return (
@@ -53,7 +51,71 @@ const Exams = props => {
           <div className='exams__list2--tab' data-name='ielts' onClick={tabs}>
             IELTS
           </div>
-          <div className='exams__body'>xad</div>
+          <div className='exams__body'>
+            {exams.ielts &&
+              exams.ielts.map((item, index) => {
+                return (
+                  <div key={index}>
+                    <h1 className='exams__h1'>
+                      {item.h1}
+                    </h1>
+                    {item.p &&
+                      item.p.map((item, index) => {
+                        return (
+                          <p key={index} className='exams__p'>
+                            {item}
+                          </p>
+                        );
+                      })}
+                    <ul className='exams__list'>
+                      {item.list &&
+                        item.list.map((item, index) => {
+                          return (
+                            <li key={index} className='exams__item'>
+                              {item}
+                            </li>
+                          );
+                        })}
+                    </ul>
+                    {item.arr &&
+                      item.arr.map((item, index) => {
+                        return (
+                          <div key={index}>
+                            <h2 className='exams__h2'>
+                              {item.h2}
+                              {/* {console.log(item)} */}
+                            </h2>
+
+                            {item.p &&
+                              item.p.map((item, index) => {
+                                return (
+                                  <p key={index} className='exams__p'>
+                                    {item}
+                                  </p>
+                                );
+                              })}
+
+                            {item.h3 &&
+                              <h3 className='exams__h3'>
+                                {item.h3}
+                              </h3>}
+                            <ul className='exams__list'>
+                              {item.list &&
+                                item.list.map((item, index) => {
+                                  return (
+                                    <li className='exams__item'>
+                                      {item}
+                                    </li>
+                                  );
+                                })}
+                            </ul>
+                          </div>
+                        );
+                      })}
+                  </div>
+                );
+              })}
+          </div>
         </div>
 
         <div className='exams__list3' ref={gmat}>

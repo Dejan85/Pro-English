@@ -8,15 +8,22 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import { fetchCourseData, fetchGre } from './redux/actions/fetchData';
-import { getBackground } from './redux/actions/background';
 
 import MainRouter from './MainRouter';
 // import AdminRouter from "./components/layout/admin/route/AdminRouter";
 
-// fetch data from api
+//
+// ─── FETCH DATA FROM API ────────────────────────────────────────────────────────
+//
+
+// course
 store.dispatch(fetchCourseData());
-store.dispatch(getBackground());
-store.dispatch(fetchGre());
+
+// exams
+store.dispatch(fetchGre('/data/gre', 'gre'));
+store.dispatch(fetchGre('/data/ielts', 'ielts'));
+store.dispatch(fetchGre('/data/gmat', 'gmat'));
+store.dispatch(fetchGre('/data/bocconi', 'bocconi'));
 
 function App () {
   return (

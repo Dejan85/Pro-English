@@ -6,7 +6,8 @@
   width: 100%;
   margin: 0 auto;
   padding: 0rem 2rem 0rem 2rem;
-  height: 200rem;
+  // height: 450rem;
+  height: 100vh;
 
   &__content {
     display: flex;
@@ -55,18 +56,28 @@
 
   &__body {
     padding: 10rem 0;
-    overflow: hidden;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 0 !important;
+    }
   }
 
-  &__h1 {
-    padding: 4rem 2rem 1.5rem;
+  &__h1,
+  &__h2,
+  &__h3 {
+    padding: 4rem 8rem 1.5rem;
   }
 
   &__p {
-    padding: 0rem 2rem;
+    padding: 1.5rem 8rem 0;
   }
 
   &__list {
-    padding: 0 4rem;
+    padding: 0rem 10rem;
+  }
+
+  &__item {
+    padding: 0.7rem;
   }
 }

@@ -1,4 +1,10 @@
-import { COURSE__DATA, EXAMS__GRE } from '../type/type';
+import {
+  COURSE__DATA,
+  EXAMS__GRE,
+  EXAMS__IELTS,
+  EXAMS__GMAT,
+  EXAMS__BOCCONI
+} from '../type/type';
 
 //
 // ─── COURSE DATA ────────────────────────────────────────────────────────────────
@@ -26,18 +32,34 @@ export const fetchCourseData = () => dispatch => {
 // ─── EXAMS DATA ─────────────────────────────────────────────────────────────────
 //
 
-export const fetchGre = () => dispatch => {
-  console.log('radi');
-  return fetch('/data/gre', {
+export const fetchGre = (url, exams) => dispatch => {
+  return fetch(url, {
     method: 'GET',
     aplication: 'json'
   })
     .then(res => {
       res.json().then(res => {
-        dispatch({
-          type: EXAMS__GRE,
-          payload: res
-        });
+        if (exams === 'gre') {
+          dispatch({
+            type: EXAMS__GRE,
+            payload: res
+          });
+        } else if (exams === 'ielts') {
+          dispatch({
+            type: EXAMS__IELTS,
+            payload: res
+          });
+        } else if (exams === 'gmat') {
+          dispatch({
+            type: EXAMS__GMAT,
+            payload: res
+          });
+        } else if (exams === 'bocconi') {
+          dispatch({
+            type: EXAMS__BOCCONI,
+            payload: res
+          });
+        }
       });
     })
     .catch(err => {
