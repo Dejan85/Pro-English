@@ -40,13 +40,13 @@
   &__list3 {
     --width: 92%;
 
-    @include tab(#63b5f6, 34rem, 8, 31rem, var(--width));
+    @include tab(#63b5f6, 34rem, 8, 30.6rem, var(--width));
   }
 
   &__list4 {
     --width: 97%;
 
-    @include tab(#9475cd, 51rem, 7, 43rem, var(--width));
+    @include tab(#9475cd, 51rem, 7, 41.8rem, var(--width));
 
     @include respond(600) {
       @include tab(#9475cd, 51rem, 7, 41rem, var(--width));

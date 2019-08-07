@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const useHanldeCourseContent = () => {
-  const [courses, setCourses] = useState(undefined);
+  const [courses] = useState(undefined);
   let i = 0;
 
   const hanldeCourseContent = (course, cor) => {
