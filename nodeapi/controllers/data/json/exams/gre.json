@@ -17,22 +17,21 @@
   },
   {
     "h1": "Kako izgleda GRE test?",
-    "table": {
-      "one": "GRE test",
-      "two": "Analytical Writing pisanje eseja x2 (60 minuta)",
-      "three": "Verbal Reasoning (jezički deo) 2 dela x20 pitanja (60 minuta)",
-      "four": "Quantitative Reasoning (matematički deo) 2dela  x20 pitanja (70 minuta)"
-    }
+    "table": [
+      "Analytical Writing pisanje eseja x2 (60 minuta)",
+      "Verbal Reasoning (jezički deo) 2 dela x20 pitanja (60 minuta)",
+      "Quantitative Reasoning (matematički deo) 2dela  x20 pitanja (70 minuta)"
+    ]
   },
   {
     "h1": "U English Square School ćete:",
-    "list": {
-      "one": "naučiti primenjive strategije za uspešnu izradu testa",
-      "two": "učiti kroz pravi, aktuelni materijal za pripremu GMAT",
-      "three": "proširiti vokabular iz različitih oblasti poslovanja",
-      "four": "naučiti različite metode čitanja i razumevanja teksta",
-      "five": "u cenu su uključeni i pripremni časovi matematike",
-      "six": "steći ćete brzinu i rutinu neophodnu da završite test na vreme"
-    }
+    "table": [
+      "naučiti primenjive strategije za uspešnu izradu testa",
+      "učiti kroz pravi, aktuelni materijal za pripremu GMAT",
+      "proširiti vokabular iz različitih oblasti poslovanja",
+      "naučiti različite metode čitanja i razumevanja teksta",
+      "u cenu su uključeni i pripremni časovi matematike",
+      "steći ćete brzinu i rutinu neophodnu da završite test na vreme"
+    ]
   }
 ]

@@ -30,17 +30,17 @@
   &__list2 {
     --width: 87%;
 
-    @include tab(#5cb432, 17rem, 9, 19rem, var(--width));
+    @include tab(#5cb432, 17rem, 9, 19.2rem, var(--width));
 
     @include respond(600) {
-      @include tab(#5cb432, 17rem, 9, 22rem, var(--width));
+      @include tab(#5cb432, 17rem, 9, 23rem, var(--width));
     }
   }
 
   &__list3 {
     --width: 92%;
 
-    @include tab(#63b5f6, 34rem, 8, 30.6rem, var(--width));
+    @include tab(#63b5f6, 34rem, 8, 33rem, var(--width));
   }
 
   &__list4 {
@@ -53,7 +53,20 @@
     }
   }
 
-  // &__list5 {
-  //   @include tab(#f8ac30, 68rem, 6, 0rem);
-  // }
+  &__body {
+    padding: 10rem 0;
+    overflow: hidden;
+  }
+
+  &__h1 {
+    padding: 4rem 2rem 1.5rem;
+  }
+
+  &__p {
+    padding: 0rem 2rem;
+  }
+
+  &__list {
+    padding: 0 4rem;
+  }
 }

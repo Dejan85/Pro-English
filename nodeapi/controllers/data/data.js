@@ -25,3 +25,42 @@ exports.gre = async (req, res) => {
     }
   );
 };
+
+exports.ielts = async (req, res) => {
+  await fs.readFile(
+    __dirname + '/json/exams/ielts.json',
+    'utf8',
+    (err, jsonString) => {
+      if (err) {
+        return console.log('File read failed:', err);
+      }
+      return res.json(JSON.parse(jsonString));
+    }
+  );
+};
+
+exports.gmat = async (req, res) => {
+  await fs.readFile(
+    __dirname + '/json/exams/gmat.json',
+    'utf8',
+    (err, jsonString) => {
+      if (err) {
+        return console.log('File read failed:', err);
+      }
+      return res.json(JSON.parse(jsonString));
+    }
+  );
+};
+
+exports.bocconi = async (req, res) => {
+  await fs.readFile(
+    __dirname + '/json/exams/bocconi.json',
+    'utf8',
+    (err, jsonString) => {
+      if (err) {
+        return console.log('File read failed:', err);
+      }
+      return res.json(JSON.parse(jsonString));
+    }
+  );
+};
