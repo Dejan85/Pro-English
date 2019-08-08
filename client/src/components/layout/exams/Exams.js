@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { Scrollbars } from 'react-custom-scrollbars';
 
 // hooks
 import useTabs from '../../hooks/exams/useTabs';
@@ -20,102 +21,106 @@ const Exams = props => {
           <div className='exams__list1--tab' data-name='gre' onClick={tabs}>
             GRE
           </div>
-          <div className='exams__body '>
-            {exams.gre &&
-              exams.gre.map((item, index) => {
-                return (
-                  <div key={index}>
-                    <h1 className='exams__h1'>
-                      {item.h1}
-                    </h1>
-                    <p className='exams__p'>
-                      {item.p}
-                    </p>
-                    <ul className='exams__list'>
-                      {item.table &&
-                        item.table.map((item, index) => {
-                          return (
-                            <li key={index} className='exams__item'>
-                              {item}
-                            </li>
-                          );
-                        })}
-                    </ul>
-                  </div>
-                );
-              })}
-          </div>
+          <Scrollbars autoHide autoHideTimeout={1000} autoHideDuration={500}>
+            <div className='exams__body'>
+              {exams.gre &&
+                exams.gre.map((item, index) => {
+                  return (
+                    <div key={index}>
+                      <h1 className='exams__h1'>
+                        {item.h1}
+                      </h1>
+                      <p className='exams__p'>
+                        {item.p}
+                      </p>
+                      <ul className='exams__list'>
+                        {item.table &&
+                          item.table.map((item, index) => {
+                            return (
+                              <li key={index} className='exams__item'>
+                                {item}
+                              </li>
+                            );
+                          })}
+                      </ul>
+                    </div>
+                  );
+                })}
+            </div>
+          </Scrollbars>
         </div>
 
         <div className='exams__list2' ref={ielts}>
           <div className='exams__list2--tab' data-name='ielts' onClick={tabs}>
             IELTS
           </div>
-          <div className='exams__body'>
-            {exams.ielts &&
-              exams.ielts.map((item, index) => {
-                return (
-                  <div key={index}>
-                    <h1 className='exams__h1'>
-                      {item.h1}
-                    </h1>
-                    {item.p &&
-                      item.p.map((item, index) => {
-                        return (
-                          <p key={index} className='exams__p'>
-                            {item}
-                          </p>
-                        );
-                      })}
-                    <ul className='exams__list'>
-                      {item.list &&
-                        item.list.map((item, index) => {
+          <Scrollbars autoHide autoHideTimeout={1000} autoHideDuration={500}>
+            <div className='exams__body'>
+              {exams.ielts &&
+                exams.ielts.map((item, index) => {
+                  return (
+                    <div key={index}>
+                      <h1 className='exams__h1'>
+                        {item.h1}
+                      </h1>
+                      {item.p &&
+                        item.p.map((item, index) => {
                           return (
-                            <li key={index} className='exams__item'>
+                            <p key={index} className='exams__p'>
                               {item}
-                            </li>
+                            </p>
                           );
                         })}
-                    </ul>
-                    {item.arr &&
-                      item.arr.map((item, index) => {
-                        return (
-                          <div key={index}>
-                            <h2 className='exams__h2'>
-                              {item.h2}
-                              {/* {console.log(item)} */}
-                            </h2>
+                      <ul className='exams__list'>
+                        {item.list &&
+                          item.list.map((item, index) => {
+                            return (
+                              <li key={index} className='exams__item'>
+                                {item}
+                              </li>
+                            );
+                          })}
+                      </ul>
+                      {item.arr &&
+                        item.arr.map((item, index) => {
+                          return (
+                            <div key={index}>
+                              <h2 className='exams__h2'>
+                                {item.h2}
+                                {/* {console.log(item)} */}
+                              </h2>
 
-                            {item.p &&
-                              item.p.map((item, index) => {
-                                return (
-                                  <p key={index} className='exams__p'>
-                                    {item}
-                                  </p>
-                                );
-                              })}
-
-                            {item.h3 &&
-                              <h3 className='exams__h3'>
-                                {item.h3}
-                              </h3>}
-                            <ul className='exams__list'>
-                              {item.list &&
-                                item.list.map((item, index) => {
+                              {item.p &&
+                                item.p.map((item, index) => {
                                   return (
-                                    <li className='exams__item'>
+                                    <p key={index} className='exams__p'>
                                       {item}
-                                    </li>
+                                    </p>
                                   );
                                 })}
-                            </ul>
-                          </div>
-                        );
-                      })}
-                  </div>
-                );
-              })}
-          </div>
+
+                              {item.h3 &&
+                                <h3 className='exams__h3'>
+                                  {item.h3}
+                                </h3>}
+                              <ul className='exams__list'>
+                                {item.list &&
+                                  item.list.map((item, index) => {
+                                    return (
+                                      <li className='exams__item'>
+                                        {item}
+                                      </li>
+                                    );
+                                  })}
+                              </ul>
+                            </div>
+                          );
+                        })}
+                    </div>
+                  );
+                })}
+            </div>
+          </Scrollbars>
         </div>
 
         <div className='exams__list3' ref={gmat}>

@@ -57,10 +57,6 @@
   &__body {
     padding: 10rem 0;
     overflow-y: auto;
-
-    &::-webkit-scrollbar {
-      width: 0 !important;
-    }
   }
 
   &__h1,

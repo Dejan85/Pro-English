@@ -14,6 +14,7 @@ exports.getCourse = async (req, res) => {
 };
 
 exports.gre = async (req, res) => {
+  console.log(req.url);
   await fs.readFile(
     __dirname + '/json/exams/gre.json',
     'utf8',

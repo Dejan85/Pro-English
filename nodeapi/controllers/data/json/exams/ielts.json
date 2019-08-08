@@ -28,10 +28,12 @@
     "h1": "Forma IELTS ispita i strategije",
     "arr": [
       {
-        "h2": "IELTS Listening",
-        "p": "Ovaj deo IELTS ispita sastoji se iz četiri dela, a svaki deo ima po deset pitanja. Dok su prva dva dela u vezi sa svakodnevnim situacija u društvenom kontekstu, druga dva dela su tematski akademski.",
-        "list": "IELST listening test",
-        "li": [
+        "h2": "1. IELTS Listening",
+        "p": [
+          "Ovaj deo IELTS ispita sastoji se iz četiri dela, a svaki deo ima po deset pitanja. Dok su prva dva dela u vezi sa svakodnevnim situacija u društvenom kontekstu, druga dva dela su tematski akademski."
+        ],
+        "h3": "IELST listening test",
+        "list": [
           "npr. razgovor o turističkom aranžmanima i monolog",
           "npr. priča o lokalnim postrojenjima i objektima. Poslednja dva dela se tiču edukacije i profesionlanog treninga",
           "čućete razgovor između dva sagovornika (npr. dva studenta diskutuju, možda u društvu mentora)",
@@ -39,10 +41,12 @@
         ]
       },
       {
-        "h2": "Tipologija pitanja IELTS reading testa",
-        "p": "Reading deo IELTS testa podrazumeva iščitavanje 3 teksta u vezi sa akademskim temama (Academic Module), odnosno iščitavanje manje formalnih tekstova u vezi sa situacijama sa kojima se svakodnevno susrećemo: brošure za putovanja, uslovi za učlanjenje u klub, promocija događaja (General Module). Potrbeno je da savladaš različite tehnike čitanja: skimming, scanning, reading for gist.",
-        "list": "Pitanja na koja ćeš odgovarati na testu su sledeća:",
-        "li": [
+        "h2": "2. Tipologija pitanja IELTS reading testa",
+        "p": [
+          "Reading deo IELTS testa podrazumeva iščitavanje 3 teksta u vezi sa akademskim temama (Academic Module), odnosno iščitavanje manje formalnih tekstova u vezi sa situacijama sa kojima se svakodnevno susrećemo: brošure za putovanja, uslovi za učlanjenje u klub, promocija događaja (General Module). Potrbeno je da savladaš različite tehnike čitanja: skimming, scanning, reading for gist."
+        ],
+        "h3": "Pitanja na koja ćeš odgovarati na testu su sledeća:",
+        "list": [
           "Multiple Choice Questions – Ovo je uobičajeni tip pitanja na testovima iz engleskog jezika. Od tebe će se tražiti da izabereš tačan odgovor, od mogućih tri ili četiri, na zadato pitanje. Kako bi se našao tačan odgovor treba da nađeš relevantnu informaciju u odlomku i shvatiš njen smisao.",
           "True/False/ Not Given Questions –  Ovaj tip pitanja važi za najteži u okviru Reading-a. U pitanjima tačno/netačno/nije dato biće ponuđeno nekoliko tvrdnji. Treba da odlučiš da li se te tvrdnje poklapaju sa informacijama iz odlomka i stavom autora ili ne. Ovde je važna upotreba tehnike skimming-a.",
           "Matching Questions – Ovo je najčešći tip pitanja u IELTS Reading delu ispita i može se desiti da na njega potrošiš više vremena nego na ostale tipove pitanja. Prvo moraš razumeti šta se od tebe traži, a onda naći i razumeti informacija iz odlomka.",
@@ -56,7 +60,7 @@
         ]
       },
       {
-        "h2": "IELTS Writing: Academic vs. General",
+        "h2": "3. IELTS Writing: Academic vs. General",
         "p": [
           "IELTS Writing deo testa, bez obzira na modul, traje 60 min. i sastoji se iz dva dela. Iako je preporuka da prvi deo testa radite 20 min., a drugi 40 min., sami određujete koliko ćete vremena odvojiti za koji deo. Ovo je deo IELTS-a gde se testira vaše stvarno znanje engleskog, gramatike i vokabulara, te je potrebno da se dobro pripremite i popunite „rupe u znanju“, jer će iskusni ispitivači sigurno da ih uoče.",
           "Prijavite se za kurs jezika i zajedno sa profesorom utvrdite šta je potrebno da naučite da biste dobili potrebnu ocenu na Writing delu.",
@@ -64,7 +68,7 @@
         ]
       },
       {
-        "h2": "IELTS SPEAKING",
+        "h2": "4. IELTS SPEAKING",
         "p": [
           "IELTS speaking se polaže pred ispitivačem. Sastoji se iz tri dela i ukupno traje 14 minuta. Sami ste sa ispitivačem i vaš usmeni odgovor se snima, a preslušaće ga barem tri osobe. Kao i u Writing delu, svi nedostaci u znanju engleskog isplivaće na površinu i uticaće na konačnu ocenu. Iako ćete imati utisak da „ćaskate“ sa ispitivačem, shvatite ovaj deo ispita ozbiljno i nikako nemojte da dajete kratke odgovore.",
           "Speaking deo IELTS testa se sastoji se iz tri dela.",
