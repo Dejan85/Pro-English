@@ -10,7 +10,6 @@ const useFetchNewsletter = () => {
       .catch(err => {
         console.log(err);
       });
-    // fetch('/newsletter', )
   };
 
   return {
