@@ -168,6 +168,23 @@ const Exams = props => {
           <div className='exams__list4--tab' data-name='bocconi' onClick={tabs}>
             BOCCONI
           </div>
+          <Scrollbars autoHide autoHideTimeout={1000} autoHideDuration={500}>
+            <div className='exams__body'>
+              {exams.bocconi &&
+                exams.bocconi.map((item, index) => {
+                  return (
+                    <div key={index}>
+                      <h1 className='exams__h1'>
+                        {item.h1}
+                      </h1>
+                      <p className='exams__p'>
+                        {item.p}
+                      </p>
+                    </div>
+                  );
+                })}
+            </div>
+          </Scrollbars>
         </div>
       </div>
     </div>
