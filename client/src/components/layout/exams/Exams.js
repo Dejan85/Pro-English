@@ -11,6 +11,8 @@ const Exams = props => {
   const [reset] = useState(() => {
     return window.scrollTo(0, 0);
   });
+
+  // tabs is onClick handler, and gre, ielts, gmat bocconi is ref
   const { tabs, gre, ielts, gmat, bocconi } = useTabs();
 
   return (
@@ -87,7 +89,6 @@ const Exams = props => {
                             <div key={index}>
                               <h2 className='exams__h2'>
                                 {item.h2}
-                                {/* {console.log(item)} */}
                               </h2>
 
                               {item.p &&
@@ -107,7 +108,7 @@ const Exams = props => {
                                 {item.list &&
                                   item.list.map((item, index) => {
                                     return (
-                                      <li className='exams__item'>
+                                      <li key={index} className='exams__item'>
                                         {item}
                                       </li>
                                     );
@@ -127,6 +128,40 @@ const Exams = props => {
           <div className='exams__list3--tab' data-name='gmat' onClick={tabs}>
             GMAT
           </div>
+          <Scrollbars autoHide autoHideTimeout={1000} autoHideDuration={500}>
+            <div className='exams__body'>
+              {exams.gmat &&
+                exams.gmat.map((item, index) => {
+                  return (
+                    <div key={index}>
+                      {item.h1 &&
+                        <h1 className='exams__h1'>
+                          {item.h1}
+                        </h1>}
+                      {item.p &&
+                        <p className='exams__p'>
+                          {item.p}
+                        </p>}
+
+                      {item.h3 &&
+                        <h2 className='exams__h2'>
+                          {item.h3}
+                        </h2>}
+                      <ul className='exams__list'>
+                        {item.list &&
+                          item.list.map((item, index) => {
+                            return (
+                              <li key={index} className='exams__item'>
+                                {item}
+                              </li>
+                            );
+                          })}
+                      </ul>
+                    </div>
+                  );
+                })}
+            </div>
+          </Scrollbars>
         </div>
 
         <div className='exams__list4' ref={bocconi}>
