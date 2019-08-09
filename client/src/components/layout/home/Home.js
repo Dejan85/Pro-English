@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Box from './partials/Box';
 import HomeAbout from './HomeAbout';
 import HomeCourseV2 from './HomeCourseV2';
-import Promotions from './partials/Promotions';
 import Promotions2 from './partials/Promotions2';
 
 import HomeBlog from './HomeBlog';
