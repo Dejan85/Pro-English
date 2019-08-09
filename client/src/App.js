@@ -10,7 +10,6 @@ import store from './redux/store';
 import { fetchCourseData, fetchGre } from './redux/actions/fetchData';
 
 import MainRouter from './MainRouter';
-// import AdminRouter from "./components/layout/admin/route/AdminRouter";
 
 //
 // ─── FETCH DATA FROM API ────────────────────────────────────────────────────────
@@ -30,7 +29,6 @@ function App () {
     <Provider store={store}>
       <Router>
         <MainRouter />
-        {/* <AdminRouter /> */}
       </Router>
     </Provider>
   );
