@@ -1,19 +1,19 @@
-import React, { useRef } from 'react';
+import React, { useRef } from 'react'
 
 // components
-import DropMenu from './partials/DropMenu';
-import AddBlog from './partials/blog/AddBlog';
-import AddEvents from './partials/events/AddEvents';
+import DropMenu from './partials/DropMenu'
+import AddBlog from './partials/blog/AddBlog'
+import AddEvents from './partials/events/AddEvents'
 
 // hooks
-import usePrivateRoute from '../../hooks/auth/usePrivateRoute';
-import useDropMenu from '../../hooks/auth/useDropMenu';
+import usePrivateRoute from '../../hooks/auth/usePrivateRoute'
+import useDropMenu from '../../hooks/auth/useDropMenu'
 
 const Dashboard = () => {
-  const { PrivateRoute } = usePrivateRoute();
-  const { dropMenuHandler } = useDropMenu();
-  const blogRef = useRef();
-  const eventsRef = useRef();
+  const { PrivateRoute } = usePrivateRoute()
+  const { dropMenuHandler } = useDropMenu()
+  const blogRef = useRef()
+  const eventsRef = useRef()
 
   return (
     <div className='dashboard'>
@@ -25,8 +25,7 @@ const Dashboard = () => {
           <ul
             className='dashboard__list'
             onClick={dropMenuHandler.bind(this, blogRef)}
-            ref={blogRef}
-          >
+            ref={blogRef}>
             <li className='dashboard__item'>
               <div className='dashboard__icon'>
                 <i className='fas fa-blog' />
@@ -40,14 +39,13 @@ const Dashboard = () => {
               add='Add Blog'
               edit='Edit Blog'
               del='Delete Blog'
-              url='/admin/blog/add'
+              url='/dashboard/blog/add'
             />
           </ul>
           <ul
             className='dashboard__list'
             onClick={dropMenuHandler.bind(this, eventsRef)}
-            ref={eventsRef}
-          >
+            ref={eventsRef}>
             <li className='dashboard__item'>
               <div className='dashboard__icon'>
                 <i className='far fa-calendar-alt' />
@@ -61,17 +59,21 @@ const Dashboard = () => {
               add='Add Events'
               edit='Edit Events'
               del='Delete Events'
-              url='/admin/events/add'
+              url='/dashboard/events/add'
             />
           </ul>
         </div>
         <div className='dashboard__panel'>
-          <PrivateRoute exact path='/admin/blog/add' component={AddBlog} />
-          <PrivateRoute exact path='/admin/events/add' component={AddEvents} />
+          <PrivateRoute exact path='/dashboard/blog/add' component={AddBlog} />
+          <PrivateRoute
+            exact
+            path='/dashboard/events/add'
+            component={AddEvents}
+          />
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Dashboard;
+export default Dashboard

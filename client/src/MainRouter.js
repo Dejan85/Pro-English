@@ -20,18 +20,29 @@ import Contact from './components/layout/contact/Contact';
 
 // admin
 import Dashboard from './components/layout/admin/Dashboard';
-
+import Signin from './components/layout/admin/auth/Signin';
+import Signup from './components/layout/admin/auth/Signup';
 
 // hooks
 import usePrivateRoute from './components/hooks/auth/usePrivateRoute';
 
-
 const MainRouter = () => {
   const {PrivateRoute} = usePrivateRoute();
+  
+
+
+  const str = window.location.pathname.split(/[\\\/]/);
+   let str2; 
+   
+   str.forEach((item) => {
+     if(item === "dashboard"){
+       return str2 = item;
+     }
+   });
+
   return (
     <>
-  {window.location.pathname !== "/dashboard" && <Header/>}
-    {console.log(window.location.pathname)}
+  {str2 !== "dashboard" && <Header/>}
     <Switch>
       <Route exact path='/' component={Home} />
       <Route exact path='/onama' component={About} />
@@ -44,9 +55,11 @@ const MainRouter = () => {
       <Route exact path='/kontakt' component={Contact} />
 
         {/* admin */}
-      <Route exact path='/dashboard' component={Dashboard}  />
+      <PrivateRoute exact path='/dashboard' component={Dashboard} />
+      <Route exact path="/dashboard/signin" component={Signin}/>
+      <Route exact path="/dashboard/signup" component={Signup}/>
     </Switch>
-    {window.location.pathname !== "/dashboard" && <Footer/>}
+    {str2 !== "dashboard" && <Footer/>}
     </>
   );
 };
