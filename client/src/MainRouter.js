@@ -21,7 +21,6 @@ import Contact from "./components/layout/contact/Contact";
 // admin
 // import Dashboard from './components/layout/admin/Dashboard'
 import Dashboard from "./components/layout/dashboard/Dashboard";
-import DashboardNav from "./components/layout/dashboard/partials/DashboardNav";
 import Signin from "./components/layout/admin/auth/Signin";
 import Signup from "./components/layout/admin/auth/Signup";
 
