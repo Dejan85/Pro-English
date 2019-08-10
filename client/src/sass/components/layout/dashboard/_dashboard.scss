@@ -1,0 +1,49 @@
+.dashboard {
+  width: 20rem;
+  height: 100vh;
+  box-shadow: 0 1px 1rem rgba($color-dark, 0.15);
+
+  &__header {
+    display: flex;
+    padding: 0.5rem 0rem;
+    justify-content: center;
+  }
+
+  &__nav {
+    background: $color-pink-dark;
+  }
+
+  &__list {
+    i {
+      transition: all 0.5s;
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    list-style-type: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border: lighten($color-pink-dark, 10%) 0.5px solid;
+    box-shadow: 0 1px 1rem rgba($color-dark, 0.15);
+  }
+
+  &__sublist {
+    height: 0px;
+    overflow: hidden;
+    transition: all 0.5s;
+  }
+
+  &__subitem {
+    padding: 1rem 3rem;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &:hover {
+      background: lighten($color-pink-dark, 6%);
+    }
+  }
+}

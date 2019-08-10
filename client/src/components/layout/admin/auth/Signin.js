@@ -8,7 +8,7 @@ const Signin = () => {
   const { input, error, redirect, onChange, onSubmit } = useForm()
   return (
     <div className='sign'>
-      {redirect && <Redirect to='/admin' />}
+      {redirect && <Redirect to='/dashboard' />}
       <h1 className='sign__h1'>Login</h1>
       <div className='sign__form'>
         <form onSubmit={onSubmit} name='signin'>

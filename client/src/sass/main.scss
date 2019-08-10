@@ -54,9 +54,11 @@
 @import "./components/layout/footer/footer";
 
 //DASHBOARD
-@import "./components/layout/admin/dashboard";
+// @import "./components/layout/admin/dashboard";
 @import "./components/layout/admin/auth/sign";
 @import "./components/layout/admin/events.scss";
+
+@import "./components/layout/dashboard/dashboard";
 
 // // TYPOGRAPFY
 
@@ -96,6 +98,8 @@
 
 //DASHBOARD
 
-@import "./components/typograpfy/admin/dashboard-typograpfy";
+// @import "./components/typograpfy/admin/dashboard-typograpfy";
 @import "./components/typograpfy/admin/auth/sign-typograpfy";
-@import "./components/typograpfy/admin/events-typograpfy";
+// @import "./components/typograpfy/admin/events-typograpfy";
+
+@import "./components/typograpfy/dashboard/dashboard-typograpfy";
