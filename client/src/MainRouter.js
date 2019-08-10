@@ -32,7 +32,6 @@ const MainRouter = () => {
   const { PrivateRoute } = usePrivateRoute();
   const { isAuthenticated } = useAuthenticate();
 
-  console.log();
 
   const str = window.location.pathname.split(/[\\\/]/);
   let str2;
