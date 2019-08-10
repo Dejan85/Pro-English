@@ -1,5 +1,7 @@
 .dashboard {
   display: flex;
+  height: 100vh;
+  overflow: hidden;
 
   &__navigation {
     width: 20rem;
@@ -49,5 +51,12 @@
     &:hover {
       background: lighten($color-pink-dark, 6%);
     }
+  }
+
+  &__content {
+    width: 100%;
+    padding: 3rem;
+
+    @include reactQuill;
   }
 }

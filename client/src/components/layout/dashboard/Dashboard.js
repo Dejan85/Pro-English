@@ -28,7 +28,7 @@ const Dashboard = () => {
     <div className="dashboard">
       <div className="dashboard__navigation">
         <div className="dashboard__header">
-          <Link>
+          <Link to="/">
             <img src={logo} alt="logo" />
           </Link>
         </div>
