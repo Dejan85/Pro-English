@@ -15,9 +15,12 @@ const useReactQuill = () => {
    */
   const modules = {
     toolbar: [
-      [{ header: "1" }, { header: "2" }, { font: [] }],
+      [{ header: [1, 2, 3, 4, 5, 6, false] }],
+      [{ font: ["Lato", "Dokdo", "Nosifer", "Fascinate"] }],
       [{ size: [] }],
-      ["bold", "italic", "underline", "strike", "blockquote"],
+      [{ color: [] }, { background: [] }],
+      [{ align: [] }],
+      ["bold", "italic", "underline", "strike", "blockquote", "code-block"],
       [
         { list: "ordered" },
         { list: "bullet" },
@@ -45,20 +48,24 @@ const useReactQuill = () => {
     "underline",
     "strike",
     "blockquote",
+    "code-block",
     "list",
     "bullet",
     "indent",
     "link",
     "image",
-    "video"
+    "video",
+    "color",
+    "background",
+    "align"
   ];
 
-  const reactQuill = text => {
+  const reactQuill = () => {
     return (
       <div>
         <ReactQuill
           onChange={handleChange}
-          value={editorHtml}
+          value={editorHtml || ""}
           modules={modules}
           formats={formats}
           // bounds={".app"}

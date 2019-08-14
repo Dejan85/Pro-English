@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 // component
 import BoxOne from "../blog/partials/BoxOne";
@@ -10,7 +12,10 @@ import slika2 from "../../../images/blog2.jpg";
 import slika3 from "../../../images/blog3.jpg";
 import slika4 from "../../../images/blog4.jpg";
 
-const Blog = () => {
+//Redux
+import { fetchBlog } from "../../../redux/actions/fetchBlog";
+
+const Blog = ({ fetchBlog }) => {
   const [reset] = useState(() => {
     return window.scrollTo(0, 0);
   });
@@ -19,28 +24,29 @@ const Blog = () => {
       date: "25. Jun 2019",
       heading: "Da li je Australija nova obećana zemlja?",
       p:
-        "Beskrajan, plavi krug. U njemu, zvezda. Da li je san o izobilju, boljem životu i srećnim ljudima moguće ostvariti samo u Americi ili svoj američki san možete da doživite i na suprotnoj strani Zemljine hemisfere, u čarobnoj Australiji?  Beskrajan, plavi krug. U njemu, zvezda. Da li je san o izobilju, boljem životu i srećnim ljudima moguće ostvariti samo u Americi ili svoj američki san možete da doživite i na suprotnoj strani Zemljine hemisfere, u čarobnoj Australiji?",
+        "Beskrajan, plavi krug. U njemu, zvezda. Da li je san o izobilju, boljem životu i srećnim ljudima moguće ostvariti samo u Americi ili svoj američki san možete da doživite i na suprotnoj strani Zemljine hemisfere, u čarobnoj Australiji?  Beskrajan, plavi krug. U njemu, zvezda. Da li je san o izobilju, boljem životu i srećnim ljudima moguće ostvariti samo u Americi ili svoj američki san možete da doživite i na suprotnoj strani Zemljine hemisfere, u čarobnoj Australiji?"
     },
     blog2: {
       date: "25. Jun 2019",
       heading: "Da li je Australija nova obećana zemlja?",
       p:
-        "Beskrajan, plavi krug. U njemu, zvezda. Da li je san o izobilju, boljem životu i srećnim ljudima moguće ostvariti samo u Americi ili svoj američki san možete da doživite i na suprotnoj strani Zemljine hemisfere, u čarobnoj Australiji?  Beskrajan, plavi krug. U njemu, zvezda. Da li je san o izobilju, boljem životu i srećnim ljudima moguće ostvariti samo u Americi ili svoj američki san možete da doživite i na suprotnoj strani Zemljine hemisfere, u čarobnoj Australiji?",
+        "Beskrajan, plavi krug. U njemu, zvezda. Da li je san o izobilju, boljem životu i srećnim ljudima moguće ostvariti samo u Americi ili svoj američki san možete da doživite i na suprotnoj strani Zemljine hemisfere, u čarobnoj Australiji?  Beskrajan, plavi krug. U njemu, zvezda. Da li je san o izobilju, boljem životu i srećnim ljudima moguće ostvariti samo u Americi ili svoj američki san možete da doživite i na suprotnoj strani Zemljine hemisfere, u čarobnoj Australiji?"
     },
     blog3: {
       date: "25. Jun 2019",
       heading: "Da li je Australija nova obećana zemlja?",
       p:
-        "Beskrajan, plavi krug. U njemu, zvezda. Da li je san o izobilju, boljem životu i srećnim ljudima moguće ostvariti samo u Americi ili svoj američki san možete da doživite i na suprotnoj strani Zemljine hemisfere, u čarobnoj Australiji?  Beskrajan, plavi krug. U njemu, zvezda. Da li je san o izobilju, boljem životu i srećnim ljudima moguće ostvariti samo u Americi ili svoj američki san možete da doživite i na suprotnoj strani Zemljine hemisfere, u čarobnoj Australiji?",
+        "Beskrajan, plavi krug. U njemu, zvezda. Da li je san o izobilju, boljem životu i srećnim ljudima moguće ostvariti samo u Americi ili svoj američki san možete da doživite i na suprotnoj strani Zemljine hemisfere, u čarobnoj Australiji?  Beskrajan, plavi krug. U njemu, zvezda. Da li je san o izobilju, boljem životu i srećnim ljudima moguće ostvariti samo u Americi ili svoj američki san možete da doživite i na suprotnoj strani Zemljine hemisfere, u čarobnoj Australiji?"
     },
     blog4: {
       date: "25. Jun 2019",
       heading: "Da li je Australija nova obećana zemlja?",
       p:
-        "Beskrajan, plavi krug. U njemu, zvezda. Da li je san o izobilju, boljem životu i srećnim ljudima moguće ostvariti samo u Americi ili svoj američki san možete da doživite i na suprotnoj strani Zemljine hemisfere, u čarobnoj Australiji?  Beskrajan, plavi krug. U njemu, zvezda. Da li je san o izobilju, boljem životu i srećnim ljudima moguće ostvariti samo u Americi ili svoj američki san možete da doživite i na suprotnoj strani Zemljine hemisfere, u čarobnoj Australiji?",
-    },
+        "Beskrajan, plavi krug. U njemu, zvezda. Da li je san o izobilju, boljem životu i srećnim ljudima moguće ostvariti samo u Americi ili svoj američki san možete da doživite i na suprotnoj strani Zemljine hemisfere, u čarobnoj Australiji?  Beskrajan, plavi krug. U njemu, zvezda. Da li je san o izobilju, boljem životu i srećnim ljudima moguće ostvariti samo u Americi ili svoj američki san možete da doživite i na suprotnoj strani Zemljine hemisfere, u čarobnoj Australiji?"
+    }
   });
   console.log("blog rendering");
+  fetchBlog();
   return (
     <div className="blog">
       {reset}
@@ -56,4 +62,11 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+Blog.propTypes = {
+  fetchBlog: PropTypes.func
+};
+
+export default connect(
+  null,
+  { fetchBlog }
+)(Blog);

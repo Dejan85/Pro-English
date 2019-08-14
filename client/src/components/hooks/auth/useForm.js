@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 // hooks
-import useSign from './useSign';
-import useAuthenticate from './useAuthenticate';
-import useErrorHandler from './useErrorHandle';
-import useContactForm from '../contact/useContactForm';
-import useFetchNewsletter from '../home/useFetchNewsletter';
+import useSign from "./useSign";
+import useAuthenticate from "./useAuthenticate";
+import useErrorHandler from "./useErrorHandle";
+import useContactForm from "../contact/useContactForm";
+import useFetchNewsletter from "../home/useFetchNewsletter";
 
 const useForm = () => {
   const { signup, signin } = useSign();
@@ -16,30 +16,31 @@ const useForm = () => {
   const [error, setError] = useState(undefined);
   const [redirect, setRedirect] = useState(false);
   const [input, setInput] = useState({
-    firstname: '',
-    lastname: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-    title: '',
-    question: '',
-    timeFromOne: '',
-    timeToOne: '00',
-    timeFromTwo: '',
-    timeToTwo: '00',
-    eventDescription: ''
+    firstname: "",
+    lastname: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    title: "",
+    question: "",
+    timeFromOne: "",
+    timeToOne: "00",
+    timeFromTwo: "",
+    timeToTwo: "00",
+    eventDescription: "",
+    file: ""
   });
   const [date, setDate] = useState();
 
   const onChange = e => {
     setInput({
       ...input,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.files[0] ? e.target.files[0] : e.target.value
     });
 
     setError({
       ...error,
-      [e.target.name]: ''
+      [e.target.name]: ""
     });
   };
 
@@ -64,7 +65,7 @@ const useForm = () => {
       // event
     } = errorHandle(input);
 
-    if (e.target.name === 'signup') {
+    if (e.target.name === "signup") {
       if (!firstname && !lastname && !email && !password && !confirmPassword) {
         return signup(input)
           .then(res => {
@@ -82,7 +83,7 @@ const useForm = () => {
       }
     }
 
-    if (e.target.name === 'signin') {
+    if (e.target.name === "signin") {
       if (!email && !password) {
         return signin({ email: input.email, password: input.password })
           .then(res => {
@@ -102,7 +103,7 @@ const useForm = () => {
       }
     }
 
-    if (e.target.name === 'contact') {
+    if (e.target.name === "contact") {
       if (!firstname && !email && !title && !question) {
         return contactForm({
           name: input.firstname,
@@ -122,7 +123,7 @@ const useForm = () => {
       }
     }
 
-    if (e.target.name === 'newsletter') {
+    if (e.target.name === "newsletter") {
       if (!email) {
         return fetchNewsletter({
           email: input.email
@@ -139,11 +140,11 @@ const useForm = () => {
       }
     }
 
-    if ((e.target.name = 'addEvents')) {
+    if ((e.target.name = "addEvents")) {
       const data = {
         time: `${input.timeFromOne +
-          ' : ' +
-          input.timeToOne} - ${input.timeFromTwo + ' : ' + input.timeToTwo}`,
+          " : " +
+          input.timeToOne} - ${input.timeFromTwo + " : " + input.timeToTwo}`,
         description: input.eventDescription,
         date
       };

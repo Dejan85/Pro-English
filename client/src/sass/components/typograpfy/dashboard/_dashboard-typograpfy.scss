@@ -15,4 +15,33 @@
   &__subitem {
     font-size: 1.6rem;
   }
+
+  &__addBlog {
+    &--btn {
+      font-family: $font-1;
+      font-size: 1.6rem;
+      color: white;
+    }
+
+    &--img {
+      &::-webkit-file-upload-button {
+        font-family: $font-1;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+.editor {
+  &__btn {
+    color: white;
+    font-size: 2rem;
+    text-transform: capitalize;
+    font-family: $font-1;
+  }
+
+  &__edit {
+    font-size: 1.7rem;
+    font-family: $font-1;
+  }
 }
