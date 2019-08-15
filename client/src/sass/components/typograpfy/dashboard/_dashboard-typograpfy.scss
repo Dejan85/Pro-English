@@ -1,7 +1,4 @@
 .dashboard {
-  &__nav {
-  }
-
   &__list {
     color: white;
     font-family: $font-1;
@@ -30,18 +27,20 @@
       }
     }
   }
-}
 
-.editor {
-  &__btn {
-    color: white;
-    font-size: 2rem;
-    text-transform: capitalize;
+  &__label {
+    font-size: 1.9rem;
+    font-family: $font-1;
+    font-weight: 800;
+  }
+
+  &__input {
+    font-size: 1.8rem;
     font-family: $font-1;
   }
 
-  &__edit {
-    font-size: 1.7rem;
+  &__textarea {
+    font-size: 1.8rem;
     font-family: $font-1;
   }
 }

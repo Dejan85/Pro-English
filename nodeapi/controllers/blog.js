@@ -37,6 +37,7 @@ exports.createBlog = (req, res) => {
   });
 };
 
+// get blog
 exports.getBlog = (req, res) => {
   Blog.find()
     .then(result => {
@@ -47,4 +48,10 @@ exports.getBlog = (req, res) => {
     });
 };
 
-exports.uploadImg = () => {};
+// get photo
+exports.postPhoto = (req, res, next) => {
+  Blog.findById(req.params.postId).then(response => {
+    res.set("Content-Type", response.photo.contentType);
+    return res.send(response.photo.data);
+  });
+};

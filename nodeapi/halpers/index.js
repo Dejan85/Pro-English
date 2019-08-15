@@ -1,5 +1,5 @@
 const User = require("../models/user");
-const Post = require("../models/post");
+const Blog = require("../models/post");
 const nodeMailer = require("nodemailer");
 const defaultEmailData = { from: "noreply@node-react.com" };
 
@@ -11,7 +11,7 @@ exports.userById = (req, res, next, id) => {
     .exec((err, user) => {
       if (err || !user) {
         return res.status(400).json({
-          error: "User not found",
+          error: "User not found"
         });
       }
       req.profile = user; // adds profile object in req with user info
@@ -20,22 +20,7 @@ exports.userById = (req, res, next, id) => {
 };
 
 // post by id
-exports.postById = (req, res, next, id) => {
-  Post.findById(id)
-    .populate("postedBy", "_id name")
-    .populate("comments.postedBy", "_id name")
-    .populate("postedBy", "_id name role")
-    .select("_id title body created likes comments photo")
-    .exec((err, post) => {
-      if (err || !post) {
-        return res.status(400).json({
-          error: err,
-        });
-      }
-      req.post = post;
-      next();
-    });
-};
+exports.postById = (req, res, next, id) => {};
 
 exports.sendEmail = emailData => {
   const transporter = nodeMailer.createTransport({
@@ -45,8 +30,8 @@ exports.sendEmail = emailData => {
     requireTLS: true,
     auth: {
       user: "youremail@gmail.com",
-      pass: "kshzlmomlthllktq",
-    },
+      pass: "kshzlmomlthllktq"
+    }
   });
   return transporter
     .sendMail(emailData)

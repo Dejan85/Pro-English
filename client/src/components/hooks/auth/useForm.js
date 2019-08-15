@@ -28,19 +28,27 @@ const useForm = () => {
     timeFromTwo: "",
     timeToTwo: "00",
     eventDescription: "",
-    file: ""
+    file: "",
+    description: ""
   });
   const [date, setDate] = useState();
 
   const onChange = e => {
     setInput({
       ...input,
-      [e.target.name]: e.target.files[0] ? e.target.files[0] : e.target.value
+      [e.target.name]: e.target.value
     });
 
     setError({
       ...error,
       [e.target.name]: ""
+    });
+  };
+
+  const fileUpload = e => {
+    setInput({
+      ...input,
+      [e.target.name]: e.target.files[0]
     });
   };
 
@@ -161,7 +169,8 @@ const useForm = () => {
     onSubmit,
     error,
     redirect,
-    getEventData
+    getEventData,
+    fileUpload
   };
 };
 

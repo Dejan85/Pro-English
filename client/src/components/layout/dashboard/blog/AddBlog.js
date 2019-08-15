@@ -12,31 +12,46 @@ import useForm from "../../../hooks/auth/useForm";
 
 const AddBlog = ({ fetchNewBlog }) => {
   const { reactQuill, editorHtml } = useReactQuill();
-  const [file, setFile] = useState();
-  const [data, setData] = useState({
-    blog: undefined,
-    photo: undefined
-  });
+
   const formData = new FormData();
-  const { onChange, input } = useForm();
+  const { onChange, input, fileUpload } = useForm();
 
   const onSubmitHandler = e => {
     e.preventDefault();
     formData.append("file", input.file);
+    formData.append("title", input.title);
+    formData.append("description", input.description);
     formData.append("body", editorHtml);
 
     fetchNewBlog({ formData });
   };
 
-  // const onChange = e => {
-  //   setFile(e.target.files[0]);
-  // };
-
   return (
     <div className="dashboard__addBlog">
       {/* <h1 className="dashboard__addBlog--h1">Add New Blog</h1> */}
       {/* {editorHtml && parse(editorHtml)} */}
-      <form onSubmit={onSubmitHandler}>
+      <form className="dashboard__form" onSubmit={onSubmitHandler}>
+        <div className="dashboard__inputHolder">
+          <label className="dashboard__label">Title</label>
+          <input
+            className="dashboard__input"
+            name="title"
+            onChange={onChange}
+            value={input.title}
+          />
+        </div>
+
+        <div className="dashboard__inputHolder">
+          <label className="dashboard__label">Description</label>
+          <textarea
+            className="dashboard__textarea"
+            name="description"
+            onChange={onChange}
+            value={input.description}
+            rows="4"
+          />
+        </div>
+
         {reactQuill()}
         <button className="dashboard__addBlog--btn" type="submit">
           Save
@@ -46,7 +61,7 @@ const AddBlog = ({ fetchNewBlog }) => {
           type="file"
           name="file"
           accept="image/*"
-          onChange={onChange}
+          onChange={fileUpload}
         />
       </form>
     </div>

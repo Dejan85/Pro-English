@@ -26,7 +26,7 @@ exports.createPost = (req, res, next) => {
   form.parse(req, (err, fields, files) => {
     if (err) {
       return res.status(400).json({
-        error: "Image could not be uploaded",
+        error: "Image could not be uploaded"
       });
     }
 
@@ -44,7 +44,7 @@ exports.createPost = (req, res, next) => {
     post.save((err, result) => {
       if (err) {
         res.status(400).json({
-          err,
+          err
         });
       }
       res.json(result);
@@ -61,7 +61,7 @@ exports.postsByUser = (req, res) => {
     .exec((err, posts) => {
       if (err) {
         return res.status(400).json({
-          error: err,
+          error: err
         });
       }
       res.json(posts);
@@ -75,7 +75,7 @@ exports.updatePost = (req, res, next) => {
   form.parse(req, (err, fields, files) => {
     if (err) {
       return res.status(400).json({
-        error: "Photo could not be uploaded",
+        error: "Photo could not be uploaded"
       });
     }
 
@@ -92,7 +92,7 @@ exports.updatePost = (req, res, next) => {
     post.save((err, result) => {
       if (err) {
         return res.status(400).json({
-          error: err,
+          error: err
         });
       }
 
@@ -110,7 +110,7 @@ exports.deletePost = (req, res) => {
       res.status(400).json(err);
     }
     res.json({
-      message: "Post deleted succesfully!",
+      message: "Post deleted succesfully!"
     });
   });
 };
@@ -131,13 +131,13 @@ exports.like = (req, res, next) => {
   Post.findByIdAndUpdate(
     req.body.postId,
     {
-      $push: { likes: req.body.userId },
+      $push: { likes: req.body.userId }
     },
     { new: true }
   ).exec((err, result) => {
     if (err) {
       return res.status(400).json({
-        error: err,
+        error: err
       });
     } else {
       res.json(result);
@@ -150,13 +150,13 @@ exports.unlike = (req, res, next) => {
   Post.findByIdAndUpdate(
     req.body.postId,
     {
-      $pull: { likes: req.body.userId },
+      $pull: { likes: req.body.userId }
     },
     { new: true }
   ).exec((err, result) => {
     if (err) {
       return res.status(400).json({
-        error: err,
+        error: err
       });
     } else {
       res.json(result);
@@ -179,7 +179,7 @@ exports.comment = (req, res) => {
     .exec((err, result) => {
       if (err) {
         return res.status(400).json({
-          error: err,
+          error: err
         });
       } else {
         res.json(result);
@@ -194,7 +194,7 @@ exports.uncomment = (req, res, next) => {
   Post.findByIdAndUpdate(
     req.body.postId,
     {
-      $pull: { comments: { _id: comment._id } },
+      $pull: { comments: { _id: comment._id } }
     },
     { new: true }
   )
@@ -203,7 +203,7 @@ exports.uncomment = (req, res, next) => {
     .exec((err, result) => {
       if (err) {
         return res.status(400).json({
-          error: err,
+          error: err
         });
       } else {
         res.json(result);
