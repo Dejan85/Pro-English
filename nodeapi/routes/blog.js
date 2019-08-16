@@ -9,7 +9,7 @@ const { createBlog, getBlog, postPhoto } = require("../controllers/blog");
 
 router.post("/new/:userId", createBlog);
 router.get("/get", getBlog);
-router.get("/image/:postId", postPhoto);
+router.get("/image/:id", postPhoto);
 
 // param
 router.param("userId", userById);

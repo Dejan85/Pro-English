@@ -1,48 +1,69 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import PropType from "prop-types";
+import parse from "html-react-parser";
 
 // hooks
-import useScrollIndicator from '../../hooks/global/useScrollIndicator';
+import useScrollIndicator from "../../hooks/global/useScrollIndicator";
 
 // images
-import kengur from '../../../images/kengur.jpg';
+import kengur from "../../../images/kengur.jpg";
 
-const BlogPost = () => {
+const BlogPost = ({ blog, match }) => {
   const [reset] = useState(() => {
     return window.scrollTo(0, 0);
   });
   const { scrollIndicator } = useScrollIndicator();
+  const [data, setData] = useState();
+
+  console.log(blog);
+
+  useEffect(() => {
+    blog &&
+      blog.map((item, index) => {
+        if (match.params.blogId === item._id) {
+          setData(item);
+        }
+      });
+  }, [blog, match.params.blogId]);
 
   return (
     <div>
-      <div className='blogPost'>
+      <div className="blogPost">
         {scrollIndicator()}
         {reset}
-        <h1 className='blogPost__h1'>
-          DA LI JE AUSTRALIJA NOVA OBEĆANA ZEMLJA?
-        </h1>
-        <span className='blogPost__span'>
-          Beskrajan, plavi krug. U njemu, zvezda.
+        <h1 className="blogPost__h1">{data && data.title}</h1>
+        <span className="blogPost__span">
+          {/* Beskrajan, plavi krug. U njemu, zvezda. */}
         </span>
-        <div className='blogPost__info'>
-          <p className='blogPost__date'>25. jun 2019.</p>
-          <p className='blogPost__postedBy'>
-            <span>Postovala:</span> Branka
+        <div className="blogPost__info">
+          <p className="blogPost__date">{data && data.created}</p>
+          <p className="blogPost__postedBy">
+            <span className="blogPost__postedBy--span">Postovala:</span>
+            {data && data.postedBy}
           </p>
         </div>
-        <div className='blogPost__content'>
-          <p className='blogPost__content__p'>
-            <i>
+        <div className="blogPost__content">
+          <p className="blogPost__content__p">
+            {/* <i>
               Da li je san o izobilju, boljem životu i srećnim ljudima moguće
               ostvariti samo u Americi ili svoj američki san možete da doživite
               i na suprotnoj strani Zemljine hemisfere, u čarobnoj Australiji?
-            </i>
+            </i> */}
+            {data && data.description}
           </p>
-          <h2 className='blogPost__h2'>
-            Ovaj tekst je namenjen onima koji razmišljaju o odlasku iz Srbije i
-            pitaju se kuda dalje.
+          <h2 className="blogPost__h2">
+            {/* Ovaj tekst je namenjen onima koji razmišljaju o odlasku iz Srbije i
+            pitaju se kuda dalje. */}
           </h2>
-          <img className='blogPost__img' src={kengur} alt='proenglish' />
-          <p className='blogPost__content__p'>
+          <img
+            className="blogPost__img"
+            src={`/blog/image/${data && data._id}`}
+            alt="proenglish"
+          />
+          {data && parse(data.body)}
+          {/* <p className="blogPost__content__p">
             Početak dvadesetog veka su obeležila velika pomeranja evropskih
             naroda u Ameriku: nekadašnja britanska kolonija otvorila je tada
             vrata hiljadama ljudi - čak 9% stanovništva Norveške je pošlo put
@@ -58,7 +79,7 @@ const BlogPost = () => {
             upuste u avanturu ostvarivanja svojih snova. Medjutim, kuda sada idu
             Evropljani?
           </p>
-          <p className='blogPost__content__p'>
+          <p className="blogPost__content__p">
             Nama koji potičemo sa Balkana seobe su dobro poznate još iz vremena
             Čarnojevića koji su naše pretke poveli iz područja Kosmeta i
             Metohije ka plodnoj Vojvodini i zelenoj Šumadiji za vreme
@@ -70,7 +91,7 @@ const BlogPost = () => {
             skućili i konačno žive punim plućima. Oni koji se tek spremaju da
             odu, na najvećim su mukama.
           </p>
-          <p className='blogPost__content__p'>
+          <p className="blogPost__content__p">
             Prema novijim podacima, oko 2 miliona Srba su naseljeni trajno u
             različitim zemljama sveta. U tu brojku nisu uračunati oni koji u
             inostranstvu borave privremeno, preko radne vize, niti su tom cifrom
@@ -85,10 +106,10 @@ const BlogPost = () => {
             Hercegovine, kao i preko 100.000 Hrvata. Sve više je onih koji se
             opredeljuju za odlazak u Australiju. Zašto je to slučaj?
           </p>
-          <h3 className='blogPost__h3'>
+          <h3 className="blogPost__h3">
             1. Gradovi sa visokim kvalitetom života
           </h3>
-          <p className='blogPost__content__p'>
+          <p className="blogPost__content__p">
             Prema istraživanju koje obradjuje faktore koji doprinose kvalitetu
             života, a koje obuhvata 140 svetskih gradova, australijski gradovi
             se nalaze medju 10 najboljih za život. Medju njima se nalaze Sidnej
@@ -98,8 +119,8 @@ const BlogPost = () => {
             procvat zahvaljujući velikim ulaganjima koja za cilj imaju
             iskorišćavanje punog potencijala i bogatstva Australije.
           </p>
-          <h3 className='blogPost__h3'>2. Zarada</h3>
-          <p className='blogPost__content__p'>
+          <h3 className="blogPost__h3">2. Zarada</h3>
+          <p className="blogPost__content__p">
             Ekonomska kriza koja je prodrmala Evropu i Ameriku zaobišla je
             Australiju. Zapravo, u poslednjih nekoliko godina Australija je
             ostvarila ekonomski rast i A kreditni rejting, kao i nizak državni
@@ -108,8 +129,8 @@ const BlogPost = () => {
             u obzir i to da će svaki radno sposoban član porodice moći da se
             zaposli i ostvari mesečni prihod na sličnom nivou.
           </p>
-          <h3 className='blogPost__h3'>3. Niska stopa nezaposlenosti</h3>
-          <p className='blogPost__content__p'>
+          <h3 className="blogPost__h3">3. Niska stopa nezaposlenosti</h3>
+          <p className="blogPost__content__p">
             Australija je u potrazi za kvalifikovanom i vrednom radnom snagom
             koja zemlji omogućava da parira drugim svetskim silama. Pod uslovom
             da imate potrebno obrazovanje, znanje i/ili iskustvo, potraga za
@@ -122,8 +143,8 @@ const BlogPost = () => {
             festivalima koje organizuje preko 270 nacija koje žive u Australiji.
             Zapravo, svaki četvrti Australijanac je rodjen van Australije.
           </p>
-          <h3 className='blogPost__h3'>4. Stabilnost i bezbednost</h3>
-          <p className='blogPost__content__p'>
+          <h3 className="blogPost__h3">4. Stabilnost i bezbednost</h3>
+          <p className="blogPost__content__p">
             Iako je Australija poznata po otrovnim vrstama insekata i gmizavaca,
             savremenom čoveku najčešće preti opasnost od drugog čoveka. Takve
             bojazni nema u Australiji: stopa kriminala je niska i izlazak na
@@ -134,8 +155,8 @@ const BlogPost = () => {
             zemlji koja vas svakodnevno zavodi svojom prirodom i lepotom. Ko bi
             gledao mimo te lepote u ekrane?
           </p>
-          <h3 className='blogPost__h3'>5. Najsrećnija nacija na svetu</h3>
-          <p className='blogPost__content__p'>
+          <h3 className="blogPost__h3">5. Najsrećnija nacija na svetu</h3>
+          <p className="blogPost__content__p">
             Australijanci nose titulu najsrećnijih i najraspoloženijih ljudi na
             svetu. Svi prethodno pomenuti faktori svakako doprinose tome, a tu
             je i veliki broj sunčanih dana. Mnogo govori i podatak da je
@@ -149,11 +170,23 @@ const BlogPost = () => {
             li smo Australiju sagledali kroz ružičaste naočari ili ima i istine
             u ovome? Gde ćete vi, sada kada možemo bilo kuda?
           </p>
-          <h5 className='blogPost__signature'>Hugs, Tičerka B.</h5>
+          <h5 className="blogPost__signature">Hugs, Tičerka B.</h5> */}
         </div>
       </div>
     </div>
   );
 };
 
-export default BlogPost;
+const mapStateToProps = state => {
+  const { blog } = state;
+  return blog;
+};
+
+BlogPost.propType = {
+  blog: PropType.object
+};
+
+export default connect(
+  mapStateToProps,
+  null
+)(withRouter(BlogPost));

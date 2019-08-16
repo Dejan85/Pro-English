@@ -3,11 +3,11 @@ const fs = require("fs");
 const formidable = require("formidable");
 
 //create blog
-exports.createBlog = (req, res) => {
+exports.createBlog = async (req, res) => {
   let form = new formidable.IncomingForm();
   form.keepExtensions = true;
 
-  form.parse(req, (err, fields, files) => {
+  await form.parse(req, (err, fields, files) => {
     if (err) {
       console.log(err);
       return res.status(400).json({
@@ -38,8 +38,8 @@ exports.createBlog = (req, res) => {
 };
 
 // get blog
-exports.getBlog = (req, res) => {
-  Blog.find()
+exports.getBlog = async (req, res) => {
+  await Blog.find()
     .then(result => {
       res.json(result);
     })
@@ -49,8 +49,8 @@ exports.getBlog = (req, res) => {
 };
 
 // get photo
-exports.postPhoto = (req, res, next) => {
-  Blog.findById(req.params.postId).then(response => {
+exports.postPhoto = async (req, res, next) => {
+  await Blog.findById(req.params.id).then(response => {
     res.set("Content-Type", response.photo.contentType);
     return res.send(response.photo.data);
   });

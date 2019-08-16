@@ -61,38 +61,6 @@
     @include reactQuill;
   }
 
-  &__addBlog {
-    display: flex;
-    flex-direction: column;
-
-    &--btn {
-      background: $color-pink-dark;
-      padding: 1rem;
-      width: 10rem;
-      border: none;
-      margin-top: 2rem;
-      cursor: pointer;
-    }
-
-    &--img {
-      margin-left: 2rem;
-      &::-webkit-file-upload-button {
-        background: $color-pink-dark;
-        color: white;
-        padding: 1rem;
-        border: none;
-        cursor: pointer;
-      }
-
-      &::-ms-browse {
-        background: $color-pink-dark;
-        color: white;
-        padding: 0.8em;
-        border: none;
-      }
-    }
-  }
-
   &__inputHolder {
     display: flex;
     flex-direction: column;

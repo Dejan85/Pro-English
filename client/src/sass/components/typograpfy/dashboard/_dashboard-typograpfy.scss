@@ -43,4 +43,23 @@
     font-size: 1.8rem;
     font-family: $font-1;
   }
+
+  &__editBlog {
+    &--h1 {
+      font-size: 2rem;
+      font-family: $font-1;
+    }
+
+    &--p {
+      font-size: 1.6rem;
+      font-family: $font-1;
+      text-align: justify;
+    }
+
+    &--btn {
+      color: white;
+      font-family: $font-1;
+      font-size: 1.6rem;
+    }
+  }
 }

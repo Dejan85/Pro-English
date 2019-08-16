@@ -32,7 +32,6 @@ const MainRouter = () => {
   const { PrivateRoute } = usePrivateRoute();
   const { isAuthenticated } = useAuthenticate();
 
-
   const str = window.location.pathname.split(/[\\\/]/);
   let str2;
 
@@ -51,7 +50,7 @@ const MainRouter = () => {
         <Route exact path="/kursevi" component={Course} />
         <Route exact path="/ispiti" component={Exams} />
         <Route exact path="/blog" component={Blog} />
-        <Route exact path="/singleBlog" component={BlogPost} />
+        <Route exact path="/blog/:blogId" component={BlogPost} />
         <Route exact path="/dogadjaji" component={Events} />
         <Route exact path="/dogadjaji/one" component={SingleEvent} />
         <Route exact path="/kontakt" component={Contact} />

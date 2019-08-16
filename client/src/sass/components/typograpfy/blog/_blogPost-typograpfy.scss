@@ -1,10 +1,12 @@
 .blogPost {
   text-align: justify;
-  &__h1 {
+  &__h1,
+  h1 {
     font-size: 3rem;
     font-weight: 600;
     font-family: $font-8;
     color: $color-dark;
+    text-transform: uppercase;
 
     @include respond(600) {
       font-size: 3.8rem;
@@ -12,7 +14,9 @@
   }
 
   &__h2,
-  &__h3 {
+  &__h3,
+  h2,
+  h3 {
     font-size: 2.1rem;
     font-weight: 600;
     font-family: $font-8;
@@ -34,7 +38,8 @@
     }
   }
 
-  &__date {
+  &__date,
+  span {
     color: $color-pink-dark;
     font-size: 1.3rem;
     font-weight: 500;
@@ -50,7 +55,8 @@
     font-size: 1.3rem;
     font-weight: 600;
     font-family: $font-8;
-    span {
+
+    &--span {
       color: $color-dark;
       font-weight: 500;
     }
@@ -59,7 +65,9 @@
       font-size: 2rem;
     }
   }
-  &__content__p {
+
+  &__content__p,
+  p {
     font-size: 1.9rem;
     font-family: $font-8;
     color: $color-grey-dark;

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import parse from "html-react-parser";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
@@ -28,8 +27,6 @@ const AddBlog = ({ fetchNewBlog }) => {
 
   return (
     <div className="dashboard__addBlog">
-      {/* <h1 className="dashboard__addBlog--h1">Add New Blog</h1> */}
-      {/* {editorHtml && parse(editorHtml)} */}
       <form className="dashboard__form" onSubmit={onSubmitHandler}>
         <div className="dashboard__inputHolder">
           <label className="dashboard__label">Title</label>
