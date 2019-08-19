@@ -21,7 +21,6 @@ const useForm = () => {
     email: "",
     password: "",
     confirmPassword: "",
-    title: "",
     question: "",
     timeFromOne: "",
     timeToOne: "00",
@@ -29,6 +28,7 @@ const useForm = () => {
     timeToTwo: "00",
     eventDescription: "",
     file: "",
+    title: "",
     description: ""
   });
   const [date, setDate] = useState();
@@ -170,7 +170,8 @@ const useForm = () => {
     error,
     redirect,
     getEventData,
-    fileUpload
+    fileUpload,
+    setInput
   };
 };
 

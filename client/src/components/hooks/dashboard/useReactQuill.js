@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
-const useReactQuill = () => {
-  const [editorHtml, setEditorHtml] = useState();
+const useReactQuill = (body) => {
+
+  const [editorHtml, setEditorHtml] = useState(body);
 
   const handleChange = html => {
     setEditorHtml(html);
   };
+
 
   /*
    * Quill modules to attach to editor

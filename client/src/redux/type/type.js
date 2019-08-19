@@ -10,3 +10,5 @@ export const EXAMS__BOCCONI = "EXAMS__BOCCONI";
 
 export const NEW__BLOG = "NEW__BLOG";
 export const GET__BLOG = "GET__BLOG";
+export const EDIT__BLOG = "EDIT__BLOG";
+

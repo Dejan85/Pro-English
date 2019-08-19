@@ -5,11 +5,14 @@ const router = express.Router();
 const { userById, postById } = require("../halpers");
 
 // controllers
-const { createBlog, getBlog, postPhoto } = require("../controllers/blog");
+const { createBlog, getBlog, postPhoto, editBlog, deleteBlog } = require("../controllers/blog");
 
 router.post("/new/:userId", createBlog);
 router.get("/get", getBlog);
 router.get("/image/:id", postPhoto);
+router.put("/edit/:id", editBlog);
+router.delete("/remove/:blogId", deleteBlog);
+
 
 // param
 router.param("userId", userById);

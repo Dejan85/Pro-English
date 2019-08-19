@@ -1,11 +1,14 @@
-import { NEW__BLOG, GET__BLOG } from "../type/type";
+import { NEW__BLOG, GET__BLOG, EDIT__BLOG } from "../type/type";
+import axios from 'axios';
+
 
 // hooks
 import useAuthenticate from "../../components/hooks/auth/useAuthenticate";
+const { isAuthenticated } = useAuthenticate();
 
+// create new blog
 export const fetchNewBlog = blog => dispatch => {
   const data = blog.formData;
-  const { isAuthenticated } = useAuthenticate();
   return fetch(`/blog/new/${isAuthenticated().user._id}`, {
     method: "POST",
     headers: {
@@ -27,6 +30,7 @@ export const fetchNewBlog = blog => dispatch => {
     });
 };
 
+//get all blogs
 export const fetchBlog = () => dispatch => {
   return fetch(`/blog/get/`, {
     method: "GET"
@@ -43,3 +47,42 @@ export const fetchBlog = () => dispatch => {
       console.log(err);
     });
 };
+
+// Update blog
+export const editBlog = (blog, id) => dispatch => {
+  console.log(id);
+  const data = blog.formData;
+  axios
+    .put(`/blog/edit/${id}`, data)
+    .then(res => {
+      console.log(res);
+      res.json().then(res => {
+        dispatch({
+          type: EDIT__BLOG,
+          payload: res
+        });
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
+
+// Delete blog
+export const deleteBlog = (id) => dispatch => {
+  return fetch(`/blog/remove/${id}`, {
+    method: 'DELETE',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    }
+  })
+    .then(response => {
+
+      return response.json();
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
+

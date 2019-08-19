@@ -1,27 +1,44 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import PropTypes from 'prop-types';
+
 
 //hooks
-import useReactQuill from "./useReactQuill";
-import useForm from "../auth/useForm";
+import useReactQuill from "../../../hooks/dashboard/useReactQuill";
+import useForm from "../../../hooks/auth/useForm";
 
 //redux
-import { fetchNewBlog } from "../../../redux/actions/fetchBlog";
+import { fetchNewBlog, editBlog } from "../../../../redux/actions/fetchBlog";
 
-const Editor = () => {
-  const { reactQuill, editorHtml } = useReactQuill();
-  const { onChange, input, fileUpload } = useForm();
+const Editor = ({ fetchNewBlog, editBlog, data }) => {
+  const { onChange, input, fileUpload, setInput } = useForm();
   const formData = new FormData();
+  const { reactQuill, editorHtml } = useReactQuill(data && data.body);
+
+
+  useEffect(() => {
+    data &&
+      setInput({
+        ...input,
+        title: data && data.title,
+        description: data && data.description
+      })
+  }
+
+    , [])
 
   const onSubmitHandler = e => {
-    console.log(e);
     e.preventDefault();
     formData.append("file", input.file);
     formData.append("title", input.title);
     formData.append("description", input.description);
     formData.append("body", editorHtml);
 
-    fetchNewBlog({ formData });
+
+
+    !data && fetchNewBlog({ formData });
+    data && editBlog({ formData }, data._id);
+
   };
 
   return (
@@ -33,7 +50,7 @@ const Editor = () => {
             className="dashboard__input"
             name="title"
             onChange={onChange}
-            value={input && input.title}
+            value={input.title}
           />
         </div>
 
@@ -43,7 +60,7 @@ const Editor = () => {
             className="dashboard__textarea"
             name="description"
             onChange={onChange}
-            value={input && input.description}
+            value={input.description}
             rows="4"
           />
         </div>
@@ -64,4 +81,13 @@ const Editor = () => {
   );
 };
 
-export default useEditor;
+Editor.propTypes = {
+  data: PropTypes.object,
+  fetchNewBlog: PropTypes.func,
+  editBlog: PropTypes.func
+}
+
+export default connect(
+  null,
+  { fetchNewBlog, editBlog }
+)(Editor);
