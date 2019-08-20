@@ -6,6 +6,7 @@
   &--blog {
     max-width: 39rem;
     width: 100%;
+    margin-bottom: 10rem;
   }
 
   &--imgholder {
@@ -19,7 +20,9 @@
   &--img {
     max-width: 39rem;
     width: 100%;
+    height: 28rem;
     border: 0.5rem solid $color-pink-dark;
+    outline: 1px solid red;
   }
 
   &--h1 {

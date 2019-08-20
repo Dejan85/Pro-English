@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 
@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 //hooks
 import useReactQuill from "../../../hooks/dashboard/useReactQuill";
 import useForm from "../../../hooks/auth/useForm";
+import useNavHandler from '../../../hooks/dashboard/useNavHdnler';
+
 
 //redux
 import { fetchNewBlog, editBlog } from "../../../../redux/actions/fetchBlog";
@@ -14,6 +16,10 @@ const Editor = ({ fetchNewBlog, editBlog, data }) => {
   const { onChange, input, fileUpload, setInput } = useForm();
   const formData = new FormData();
   const { reactQuill, editorHtml } = useReactQuill(data && data.body);
+  const { navHandler } = useNavHandler();
+  const [reset] = useState(() => {
+    return window.scrollTo(0, 0);
+  });
 
 
   useEffect(() => {
@@ -23,9 +29,7 @@ const Editor = ({ fetchNewBlog, editBlog, data }) => {
         title: data && data.title,
         description: data && data.description
       })
-  }
-
-    , [])
+  }, [])
 
   const onSubmitHandler = e => {
     e.preventDefault();
@@ -41,8 +45,14 @@ const Editor = ({ fetchNewBlog, editBlog, data }) => {
 
   };
 
+  const redirect = () => {
+    navHandler('editBlog')
+  };
+
+
   return (
-    <div className="dashboard__addBlog">
+    <div className="dashboard__addBlog" >
+      {reset}
       <form className="dashboard__form" onSubmit={onSubmitHandler}>
         <div className="dashboard__inputHolder">
           <label className="dashboard__label">Title</label>
@@ -66,7 +76,7 @@ const Editor = ({ fetchNewBlog, editBlog, data }) => {
         </div>
 
         {reactQuill()}
-        <button className="dashboard__addBlog--btn" type="submit">
+        <button className="dashboard__addBlog--btn" type="submit" onClick={redirect}>
           Save
         </button>
         <input
@@ -77,7 +87,7 @@ const Editor = ({ fetchNewBlog, editBlog, data }) => {
           onChange={fileUpload}
         />
       </form>
-    </div>
+    </div >
   );
 };
 

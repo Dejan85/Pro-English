@@ -18,7 +18,7 @@ const useReactQuill = (body) => {
   const modules = {
     toolbar: [
       [{ header: [1, 2, 3, 4, 5, 6, false] }],
-      [{ font: ["Lato", "Dokdo", "Nosifer", "Fascinate"] }],
+      // [{ font: ["Lato", "Dokdo", "Nosifer", "Fascinate"] }],
       [{ size: [] }],
       [{ color: [] }, { background: [] }],
       [{ align: [] }],
@@ -29,7 +29,7 @@ const useReactQuill = (body) => {
         { indent: "-1" },
         { indent: "+1" }
       ],
-      ["link", "image", "video"],
+      ["link"],
       ["clean"]
     ],
     clipboard: {
@@ -70,8 +70,8 @@ const useReactQuill = (body) => {
           value={editorHtml || ""}
           modules={modules}
           formats={formats}
-          // bounds={".app"}
-          // placeholder={this.props.placeholder}
+        // bounds={".app"}
+        // placeholder={this.props.placeholder}
         />
       </div>
     );

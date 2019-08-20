@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 import logo from "../../../images/logo_2.jpg";
 
 // Components
 import AddBlog from "./blog/AddBlog";
 import EditBlog from "./blog/EditBlog";
-import DeleteBlog from "./blog/DeleteBlog";
 import AddEvents from "./events/AddEvents";
 import EditEvents from "./events/EditEvents";
 import DeleteEvents from "./events/DeleteEvents";
@@ -13,7 +13,7 @@ import DeleteEvents from "./events/DeleteEvents";
 // hooks
 import useNavHandler from "../../hooks/dashboard/useNavHdnler";
 
-const Dashboard = () => {
+const Dashboard = ({ blogStatus }) => {
   const {
     navDropHandler,
     navHandler,
@@ -21,11 +21,25 @@ const Dashboard = () => {
     eventsRef,
     blogIconRef,
     eventsIconRef,
-    ativeContent
+    ativeContent,
+    setActiveContent
   } = useNavHandler();
+  const [reset] = useState(() => {
+    return window.scrollTo(0, 0);
+  });
+
+  useEffect(() => {
+    if (blogStatus === 200) {
+      setActiveContent({
+        editBlog: true
+      })
+    }
+  }, [blogStatus])
+
 
   return (
     <div className="dashboard">
+      {reset}
       <div className="dashboard__navigation">
         <div className="dashboard__header">
           <Link to="/">
@@ -53,12 +67,6 @@ const Dashboard = () => {
                 data-name="editBlog"
                 onClick={navHandler}>
                 Edit Blog
-              </li>
-              <li
-                className="dashboard__subitem"
-                data-name="deleteBlog"
-                onClick={navHandler}>
-                Delete Blog
               </li>
             </ul>
           </ul>
@@ -95,7 +103,6 @@ const Dashboard = () => {
       <div className="dashboard__content">
         {ativeContent.addBlog && <AddBlog />}
         {ativeContent.editBlog && <EditBlog />}
-        {ativeContent.deleteBlog && <DeleteBlog />}
         {ativeContent.addEvents && <AddEvents />}
         {ativeContent.editEvents && <EditEvents />}
         {ativeContent.deleteEvents && <DeleteEvents />}
@@ -104,4 +111,8 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+const mapStateToProps = (state) => ({
+  blogStatus: state.blog.blogStatus
+})
+
+export default connect(mapStateToProps, null)(Dashboard);

@@ -9,9 +9,9 @@ const useNavHandler = () => {
 
   const navDropHandler = e => {
     if (e.target.getAttribute("data-name") === "blog") {
-      blogRef.current.style.height === "11.7rem"
+      blogRef.current.style.height === "7.9rem"
         ? (blogRef.current.style.height = "0px")
-        : (blogRef.current.style.height = "11.7rem");
+        : (blogRef.current.style.height = "7.9rem");
       blogIconRef.current.style.transform === "rotate(90deg)"
         ? (blogIconRef.current.style.transform = "rotate(0deg)")
         : (blogIconRef.current.style.transform = "rotate(90deg)");
@@ -25,10 +25,17 @@ const useNavHandler = () => {
     }
   };
 
-  const navHandler = e => {
-    setActiveContent({
-      [e.target.getAttribute("data-name")]: true
-    });
+  const navHandler = (e) => {
+    if (e === 'editBlog') {
+      setActiveContent({
+        editBlog: true
+      });
+    } else {
+      setActiveContent({
+        [e.target.getAttribute("data-name")]: true
+      });
+    }
+
   };
 
   return {
@@ -38,7 +45,8 @@ const useNavHandler = () => {
     eventsRef,
     blogIconRef,
     eventsIconRef,
-    ativeContent
+    ativeContent,
+    setActiveContent
   };
 };
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
@@ -6,29 +6,52 @@ import { connect } from "react-redux";
 import Editor from "../partials/Editor";
 
 // Redux
-import {deleteBlog} from '../../../../redux/actions/fetchBlog';
+import { deleteBlog, fetchBlog } from '../../../../redux/actions/fetchBlog';
+
+//hooks
+import useLoading from '../../../hooks/global/useLoading';
 
 
 
-const EditBlog = ({ blog, deleteBlog }) => {
-const [showEditor, setShowEditor] = useState(false);
-const [data, setData] = useState();
+const EditBlog = ({ blog, deleteBlog, fetchBlog }) => {
+  const [showEditor, setShowEditor] = useState(false);
+  const [data, setData] = useState();
+  const [message, setMessage] = useState();
+  const { loading } = useLoading();
+  const [reset] = useState(() => {
+    return window.scrollTo(0, 0);
+  });
 
 
-const showEditorHandler = (id) => {
-  setShowEditor(!showEditor);
-  setData(id);
-}
+  const showEditorHandler = (id) => {
+    setShowEditor(!showEditor);
+    setData(id);
+  }
+
+  const deleteBlogHandler = (id) => {
+    deleteBlog(id).then((res) => {
+      res.json().then((response) => {
+        setMessage(response)
+      })
+    })
+  };
+
+  useEffect(() => {
+    fetchBlog();
+  }, [message])
+
 
   return (
-    <div className="dashboard__editBlog" style={showEditor ? {flexDirection:"column"} : {flexDirection:"row"}}>
-      {(!showEditor && 
-      blog &&
+    <div className="dashboard__editBlog" style={showEditor ? { flexDirection: "column" } : { flexDirection: "row" }}>
+      {reset}
+      {(!showEditor &&
+        blog &&
         blog.map((item, index) => {
-        const {_id, title, description } = item;
+          const { _id, title, description } = item;
           return (
-            <div className="dashboard__editBlog--blog" key={index}>
+            <div className="dashboard__editBlog--blog" data-key={index} key={index}>
               <div className="dashboard__editBlog--imgholder">
+
                 <img
                   className="dashboard__editBlog--img"
                   src={`/blog/image/${_id}`}
@@ -43,18 +66,19 @@ const showEditorHandler = (id) => {
               </div>
               <div className="dashboard__editBlog--btnholder">
                 <button className="dashboard__editBlog--btn" onClick={showEditorHandler.bind(this, item)}>Edit</button>
-                <button className="dashboard__editBlog--btn" onClick={deleteBlog.bind(this, _id)}>Delete</button>
+                <button className="dashboard__editBlog--btn" onClick={deleteBlogHandler.bind(this, _id)}>Delete</button>
               </div>
             </div>
           );
-        })) || (showEditor && <Editor data={data}/>)}
+        })) || (showEditor && <Editor data={data} />)}
     </div>
   );
 };
 
 EditBlog.propTypes = {
   blog: PropTypes.array,
-  deleteBlog: PropTypes.func
+  deleteBlog: PropTypes.func,
+  fetchBlog: PropTypes.func
 };
 
 const mapStateToProps = state => {
@@ -64,5 +88,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  {deleteBlog}
+  { deleteBlog, fetchBlog }
 )(EditBlog);
