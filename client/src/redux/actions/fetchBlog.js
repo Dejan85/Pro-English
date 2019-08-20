@@ -1,5 +1,7 @@
 import { NEW__BLOG, GET__BLOG, EDIT__BLOG } from "../type/type";
 import axios from 'axios';
+import store from '../store';
+
 
 // hooks
 import useAuthenticate from "../../components/hooks/auth/useAuthenticate";
@@ -15,8 +17,6 @@ export const fetchNewBlog = blog => dispatch => {
   return fetch(`/blog/new/${isAuthenticated().user._id}`, {
     method: "POST",
     headers: {
-      // "Content-Type": "application/json"
-      // "Content-Type": "multipart/form-data",
       Accept: "application/json"
     },
     body: data
@@ -52,18 +52,19 @@ export const fetchBlog = () => dispatch => {
 
 // Update blog
 export const editBlog = (blog, id) => dispatch => {
-  console.log(id);
+  store.dispatch({
+    type: EDIT__BLOG,
+    payload: undefined
+  });
   const data = blog.formData;
   axios
     .put(`/blog/edit/${id}`, data)
     .then(res => {
-      console.log(res);
-      res.json().then(res => {
-        dispatch({
-          type: EDIT__BLOG,
-          payload: res
-        });
-      });
+      console.log(res.status);
+      dispatch({
+        type: EDIT__BLOG,
+        payload: res.status
+      })
     })
     .catch(err => {
       console.log(err);

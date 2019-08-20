@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import PropTypes from 'prop-types';
+import PropTypes, { number } from 'prop-types';
 
 
 //hooks
@@ -12,7 +12,7 @@ import useNavHandler from '../../../hooks/dashboard/useNavHdnler';
 //redux
 import { fetchNewBlog, editBlog } from "../../../../redux/actions/fetchBlog";
 
-const Editor = ({ fetchNewBlog, editBlog, data }) => {
+const Editor = ({ fetchNewBlog, editBlog, data, }) => {
   const { onChange, input, fileUpload, setInput } = useForm();
   const formData = new FormData();
   const { reactQuill, editorHtml } = useReactQuill(data && data.body);
@@ -20,7 +20,6 @@ const Editor = ({ fetchNewBlog, editBlog, data }) => {
   const [reset] = useState(() => {
     return window.scrollTo(0, 0);
   });
-
 
   useEffect(() => {
     data &&
@@ -46,7 +45,7 @@ const Editor = ({ fetchNewBlog, editBlog, data }) => {
   };
 
   const redirect = () => {
-    navHandler('editBlog')
+    navHandler('editBlog');
   };
 
 
@@ -91,13 +90,23 @@ const Editor = ({ fetchNewBlog, editBlog, data }) => {
   );
 };
 
+const mapStateToProps = (state) => {
+  const { editBlogStatus } = state.blog;
+  return { editBlogStatus };
+};
+
+
 Editor.propTypes = {
   data: PropTypes.object,
   fetchNewBlog: PropTypes.func,
-  editBlog: PropTypes.func
+  editBlog: PropTypes.func,
+  show: PropTypes.func,
+  editBlogStatus: PropTypes.number
 }
 
+
+
 export default connect(
-  null,
+  mapStateToProps,
   { fetchNewBlog, editBlog }
 )(Editor);

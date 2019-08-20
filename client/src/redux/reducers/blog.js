@@ -1,4 +1,4 @@
-import { GET__BLOG, NEW__BLOG } from "../type/type";
+import { GET__BLOG, NEW__BLOG, EDIT__BLOG } from "../type/type";
 
 const initialState = {};
 
@@ -14,6 +14,12 @@ export default function (state = initialState, action) {
       return {
         ...state,
         blogStatus: action.payload
+      };
+
+    case EDIT__BLOG:
+      return {
+        ...state,
+        editBlogStaus: action.payload
       };
 
 

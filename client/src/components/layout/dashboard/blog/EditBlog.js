@@ -13,7 +13,7 @@ import useLoading from '../../../hooks/global/useLoading';
 
 
 
-const EditBlog = ({ blog, deleteBlog, fetchBlog }) => {
+const EditBlog = ({ blog, deleteBlog, fetchBlog, editBlogStatus }) => {
   const [showEditor, setShowEditor] = useState(false);
   const [data, setData] = useState();
   const [message, setMessage] = useState();
@@ -41,12 +41,16 @@ const EditBlog = ({ blog, deleteBlog, fetchBlog }) => {
   }, [message])
 
 
+  useEffect(() => {
+    setShowEditor(false);
+  }, [editBlogStatus])
+
   return (
     <div className="dashboard__editBlog" style={showEditor ? { flexDirection: "column" } : { flexDirection: "row" }}>
       {reset}
       {(!showEditor &&
-        blog &&
-        blog.map((item, index) => {
+        blog.blog &&
+        blog.blog.map((item, index) => {
           const { _id, title, description } = item;
           return (
             <div className="dashboard__editBlog--blog" data-key={index} key={index}>
@@ -70,20 +74,21 @@ const EditBlog = ({ blog, deleteBlog, fetchBlog }) => {
               </div>
             </div>
           );
-        })) || (showEditor && <Editor data={data} />)}
+        })) || (showEditor && <Editor data={data} setShowEditor={setShowEditor} />)}
     </div>
   );
 };
 
 EditBlog.propTypes = {
-  blog: PropTypes.array,
+  blog: PropTypes.object,
   deleteBlog: PropTypes.func,
-  fetchBlog: PropTypes.func
+  fetchBlog: PropTypes.func,
+  editBlogStatus: PropTypes.number
 };
 
 const mapStateToProps = state => {
-  const { blog } = state;
-  return blog;
+  const { blog, editBlogStatus } = state;
+  return { blog, editBlogStatus };
 };
 
 export default connect(
