@@ -1,10 +1,10 @@
 import React from 'react';
-import loading from '../../../images/loading.gif';
+import logo from '../../../images/loading.gif';
 
 
 const useLoading = () => {
     const loading = () => {
-        return <> <img src={loading} alt="img"></img> </>
+        return <img className="loading" src={logo} alt="xad" />
     }
     return {
         loading

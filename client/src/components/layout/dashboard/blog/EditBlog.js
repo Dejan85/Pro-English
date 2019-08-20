@@ -40,6 +40,7 @@ const EditBlog = ({ blog, deleteBlog, fetchBlog, editBlogStatus }) => {
     fetchBlog();
   }, [message])
 
+  console.log(blog.blog);
 
   useEffect(() => {
     setShowEditor(false);
@@ -48,7 +49,7 @@ const EditBlog = ({ blog, deleteBlog, fetchBlog, editBlogStatus }) => {
   return (
     <div className="dashboard__editBlog" style={showEditor ? { flexDirection: "column" } : { flexDirection: "row" }}>
       {reset}
-      {(!showEditor &&
+      {(!blog.blog && loading()) || (!showEditor &&
         blog.blog &&
         blog.blog.map((item, index) => {
           const { _id, title, description } = item;
