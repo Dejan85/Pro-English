@@ -19,7 +19,7 @@ export default function (state = initialState, action) {
     case EDIT__BLOG:
       return {
         ...state,
-        editBlogStaus: action.payload
+        editBlogStatus: action.payload
       };
 
 

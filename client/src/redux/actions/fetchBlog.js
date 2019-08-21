@@ -58,7 +58,6 @@ export const editBlog = (blog, id) => dispatch => {
   axios
     .put(`/blog/edit/${id}`, data)
     .then(res => {
-      console.log(res.status);
       dispatch({
         type: EDIT__BLOG,
         payload: res.status

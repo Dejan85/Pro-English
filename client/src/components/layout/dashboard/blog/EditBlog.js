@@ -13,7 +13,7 @@ import useLoading from '../../../hooks/global/useLoading';
 
 
 
-const EditBlog = ({ blog, deleteBlog, fetchBlog, editBlogStatus }) => {
+const EditBlog = ({ blog, deleteBlog, fetchBlog }) => {
   const [showEditor, setShowEditor] = useState(false);
   const [data, setData] = useState();
   const [message, setMessage] = useState();
@@ -40,13 +40,11 @@ const EditBlog = ({ blog, deleteBlog, fetchBlog, editBlogStatus }) => {
     fetchBlog();
   }, [message])
 
-  console.log(blog.blog);
 
   useEffect(() => {
     setShowEditor(false);
-  }, [editBlogStatus])
-
-
+    fetchBlog();
+  }, [blog.editBlogStatus])
 
 
   return (
@@ -78,7 +76,7 @@ const EditBlog = ({ blog, deleteBlog, fetchBlog, editBlogStatus }) => {
               </div>
             </div>
           );
-        })) || (showEditor && <Editor data={data} setShowEditor={setShowEditor} />)}
+        })) || (showEditor && <Editor data={data} />)}
     </div>
   );
 };
@@ -87,12 +85,11 @@ EditBlog.propTypes = {
   blog: PropTypes.object,
   deleteBlog: PropTypes.func,
   fetchBlog: PropTypes.func,
-  editBlogStatus: PropTypes.number
 };
 
 const mapStateToProps = state => {
-  const { blog, editBlogStatus } = state;
-  return { blog, editBlogStatus };
+  const { blog } = state;
+  return { blog };
 };
 
 export default connect(

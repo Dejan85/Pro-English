@@ -12,7 +12,7 @@ import useNavHandler from '../../../hooks/dashboard/useNavHdnler';
 //redux
 import { fetchNewBlog, editBlog } from "../../../../redux/actions/fetchBlog";
 
-const Editor = ({ fetchNewBlog, editBlog, data, }) => {
+const Editor = ({ fetchNewBlog, editBlog, data }) => {
   const { onChange, input, fileUpload, setInput } = useForm();
   const formData = new FormData();
   const { reactQuill, editorHtml } = useReactQuill(data && data.body);
