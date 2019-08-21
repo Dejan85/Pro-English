@@ -46,6 +46,9 @@ const EditBlog = ({ blog, deleteBlog, fetchBlog, editBlogStatus }) => {
     setShowEditor(false);
   }, [editBlogStatus])
 
+
+
+
   return (
     <div className="dashboard__editBlog" style={showEditor ? { flexDirection: "column" } : { flexDirection: "row" }}>
       {reset}

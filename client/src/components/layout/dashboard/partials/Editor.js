@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import PropTypes, { number } from 'prop-types';
+import PropTypes from 'prop-types';
 
 
 //hooks

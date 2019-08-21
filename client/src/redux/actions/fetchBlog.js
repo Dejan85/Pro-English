@@ -11,8 +11,6 @@ const { isAuthenticated } = useAuthenticate();
 
 // create new blog
 export const fetchNewBlog = blog => dispatch => {
-
-
   const data = blog.formData;
   return fetch(`/blog/new/${isAuthenticated().user._id}`, {
     method: "POST",
