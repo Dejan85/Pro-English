@@ -47,7 +47,7 @@
   &__list4 {
     --width: 97%;
 
-    @include tab(#9475cd, 51rem, 7, 41.8rem, var(--width));
+    @include tab(#9475cd, 51rem, 7, 44.8rem, var(--width));
 
     @include respond(600) {
       @include tab(#9475cd, 51rem, 7, 41rem, var(--width));
