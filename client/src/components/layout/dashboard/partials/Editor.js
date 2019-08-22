@@ -11,8 +11,10 @@ import useNavHandler from '../../../hooks/dashboard/useNavHdnler';
 
 //redux
 import { fetchNewBlog, editBlog } from "../../../../redux/actions/fetchBlog";
+import { fetchNewExams } from '../../../../redux/actions/fetchExams';
 
-const Editor = ({ fetchNewBlog, editBlog, data }) => {
+
+const Editor = ({ fetchNewBlog, editBlog, data, disableDescription, fetchNewExams }) => {
   const { onChange, input, fileUpload, setInput } = useForm();
   const formData = new FormData();
   const { reactQuill, editorHtml } = useReactQuill(data && data.body);
@@ -32,16 +34,19 @@ const Editor = ({ fetchNewBlog, editBlog, data }) => {
 
   const onSubmitHandler = e => {
     e.preventDefault();
-    formData.append("file", input.file);
-    formData.append("title", input.title);
-    formData.append("description", input.description);
-    formData.append("body", editorHtml);
+    input.file && formData.append("file", input.file);
+    input.title && formData.append("title", input.title);
+    input.description && formData.append("description", input.description);
+    editorHtml && formData.append("body", editorHtml);
 
 
+    //
+    // ─── OVDE JE PROBLEM STO ZOVE I FETCHNEWBLOG KADA HOCEMO FETCHNEWEWXAMS DA POZOVEMO
+    //
 
     !data && fetchNewBlog({ formData });
     data && editBlog({ formData }, data._id);
-
+    disableDescription && fetchNewExams({ formData });
   };
 
   const redirect = () => {
@@ -63,7 +68,7 @@ const Editor = ({ fetchNewBlog, editBlog, data }) => {
           />
         </div>
 
-        <div className="dashboard__inputHolder">
+        {!disableDescription && <div className="dashboard__inputHolder">
           <label className="dashboard__label">Description</label>
           <textarea
             className="dashboard__textarea"
@@ -72,7 +77,7 @@ const Editor = ({ fetchNewBlog, editBlog, data }) => {
             value={input.description}
             rows="4"
           />
-        </div>
+        </div>}
 
         {reactQuill()}
         <button className="dashboard__addBlog--btn" type="submit" onClick={redirect}>
@@ -101,12 +106,13 @@ Editor.propTypes = {
   fetchNewBlog: PropTypes.func,
   editBlog: PropTypes.func,
   show: PropTypes.func,
-  editBlogStatus: PropTypes.number
+  editBlogStatus: PropTypes.number,
+  fetchNewExams: PropTypes.func
 }
 
 
 
 export default connect(
   mapStateToProps,
-  { fetchNewBlog, editBlog }
+  { fetchNewBlog, editBlog, fetchNewExams }
 )(Editor);

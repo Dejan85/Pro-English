@@ -7,7 +7,9 @@ const {
   gre,
   ielts,
   gmat,
-  bocconi
+  bocconi,
+  toefl,
+  sat
 } = require("../controllers/data/data");
 
 const { nweBlog } = require("../controllers/data/blogData");
@@ -20,6 +22,8 @@ router.get("/gre", gre);
 router.get("/ielts", ielts);
 router.get("/gmat", gmat);
 router.get("/bocconi", bocconi);
+router.get("/toefl", toefl);
+router.get("/sat", sat);
 
 //blog
 router.post("/blog/new", nweBlog);

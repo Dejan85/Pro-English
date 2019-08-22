@@ -65,3 +65,29 @@ exports.bocconi = async (req, res) => {
     }
   );
 };
+
+exports.toefl = async (req, res) => {
+  await fs.readFile(
+    __dirname + "/json/exams/toefl.json",
+    "utf8",
+    (err, jsonString) => {
+      if (err) {
+        return console.log("File read failed:", err);
+      }
+      return res.json(JSON.parse(jsonString));
+    }
+  );
+};
+
+exports.sat = async (req, res) => {
+  await fs.readFile(
+    __dirname + "/json/exams/sat.json",
+    "utf8",
+    (err, jsonString) => {
+      if (err) {
+        return console.log("File read failed:", err);
+      }
+      return res.json(JSON.parse(jsonString));
+    }
+  );
+};

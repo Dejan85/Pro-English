@@ -4,7 +4,7 @@
     // color: white;
     color: darken($color-grey-dark, 10%);
 
-    font-size: 2.7rem;
+    font-size: 2.6rem;
   }
 
   &__h2 {
@@ -23,12 +23,14 @@
     font-family: $font-1;
     // color: white;
     color: $color-grey;
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   &__item {
     font-family: $font-1;
     // color: white;
+    color: $color-grey;
+
     font-size: 2rem;
   }
 }

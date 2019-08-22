@@ -57,6 +57,7 @@ const data = require("./nodeapi/routes/data");
 const contact = require("./nodeapi/routes/contact");
 const newsletter = require("./nodeapi/routes/newsletter");
 const blog = require("./nodeapi/routes/blog");
+const exams = require("./nodeapi/routes/exams");
 
 app.use("/", post);
 app.use("/", auth);
@@ -65,9 +66,10 @@ app.use("/data", data);
 app.use("/contact", contact);
 app.use("/newsletter", newsletter);
 app.use("/blog", blog);
+app.use("/exams", exams);
 
 // express jwt (this is must be below route)
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   if (err.name === "UnauthorizedError") {
     res.status(401).json({
       err: "Unauthorized!"

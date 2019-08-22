@@ -9,6 +9,9 @@ import EditBlog from "./blog/EditBlog";
 import AddEvents from "./events/AddEvents";
 import EditEvents from "./events/EditEvents";
 import DeleteEvents from "./events/DeleteEvents";
+import AddExams from './exams/AddExams';
+import EditExams from './exams/EditExams';
+
 
 // hooks
 import useNavHandler from "../../hooks/dashboard/useNavHdnler";
@@ -22,7 +25,10 @@ const Dashboard = ({ blogStatus }) => {
     blogIconRef,
     eventsIconRef,
     ativeContent,
-    setActiveContent
+    setActiveContent,
+    examsRef,
+    examsIconRef,
+
   } = useNavHandler();
   const [reset] = useState(() => {
     return window.scrollTo(0, 0);
@@ -47,6 +53,7 @@ const Dashboard = ({ blogStatus }) => {
           </Link>
         </div>
         <div className="dashboard__nav">
+          {/*BLOG*/}
           <ul className="dashboard__list">
             <li
               className="dashboard__item"
@@ -70,6 +77,8 @@ const Dashboard = ({ blogStatus }) => {
               </li>
             </ul>
           </ul>
+
+          {/*EVENTS*/}
           <ul className="dashboard__list">
             <li
               className="dashboard__item"
@@ -98,6 +107,32 @@ const Dashboard = ({ blogStatus }) => {
               </li>
             </ul>
           </ul>
+
+
+          {/*EXAMS*/}
+          <ul className="dashboard__list">
+            <li
+              className="dashboard__item"
+              data-name="exams"
+              onClick={navDropHandler}>
+              Exams <i className="fas fa-chevron-right" ref={examsIconRef} />
+            </li>
+            <ul className="dashboard__sublist" ref={examsRef}>
+              <li
+                className="dashboard__subitem"
+                data-name="addExams"
+                onClick={navHandler}>
+                Add Exams
+              </li>
+              <li
+                className="dashboard__subitem"
+                data-name="editExams"
+                onClick={navHandler}>
+                Edit Exams
+              </li>
+            </ul>
+          </ul>
+
         </div>
       </div>
       <div className="dashboard__content">
@@ -106,6 +141,8 @@ const Dashboard = ({ blogStatus }) => {
         {ativeContent.addEvents && <AddEvents />}
         {ativeContent.editEvents && <EditEvents />}
         {ativeContent.deleteEvents && <DeleteEvents />}
+        {ativeContent.addExams && <AddExams />}
+        {ativeContent.editExams && <EditExams />}
       </div>
     </div>
   );

@@ -4,6 +4,8 @@ const useTabs = () => {
   const gre = useRef();
   const ielts = useRef();
   const gmat = useRef();
+  const sat = useRef();
+  const toefil = useRef();
   const bocconi = useRef();
 
   const tabs = e => {
