@@ -14,7 +14,7 @@ import { fetchNewBlog, editBlog } from "../../../../redux/actions/fetchBlog";
 import { fetchNewExams } from '../../../../redux/actions/fetchExams';
 
 
-const Editor = ({ fetchNewBlog, editBlog, data, disableDescription, fetchNewExams }) => {
+const Editor = ({ fetchNewBlog, editBlog, data, disableDescription, fetchNewExams, name }) => {
   const { onChange, input, fileUpload, setInput } = useForm();
   const formData = new FormData();
   const { reactQuill, editorHtml } = useReactQuill(data && data.body);
@@ -39,20 +39,14 @@ const Editor = ({ fetchNewBlog, editBlog, data, disableDescription, fetchNewExam
     input.description && formData.append("description", input.description);
     editorHtml && formData.append("body", editorHtml);
 
-
-    //
-    // ─── OVDE JE PROBLEM STO ZOVE I FETCHNEWBLOG KADA HOCEMO FETCHNEWEWXAMS DA POZOVEMO
-    //
-
-    !data && fetchNewBlog({ formData });
-    data && editBlog({ formData }, data._id);
-    disableDescription && fetchNewExams({ formData });
+    (name === "addBlog") && !data && fetchNewBlog({ formData });
+    (editBlog === "editBlog") && data && editBlog({ formData }, data._id);
+    (name === "addExams") && fetchNewExams({ formData });
   };
 
   const redirect = () => {
     navHandler('editBlog');
   };
-
 
   return (
     <div className="dashboard__addBlog" >
@@ -107,8 +101,12 @@ Editor.propTypes = {
   editBlog: PropTypes.func,
   show: PropTypes.func,
   editBlogStatus: PropTypes.number,
-  fetchNewExams: PropTypes.func
+  fetchNewExams: PropTypes.func,
+  name: PropTypes.string,
+  disableDescription: PropTypes.bool
 }
+
+
 
 
 

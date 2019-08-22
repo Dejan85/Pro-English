@@ -76,7 +76,7 @@ const EditBlog = ({ blog, deleteBlog, fetchBlog }) => {
               </div>
             </div>
           );
-        })) || (showEditor && <Editor data={data} />)}
+        })) || (showEditor && <Editor data={data} name="editBlog" />)}
     </div>
   );
 };

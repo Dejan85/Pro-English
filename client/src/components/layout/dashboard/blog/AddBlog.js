@@ -12,7 +12,7 @@ const AddBlog = () => {
     payload: undefined
   })
 
-  return <Editor />;
+  return <Editor name="addBlog" />;
 };
 
 export default AddBlog;
