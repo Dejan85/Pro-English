@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, createRef, useEffect } from "react";
 import { connect } from "react-redux";
 import { Scrollbars } from "react-custom-scrollbars";
 import parse from "html-react-parser";
@@ -13,9 +13,19 @@ const Exams = props => {
   });
 
   // tabs is onClick handler, and gre, ielts, gmat bocconi is ref
-  const { tabs } = useTabs();
-  const { gre, ielts, gmat, bocconi, sat, teofl } = useTabs();
-  const refs = [gre, ielts, gmat, bocconi, sat, teofl];
+  // const { gre, ielts, gmat, bocconi, sat, toefl } = useTabs();
+  const gre = useRef();
+  const ielts = useRef();
+  const gmat = useRef();
+  const sat = useRef();
+  const toefl = useRef();
+  const bocconi = useRef();
+  const refs = [toefl, sat, ielts, gre, bocconi, gmat];
+
+  const { tabs } = useTabs(toefl, sat, ielts, gre, bocconi, gmat);
+  const dataName = ["toefl", "sat", "ielts", "gre", "bocconi", "gmat"];
+
+  // let refs = useRef([...Array(exams && exams.length)].map(() => createRef()));
 
   return (
     <div className="exams">
@@ -31,7 +41,7 @@ const Exams = props => {
               >
                 <div
                   className={`exams__list${index}--tab`}
-                  data-name="gre"
+                  data-name={dataName[index]}
                   onClick={tabs}
                 >
                   {item.title}
