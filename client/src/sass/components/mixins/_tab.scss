@@ -11,6 +11,11 @@
   -moz-box-shadow: 5px 0px 26px -16px rgba(0, 0, 0, 0.75);
   box-shadow: 5px 0px 26px -16px rgba(0, 0, 0, 0.75);
 
+  img {
+    max-width: 100%;
+    width: auto;
+  }
+
   &--tab {
     display: flex;
     justify-content: center;
