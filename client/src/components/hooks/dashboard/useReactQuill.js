@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
-const useReactQuill = (body) => {
-
+const useReactQuill = body => {
   const [editorHtml, setEditorHtml] = useState(body);
 
   const handleChange = html => {
     setEditorHtml(html);
+    console.log(html);
   };
-
 
   /*
    * Quill modules to attach to editor
@@ -30,7 +29,8 @@ const useReactQuill = (body) => {
         { indent: "+1" }
       ],
       ["link"],
-      ["clean"]
+      ["clean"],
+      ["image"]
     ],
     clipboard: {
       // toggle to add extra line breaks when pasting HTML:
@@ -70,8 +70,8 @@ const useReactQuill = (body) => {
           value={editorHtml || ""}
           modules={modules}
           formats={formats}
-        // bounds={".app"}
-        // placeholder={this.props.placeholder}
+          // bounds={".app"}
+          // placeholder={this.props.placeholder}
         />
       </div>
     );

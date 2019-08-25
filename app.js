@@ -13,8 +13,6 @@ const path = require("path");
 
 dotenv.config();
 
-
-
 //
 // ─── DB ─────────────────────────────────────────────────────────────────────────
 //
@@ -69,7 +67,7 @@ app.use("/blog", blog);
 app.use("/exams", exams);
 
 // express jwt (this is must be below route)
-app.use(function (err, req, res, next) {
+app.use(function(err, req, res, next) {
   if (err.name === "UnauthorizedError") {
     res.status(401).json({
       err: "Unauthorized!"

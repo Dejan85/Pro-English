@@ -1,5 +1,6 @@
 .exams {
-  &__h1 {
+  &__h1,
+  h1 {
     font-family: $font-1;
     // color: white;
     color: darken($color-grey-dark, 10%);
@@ -7,26 +8,30 @@
     font-size: 2.6rem;
   }
 
-  &__h2 {
+  &__h2,
+  h2 {
     font-family: $font-1;
     // color: white;
-    font-size: 2.3rem;
+    font-size: 2.1rem;
   }
 
-  &__h3 {
+  &__h3,
+  h3 {
     font-family: $font-1;
     // color: white;
     font-size: 2rem;
   }
 
-  &__p {
+  &__p,
+  p {
     font-family: $font-1;
     // color: white;
     color: $color-grey;
     font-size: 1.8rem;
   }
 
-  &__item {
+  &__item,
+  li {
     font-family: $font-1;
     // color: white;
     color: $color-grey;

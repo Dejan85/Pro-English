@@ -12,10 +12,10 @@ export const NEW__BLOG = "NEW__BLOG";
 export const GET__BLOG = "GET__BLOG";
 export const EDIT__BLOG = "EDIT__BLOG";
 
-
 //
 // ─── EXAMS TYPE ─────────────────────────────────────────────────────────────────
 //
 
 export const NEW__EXAMS = "NEW__EXAMS";
+export const GET__EXAMS = "GET__EXAMS";
 export const EDIT__EXAMS = "EDIT__EXAMS";

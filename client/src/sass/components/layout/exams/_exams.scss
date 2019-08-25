@@ -61,19 +61,28 @@
 
   &__h1,
   &__h2,
-  &__h3 {
+  &__h3,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     padding: 4rem 8rem 1.5rem;
   }
 
-  &__p {
+  &__p,
+  p {
     padding: 1.5rem 8rem 0;
   }
 
-  &__list {
+  &__list,
+  ul {
     padding: 0rem 10rem;
   }
 
-  &__item {
+  &__item,
+  li {
     padding: 0.7rem;
   }
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
@@ -10,8 +10,7 @@ import BoxTwo from "../blog/partials/BoxTwo";
 import { fetchBlog } from "../../../redux/actions/fetchBlog";
 
 //hooks
-import useLoading from '../../hooks/global/useLoading';
-
+import useLoading from "../../hooks/global/useLoading";
 
 const Blog = ({ blog }) => {
   const [reset] = useState(() => {
@@ -32,7 +31,8 @@ const Blog = ({ blog }) => {
               {!(index & 1) ? <BoxOne blog={item} /> : <BoxTwo blog={item} />}
             </div>
           );
-        })) || (loading())}
+        })) ||
+        loading()}
     </div>
   );
 };

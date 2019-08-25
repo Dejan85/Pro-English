@@ -1,20 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import PropTypes from 'prop-types';
-
+import PropTypes from "prop-types";
 
 //hooks
 import useReactQuill from "../../../hooks/dashboard/useReactQuill";
 import useForm from "../../../hooks/auth/useForm";
-import useNavHandler from '../../../hooks/dashboard/useNavHdnler';
-
+import useNavHandler from "../../../hooks/dashboard/useNavHdnler";
 
 //redux
 import { fetchNewBlog, editBlog } from "../../../../redux/actions/fetchBlog";
-import { fetchNewExams } from '../../../../redux/actions/fetchExams';
+import { fetchNewExams } from "../../../../redux/actions/fetchExams";
 
-
-const Editor = ({ fetchNewBlog, editBlog, data, disableDescription, fetchNewExams, name }) => {
+const Editor = ({
+  fetchNewBlog,
+  editBlog,
+  data,
+  disableDescription,
+  fetchNewExams,
+  name
+}) => {
   const { onChange, input, fileUpload, setInput } = useForm();
   const formData = new FormData();
   const { reactQuill, editorHtml } = useReactQuill(data && data.body);
@@ -29,8 +33,8 @@ const Editor = ({ fetchNewBlog, editBlog, data, disableDescription, fetchNewExam
         ...input,
         title: data && data.title,
         description: data && data.description
-      })
-  }, [])
+      });
+  }, []);
 
   const onSubmitHandler = e => {
     e.preventDefault();
@@ -39,17 +43,17 @@ const Editor = ({ fetchNewBlog, editBlog, data, disableDescription, fetchNewExam
     input.description && formData.append("description", input.description);
     editorHtml && formData.append("body", editorHtml);
 
-    (name === "addBlog") && !data && fetchNewBlog({ formData });
-    (editBlog === "editBlog") && data && editBlog({ formData }, data._id);
-    (name === "addExams") && fetchNewExams({ formData });
+    name === "addBlog" && !data && fetchNewBlog({ formData });
+    name === "editBlog" && data && editBlog({ formData }, data._id);
+    name === "addExams" && fetchNewExams({ formData });
   };
 
   const redirect = () => {
-    navHandler('editBlog');
+    navHandler("editBlog");
   };
 
   return (
-    <div className="dashboard__addBlog" >
+    <div className="dashboard__addBlog">
       {reset}
       <form className="dashboard__form" onSubmit={onSubmitHandler}>
         <div className="dashboard__inputHolder">
@@ -62,19 +66,25 @@ const Editor = ({ fetchNewBlog, editBlog, data, disableDescription, fetchNewExam
           />
         </div>
 
-        {!disableDescription && <div className="dashboard__inputHolder">
-          <label className="dashboard__label">Description</label>
-          <textarea
-            className="dashboard__textarea"
-            name="description"
-            onChange={onChange}
-            value={input.description}
-            rows="4"
-          />
-        </div>}
+        {
+          <div className="dashboard__inputHolder">
+            <label className="dashboard__label">Description</label>
+            <textarea
+              className="dashboard__textarea"
+              name="description"
+              onChange={onChange}
+              value={input.description}
+              rows="4"
+            />
+          </div>
+        }
 
         {reactQuill()}
-        <button className="dashboard__addBlog--btn" type="submit" onClick={redirect}>
+        <button
+          className="dashboard__addBlog--btn"
+          type="submit"
+          onClick={redirect}
+        >
           Save
         </button>
         <input
@@ -85,15 +95,14 @@ const Editor = ({ fetchNewBlog, editBlog, data, disableDescription, fetchNewExam
           onChange={fileUpload}
         />
       </form>
-    </div >
+    </div>
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   const { editBlogStatus } = state.blog;
   return { editBlogStatus };
 };
-
 
 Editor.propTypes = {
   data: PropTypes.object,
@@ -104,11 +113,7 @@ Editor.propTypes = {
   fetchNewExams: PropTypes.func,
   name: PropTypes.string,
   disableDescription: PropTypes.bool
-}
-
-
-
-
+};
 
 export default connect(
   mapStateToProps,

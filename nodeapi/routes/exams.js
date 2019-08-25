@@ -5,11 +5,17 @@ const router = express.Router();
 const { userById, postById } = require("../halpers");
 
 // controllers
-const { createExams } = require("../controllers/exams");
+const {
+  createExams,
+  getExams,
+  editExams,
+  deleteExams
+} = require("../controllers/exams");
 
 router.post("/new/:userId", createExams);
-
-
+router.get("/get", getExams);
+router.put("/edit/:id", editExams);
+router.delete("/remove/:id", deleteExams);
 
 // param
 router.param("userId", userById);

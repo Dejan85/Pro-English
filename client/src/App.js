@@ -9,14 +9,13 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 import { fetchCourseData, fetchGre } from "./redux/actions/fetchData";
 import { fetchBlog } from "./redux/actions/fetchBlog";
+import { fetchExams } from "./redux/actions/fetchExams";
 
 import MainRouter from "./MainRouter";
 
 //
 // ─── FETCH DATA FROM API ────────────────────────────────────────────────────────
 //
-
-
 
 // course
 
@@ -30,6 +29,7 @@ function App() {
     store.dispatch(fetchGre("/data/gmat", "gmat"));
     store.dispatch(fetchGre("/data/bocconi", "bocconi"));
     store.dispatch(fetchBlog());
+    store.dispatch(fetchExams());
   }, []);
   return (
     <Provider store={store}>
