@@ -18,7 +18,7 @@
     // background: #9475cd;
   }
 
-  &__list1 {
+  &__list0 {
     --width: 82%;
 
     @include tab($color-pink-dark, 0rem, 10, 10rem, var(--width));
@@ -28,29 +28,52 @@
     }
   }
 
-  &__list2 {
-    --width: 87%;
+  &__list1 {
+    // --width: 87%;
+    --width: 84%;
 
-    @include tab(#5cb432, 17rem, 9, 19.2rem, var(--width));
+    @include tab(#5cb432, 17rem, 9, 25rem, var(--width));
 
     @include respond(600) {
       @include tab(#5cb432, 17rem, 9, 23rem, var(--width));
     }
   }
 
-  &__list3 {
-    --width: 92%;
-
-    @include tab(#63b5f6, 34rem, 8, 33rem, var(--width));
+  &__list2 {
+    --width: 86%;
+    @include tab(#63b5f6, 34rem, 8, 35rem, var(--width));
   }
 
-  &__list4 {
-    --width: 97%;
+  &__list3 {
+    // --width: 97%;
+    --width: 88%;
 
-    @include tab(#9475cd, 51rem, 7, 44.8rem, var(--width));
+    @include tab(#9475cd, 51rem, 7, 50rem, var(--width));
 
     @include respond(600) {
       @include tab(#9475cd, 51rem, 7, 41rem, var(--width));
+    }
+  }
+
+  &__list4 {
+    // --width: 97%;
+    --width: 90%;
+
+    @include tab(#75b8cd, 71rem, 6, 60rem, var(--width));
+
+    @include respond(600) {
+      @include tab(#9475cd, 51rem, 6, 41rem, var(--width));
+    }
+  }
+
+  &__list5 {
+    // --width: 97%;
+    --width: 92%;
+
+    @include tab(#dcdf2b, 51rem, 5, 80rem, var(--width));
+
+    @include respond(600) {
+      @include tab(#9475cd, 51rem, 5, 41rem, var(--width));
     }
   }
 
