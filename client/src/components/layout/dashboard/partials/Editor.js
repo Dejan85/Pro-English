@@ -9,14 +9,15 @@ import useNavHandler from "../../../hooks/dashboard/useNavHdnler";
 
 //redux
 import { fetchNewBlog, editBlog } from "../../../../redux/actions/fetchBlog";
-import { fetchNewExams } from "../../../../redux/actions/fetchExams";
+import { fetchNewExams, editExams } from "../../../../redux/actions/fetchExams";
 
 const Editor = ({
   fetchNewBlog,
   editBlog,
   data,
-  disableDescription,
+  disableImageUpload,
   fetchNewExams,
+  editExams,
   name
 }) => {
   const { onChange, input, fileUpload, setInput } = useForm();
@@ -43,9 +44,10 @@ const Editor = ({
     input.description && formData.append("description", input.description);
     editorHtml && formData.append("body", editorHtml);
 
-    name === "addBlog" && !data && fetchNewBlog({ formData });
-    name === "editBlog" && data && editBlog({ formData }, data._id);
-    name === "addExams" && fetchNewExams({ formData });
+    // name === "addBlog" && !data && fetchNewBlog({ formData });
+    // name === "editBlog" && data && editBlog({ formData }, data._id);
+    // name === "addExams" && fetchNewExams({ formData });
+    name === "editExams" && editExams({ formData }, data._id);
   };
 
   const redirect = () => {
@@ -87,13 +89,15 @@ const Editor = ({
         >
           Save
         </button>
-        <input
-          className="dashboard__addBlog--img"
-          type="file"
-          name="file"
-          accept="image/*"
-          onChange={fileUpload}
-        />
+        {!disableImageUpload && (
+          <input
+            className="dashboard__addBlog--img"
+            type="file"
+            name="file"
+            accept="image/*"
+            onChange={fileUpload}
+          />
+        )}
       </form>
     </div>
   );
@@ -111,11 +115,12 @@ Editor.propTypes = {
   show: PropTypes.func,
   editBlogStatus: PropTypes.number,
   fetchNewExams: PropTypes.func,
+  editExams: PropTypes.func,
   name: PropTypes.string,
-  disableDescription: PropTypes.bool
+  disableImageUpload: PropTypes.bool
 };
 
 export default connect(
   mapStateToProps,
-  { fetchNewBlog, editBlog, fetchNewExams }
+  { fetchNewBlog, editBlog, fetchNewExams, editExams }
 )(Editor);

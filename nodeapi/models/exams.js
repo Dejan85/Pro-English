@@ -17,10 +17,10 @@ const examsSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  photo: {
-    data: Buffer,
-    contentType: String
-  },
+  // photo: {
+  //   data: Buffer,
+  //   contentType: String
+  // },
   created: {
     type: Date,
     default: Date.now

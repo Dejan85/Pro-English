@@ -58,20 +58,20 @@ const EditExams = ({ exams, deleteExams, fetchExams }) => {
         (!showEditor &&
           exams &&
           exams.map((item, index) => {
-            const { _id, title, description } = item;
+            const { title, description } = item;
             return (
               <div
                 className="dashboard__editBlog--blog"
                 data-key={index}
                 key={index}
               >
-                <div className="dashboard__editBlog--imgholder">
+                {/* <div className="dashboard__editBlog--imgholder">
                   <img
                     className="dashboard__editBlog--img"
                     src={`/blog/image/${_id}`}
                     alt={"proenglish"}
                   />
-                </div>
+                </div> */}
                 <div className="dashboard__editBlog--contentholder">
                   <h1 className="dashboard__editBlog--h1">{title}</h1>
                   <p className="dashboard__editBlog--p">
@@ -85,17 +85,19 @@ const EditExams = ({ exams, deleteExams, fetchExams }) => {
                   >
                     Edit
                   </button>
-                  <button
+                  {/* <button
                     className="dashboard__editBlog--btn"
                     onClick={deleteExamsHandler.bind(this, _id)}
                   >
                     Delete
-                  </button>
+                  </button> */}
                 </div>
               </div>
             );
           })) ||
-        (showEditor && <Editor data={data} name="editBlog" />)}
+        (showEditor && (
+          <Editor data={data} name="editExams" disableImageUpload={true} />
+        ))}
     </div>
   );
 };

@@ -70,15 +70,14 @@ exports.editExams = async (req, res) => {
       }
 
       let data = _.extend(exams, fields);
-      data.update(Data.now());
-      console.log(data);
+      data.update(Date.now());
 
       if (files.file) {
         data.photo.data = fs.readFileSync(files.file.path);
         exams.photo.contentType = files.file.type;
       }
 
-      Exams.save((err, result) => {
+      exams.save((err, result) => {
         if (err) {
           return res.status(400).json({
             error: err
