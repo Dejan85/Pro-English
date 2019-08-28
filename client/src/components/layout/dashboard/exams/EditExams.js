@@ -11,7 +11,7 @@ import { fetchExams, deleteExams } from "../../../../redux/actions/fetchExams";
 //hooks
 import useLoading from "../../../hooks/global/useLoading";
 
-const EditExams = ({ exams, deleteExams, fetchExams }) => {
+const EditExams = ({ exams, deleteExams, fetchExams, editExamsStatus }) => {
   const [showEditor, setShowEditor] = useState(false);
   const [data, setData] = useState();
   const [message, setMessage] = useState();
@@ -27,24 +27,23 @@ const EditExams = ({ exams, deleteExams, fetchExams }) => {
   };
 
   // brise nam editor sa ekrana
-  const deleteExamsHandler = id => {
-    deleteExams(id).then(res => {
-      res.json().then(response => {
-        setMessage(response);
-      });
-    });
-  };
+  // const deleteExamsHandler = id => {
+  //   deleteExams(id).then(res => {
+  //     res.json().then(response => {
+  //       setMessage(response);
+  //     });
+  //   });
+  // };
 
   useEffect(() => {
     fetchExams();
   }, []);
 
   useEffect(() => {
+    // sluzi nam da bi nam sklonio editor sa ekrana kada zavrsimo edit
     setShowEditor(false);
     fetchExams();
-  }, []);
-
-  console.log(exams);
+  }, [editExamsStatus]);
 
   return (
     <div
@@ -105,12 +104,13 @@ const EditExams = ({ exams, deleteExams, fetchExams }) => {
 EditExams.propTypes = {
   exams: PropTypes.array,
   deleteExams: PropTypes.func,
-  fetchExams: PropTypes.func
+  fetchExams: PropTypes.func,
+  editExamsStatus: PropTypes.number
 };
 
 const mapStateToProps = state => {
-  const { exams } = state.exams;
-  return { exams };
+  const { exams, editExamsStatus } = state.exams;
+  return { exams, editExamsStatus };
 };
 
 export default connect(

@@ -1,9 +1,6 @@
 const useTabs = (toefl, sat, ielts, gre, bocconi, gmat) => {
   const tabs = e => {
     if (e.target.getAttribute("data-name") === "toefl") {
-      // if (ref.current.style.getPropertyValue("--width") === "1%") {
-      //   return ref.current.style.setProperty("--width", "82%");
-      // }
       toefl.current.style.setProperty("--width", "82%");
       sat.current.style.setProperty("--width", "84%");
       ielts.current.style.setProperty("--width", "86%");

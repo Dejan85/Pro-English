@@ -61,6 +61,7 @@
 @import "./components/layout/dashboard/dashboard";
 @import "./components/layout/dashboard/addBlog";
 @import "./components/layout/dashboard/editBlog";
+@import "./components/layout/dashboard/addEvents";
 
 // // TYPOGRAPFY
 //header
@@ -100,5 +101,5 @@
 //DASHBOARD
 
 @import "./components/typograpfy/admin/auth/sign-typograpfy";
-
 @import "./components/typograpfy/dashboard/dashboard-typograpfy";
+@import "./components/typograpfy/dashboard/addEvents-typograpfy";

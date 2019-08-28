@@ -44,9 +44,9 @@ const Editor = ({
     input.description && formData.append("description", input.description);
     editorHtml && formData.append("body", editorHtml);
 
-    // name === "addBlog" && !data && fetchNewBlog({ formData });
-    // name === "editBlog" && data && editBlog({ formData }, data._id);
-    // name === "addExams" && fetchNewExams({ formData });
+    name === "addBlog" && !data && fetchNewBlog({ formData });
+    name === "editBlog" && data && editBlog({ formData }, data._id);
+    name === "addExams" && fetchNewExams({ formData });
     name === "editExams" && editExams({ formData }, data._id);
   };
 

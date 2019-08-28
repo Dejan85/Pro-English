@@ -70,7 +70,6 @@ export const editExams = (exams, id) => dispatch => {
   axios
     .put(`/exams/edit/${id}`, data)
     .then(res => {
-      console.log(res);
       dispatch({
         type: EDIT__EXAMS,
         payload: res.status

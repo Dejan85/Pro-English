@@ -1,0 +1,34 @@
+.addEvents {
+  &__h1 {
+    font-family: $font-1;
+    font-weight: 800;
+    font-size: 2.5rem;
+  }
+
+  &__form {
+    &--header {
+      font-family: $font-1;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    &--icon {
+      color: $color-pink-dark;
+    }
+
+    &--label {
+      font-family: $font-1;
+      font-size: 1.6rem;
+    }
+
+    &--textarea {
+      font-family: $font-1;
+    }
+
+    &--btn {
+      font-family: $font-1;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}

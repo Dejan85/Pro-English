@@ -18,9 +18,9 @@ const useNavHandler = () => {
         ? (blogIconRef.current.style.transform = "rotate(0deg)")
         : (blogIconRef.current.style.transform = "rotate(90deg)");
     } else if (e.target.getAttribute("data-name") === "events") {
-      eventsRef.current.style.height === "11.7rem"
+      eventsRef.current.style.height === "4rem"
         ? (eventsRef.current.style.height = "0px")
-        : (eventsRef.current.style.height = "11.7rem");
+        : (eventsRef.current.style.height = "4rem");
       eventsIconRef.current.style.transform === "rotate(90deg)"
         ? (eventsIconRef.current.style.transform = "rotate(0deg)")
         : (eventsIconRef.current.style.transform = "rotate(90deg)");
@@ -34,8 +34,8 @@ const useNavHandler = () => {
     }
   };
 
-  const navHandler = (e) => {
-    if (e === 'editBlog') {
+  const navHandler = e => {
+    if (e === "editBlog") {
       setActiveContent({
         editBlog: true
       });
@@ -44,7 +44,6 @@ const useNavHandler = () => {
         [e.target.getAttribute("data-name")]: true
       });
     }
-
   };
 
   return {

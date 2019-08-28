@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import logo from "../../../images/logo_2.jpg";
 
@@ -9,9 +9,8 @@ import EditBlog from "./blog/EditBlog";
 import AddEvents from "./events/AddEvents";
 import EditEvents from "./events/EditEvents";
 import DeleteEvents from "./events/DeleteEvents";
-import AddExams from './exams/AddExams';
-import EditExams from './exams/EditExams';
-
+import AddExams from "./exams/AddExams";
+import EditExams from "./exams/EditExams";
 
 // hooks
 import useNavHandler from "../../hooks/dashboard/useNavHdnler";
@@ -27,8 +26,7 @@ const Dashboard = ({ blogStatus }) => {
     ativeContent,
     setActiveContent,
     examsRef,
-    examsIconRef,
-
+    examsIconRef
   } = useNavHandler();
   const [reset] = useState(() => {
     return window.scrollTo(0, 0);
@@ -38,10 +36,9 @@ const Dashboard = ({ blogStatus }) => {
     if (blogStatus === 200) {
       setActiveContent({
         editBlog: true
-      })
+      });
     }
-  }, [blogStatus])
-
+  }, [blogStatus]);
 
   return (
     <div className="dashboard">
@@ -58,7 +55,8 @@ const Dashboard = ({ blogStatus }) => {
             <li
               className="dashboard__item"
               data-name="blog"
-              onClick={navDropHandler}>
+              onClick={navDropHandler}
+            >
               Blog
               <i className="fas fa-chevron-right" ref={blogIconRef} />
             </li>
@@ -66,13 +64,15 @@ const Dashboard = ({ blogStatus }) => {
               <li
                 className="dashboard__subitem"
                 data-name="addBlog"
-                onClick={navHandler}>
+                onClick={navHandler}
+              >
                 Add Blog
               </li>
               <li
                 className="dashboard__subitem"
                 data-name="editBlog"
-                onClick={navHandler}>
+                onClick={navHandler}
+              >
                 Edit Blog
               </li>
             </ul>
@@ -83,56 +83,61 @@ const Dashboard = ({ blogStatus }) => {
             <li
               className="dashboard__item"
               data-name="events"
-              onClick={navDropHandler}>
+              onClick={navDropHandler}
+            >
               Events <i className="fas fa-chevron-right" ref={eventsIconRef} />
             </li>
             <ul className="dashboard__sublist" ref={eventsRef}>
               <li
                 className="dashboard__subitem"
                 data-name="addEvents"
-                onClick={navHandler}>
+                onClick={navHandler}
+              >
                 Add Event
               </li>
-              <li
+              {/* <li
                 className="dashboard__subitem"
                 data-name="editEvents"
-                onClick={navHandler}>
+                onClick={navHandler}
+              >
                 Edit Event
               </li>
               <li
                 className="dashboard__subitem"
                 data-name="deleteEvents"
-                onClick={navHandler}>
+                onClick={navHandler}
+              >
                 Delete Event
-              </li>
+              </li> */}
             </ul>
           </ul>
-
 
           {/*EXAMS*/}
           <ul className="dashboard__list">
             <li
               className="dashboard__item"
               data-name="exams"
-              onClick={navDropHandler}>
+              onClick={navDropHandler}
+            >
               Exams <i className="fas fa-chevron-right" ref={examsIconRef} />
             </li>
             <ul className="dashboard__sublist" ref={examsRef}>
               <li
                 className="dashboard__subitem"
                 data-name="addExams"
-                onClick={navHandler}>
+                onClick={navHandler}
+              >
                 Add Exams
               </li>
               <li
                 className="dashboard__subitem"
                 data-name="editExams"
-                onClick={navHandler}>
+                onClick={navHandler}
+              >
                 Edit Exams
               </li>
             </ul>
           </ul>
-
         </div>
       </div>
       <div className="dashboard__content">
@@ -148,8 +153,11 @@ const Dashboard = ({ blogStatus }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   blogStatus: state.blog.blogStatus
-})
+});
 
-export default connect(mapStateToProps, null)(Dashboard);
+export default connect(
+  mapStateToProps,
+  null
+)(Dashboard);
