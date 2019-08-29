@@ -49,7 +49,8 @@ const useForm = () => {
     });
   };
 
-  const onSubmit = (date, popupHandler, e) => {
+  const onSubmit = (date, popupHandler, addEvent, e) => {
+    console.log(addEvent);
     e && e.preventDefault();
     const {
       firstname,
@@ -134,14 +135,19 @@ const useForm = () => {
 
     if (e.target.name === "addEvents") {
       popupHandler();
-      setInput({});
+      setInput({
+        ...input,
+        title: "",
+        time: "",
+        description: ""
+      });
       const data = {
         title: input.title,
         time: input.time,
         description: input.description,
         date
       };
-      console.log(data);
+      addEvent(data);
     }
   };
 

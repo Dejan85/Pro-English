@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 //Hooks
 import useCalendar from "../../../hooks/global/useCalendar";
@@ -7,7 +9,10 @@ import useForm from "../../../hooks/auth/useForm";
 //components
 import AddEventPopUp from "./partials/AddEventPopUp";
 
-const AddEvents = () => {
+//redux
+import { addEvent } from "../../../../redux/actions/fetchEvents";
+
+const AddEvents = ({ addEvent }) => {
   const { addEventCalendarRender, popup, setPopup, date } = useCalendar();
   const { input, onChange, onSubmit } = useForm();
 
@@ -28,10 +33,18 @@ const AddEvents = () => {
           change={onChange}
           submit={onSubmit}
           date={date}
+          addEvent={addEvent}
         />
       )}
     </div>
   );
 };
 
-export default AddEvents;
+AddEvents.propTypes = {
+  addEvent: PropTypes.func
+};
+
+export default connect(
+  null,
+  { addEvent }
+)(AddEvents);

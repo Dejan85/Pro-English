@@ -56,6 +56,7 @@ const contact = require("./nodeapi/routes/contact");
 const newsletter = require("./nodeapi/routes/newsletter");
 const blog = require("./nodeapi/routes/blog");
 const exams = require("./nodeapi/routes/exams");
+const events = require("./nodeapi/routes/events");
 
 app.use("/", post);
 app.use("/", auth);
@@ -65,6 +66,7 @@ app.use("/contact", contact);
 app.use("/newsletter", newsletter);
 app.use("/blog", blog);
 app.use("/exams", exams);
+app.use("/events", events);
 
 // express jwt (this is must be below route)
 app.use(function(err, req, res, next) {

@@ -10,16 +10,13 @@ import store from "./redux/store";
 import { fetchCourseData, fetchGre } from "./redux/actions/fetchData";
 import { fetchBlog } from "./redux/actions/fetchBlog";
 import { fetchExams } from "./redux/actions/fetchExams";
+import { getAllEvents } from "./redux/actions/fetchEvents";
 
 import MainRouter from "./MainRouter";
 
 //
 // ─── FETCH DATA FROM API ────────────────────────────────────────────────────────
 //
-
-// course
-
-// exams
 
 function App() {
   useEffect(() => {
@@ -30,6 +27,7 @@ function App() {
     store.dispatch(fetchGre("/data/bocconi", "bocconi"));
     store.dispatch(fetchBlog());
     store.dispatch(fetchExams());
+    store.dispatch(getAllEvents());
   }, []);
   return (
     <Provider store={store}>

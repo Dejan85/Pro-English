@@ -6,6 +6,7 @@ import { combineReducers } from "redux";
 
 import course from "./course";
 import blog from "./blog";
+import events from "./events";
 
 //
 // ─── EXAMS ──────────────────────────────────────────────────────────────────────
@@ -19,5 +20,7 @@ export default combineReducers({
   // exams
   exams,
   //BLOG
-  blog
+  blog,
+  //EVENTS
+  events
 });

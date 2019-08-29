@@ -1,12 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const AddEventPopUp = ({ popupHandler, input, change, submit, date }) => {
+const AddEventPopUp = ({
+  popupHandler,
+  input,
+  change,
+  submit,
+  date,
+  addEvent
+}) => {
   const { title, time, description } = input;
   return (
     <form
       name="addEvents"
-      onSubmit={submit.bind(this, date.date, popupHandler)}
+      onSubmit={submit.bind(this, date.date, popupHandler, addEvent)}
     >
       <div className="addEvents__popup">
         <div className="addEvents__form">
@@ -64,7 +71,8 @@ AddEventPopUp.propTypes = {
   input: PropTypes.object,
   change: PropTypes.func,
   submit: PropTypes.func,
-  date: PropTypes.object
+  date: PropTypes.object,
+  addEvent: PropTypes.func
 };
 
 export default AddEventPopUp;

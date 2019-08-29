@@ -9,8 +9,6 @@ exports.createExams = async (req, res) => {
   form.keepExtensions = true;
 
   await form.parse(req, (err, fields, files) => {
-    console.log(fields);
-
     if (err) {
       console.log(err);
       return res.status(400).json({
