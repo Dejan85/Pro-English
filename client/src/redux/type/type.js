@@ -19,3 +19,12 @@ export const EDIT__BLOG = "EDIT__BLOG";
 export const NEW__EXAMS = "NEW__EXAMS";
 export const GET__EXAMS = "GET__EXAMS";
 export const EDIT__EXAMS = "EDIT__EXAMS";
+
+//
+// ─── EVENTS TYPE ────────────────────────────────────────────────────────────────
+//
+
+export const NEW__EVENT = "NEW__EVENT";
+export const GET__EVENT = "GET__EVENT";
+export const EDIT__EVENT = "EDIT__EVENT";
+export const DELETE__EVENT = "DELETE__EVENT";

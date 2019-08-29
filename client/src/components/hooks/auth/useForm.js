@@ -22,16 +22,13 @@ const useForm = () => {
     password: "",
     confirmPassword: "",
     question: "",
-    timeFromOne: "",
-    timeToOne: "00",
-    timeFromTwo: "",
-    timeToTwo: "00",
     eventDescription: "",
     file: "",
     title: "",
-    description: ""
+    description: "",
+    time: "",
+    date: ""
   });
-  const [date, setDate] = useState();
 
   const onChange = e => {
     setInput({
@@ -52,11 +49,7 @@ const useForm = () => {
     });
   };
 
-  const getEventData = date => {
-    setDate(date);
-  };
-
-  const onSubmit = e => {
+  const onSubmit = (date, popupHandler, e) => {
     e && e.preventDefault();
     const {
       firstname,
@@ -66,11 +59,6 @@ const useForm = () => {
       confirmPassword,
       title,
       question
-      // timeFromOne,
-      // timeToOne,
-      // timeFromTwo,
-      // timeToTwo,
-      // event
     } = errorHandle(input);
 
     if (e.target.name === "signup") {
@@ -135,31 +123,25 @@ const useForm = () => {
       if (!email) {
         return fetchNewsletter({
           email: input.email
+        }).catch(err => {
+          setError(err);
+          console.log(err);
         });
-        // .then(res => {
-        //   console.log(res);
-        // })
-        // .catch(err => {
-        //   setError(err);
-        //   console.log(err);
-        // });
       } else {
         setError({ email });
       }
     }
 
-    if ((e.target.name = "addEvents")) {
+    if (e.target.name === "addEvents") {
+      popupHandler();
+      setInput({});
       const data = {
-        time: `${input.timeFromOne +
-          " : " +
-          input.timeToOne} - ${input.timeFromTwo + " : " + input.timeToTwo}`,
-        description: input.eventDescription,
+        title: input.title,
+        time: input.time,
+        description: input.description,
         date
       };
-
-      console.log(data.time);
-      console.log(data.description);
-      console.log(data.date);
+      console.log(data);
     }
   };
 
@@ -169,7 +151,6 @@ const useForm = () => {
     onSubmit,
     error,
     redirect,
-    getEventData,
     fileUpload,
     setInput
   };

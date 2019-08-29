@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const useCalendar = () => {
+  const [date, setDate] = useState();
   const [months] = useState([
     "januar",
     "februar",
@@ -83,16 +84,15 @@ const useCalendar = () => {
   const addEventCalendarRender = () => {
     const addEventHandler = e => {
       if (e.target.getAttribute("data-date") !== " ") {
-        console.log(
+        let date =
           e.target.getAttribute("data-date") +
-            " " +
-            showHeaderDate().month +
-            " " +
-            showHeaderDate().year
-        );
+          " " +
+          showHeaderDate().month +
+          " " +
+          showHeaderDate().year;
+        setDate({ date });
+        setPopup(!popup);
       }
-
-      setPopup(!popup);
     };
 
     return (
@@ -121,6 +121,7 @@ const useCalendar = () => {
                     className="calendar__item-2"
                     data-date={item}
                     onClick={addEventHandler}
+                    name="date"
                   >
                     {item}
                   </li>
@@ -139,7 +140,8 @@ const useCalendar = () => {
     weeks,
     addEventCalendarRender,
     popup,
-    setPopup
+    setPopup,
+    date
   };
 };
 
