@@ -58,6 +58,12 @@ const AddEvents = ({
       return parseInt(a.date.split(" ")[0]) - parseInt(b.date.split(" ")[0]);
     });
 
+  // sortiramo evente po satima
+  events &&
+    events.sort((a, b) => {
+      return parseInt(a.time.split(" ")[0]) - parseInt(b.time.split(" ")[0]);
+    });
+
   return (
     <div className="addEvents">
       <div className="addEvents__calendar">{addEventCalendarRender()}</div>

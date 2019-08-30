@@ -17,6 +17,15 @@ const useCalendar = () => {
     "decembar"
   ]);
   const [week] = useState(["p", "u", "s", "Č", "p", "s", "n"]);
+  const [week2] = useState([
+    "Ponedeljak",
+    "Utorak",
+    "Sreda",
+    "Četvrtak",
+    "Petak",
+    "Subota",
+    "Nedelja"
+  ]);
   const [currentDate, setCurrentDate] = useState({
     year: new Date().getFullYear(),
     month: new Date().getMonth()
@@ -29,6 +38,9 @@ const useCalendar = () => {
   });
 
   const { year, month } = currentDate;
+  const [currentWeekDay] = useState({
+    weekDay: new Date().getDay()
+  });
   const [popup, setPopup] = useState(false);
 
   //
@@ -113,7 +125,7 @@ const useCalendar = () => {
     }
   };
 
-  const addEventCalendarRender = () => {
+  const addEventCalendarRender = homeEvents => {
     const addEventHandler = e => {
       if (e.target.getAttribute("data-date") !== " ") {
         let date =
@@ -131,15 +143,26 @@ const useCalendar = () => {
       <div className="calendar">
         <div className="calendar__container">
           <div className="calendar__header">
-            <div className="calendar__icon" onClick={handleMonthDecrease}>
-              <i className="fas fa-chevron-left" />
-            </div>
-            <p className="calendar__p">{`${showHeaderDate().month} ${
-              showHeaderDate().year
-            }`}</p>
-            <div className="calendar__icon" onClick={handleMonthIncrease}>
-              <i className="fas fa-chevron-right" />
-            </div>
+            {!homeEvents && (
+              <div className="calendar__icon" onClick={handleMonthDecrease}>
+                <i className="fas fa-chevron-left" />
+              </div>
+            )}
+            <p
+              className="calendar__p"
+              style={
+                homeEvents && {
+                  display: "flex",
+                  margin: "0 auto",
+                  alignSelf: "center"
+                }
+              }
+            >{`${showHeaderDate().month} ${showHeaderDate().year}`}</p>
+            {!homeEvents && (
+              <div className="calendar__icon" onClick={handleMonthIncrease}>
+                <i className="fas fa-chevron-right" />
+              </div>
+            )}
           </div>
           <div className="calendar__week">
             <ul className="calendar__list">{weeks()}</ul>
@@ -149,6 +172,7 @@ const useCalendar = () => {
               {getAllDaysInMonth().map((item, index) => {
                 return (
                   <li
+                    style={homeEvents && { cursor: "default" }}
                     key={index}
                     className={`${
                       item === currentDay.day &&
@@ -180,7 +204,10 @@ const useCalendar = () => {
     setPopup,
     date,
     currentDate,
-    months
+    months,
+    currentDay,
+    week2,
+    currentWeekDay
   };
 };
 
