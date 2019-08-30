@@ -21,6 +21,12 @@ const useCalendar = () => {
     year: new Date().getFullYear(),
     month: new Date().getMonth()
   });
+  const [currentMonth] = useState({
+    month: new Date().getMonth()
+  });
+  const [currentDay] = useState({
+    day: new Date().getDate()
+  });
 
   const { year, month } = currentDate;
   const [popup, setPopup] = useState(false);
@@ -144,7 +150,12 @@ const useCalendar = () => {
                 return (
                   <li
                     key={index}
-                    className="calendar__item-2"
+                    className={`${
+                      item === currentDay.day &&
+                      showHeaderDate().month === months[currentMonth.month]
+                        ? "calendar__item-2 currentDay "
+                        : "calendar__item-2"
+                    }`}
                     data-date={item}
                     onClick={addEventHandler}
                     name="date"
