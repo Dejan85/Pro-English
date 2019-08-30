@@ -25,10 +25,10 @@
   "homepage": "https://github.com/xypnotica/Pro-English#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "concurrently": "^4.1.1",
+    "concurrently": "^4.1.2",
     "cookie-parser": "^1.4.4",
     "cors": "^2.8.5",
-    "dotenv": "^8.0.0",
+    "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "express-jwt": "^5.3.1",
     "express-validator": "^5.3.1",
@@ -36,12 +36,12 @@
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
     "mailchimp-api-v3": "^1.13.1",
-    "mongoose": "^5.6.9",
+    "mongoose": "^5.6.11",
     "morgan": "^1.9.1",
     "node-sass": "^4.12.0",
     "nodemailer": "^6.3.0",
     "request": "^2.88.0",
-    "uuid": "^3.3.2",
+    "uuid": "^3.3.3",
     "validator": "^11.1.0"
   }
 }
