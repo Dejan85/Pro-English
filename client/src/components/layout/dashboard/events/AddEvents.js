@@ -52,7 +52,12 @@ const AddEvents = ({
     eventsChangeStatus && getAllEvents();
   }, [eventsChangeStatus]);
 
-  console.log(events);
+  // sortiramo evente po datumima
+  events &&
+    events.sort((a, b) => {
+      return parseInt(a.date.split(" ")[0]) - parseInt(b.date.split(" ")[0]);
+    });
+
   return (
     <div className="addEvents">
       <div className="addEvents__calendar">{addEventCalendarRender()}</div>
