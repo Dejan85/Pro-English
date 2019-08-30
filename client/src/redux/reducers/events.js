@@ -1,4 +1,9 @@
-import { GET__EVENT } from "../type/type";
+import {
+  NEW__EVENT,
+  GET__EVENT,
+  DELETE__EVENT,
+  UPDATE__EVENT
+} from "../type/type";
 
 const initialState = {};
 
@@ -8,6 +13,23 @@ export default function(state = initialState, action) {
       return {
         ...state,
         events: action.payload
+      };
+    case NEW__EVENT:
+      return {
+        ...state,
+        eventsChangeStatus: action.payload
+      };
+
+    case UPDATE__EVENT:
+      return {
+        ...state,
+        eventsChangeStatus: action.payload
+      };
+
+    case DELETE__EVENT:
+      return {
+        ...state,
+        eventsChangeStatus: action.payload
       };
 
     default:

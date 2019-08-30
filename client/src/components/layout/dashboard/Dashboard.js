@@ -7,8 +7,6 @@ import logo from "../../../images/logo_2.jpg";
 import AddBlog from "./blog/AddBlog";
 import EditBlog from "./blog/EditBlog";
 import AddEvents from "./events/AddEvents";
-import EditEvents from "./events/EditEvents";
-import DeleteEvents from "./events/DeleteEvents";
 import AddExams from "./exams/AddExams";
 import EditExams from "./exams/EditExams";
 
@@ -95,20 +93,6 @@ const Dashboard = ({ blogStatus }) => {
               >
                 Add Event
               </li>
-              {/* <li
-                className="dashboard__subitem"
-                data-name="editEvents"
-                onClick={navHandler}
-              >
-                Edit Event
-              </li>
-              <li
-                className="dashboard__subitem"
-                data-name="deleteEvents"
-                onClick={navHandler}
-              >
-                Delete Event
-              </li> */}
             </ul>
           </ul>
 
@@ -144,8 +128,6 @@ const Dashboard = ({ blogStatus }) => {
         {ativeContent.addBlog && <AddBlog />}
         {ativeContent.editBlog && <EditBlog />}
         {ativeContent.addEvents && <AddEvents />}
-        {ativeContent.editEvents && <EditEvents />}
-        {ativeContent.deleteEvents && <DeleteEvents />}
         {ativeContent.addExams && <AddExams />}
         {ativeContent.editExams && <EditExams />}
       </div>

@@ -23,6 +23,7 @@ mongoose
   .then(() => {
     console.log("Db Connected");
   });
+mongoose.set("useFindAndModify", false);
 
 mongoose.connection.on("error", err => {
   console.log(`Db connection error: ${err.message}`);

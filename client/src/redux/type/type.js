@@ -26,5 +26,5 @@ export const EDIT__EXAMS = "EDIT__EXAMS";
 
 export const NEW__EVENT = "NEW__EVENT";
 export const GET__EVENT = "GET__EVENT";
-export const EDIT__EVENT = "EDIT__EVENT";
+export const UPDATE__EVENT = "UPDATE__EVENT";
 export const DELETE__EVENT = "DELETE__EVENT";

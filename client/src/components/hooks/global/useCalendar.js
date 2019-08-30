@@ -17,10 +17,11 @@ const useCalendar = () => {
     "decembar"
   ]);
   const [week] = useState(["p", "u", "s", "Č", "p", "s", "n"]);
-  const [currentDate] = useState({
+  const [currentDate, setCurrentDate] = useState({
     year: new Date().getFullYear(),
     month: new Date().getMonth()
   });
+
   const { year, month } = currentDate;
   const [popup, setPopup] = useState(false);
 
@@ -81,6 +82,31 @@ const useCalendar = () => {
     );
   };
 
+  // handler for calendar header ++
+  const handleMonthIncrease = () => {
+    setCurrentDate({
+      ...currentDate,
+      month: currentDate.month + 1
+    });
+
+    const counter = 12 - currentDate.month;
+    if (counter === 1) {
+      setCurrentDate({ ...currentDate, month: currentDate.month - 11 });
+    }
+  };
+
+  // handler for calendar header --
+  const handleMonthDecrease = () => {
+    setCurrentDate({
+      ...currentDate,
+      month: currentDate.month - 1
+    });
+
+    if (currentDate.month < 1) {
+      setCurrentDate({ ...currentDate, month: 11 });
+    }
+  };
+
   const addEventCalendarRender = () => {
     const addEventHandler = e => {
       if (e.target.getAttribute("data-date") !== " ") {
@@ -99,13 +125,13 @@ const useCalendar = () => {
       <div className="calendar">
         <div className="calendar__container">
           <div className="calendar__header">
-            <div className="calendar__icon">
+            <div className="calendar__icon" onClick={handleMonthDecrease}>
               <i className="fas fa-chevron-left" />
             </div>
             <p className="calendar__p">{`${showHeaderDate().month} ${
               showHeaderDate().year
             }`}</p>
-            <div className="calendar__icon">
+            <div className="calendar__icon" onClick={handleMonthIncrease}>
               <i className="fas fa-chevron-right" />
             </div>
           </div>
@@ -141,7 +167,9 @@ const useCalendar = () => {
     addEventCalendarRender,
     popup,
     setPopup,
-    date
+    date,
+    currentDate,
+    months
   };
 };
 

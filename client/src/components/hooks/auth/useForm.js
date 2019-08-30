@@ -27,7 +27,8 @@ const useForm = () => {
     title: "",
     description: "",
     time: "",
-    date: ""
+    date: "",
+    id: ""
   });
 
   const onChange = e => {
@@ -49,8 +50,7 @@ const useForm = () => {
     });
   };
 
-  const onSubmit = (date, popupHandler, addEvent, e) => {
-    console.log(addEvent);
+  const onSubmit = e => {
     e && e.preventDefault();
     const {
       firstname,
@@ -131,23 +131,6 @@ const useForm = () => {
       } else {
         setError({ email });
       }
-    }
-
-    if (e.target.name === "addEvents") {
-      popupHandler();
-      setInput({
-        ...input,
-        title: "",
-        time: "",
-        description: ""
-      });
-      const data = {
-        title: input.title,
-        time: input.time,
-        description: input.description,
-        date
-      };
-      addEvent(data);
     }
   };
 

@@ -5,10 +5,17 @@ const router = express.Router();
 const { userById, postById } = require("../halpers");
 
 // controllers
-const { createEvent, getAllEvents } = require("../controllers/events");
+const {
+  createEvent,
+  getAllEvents,
+  deleteEvent,
+  updateEvent
+} = require("../controllers/events");
 
 router.post("/new", createEvent);
 router.get("/get", getAllEvents);
+router.put("/update/:id", updateEvent);
+router.delete("/remove/:id", deleteEvent);
 
 // param
 router.param("userId", userById);

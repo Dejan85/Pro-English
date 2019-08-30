@@ -1,6 +1,6 @@
 .addEvents {
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
 
   &__calendar {
     // max-width: 90rem;
@@ -10,9 +10,11 @@
 
   &__events {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    // justify-content: center;
     margin: 5rem 0 0 0;
-    width: 49%;
+    width: 30%;
+    margin-left: 10rem;
   }
 
   &__popup {

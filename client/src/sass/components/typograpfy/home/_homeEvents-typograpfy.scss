@@ -159,7 +159,8 @@
       }
     }
 
-    &__p {
+    &__p,
+    &__description {
       font-size: 1.4rem;
       font-family: $font-1;
       font-weight: 500;
@@ -185,6 +186,17 @@
         @include respond(600) {
           font-size: 2.4rem;
         }
+      }
+    }
+    &__description {
+      color: $color-grey-dark;
+      font-size: 1.4rem;
+    }
+
+    &__btn {
+      i {
+        font-size: 2rem;
+        color: $color-pink-dark;
       }
     }
   }

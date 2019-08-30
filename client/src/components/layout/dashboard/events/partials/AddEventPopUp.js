@@ -4,16 +4,54 @@ import PropTypes from "prop-types";
 const AddEventPopUp = ({
   popupHandler,
   input,
+  setInput,
   change,
-  submit,
   date,
-  addEvent
+  addEvent,
+  updateEvent,
+  name
 }) => {
   const { title, time, description } = input;
+
+  const onSubmitHandler = e => {
+    e.preventDefault();
+    popupHandler();
+    setInput({
+      ...input,
+      title: "",
+      time: "",
+      description: ""
+    });
+    const data = {
+      title: input.title,
+      time: input.time,
+      description: input.description,
+      date
+    };
+    addEvent(data);
+  };
+
+  const onSubmitHandlerUpdate = e => {
+    e.preventDefault();
+    popupHandler();
+    setInput({
+      ...input,
+      title: "",
+      time: "",
+      description: ""
+    });
+    const data = {
+      title: input.title,
+      time: input.time,
+      description: input.description,
+      date
+    };
+    updateEvent(data, input.id);
+  };
+
   return (
     <form
-      name="addEvents"
-      onSubmit={submit.bind(this, date.date, popupHandler, addEvent)}
+      onSubmit={name === "addEvent" ? onSubmitHandler : onSubmitHandlerUpdate}
     >
       <div className="addEvents__popup">
         <div className="addEvents__form">
@@ -69,10 +107,12 @@ const AddEventPopUp = ({
 AddEventPopUp.propTypes = {
   popupHandler: PropTypes.func,
   input: PropTypes.object,
+  setInput: PropTypes.func,
   change: PropTypes.func,
-  submit: PropTypes.func,
-  date: PropTypes.object,
-  addEvent: PropTypes.func
+  date: PropTypes.string,
+  addEvent: PropTypes.func,
+  updateEvent: PropTypes.func,
+  name: PropTypes.string
 };
 
 export default AddEventPopUp;
