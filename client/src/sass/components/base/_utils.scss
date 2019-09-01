@@ -102,3 +102,12 @@
   background: lighten($color-pink-dark, 5%);
   color: white !important;
 }
+
+.markerForDay {
+  position: absolute;
+  background: $color-pink-dark;
+  width: 90%;
+  height: 0.5rem;
+  top: 0.5rem;
+  pointer-events: none;
+}

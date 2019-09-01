@@ -1,10 +1,7 @@
 .event {
   display: flex;
   width: 100%;
-  // height: 29rem;
-  padding: 5rem 0;
-  // margin: 5rem 0;
-  // outline: 1px solid red;
+  padding: 2rem 0;
 
   &:not(:last-child) {
     border-bottom: 1px solid $color-grey-light;
@@ -17,6 +14,7 @@
     width: 10rem;
     height: 11rem;
     border-top: 3px solid $color-pink-dark;
+    // flex: 1 0 10rem;
 
     &--num {
       display: flex;
@@ -24,10 +22,8 @@
       align-items: center;
       flex: 5;
       border: 1px solid $color-grey-light;
-      // background: orange;
     }
     &--mounth {
-      // background: orangered;
       flex: 2;
       display: flex;
       justify-content: center;
@@ -39,11 +35,8 @@
   &__content {
     position: relative;
     display: flex;
-    // flex-direction: column;
     max-width: 150rem;
     width: 100%;
-    // padding-left: 4rem;
-    // outline: 1px solid red;
     flex-wrap: wrap;
   }
 
@@ -63,7 +56,7 @@
   }
 
   &__p {
-    padding: 2rem 0 3rem;
+    padding: 0.7rem 0 3rem;
   }
 
   &__link {

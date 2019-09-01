@@ -28,7 +28,8 @@ const useCalendar = () => {
   ]);
   const [currentDate, setCurrentDate] = useState({
     year: new Date().getFullYear(),
-    month: new Date().getMonth()
+    month: new Date().getMonth(),
+    day: new Date().getDate()
   });
   const [currentMonth] = useState({
     month: new Date().getMonth()
@@ -125,7 +126,17 @@ const useCalendar = () => {
     }
   };
 
-  const addEventCalendarRender = homeEvents => {
+  const addEventCalendarRender = (events, calendarHandler) => {
+    const setCurrentDateHandler = e => {
+      setCurrentDate({
+        ...currentDate,
+        day: parseInt(e.target.getAttribute("data-date"))
+      });
+
+      calendarHandler && calendarHandler();
+    };
+
+    // Ovo funkcija nam sluzi da nam otvori prozor preko koga ubacujemo evente
     const addEventHandler = e => {
       if (e.target.getAttribute("data-date") !== " ") {
         let date =
@@ -139,30 +150,36 @@ const useCalendar = () => {
       }
     };
 
+    // sortiramo evente po datumima
+    events &&
+      events.sort((a, b) => {
+        return parseInt(a.date.split(" ")[0]) - parseInt(b.date.split(" ")[0]);
+      });
+
     return (
       <div className="calendar">
         <div className="calendar__container">
           <div className="calendar__header">
-            {!homeEvents && (
-              <div className="calendar__icon" onClick={handleMonthDecrease}>
-                <i className="fas fa-chevron-left" />
-              </div>
-            )}
+            {/* {!homeEvents && ( */}
+            <div className="calendar__icon" onClick={handleMonthDecrease}>
+              <i className="fas fa-chevron-left" />
+            </div>
+            {/* )} */}
             <p
               className="calendar__p"
-              style={
-                homeEvents && {
-                  display: "flex",
-                  margin: "0 auto",
-                  alignSelf: "center"
-                }
-              }
+              // style={
+              //   homeEvents && {
+              //     display: "flex",
+              //     margin: "0 auto",
+              //     alignSelf: "center"
+              //   }
+              // }
             >{`${showHeaderDate().month} ${showHeaderDate().year}`}</p>
-            {!homeEvents && (
-              <div className="calendar__icon" onClick={handleMonthIncrease}>
-                <i className="fas fa-chevron-right" />
-              </div>
-            )}
+            {/* {!homeEvents && ( */}
+            <div className="calendar__icon" onClick={handleMonthIncrease}>
+              <i className="fas fa-chevron-right" />
+            </div>
+            {/* )} */}
           </div>
           <div className="calendar__week">
             <ul className="calendar__list">{weeks()}</ul>
@@ -172,18 +189,29 @@ const useCalendar = () => {
               {getAllDaysInMonth().map((item, index) => {
                 return (
                   <li
-                    style={homeEvents && { cursor: "default" }}
+                    // style={homeEvents && { cursor: "default" }}
                     key={index}
                     className={`${
-                      item === currentDay.day &&
+                      item === currentDate.day &&
                       showHeaderDate().month === months[currentMonth.month]
                         ? "calendar__item-2 currentDay "
                         : "calendar__item-2"
                     }`}
                     data-date={item}
-                    onClick={addEventHandler}
+                    onDoubleClick={addEventHandler}
+                    onClick={setCurrentDateHandler}
                     name="date"
                   >
+                    {events &&
+                      events.map((item2, index2) => {
+                        return (
+                          parseInt(item2.date) === item &&
+                          months[currentDate.month] ===
+                            item2.date.split(" ")[1] && (
+                            <div key={index2} className="markerForDay" />
+                          )
+                        );
+                      })}
                     {item}
                   </li>
                 );

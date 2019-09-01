@@ -52,34 +52,39 @@ const AddEvents = ({
     eventsChangeStatus && getAllEvents();
   }, [eventsChangeStatus]);
 
-  // sortiramo evente po datumima
-  events &&
-    events.sort((a, b) => {
-      return parseInt(a.date.split(" ")[0]) - parseInt(b.date.split(" ")[0]);
-    });
-
   // sortiramo evente po satima
   events &&
     events.sort((a, b) => {
       return parseInt(a.time.split(" ")[0]) - parseInt(b.time.split(" ")[0]);
     });
 
+  // sortiramo evente po datumima
+  events &&
+    events.sort((a, b) => {
+      return parseInt(a.date.split(" ")[0]) - parseInt(b.date.split(" ")[0]);
+    });
+
   return (
     <div className="addEvents">
-      <div className="addEvents__calendar">{addEventCalendarRender()}</div>
+      <div className="addEvents__calendar">
+        {addEventCalendarRender(events)}
+      </div>
       <div className="addEvents__events">
         <h1 className="addEvents__h1">Events</h1>
         {events &&
           events.map((item, index) => {
-            const words = item.date.split(" ");
-            if (months[currentDate.month] === words[1]) {
+            const date = item.date.split(" ");
+            if (
+              months[currentDate.month] === date[1] &&
+              currentDate.day === parseInt(date)
+            ) {
               return (
                 <div key={index}>
                   <CalendarEventCard
                     title={item.title}
                     time={item.time}
                     description={item.description}
-                    date={words}
+                    date={date}
                     addEvent={true}
                     id={item._id}
                     popupHandler={popupHandler}

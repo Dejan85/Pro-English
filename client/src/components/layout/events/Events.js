@@ -1,28 +1,35 @@
 import React, { useState, useRef } from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 // components
-import Calendar from "../home/calendar/Calendar";
+// import Calendar from "../home/calendar/Calendar";
 import Actuel from "./partials/Actuel";
 import Daily from "./partials/Daily";
 import Mounthly from "./partials/Mounthly";
 import Weekly from "./partials/Weekly";
 
-const Events = () => {
+// hooks
+import useCalendar from "../../hooks/global/useCalendar";
+
+const Events = ({ events }) => {
   const [reset] = useState(() => {
     return window.scrollTo(0, 0);
   });
   const [calendar, setCalendar] = useState(false);
-  const [calendarEventCard] = useState(true);
+  // const [calendarEventCard] = useState(true);
   const [sort, setSort] = useState({
-    actuel: true,
-    daily: false,
+    actuel: false,
+    daily: true,
     mounthly: false,
-    weekly: false,
+    weekly: false
   });
-  const actuel = useRef();
+  // const actuel = useRef();
   const daily = useRef();
   const weekly = useRef();
   const mounthly = useRef();
+  const { addEventCalendarRender, currentDate, months } = useCalendar();
+  const [date, setDate] = useState(false);
 
   const calendarHandler = () => {
     setCalendar(!calendar);
@@ -35,7 +42,7 @@ const Events = () => {
 
   const sortingHandler = ref => {
     setSort({
-      [ref.current.getAttribute("data-name")]: true,
+      [ref.current.getAttribute("data-name")]: true
     });
   };
 
@@ -49,39 +56,47 @@ const Events = () => {
       <div className="events__search">
         {calendar && (
           <div className="events__popupCalendar">
-            <Calendar
+            {/* <Calendar
               closePopup={closeCalendar}
               calendarEventCard={calendarEventCard}
-            />
+            /> */}
+            {addEventCalendarRender(events, calendarHandler)}
           </div>
         )}
         <p className="events__label">Izaberi daatum</p>
         <div className="events__calendar" onClick={calendarHandler}>
-          07/25/2019
+          <p>
+            {date ||
+              `${currentDate.day}. ${months[currentDate.month]} ${
+                currentDate.year
+              }.`}
+          </p>
         </div>
-        <div className="events__button">Pretrazi Dogadjaje</div>
+        {/* <div className="events__button">Pretrazi Dogadjaje</div> */}
       </div>
       <div className="events__sort">
         <ul className="events__list">
-          <li
+          {/* <li
             className={`events__item ${sort.actuel && "events__item__active2"}`}
             data-name="actuel"
             ref={actuel}
             onClick={sortingHandler.bind(this, actuel)}>
             Aktuelno
-          </li>
+          </li> */}
           <li
             className={`events__item ${sort.daily && "events__item__active2"}`}
             data-name="daily"
             ref={daily}
-            onClick={sortingHandler.bind(this, daily)}>
+            onClick={sortingHandler.bind(this, daily)}
+          >
             Dnevni
           </li>
           <li
             className={`events__item ${sort.weekly && "events__item__active2"}`}
             data-name="weekly"
             ref={weekly}
-            onClick={sortingHandler.bind(this, weekly)}>
+            onClick={sortingHandler.bind(this, weekly)}
+          >
             Nedeljni
           </li>
           <li
@@ -89,7 +104,8 @@ const Events = () => {
               "events__item__active2"}`}
             data-name="mounthly"
             ref={mounthly}
-            onClick={sortingHandler.bind(this, mounthly)}>
+            onClick={sortingHandler.bind(this, mounthly)}
+          >
             Mesecni
           </li>
         </ul>
@@ -98,7 +114,9 @@ const Events = () => {
         <h2 className="events__h2">Desavanja koja su trenutno aktuelna</h2>
       </div>
       {(sort.actuel && <Actuel />) ||
-        (sort.daily && <Daily />) ||
+        (sort.daily && (
+          <Daily events={events} currentDate={currentDate} months={months} />
+        )) ||
         (sort.weekly && <Weekly />) ||
         (sort.mounthly && <Mounthly />)}
 
@@ -107,4 +125,16 @@ const Events = () => {
   );
 };
 
-export default Events;
+Events.propTypes = {
+  events: PropTypes.array
+};
+
+const mapStateToProps = state => {
+  const { events } = state.events;
+  return { events };
+};
+
+export default connect(
+  mapStateToProps,
+  null
+)(Events);

@@ -1,42 +1,40 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+// import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 // components
 
-const Event = () => {
+const Event = ({ item }) => {
+  console.log(item);
   return (
-    <div className='event'>
-      <div className='event__content'>
-        <div className='event__date'>
-          <div className='event__date--num'>28</div>
-          <div className='event__date--mounth'>JULY</div>
+    <div className="event">
+      <div className="event__content">
+        <div className="event__date">
+          <div className="event__date--num">{item.date.split(" ")[0]}</div>
+          <div className="event__date--mounth">{item.date.split(" ")[1]}</div>
         </div>
-        <h2 className='event__h2'>
-          Priprema za polaganje medjunarodnih ispita
-          <span className='event__span'>
-            <i className='far fa-clock' />
-            October 8, 2018 10:00 - March 31, 2020 17:00
+        <h2 className="event__h2">
+          {item.title}
+          <span className="event__span">
+            <i className="far fa-clock" />
+            {`${item.date.split(" ")[0]}. ${item.date.split(" ")[1]} ${
+              item.date.split(" ")[2]
+            }. ${item.time}`}
           </span>
+          <p className="event__p">{item.description}</p>
         </h2>
 
-        <p className='event__p'>
-          Sed rutrum, libero non pretium tristique, arcu mi sollicitudin ex,
-          quis venenatis orci tellus vel dolor. Donec gravida, dolor ut auctor
-          facilisis, enim dolor pellentesque lectus, nec vehicula nibh risus ac
-          leo. Mauris volutpat aliquam tellus nec rhoncus. Aliquam et nibh
-          pulvinar, sodales nibh et, pretium urna. Sed rutrum, libero non
-          pretium tristique, arcu mi sollicitudin ex, quis venenatis orci tellus
-          vel dolor. Donec gravida, dolor ut auctor facilisis, enim dolor
-          pellentesque lectus, nec vehicula nibh risus ac leo. Mauris volutpat
-          aliquam tellus nec rhoncus. Aliquam et nibh pulvinar, sodales nibh et,
-          pretium urna.
-        </p>
-        <Link to='/dogadjaji/one' className='event__link'>
+        {/* <p className="event__p">{item.description}</p> */}
+        {/* <Link to="/dogadjaji/one" className="event__link">
           Procitaj sve
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
+};
+
+Event.propTypes = {
+  item: PropTypes.object
 };
 
 export default Event;
