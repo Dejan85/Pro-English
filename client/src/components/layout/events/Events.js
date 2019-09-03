@@ -117,7 +117,7 @@ const Events = ({ events }) => {
         (sort.daily && (
           <Daily events={events} currentDate={currentDate} months={months} />
         )) ||
-        (sort.weekly && <Weekly />) ||
+        (sort.weekly && <Weekly events={events} />) ||
         (sort.mounthly && <Mounthly />)}
 
       {/* {sort.mounthly && <Mounthly />} */}

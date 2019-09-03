@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import moment from "moment";
 
 const useCalendar = () => {
   const [date, setDate] = useState();
@@ -29,8 +30,33 @@ const useCalendar = () => {
   const [currentDate, setCurrentDate] = useState({
     year: new Date().getFullYear(),
     month: new Date().getMonth(),
-    day: new Date().getDate()
+    day: new Date().getDate(),
+    weeks: () => {
+      const startOfWeek = moment()
+        .startOf("isoWeek")
+        .format("DD-MM-YYYY");
+      const endOfWeek = moment()
+        .endOf("isoWeek")
+        .format("DD-MM-YYYY");
+
+      const days = [];
+
+      for (let i = parseInt(startOfWeek); i <= parseInt(endOfWeek); i++) {
+        days.push(i);
+      }
+
+      // let day = startOfWeek;
+      // while (day <= endOfWeek) {
+      //   days.push(day.toDate());
+      //   day = day.clone().add(1, "d");
+      // }
+
+      return days;
+    }
   });
+
+  console.log(currentDate.day);
+
   const [currentMonth] = useState({
     month: new Date().getMonth()
   });
@@ -57,13 +83,19 @@ const useCalendar = () => {
   //
 
   const getAllDaysInMonth = () => {
-    let firstDayInMonth = new Date(`${year}-${month + 1}-01`).getDay();
+    let firstDayInMonth = new Date(`${year}-${month + 1}`).getDay();
     let days = new Date(year, month + 1, 0).getDate();
 
     const arr = [];
     const arr2 = [];
+    const arr3 = [];
+
     for (let i = 1; i <= days; i++) {
-      if (i < firstDayInMonth) {
+      if (firstDayInMonth === 0 && i <= 6) {
+        arr.push(" ");
+        arr2.push(i);
+        arr3.push(" ");
+      } else if (i < firstDayInMonth) {
         arr.push(" ");
         arr2.push(i);
       } else {
@@ -77,8 +109,7 @@ const useCalendar = () => {
         for (let i = 1; i < counter; i++) {
           arr2.push(" ");
         }
-
-        return [...arr, ...arr2];
+        return [...arr, ...arr2, ...arr3];
       }
     }
   };
