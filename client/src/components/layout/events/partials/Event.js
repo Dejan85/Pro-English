@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 // components
 
 const Event = ({ item }) => {
-  console.log(item);
   return (
     <div className="event">
       <div className="event__content">

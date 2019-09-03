@@ -28,8 +28,14 @@ const Events = ({ events }) => {
   const daily = useRef();
   const weekly = useRef();
   const mounthly = useRef();
-  const { addEventCalendarRender, currentDate, months } = useCalendar();
-  const [date, setDate] = useState(false);
+  const {
+    addEventCalendarRender,
+    currentDate,
+    months,
+    week2,
+    getAllDaysInMonth
+  } = useCalendar();
+  const [date] = useState(false);
 
   const calendarHandler = () => {
     setCalendar(!calendar);
@@ -47,6 +53,18 @@ const Events = ({ events }) => {
   };
 
   window.onwheel = closeCalendar;
+
+  // sortiramo evente po satima
+  events &&
+    events.sort((a, b) => {
+      return parseInt(a.time.split(" ")[0]) - parseInt(b.time.split(" ")[0]);
+    });
+
+  // sortiramo evente po datumima
+  events &&
+    events.sort((a, b) => {
+      return parseInt(a.date.split(" ")[0]) - parseInt(b.date.split(" ")[0]);
+    });
 
   return (
     <div className="events">
@@ -117,8 +135,23 @@ const Events = ({ events }) => {
         (sort.daily && (
           <Daily events={events} currentDate={currentDate} months={months} />
         )) ||
-        (sort.weekly && <Weekly events={events} />) ||
-        (sort.mounthly && <Mounthly />)}
+        (sort.weekly && (
+          <Weekly
+            events={events}
+            week={currentDate}
+            months={months}
+            week2={week2}
+          />
+        )) ||
+        (sort.mounthly && (
+          <Mounthly
+            currentDate={currentDate}
+            getAllDaysInMonth={getAllDaysInMonth}
+            events={events}
+            week2={week2}
+            months={months}
+          />
+        ))}
 
       {/* {sort.mounthly && <Mounthly />} */}
     </div>

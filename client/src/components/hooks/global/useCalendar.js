@@ -44,18 +44,9 @@ const useCalendar = () => {
       for (let i = parseInt(startOfWeek); i <= parseInt(endOfWeek); i++) {
         days.push(i);
       }
-
-      // let day = startOfWeek;
-      // while (day <= endOfWeek) {
-      //   days.push(day.toDate());
-      //   day = day.clone().add(1, "d");
-      // }
-
       return days;
     }
   });
-
-  console.log(currentDate.day);
 
   const [currentMonth] = useState({
     month: new Date().getMonth()
