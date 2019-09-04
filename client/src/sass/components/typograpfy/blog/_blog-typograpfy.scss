@@ -29,8 +29,9 @@
   }
 
   &__p {
-    font-size: 1.6rem;
-    font-family: $font-8;
+    font-size: 1.9rem;
+    font-family: $font-1;
+    line-height: 1.5;
 
     @include respond(900) {
       font-size: 2rem;

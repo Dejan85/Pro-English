@@ -93,14 +93,12 @@ exports.editBlog = async (req, res) => {
 
 // delete blog
 exports.deleteBlog = async (req, res) => {
-  await Blog.findOneAndDelete(req.params.blogId, (err, response) => {
-    console.log(response);
+  await Blog.findByIdAndRemove(req.params.id, (err, result) => {
     if (err) {
-      res.status(400).json(err);
+      console.log("you cant delete this item");
+    } else {
+      res.status(200).json({ result });
     }
-    res.json({
-      message: "Post deleted succesfully!"
-    });
   });
 };
 

@@ -45,8 +45,17 @@
     padding: 1rem 0 2rem 0;
   }
 
-  &__signature {
+  &__signature,
+  h6 {
     align-self: flex-end;
-    padding: 2rem 0;
+    padding-top: 1rem;
+  }
+
+  ul {
+    padding-left: 2rem;
+  }
+
+  li {
+    padding-bottom: 1rem;
   }
 }
