@@ -3,7 +3,6 @@ const fs = require("fs");
 const formidable = require("formidable");
 const _ = require("lodash");
 
-
 //create blog
 exports.createBlog = async (req, res) => {
   let form = new formidable.IncomingForm();
@@ -61,7 +60,7 @@ exports.editBlog = async (req, res) => {
     if (err) {
       console.log(err);
       return res.status(400).json({
-        error: 'Photo could not be uploaded'
+        error: "Photo could not be uploaded"
       });
     }
 
@@ -88,21 +87,21 @@ exports.editBlog = async (req, res) => {
         }
         res.json(blog);
       });
-
-    })
+    });
   });
-}
+};
 
 // delete blog
 exports.deleteBlog = async (req, res) => {
-  await Blog.findOneAndDelete({ _id: req.params.blogId }, (err, response) => {
+  await Blog.findOneAndDelete(req.params.blogId, (err, response) => {
+    console.log(response);
     if (err) {
       res.status(400).json(err);
     }
     res.json({
-      message: 'Post deleted succesfully!'
-    })
-  })
+      message: "Post deleted succesfully!"
+    });
+  });
 };
 
 // get photo

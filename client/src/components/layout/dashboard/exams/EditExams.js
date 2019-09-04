@@ -81,6 +81,7 @@ const EditExams = ({ exams, deleteExams, fetchExams, editExamsStatus }) => {
                   <button
                     className="dashboard__editBlog--btn"
                     onClick={showEditorHandler.bind(this, item)}
+                    style={{ marginLeft: "0px" }}
                   >
                     Edit
                   </button>

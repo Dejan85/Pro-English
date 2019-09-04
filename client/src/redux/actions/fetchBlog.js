@@ -1,13 +1,11 @@
 import { NEW__BLOG, GET__BLOG, EDIT__BLOG } from "../type/type";
-import axios from 'axios';
-import store from '../store';
-
+import axios from "axios";
+import store from "../store";
 
 // hooks
 import useAuthenticate from "../../components/hooks/auth/useAuthenticate";
 
 const { isAuthenticated } = useAuthenticate();
-
 
 // create new blog
 export const fetchNewBlog = blog => dispatch => {
@@ -61,7 +59,7 @@ export const editBlog = (blog, id) => dispatch => {
       dispatch({
         type: EDIT__BLOG,
         payload: res.status
-      })
+      });
     })
     .catch(err => {
       console.log(err);
@@ -70,12 +68,13 @@ export const editBlog = (blog, id) => dispatch => {
 
 // Delete blog
 export const deleteBlog = (id, e) => dispatch => {
+  console.log(id);
   // e.target.parentNode.parentNode.innerHTML = ""
   return fetch(`/blog/remove/${id}`, {
-    method: 'DELETE',
+    method: "DELETE",
     headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
+      Accept: "application/json",
+      "Content-Type": "application/json"
     }
   })
     .then(res => {
@@ -85,4 +84,3 @@ export const deleteBlog = (id, e) => dispatch => {
       console.log(err);
     });
 };
-

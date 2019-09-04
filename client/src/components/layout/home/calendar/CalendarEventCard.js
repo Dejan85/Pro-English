@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
@@ -15,8 +15,39 @@ const CalendarEventCard = ({
   id,
   popupHandler
 }) => {
+  const [confrim, setConfirm] = useState(false);
+
+  const deleteEventHandler = () => {
+    setConfirm(true);
+  };
+
+  // deleteEvent(id);
   return (
     <div className="calendar__event__container">
+      {confrim && (
+        <div className="confirmBox">
+          <p className="confirmBox__p">
+            Da li ste sigurni da zelite da obrisete?
+          </p>
+          <div className="confirmBox__icon">
+            <i
+              className="fas fa-check"
+              style={{ color: "#80C702" }}
+              onClick={() => {
+                setConfirm(false);
+                deleteEvent(id);
+              }}
+            />
+            <i
+              className="fas fa-times"
+              style={{ color: "#EB1B1B" }}
+              onClick={() => {
+                setConfirm(false);
+              }}
+            />
+          </div>
+        </div>
+      )}
       <div className="calendar__event__card">
         <div className="calendar__event__day">{(date && date[0]) || "18"}</div>
         <div className="calendar__event__month">
@@ -43,7 +74,8 @@ const CalendarEventCard = ({
           />
           <i
             className="fas fa-trash-alt"
-            onClick={deleteEvent.bind(this, id)}
+            // onClick={deleteEvent.bind(this, id)}
+            onClick={deleteEventHandler}
           />
         </div>
       )}

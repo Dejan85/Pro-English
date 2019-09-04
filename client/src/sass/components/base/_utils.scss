@@ -111,3 +111,35 @@
   top: 0.5rem;
   pointer-events: none;
 }
+
+.confirmBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 60rem;
+  height: 20rem;
+  background: white;
+  box-shadow: 0 1px 1rem rgba($color-dark, 0.15);
+
+  &__p {
+    font-size: 3rem;
+    font-family: $font-1;
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: space-between;
+    width: 10rem;
+    display: flex;
+    font-size: 3.5rem;
+    padding: 2rem 0 0 0;
+    cursor: pointer;
+  }
+}
