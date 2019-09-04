@@ -7,6 +7,7 @@ import moment from "moment";
 
 // hooks
 import useScrollIndicator from "../../hooks/global/useScrollIndicator";
+import useLoading from "../../hooks/global/useLoading";
 
 const BlogPost = ({ blog, match }) => {
   const [reset] = useState(() => {
@@ -14,6 +15,7 @@ const BlogPost = ({ blog, match }) => {
   });
   const { scrollIndicator } = useScrollIndicator();
   const [data, setData] = useState();
+  const { loading } = useLoading();
 
   useEffect(() => {
     blog &&
@@ -21,34 +23,35 @@ const BlogPost = ({ blog, match }) => {
         return match.params.blogId === item._id && setData(item);
       });
   }, [blog, match.params.blogId]);
-  // console.log(data && data.created);
 
   return (
     <div>
       <div className="blogPost">
         {scrollIndicator()}
         {reset}
-        <h1 className="blogPost__h1">{data && data.title}</h1>
-        <span className="blogPost__span">
-          {/* Beskrajan, plavi krug. U njemu, zvezda. */}
-        </span>
-        <div className="blogPost__info">
-          <p className="blogPost__date">
-            {data && moment(data.created).format("DD. MMMM YYYY.")}
-          </p>
-          <p className="blogPost__postedBy">
-            <span className="blogPost__postedBy--span">Post: </span>
-            {data && data.postedBy}
-          </p>
-        </div>
-        <div className="blogPost__content">
-          <img
-            className="blogPost__img"
-            src={`/blog/image/${data && data._id}`}
-            alt="proenglish"
-          />
-          {data && parse(data.body)}
-        </div>
+        {(!data && loading()) || (
+          <div>
+            {" "}
+            <h1 className="blogPost__h1">{data && data.title}</h1>
+            <div className="blogPost__info">
+              <p className="blogPost__date">
+                {data && moment(data.created).format("DD. MMMM YYYY.")}
+              </p>
+              <p className="blogPost__postedBy">
+                <span className="blogPost__postedBy--span">Post: </span>
+                {data && data.postedBy}
+              </p>
+            </div>
+            <div className="blogPost__content">
+              <img
+                className="blogPost__img"
+                src={`/blog/image/${data && data._id}`}
+                alt="proenglish"
+              />
+              {data && parse(data.body)}
+            </div>{" "}
+          </div>
+        )}
       </div>
     </div>
   );

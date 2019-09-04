@@ -1,26 +1,42 @@
 import React from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import moment from "moment";
 
 // components
 import BlogBox from "./partials/BlogBox";
 import NewLetter from "./partials/NewsLetter";
 
-// images
-// import slika from "../../../images/30.jpg";
-import slika2 from "../../../images/31.jpg";
-import slika3 from "../../../images/33.jpg";
-import slika4 from "../../../images/34.jpg";
-import kengur from "../../../images/kengur.jpg";
+const HomeBlog = ({ blog }) => {
+  // sortiramo evente po satima
+  blog &&
+    blog.sort((a, b) => {
+      return (
+        parseInt(moment(a.created).format("h:mm:ss a")) -
+        parseInt(moment(a.created).format("h:mm:ss a"))
+      );
+    });
 
-const HomeBlog = () => {
+  // sortiramo evente po datumima
+  blog &&
+    blog.sort((a, b) => {
+      return (
+        parseInt(moment(a.created).format("DD. MMMM YYYY.")) -
+        parseInt(moment(a.created).format("DD. MMMM YYYY."))
+      );
+    });
+
   return (
     <div className="homeBlog">
       <h3 className="homeBlog__h3">Blog</h3>
       <div className="homeBlog__line" />
       <div className="homeBlog__content">
-        <BlogBox slika={kengur} />
-        <BlogBox slika={slika2} />
-        <BlogBox slika={slika3} />
-        <BlogBox slika={slika4} />
+        {blog &&
+          blog.map((item, index) => {
+            return (
+              index <= 3 && <div key={index}>{<BlogBox item={item} />}</div>
+            );
+          })}
         <div className="homeBlog__newsletter">
           <NewLetter />
         </div>
@@ -29,4 +45,16 @@ const HomeBlog = () => {
   );
 };
 
-export default HomeBlog;
+const mapStateToProps = state => {
+  const { blog } = state.blog;
+  return { blog };
+};
+
+HomeBlog.propTypes = {
+  blog: PropTypes.array
+};
+
+export default connect(
+  mapStateToProps,
+  null
+)(HomeBlog);

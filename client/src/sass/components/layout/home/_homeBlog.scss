@@ -22,6 +22,8 @@
 
   &__blogBox {
     width: 27rem;
+    min-height: 62rem;
+    height: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
 
     @include respond(900) {
@@ -33,6 +35,7 @@
 
   &__img {
     width: 100%;
+    height: 30rem;
     object-fit: cover;
 
     @include respond(900) {
@@ -42,9 +45,10 @@
 
   &__link {
     display: block;
-    padding: 1.5rem 0;
+    padding: 1.5rem 0.5rem;
     text-align: center;
     transition: all 0.5s;
+    height: 10rem;
 
     &:hover {
       color: $color-pink-dark;
