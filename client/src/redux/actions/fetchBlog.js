@@ -1,5 +1,5 @@
 import { NEW__BLOG, GET__BLOG, EDIT__BLOG } from "../type/type";
-import axios from "axios";
+// import axios from "axios";
 import store from "../store";
 
 // hooks
@@ -13,7 +13,8 @@ export const fetchNewBlog = blog => dispatch => {
   return fetch(`/blog/new/${isAuthenticated().user._id}`, {
     method: "POST",
     headers: {
-      Accept: "application/json"
+      Accept: "application/json",
+      Authorization: `Bearer ${isAuthenticated().token}`
     },
     body: data
   })
@@ -53,9 +54,28 @@ export const editBlog = (blog, id) => dispatch => {
     payload: undefined
   });
   const data = blog.formData;
-  axios
-    .put(`/blog/edit/${id}`, data)
+  // axios
+  //   .put(`/blog/edit/${id}`, data)
+  //   .then(res => {
+  //     dispatch({
+  //       type: EDIT__BLOG,
+  //       payload: res.status
+  //     });
+  //   })
+  //   .catch(err => {
+  //     console.log(err);
+  //   });
+
+  return fetch(`/blog/edit/${id}`, {
+    method: "PUT",
+    headers: {
+      Accept: "application/json",
+      Authorization: `Bearer ${isAuthenticated().token}`
+    },
+    body: data
+  })
     .then(res => {
+      console.log(res.status);
       dispatch({
         type: EDIT__BLOG,
         payload: res.status
@@ -68,13 +88,12 @@ export const editBlog = (blog, id) => dispatch => {
 
 // Delete blog
 export const deleteBlog = (id, e) => dispatch => {
-  console.log(id);
-  // e.target.parentNode.parentNode.innerHTML = ""
   return fetch(`/blog/remove/${id}`, {
     method: "DELETE",
     headers: {
       Accept: "application/json",
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${isAuthenticated().token}`
     }
   })
     .then(res => {

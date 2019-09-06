@@ -14,7 +14,7 @@ const BlogBox = ({ item }) => {
         <Link className="homeBlog__link" to={`/blog/${item._id}`}>
           {item.title}
         </Link>
-        <p className="homeBlog__p">{item.description.substr(0, 170)}</p>
+        <p className="homeBlog__p">{`${item.description.substr(0, 170)}...`}</p>
         <div className="homeBlog__line2" />
         <span className="homeBlog__span">
           {moment(item.created).format("DD. MMMM YYYY.")}

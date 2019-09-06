@@ -7,7 +7,12 @@ import moment from "moment";
 import BlogBox from "./partials/BlogBox";
 import NewLetter from "./partials/NewsLetter";
 
+//hooks
+import useLoading from "../../hooks/global/useLoading";
+
 const HomeBlog = ({ blog }) => {
+  const { loading } = useLoading();
+
   // sortiramo evente po satima
   blog &&
     blog.sort((a, b) => {
@@ -31,12 +36,13 @@ const HomeBlog = ({ blog }) => {
       <h3 className="homeBlog__h3">Blog</h3>
       <div className="homeBlog__line" />
       <div className="homeBlog__content">
-        {blog &&
-          blog.map((item, index) => {
-            return (
-              index <= 3 && <div key={index}>{<BlogBox item={item} />}</div>
-            );
-          })}
+        {(!blog && loading()) ||
+          (blog &&
+            blog.map((item, index) => {
+              return (
+                index <= 3 && <div key={index}>{<BlogBox item={item} />}</div>
+              );
+            }))}
         <div className="homeBlog__newsletter">
           <NewLetter />
         </div>

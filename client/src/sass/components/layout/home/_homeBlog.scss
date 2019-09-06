@@ -83,4 +83,10 @@
   &__p2 {
     padding: 1rem 1rem;
   }
+
+  &__content {
+    position: relative;
+    min-height: 70rem;
+    height: 100%;
+  }
 }

@@ -13,11 +13,13 @@ const {
   deleteBlog
 } = require("../controllers/blog");
 
-router.post("/new/:userId", createBlog);
+const { requireSignin } = require("../authorization");
+
+router.post("/new/:userId", requireSignin, createBlog);
 router.get("/get", getBlog);
 router.get("/image/:id", postPhoto);
-router.put("/edit/:id", editBlog);
-router.delete("/remove/:id", deleteBlog);
+router.put("/edit/:id", requireSignin, editBlog);
+router.delete("/remove/:id", requireSignin, deleteBlog);
 
 // param
 router.param("userId", userById);

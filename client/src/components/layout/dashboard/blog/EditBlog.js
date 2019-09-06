@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import moment from "moment";
 
 // Components
 import Editor from "../partials/Editor";
@@ -11,7 +12,7 @@ import { deleteBlog, fetchBlog } from "../../../../redux/actions/fetchBlog";
 //hooks
 import useLoading from "../../../hooks/global/useLoading";
 
-const EditBlog = ({ blog, deleteBlog, fetchBlog }) => {
+const EditBlog = ({ blog, deleteBlog, fetchBlog, editBlogStatus }) => {
   const [showEditor, setShowEditor] = useState(false);
   const [confrim, setConfirm] = useState(false);
   const [data, setData] = useState();
@@ -42,12 +43,30 @@ const EditBlog = ({ blog, deleteBlog, fetchBlog }) => {
   useEffect(() => {
     setShowEditor(false);
     fetchBlog();
-  }, [blog.editBlogStatus]);
+  }, [editBlogStatus]);
 
   const deleteEventHandler = id => {
     setBlogId(id);
     setConfirm(true);
   };
+
+  // sortiramo evente po satima
+  blog &&
+    blog.sort((a, b) => {
+      return (
+        parseInt(moment(a.created).format("h:mm:ss a")) -
+        parseInt(moment(a.created).format("h:mm:ss a"))
+      );
+    });
+
+  // sortiramo evente po datumima
+  blog &&
+    blog.sort((a, b) => {
+      return (
+        parseInt(moment(a.created).format("DD. MMMM YYYY.")) -
+        parseInt(moment(a.created).format("DD. MMMM YYYY."))
+      );
+    });
 
   return (
     <div
@@ -81,10 +100,10 @@ const EditBlog = ({ blog, deleteBlog, fetchBlog }) => {
         </div>
       )}
       {reset}
-      {(!blog.blog && loading()) ||
+      {(!blog && loading()) ||
         (!showEditor &&
-          blog.blog &&
-          blog.blog.map((item, index) => {
+          blog &&
+          blog.map((item, index) => {
             const { _id, title, description } = item;
             return (
               <div
@@ -129,14 +148,16 @@ const EditBlog = ({ blog, deleteBlog, fetchBlog }) => {
 };
 
 EditBlog.propTypes = {
-  blog: PropTypes.object,
+  blog: PropTypes.array,
   deleteBlog: PropTypes.func,
-  fetchBlog: PropTypes.func
+  fetchBlog: PropTypes.func,
+  editBlogStatus: PropTypes.number
 };
 
 const mapStateToProps = state => {
-  const { blog } = state;
-  return { blog };
+  const { blog } = state.blog;
+  const { editBlogStatus } = state.blog;
+  return { blog, editBlogStatus };
 };
 
 export default connect(
