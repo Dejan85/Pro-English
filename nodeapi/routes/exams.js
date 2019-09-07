@@ -12,10 +12,12 @@ const {
   deleteExams
 } = require("../controllers/exams");
 
-router.post("/new/:userId", createExams);
+const { requireSignin } = require("../authorization");
+
+router.post("/new/:userId", requireSignin, createExams);
 router.get("/get", getExams);
-router.put("/edit/:id", editExams);
-router.delete("/remove/:id", deleteExams);
+router.put("/edit/:id", requireSignin, editExams);
+router.delete("/remove/:id", requireSignin, deleteExams);
 
 // param
 router.param("userId", userById);

@@ -25,9 +25,9 @@ const useNavHandler = () => {
         ? (eventsIconRef.current.style.transform = "rotate(0deg)")
         : (eventsIconRef.current.style.transform = "rotate(90deg)");
     } else if (e.target.getAttribute("data-name") === "exams") {
-      examsRef.current.style.height === "7.9rem"
+      examsRef.current.style.height === "4rem"
         ? (examsRef.current.style.height = "0px")
-        : (examsRef.current.style.height = "7.9rem");
+        : (examsRef.current.style.height = "4rem");
       examsIconRef.current.style.transform === "rotate(90deg)"
         ? (examsIconRef.current.style.transform = "rotate(0deg)")
         : (examsIconRef.current.style.transform = "rotate(90deg)");

@@ -51,8 +51,8 @@ const HomeEvent = ({ events }) => {
               {events &&
                 events.map((item, index) => {
                   const date = item.date.split(" ");
-                  if (months[currentDate.month] === date[1]) {
-                    return (
+                  return (
+                    months[currentDate.month] === date[1] && (
                       <div key={index} style={{ paddingRight: "1rem" }}>
                         <CalendarEventCard
                           title={item.title}
@@ -60,8 +60,8 @@ const HomeEvent = ({ events }) => {
                           date={date}
                         />
                       </div>
-                    );
-                  }
+                    )
+                  );
                 })}
             </Scrollbars>
           </div>

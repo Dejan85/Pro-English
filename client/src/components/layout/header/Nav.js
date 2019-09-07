@@ -1,15 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 
-// components
-import DropNav from "./partials/DropNav";
-
 const Nav = () => {
-  const [ispiti] = useState({
-    links: ["Toefl", "Ielts", "Gmat", "Gre", "Sat"],
-    address: ["Toefl", "Ielts", "Gmat", "Gre", "Sat"],
-  });
-
   return (
     <nav className="header__nav">
       <ul className="header__list">
@@ -18,7 +10,8 @@ const Nav = () => {
             className="header__link"
             activeClassName="active"
             exact
-            to="/">
+            to="/"
+          >
             Home
           </NavLink>
         </li>
@@ -26,7 +19,8 @@ const Nav = () => {
           <NavLink
             className="header__link"
             activeClassName="active"
-            to="/onama">
+            to="/onama"
+          >
             O nama
           </NavLink>
         </li>
@@ -34,7 +28,8 @@ const Nav = () => {
           <NavLink
             className="header__link"
             activeClassName="active"
-            to="/kursevi">
+            to="/kursevi"
+          >
             Kursevi
           </NavLink>
         </li>
@@ -42,7 +37,8 @@ const Nav = () => {
           <NavLink
             className="header__link"
             activeClassName="active"
-            to="/ispiti">
+            to="/ispiti"
+          >
             Pripreme za ispite
           </NavLink>
           {/* <DropNav info={ispiti} /> */}
@@ -51,7 +47,8 @@ const Nav = () => {
           <NavLink
             className="header__link"
             activeClassName="active"
-            to="/dogadjaji">
+            to="/dogadjaji"
+          >
             Dogadjaji
           </NavLink>
         </li>
@@ -64,7 +61,8 @@ const Nav = () => {
           <NavLink
             className="header__link"
             activeClassName="active"
-            to="/kontakt">
+            to="/kontakt"
+          >
             Kontakt
           </NavLink>
         </li>

@@ -26,11 +26,11 @@ import Signup from "./components/layout/admin/auth/Signup";
 
 // hooks
 import usePrivateRoute from "./components/hooks/auth/usePrivateRoute";
-import useAuthenticate from "./components/hooks/auth/useAuthenticate";
+// import useAuthenticate from "./components/hooks/auth/useAuthenticate";
 
 const MainRouter = () => {
   const { PrivateRoute } = usePrivateRoute();
-  const { isAuthenticated } = useAuthenticate();
+  // const { isAuthenticated } = useAuthenticate();
 
   const str = window.location.pathname.split(/[\\\/]/);
   let str2;

@@ -12,13 +12,13 @@ const { isAuthenticated } = useAuthenticate();
 //
 
 export const fetchNewExams = exams => dispatch => {
-  console.log("radi");
   const data = exams.formData;
 
   return fetch(`/exams/new/${isAuthenticated().user._id}`, {
     method: "POST",
     headers: {
-      Accept: "application/json"
+      Accept: "application/json",
+      Authorization: `Bearer ${isAuthenticated().token}`
     },
     body: data
   })
@@ -67,9 +67,27 @@ export const editExams = (exams, id) => dispatch => {
     payload: undefined
   });
   const data = exams.formData;
-  axios
-    .put(`/exams/edit/${id}`, data)
+  // axios
+  //   .put(`/exams/edit/${id}`, data)
+  //   .then(res => {
+  //     dispatch({
+  //       type: EDIT__EXAMS,
+  //       payload: res.status
+  //     });
+  //   })
+  //   .catch(err => {
+  //     console.log(err);
+  //   });
+  return fetch(`/exams/edit/${id}`, {
+    method: "PUT",
+    headers: {
+      Accept: "application/json",
+      Authorization: `Bearer ${isAuthenticated().token}`
+    },
+    body: data
+  })
     .then(res => {
+      console.log(res.status);
       dispatch({
         type: EDIT__EXAMS,
         payload: res.status
@@ -90,7 +108,8 @@ export const deleteExams = (id, e) => dispatch => {
     method: "DELETE",
     headers: {
       Accept: "application/json",
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${isAuthenticated().token}`
     }
   })
     .then(res => {

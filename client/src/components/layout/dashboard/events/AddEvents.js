@@ -74,11 +74,9 @@ const AddEvents = ({
         {events &&
           events.map((item, index) => {
             const date = item.date.split(" ");
-            if (
+            return (
               months[currentDate.month] === date[1] &&
-              currentDate.day === parseInt(date)
-            ) {
-              return (
+              currentDate.day === parseInt(date) && (
                 <div key={index}>
                   <CalendarEventCard
                     title={item.title}
@@ -90,8 +88,8 @@ const AddEvents = ({
                     popupHandler={popupHandler}
                   />
                 </div>
-              );
-            }
+              )
+            );
           })}
       </div>
       {popup && (

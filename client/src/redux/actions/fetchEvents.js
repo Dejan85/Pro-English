@@ -6,6 +6,10 @@ import {
 } from "../type/type";
 import axios from "axios";
 
+//hooks
+import useAuthenticate from "../../components/hooks/auth/useAuthenticate";
+const { isAuthenticated } = useAuthenticate();
+
 //
 // ─── ADD EVENT ──────────────────────────────────────────────────────────────────
 //
@@ -27,6 +31,24 @@ export const addEvent = data => dispatch => {
     .catch(err => {
       console.log(err);
     });
+
+  // return fetch("/events/new", {
+  //   method: "POST",
+  //   headers: {
+  //     Accept: "application/json",
+  //     Authorization: `Bearer ${isAuthenticated().token}`
+  //   },
+  //   body: {data}
+  // })
+  //   .then(res => {
+  //     dispatch({
+  //       type: NEW__EVENT,
+  //       payload: res.status
+  //     });
+  //   })
+  //   .catch(err => {
+  //     console.log(err);
+  //   });
 };
 
 //

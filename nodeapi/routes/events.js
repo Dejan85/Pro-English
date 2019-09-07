@@ -12,6 +12,8 @@ const {
   updateEvent
 } = require("../controllers/events");
 
+const { requireSignin } = require("../authorization");
+
 router.post("/new", createEvent);
 router.get("/get", getAllEvents);
 router.put("/update/:id", updateEvent);

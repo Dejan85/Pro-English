@@ -1,33 +1,12 @@
 import React, { useState } from "react";
 
-import background from "../../../../images/60.jpg";
-import background1 from "../../../../images/61.jpg";
-import background2 from "../../../../images/63.jpg";
 import background3 from "../../../../images/64.jpg";
 
 const Promotions2 = ({ promotionsHandler }) => {
-  const [bckg] = useState(() => {
-    return {
-      backgroundImage: `url(${background})`,
-      backgroundRepeat: "no-repeat",
-    };
-  });
-  const [bckg1] = useState(() => {
-    return {
-      backgroundImage: `url(${background1})`,
-      backgroundRepeat: "no-repeat",
-    };
-  });
-  const [bckg2] = useState(() => {
-    return {
-      backgroundImage: `url(${background2})`,
-      backgroundRepeat: "no-repeat",
-    };
-  });
   const [bckg3] = useState(() => {
     return {
       backgroundImage: `url(${background3})`,
-      backgroundRepeat: "no-repeat",
+      backgroundRepeat: "no-repeat"
     };
   });
 

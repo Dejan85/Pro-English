@@ -106,13 +106,13 @@ const Dashboard = ({ blogStatus }) => {
               Exams <i className="fas fa-chevron-right" ref={examsIconRef} />
             </li>
             <ul className="dashboard__sublist" ref={examsRef}>
-              <li
+              {/* <li
                 className="dashboard__subitem"
                 data-name="addExams"
                 onClick={navHandler}
               >
                 Add Exams
-              </li>
+              </li> */}
               <li
                 className="dashboard__subitem"
                 data-name="editExams"

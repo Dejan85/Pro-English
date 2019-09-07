@@ -11,10 +11,10 @@ import { fetchExams, deleteExams } from "../../../../redux/actions/fetchExams";
 //hooks
 import useLoading from "../../../hooks/global/useLoading";
 
-const EditExams = ({ exams, deleteExams, fetchExams, editExamsStatus }) => {
+const EditExams = ({ exams, fetchExams, editExamsStatus }) => {
   const [showEditor, setShowEditor] = useState(false);
   const [data, setData] = useState();
-  const [message, setMessage] = useState();
+  // const [message, setMessage] = useState();
   const { loading } = useLoading();
   const [reset] = useState(() => {
     return window.scrollTo(0, 0);

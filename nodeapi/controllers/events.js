@@ -5,6 +5,7 @@ const Events = require("../models/events");
 //
 
 exports.createEvent = async (req, res) => {
+  console.log(req.body);
   const newEvents = new Events({
     title: req.body.title,
     time: req.body.time,
