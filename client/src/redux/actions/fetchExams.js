@@ -1,4 +1,3 @@
-import axios from "axios";
 import store from "../store";
 import { NEW__EXAMS, GET__EXAMS, EDIT__EXAMS } from "../type/type";
 
@@ -87,7 +86,6 @@ export const editExams = (exams, id) => dispatch => {
     body: data
   })
     .then(res => {
-      console.log(res.status);
       dispatch({
         type: EDIT__EXAMS,
         payload: res.status

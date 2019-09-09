@@ -7,6 +7,8 @@ const useNavHandler = () => {
   const eventsIconRef = useRef();
   const examsRef = useRef();
   const examsIconRef = useRef();
+  const aboutRef = useRef();
+  const aboutIconRef = useRef();
   const [ativeContent, setActiveContent] = useState({});
 
   const navDropHandler = e => {
@@ -31,6 +33,13 @@ const useNavHandler = () => {
       examsIconRef.current.style.transform === "rotate(90deg)"
         ? (examsIconRef.current.style.transform = "rotate(0deg)")
         : (examsIconRef.current.style.transform = "rotate(90deg)");
+    } else if (e.target.getAttribute("data-name") === "about") {
+      aboutRef.current.style.height === "4rem"
+        ? (aboutRef.current.style.height = "0px")
+        : (aboutRef.current.style.height = "4rem");
+      aboutIconRef.current.style.transform === "rotate(90deg)"
+        ? (aboutIconRef.current.style.transform = "rotate(0deg)")
+        : (aboutIconRef.current.style.transform = "rotate(90deg)");
     }
   };
 
@@ -56,7 +65,9 @@ const useNavHandler = () => {
     ativeContent,
     setActiveContent,
     examsRef,
-    examsIconRef
+    examsIconRef,
+    aboutRef,
+    aboutIconRef
   };
 };
 

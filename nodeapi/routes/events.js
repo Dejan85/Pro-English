@@ -12,6 +12,7 @@ const {
   updateEvent
 } = require("../controllers/events");
 
+//authorization
 const { requireSignin } = require("../authorization");
 
 router.post("/new", createEvent);

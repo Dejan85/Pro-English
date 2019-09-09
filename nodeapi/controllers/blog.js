@@ -72,8 +72,6 @@ exports.editBlog = async (req, res) => {
       let data = _.extend(blog, fields);
       data.update(Date.now());
 
-      console.log(data);
-
       if (files.file) {
         data.photo.data = fs.readFileSync(files.file.path);
         blog.photo.contentType = files.file.type;

@@ -28,3 +28,10 @@ export const NEW__EVENT = "NEW__EVENT";
 export const GET__EVENT = "GET__EVENT";
 export const UPDATE__EVENT = "UPDATE__EVENT";
 export const DELETE__EVENT = "DELETE__EVENT";
+
+//
+// ─── ABOUT TYPE ─────────────────────────────────────────────────────────────────
+//
+
+export const GET__ABOUT = "GET__ABOUT";
+export const UPDATE__ABOUT = "UPDATE__ABOUT";

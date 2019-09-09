@@ -10,6 +10,7 @@ import useNavHandler from "../../../hooks/dashboard/useNavHdnler";
 //redux
 import { fetchNewBlog, editBlog } from "../../../../redux/actions/fetchBlog";
 import { fetchNewExams, editExams } from "../../../../redux/actions/fetchExams";
+import { updateAbout } from "../../../../redux/actions/fetchAbout";
 
 const Editor = ({
   fetchNewBlog,
@@ -18,7 +19,8 @@ const Editor = ({
   disableImageUpload,
   fetchNewExams,
   editExams,
-  name
+  name,
+  updateAbout
 }) => {
   const { onChange, input, fileUpload, setInput } = useForm();
   const formData = new FormData();
@@ -39,6 +41,7 @@ const Editor = ({
 
   const onSubmitHandler = e => {
     e.preventDefault();
+
     input.file && formData.append("file", input.file);
     input.title && formData.append("title", input.title);
     input.description && formData.append("description", input.description);
@@ -48,6 +51,7 @@ const Editor = ({
     name === "editBlog" && data && editBlog({ formData }, data._id);
     name === "addExams" && fetchNewExams({ formData });
     name === "editExams" && editExams({ formData }, data._id);
+    name === "editAbout" && updateAbout({ formData }, data._id);
   };
 
   const redirect = () => {
@@ -117,10 +121,11 @@ Editor.propTypes = {
   fetchNewExams: PropTypes.func,
   editExams: PropTypes.func,
   name: PropTypes.string,
-  disableImageUpload: PropTypes.bool
+  disableImageUpload: PropTypes.bool,
+  updateAbout: PropTypes.func
 };
 
 export default connect(
   mapStateToProps,
-  { fetchNewBlog, editBlog, fetchNewExams, editExams }
+  { fetchNewBlog, editBlog, fetchNewExams, editExams, updateAbout }
 )(Editor);

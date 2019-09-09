@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import parse from "html-react-parser";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 // images
 import slika from "../../../images/38.jpg";
@@ -6,7 +9,7 @@ import slika2 from "../../../images/51.jpg";
 import bckg from "../../../images/7.1.jpg";
 import bckg2 from "../../../images/3.1.jpg";
 
-const About = () => {
+const About = ({ about }) => {
   // stavio sam ovo ovde da bi resetovao scroll PRE NEGO STO SE COMPONENT MOUNT. Ovo je umesto componentWillMount
   const [reset] = useState(() => {
     return window.scrollTo(0, 0);
@@ -18,7 +21,7 @@ const About = () => {
     return { backgroundImage: `url(${bckg2})` };
   });
 
-  console.log("about rendering");
+  console.log(about);
 
   return (
     <div className="about">
@@ -26,10 +29,11 @@ const About = () => {
       <div className="about__background" style={background} />
       <div className="about__content">
         <div className="about__container">
-          <h1 className="about__h1">Naša misija </h1>
+          <h1 className="about__h1">{about && about[0].title} </h1>
           <div className="about__paragraph">
             <div className="about__paragraph--p">
-              <p>
+              {about && parse(about[0].body)}
+              {/* <p>
                 ProEnglish predstavlja pokret i preokret u učenju engleskog
                 jezika i ostvarenje je našeg sna da se sa engleskog skloni veo
                 mističnosti i ružna reputacija koju su stvorile godine pogrešnog
@@ -60,7 +64,7 @@ const About = () => {
                 bude lepše. A koliko ćemo visoko zidati zavisi od vaših
                 neimarskih stremljenja: što više spratova, to smo bliže zvezdama
                 i mesecu.
-              </p>
+              </p> */}
             </div>
             <img src={slika2} alt="proenglish" />
             <p />
@@ -71,11 +75,12 @@ const About = () => {
 
       <div className="about__content">
         <div className="about__container">
-          <h2 className="about__h2">Način rada </h2>
+          <h2 className="about__h2">{about && about[1].title} </h2>
           <div className="about__paragraph">
             <img src={slika} alt="proenglish" />
             <div className="about__paragraph--p2">
-              <p>
+              {about && parse(about[1].body)}
+              {/* <p>
                 ProEnglish predstavlja moderan pristup učenju usmeren na
                 prevazilaženje blokade u govoru i usvajanje primenjivog znanja.
                 Naši programi su osmišljeni tako da idu u korak sa savremenim
@@ -125,7 +130,7 @@ const About = () => {
                 kafe ili čaja, kako nalaže običaj, u mestu koje je naš drugi dom
                 i u kome provodimo najviše vremena kako bismo zajedno uspeli.
                 <span> Cheers!</span>
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
@@ -134,4 +139,16 @@ const About = () => {
   );
 };
 
-export default About;
+About.propTypes = {
+  about: PropTypes.array
+};
+
+const mapStateToProps = state => {
+  const { about } = state.about;
+  return { about };
+};
+
+export default connect(
+  mapStateToProps,
+  null
+)(About);

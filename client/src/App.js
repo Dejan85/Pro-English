@@ -12,6 +12,7 @@ import { fetchCourseData, fetchGre } from "./redux/actions/fetchData";
 import { fetchBlog } from "./redux/actions/fetchBlog";
 import { fetchExams } from "./redux/actions/fetchExams";
 import { getAllEvents } from "./redux/actions/fetchEvents";
+import { fetchAbout } from "./redux/actions/fetchAbout";
 
 import MainRouter from "./MainRouter";
 
@@ -29,6 +30,7 @@ function App() {
     store.dispatch(fetchBlog());
     store.dispatch(fetchExams());
     store.dispatch(getAllEvents());
+    store.dispatch(fetchAbout());
   }, []);
   return (
     <Provider store={store}>

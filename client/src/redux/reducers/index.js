@@ -7,6 +7,7 @@ import { combineReducers } from "redux";
 import course from "./course";
 import blog from "./blog";
 import events from "./events";
+import about from "./about";
 
 //
 // ─── EXAMS ──────────────────────────────────────────────────────────────────────
@@ -22,5 +23,7 @@ export default combineReducers({
   //BLOG
   blog,
   //EVENTS
-  events
+  events,
+  //about
+  about
 });

@@ -9,6 +9,7 @@ import EditBlog from "./blog/EditBlog";
 import AddEvents from "./events/AddEvents";
 import AddExams from "./exams/AddExams";
 import EditExams from "./exams/EditExams";
+import EditAbout from "./about/EditAbout";
 
 // hooks
 import useNavHandler from "../../hooks/dashboard/useNavHdnler";
@@ -24,7 +25,9 @@ const Dashboard = ({ blogStatus }) => {
     ativeContent,
     setActiveContent,
     examsRef,
-    examsIconRef
+    examsIconRef,
+    aboutRef,
+    aboutIconRef
   } = useNavHandler();
   const [reset] = useState(() => {
     return window.scrollTo(0, 0);
@@ -106,19 +109,32 @@ const Dashboard = ({ blogStatus }) => {
               Exams <i className="fas fa-chevron-right" ref={examsIconRef} />
             </li>
             <ul className="dashboard__sublist" ref={examsRef}>
-              {/* <li
-                className="dashboard__subitem"
-                data-name="addExams"
-                onClick={navHandler}
-              >
-                Add Exams
-              </li> */}
               <li
                 className="dashboard__subitem"
                 data-name="editExams"
                 onClick={navHandler}
               >
                 Edit Exams
+              </li>
+            </ul>
+          </ul>
+
+          {/* ABOUT */}
+          <ul className="dashboard__list">
+            <li
+              className="dashboard__item"
+              data-name="about"
+              onClick={navDropHandler}
+            >
+              About <i className="fas fa-chevron-right" ref={aboutIconRef} />
+            </li>
+            <ul className="dashboard__sublist" ref={aboutRef}>
+              <li
+                className="dashboard__subitem"
+                data-name="editAbout"
+                onClick={navHandler}
+              >
+                Edit About
               </li>
             </ul>
           </ul>
@@ -130,6 +146,7 @@ const Dashboard = ({ blogStatus }) => {
         {ativeContent.addEvents && <AddEvents />}
         {ativeContent.addExams && <AddExams />}
         {ativeContent.editExams && <EditExams />}
+        {ativeContent.editAbout && <EditAbout />}
       </div>
     </div>
   );
