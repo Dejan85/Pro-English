@@ -39,11 +39,11 @@ const Home = () => {
       {promotions && <Promotions2 promotionsHandler={promotionsHandler} />}
       <div className="home__content" style={bckg}>
         <h1 className="home__h1">
-          Dobrodosli u nas kutak u kome smo oziveli najbolje u nastavi
+          Dobrodošli u naš kutak u kome smo oživeli najbolje u nastavi
           engleskog.
         </h1>
         <p className="home__p">
-          Na kreativan i zabavan nacin vam pomazemo da uspesno usvojite engleski
+          Na kreativan i zabavan način vam pomažemo da uspešno usvojite engleski
           i da govorite bez blokade i treme.
         </p>
       </div>
