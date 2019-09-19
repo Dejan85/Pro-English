@@ -39,7 +39,7 @@ function App() {
         <div className="underconstructor">
           <p>
             Poštovani, sajt je u izradi. Uskoro dolazimo ovde, a do tad možete
-            da nas pratite na društvenim mrežama.
+            da nas pratite na društvenim mrežama. <br></br> Vaš ProEnglish.
           </p>
         </div>
       </Router>
