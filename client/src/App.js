@@ -35,7 +35,13 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <MainRouter />
+        {/* <MainRouter /> */}
+        <div className="underconstructor">
+          <p>
+            Poštovani, sajt je u izradi. Uskoro dolazimo ovde, a do tad možete
+            da nas pratite na društvenim mrežama.
+          </p>
+        </div>
       </Router>
     </Provider>
   );
