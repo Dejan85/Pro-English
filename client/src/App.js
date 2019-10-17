@@ -35,13 +35,13 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        {/* <MainRouter /> */}
-        <div className="underconstructor">
+        <MainRouter />
+        {/* <div className="underconstructor">
           <p>
             Poštovani, sajt je u izradi. Uskoro dolazimo ovde, a do tad možete
             da nas pratite na društvenim mrežama. <br></br> Vaš ProEnglish.
           </p>
-        </div>
+        </div> */}
       </Router>
     </Provider>
   );

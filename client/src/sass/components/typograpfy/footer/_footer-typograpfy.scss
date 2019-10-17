@@ -28,8 +28,8 @@
     text-decoration: none;
     font-family: $font-1;
     font-weight: 300;
-    font-size: 1.4rem;
-    text-align: justify;
+    font-size: 1.6rem;
+    text-align: left;
 
     @include respond(320) {
       font-size: 3rem;

@@ -16,12 +16,13 @@ const HomeCourseV2 = () => {
           <div className="homeCourseV2__content">
             <h3 className="homeCourseV2__h3">Kurs aktivne konverzacije</h3>
             <p className="homeCourseV2__p">
-              Onec pede justo, fringilla, aliquet nec, vulputatee egerdiet
-              erdiett arcu. In justo, rhoncus ut, imperdiet a, venenatis
-              vitaerdiet erde justo. llam dictum felis eu pede mollis pretium
-              diet a, venenatis vita sto. Nullam dictum felis eu pede mollis
-              pretiumdiet a, venenatis ie ust. ullam dictum felis eu pedemol
-              iumpretium ieta...
+              Osluškujući potrebe svojih učenika, osmislili smo jedinstvene
+              kurseve konverzacije na kojima nema praznog hoda, bespotrebnog
+              prepisivanja i popunjavanja vežbanja. Sve što naučite kod nas je
+              svrsishodno i primenjivo. Sistematičan rad i zabavne i realne
+              aktivnosti koje zahtevaju vašu potpuno uključenost u svaki čas
+              dovode do merljivog napretka i tečnije izražavanja. Zakažite
+              besplatan probni čas.
             </p>
             <Link className="homeCourseV2__link" to="/">
               Test
@@ -42,12 +43,14 @@ const HomeCourseV2 = () => {
               Priprema za medjunarodne ispite
             </h3>
             <p className="homeCourseV2__p">
-              onec pede justo, fringilla, aliquet nec, vulputatee egerdiet
-              erdiett arcu. In justo, rhoncus ut, imperdiet a, venenatis
-              vitaerdiet erde justo. llam dictum felis eu pede mollis pretium
-              diet a, venenatis vita sto. Nullam dictum felis eu pede mollis
-              pretiumdiet a, venenatis ie ust. ullam dictum felis eu pedemol
-              iumpretium ieta...
+              Personalizovane pripreme za medjunarodne ispite iz engleskog
+              (TOEFL, SAT, IELTS, GMAT, GRE, Bocconi test) koje se bave svakim
+              polaznikom i njegovim slabostima u upotrebi engleskog pojedinačno.
+              Osmišljene tako da se bave unapredjivanjem veština koje testovi
+              proveravaju. Profesori su potkovani iskustvom i upoznati su sa
+              kriterijumima koji se primenjuju pri ocenjivanju, pa će vam
+              njihova procena osigurati da izbegnete da polažete dva puta isti
+              test.
             </p>
             <Link className="homeCourseV2__link" to="/">
               Test

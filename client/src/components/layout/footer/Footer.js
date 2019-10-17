@@ -11,13 +11,13 @@ const Footer = () => {
         <div className="footer__msg">
           <h1 className="footer__h1">ProEnglish</h1>
           <p className="footer__p">
-            We are Education, create your passion and inspiration. And hope
-            success will come for your dream. Please send email and get latest
-            news. We are Education, create your passion and inspiration. And
-            hope success will come for your dream. Please send email and get
-            latest news. We are Education, create your passion and inspiration.
-            And hope success will come for your dream. Please send email and get
-            latest news. We are Education, create your passion and inspiration.
+            Centar za učenje engleskog i pripreme za medjunarodne ispite u
+            centru grada. Simulacija ispita. Jedinstven pristup učenju i kursevi
+            posvećeni aktivnoj upotrebi engleskog. Rad sa master profesorima
+            engleskog jezika sa iskustvom. Ćaskaonice sa izvornim govornicima.
+            Usvajanje realnog engleskog, onako kako se zaista koristi i aktivna
+            konverzacija tokom celog časa. Zajedno sa vama svoju viziju
+            usvajanja jezika pretvaramo u stvarnost.
           </p>
         </div>
         <div className="footer__course">

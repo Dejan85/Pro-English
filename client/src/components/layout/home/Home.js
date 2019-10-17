@@ -39,12 +39,18 @@ const Home = () => {
       {promotions && <Promotions2 promotionsHandler={promotionsHandler} />}
       <div className="home__content" style={bckg}>
         <h1 className="home__h1">
-          Dobrodošli u naš kutak u kome smo oživeli najbolje u nastavi
-          engleskog.
+          {/* Dobrodošli u naš kutak u kome smo oživeli najbolje u nastavi
+          engleskog. */}
+          Dobrodošli u naš kutak u kome smo oživeli najbolje u nastavi engleskog
+          zahvaljujući iskustvu koje smo sticali godinama radeći sa decom i
+          odraslima.
         </h1>
         <p className="home__p">
-          Na kreativan i zabavan način vam pomažemo da uspešno usvojite engleski
-          i da govorite bez blokade i treme.
+          {/* Na kreativan i zabavan način vam pomažemo da uspešno usvojite engleski
+          i da govorite bez blokade i treme. */}
+          Na kreativan i zabavan način vam pomažemo da uspešno i trajno usvojite
+          engleski i da govorite bez blokade i treme kako biste konačno
+          ostvarili svoje lične i poslovne ciljeve.
         </p>
       </div>
       <div className="home__boxes">
