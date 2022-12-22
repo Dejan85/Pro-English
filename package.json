@@ -34,7 +34,7 @@
     "express-validator": "^5.3.1",
     "formidable": "^1.2.1",
     "isomorphic-style-loader": "^5.1.0",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "lodash": "^4.17.15",
     "mailchimp-api-v3": "^1.13.1",
     "moment": "^2.24.0",
